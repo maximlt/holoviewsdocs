@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.annotators — HoloViews v1.14.7a1</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents">
+<link href="../../genindex.html" rel="index" title="Index">
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.annotators</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getmro</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="kn">from</span> <span class="nn">panel.pane</span> <span class="kn">import</span> <span class="n">PaneBase</span>
+<span class="kn">from</span> <span class="nn">panel.layout</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">Tabs</span>
+<span class="kn">from</span> <span class="nn">panel.util</span> <span class="kn">import</span> <span class="n">param_name</span>
+
+<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">DynamicMap</span><span class="p">,</span> <span class="n">HoloMap</span><span class="p">,</span> <span class="n">ViewableElement</span><span class="p">,</span> <span class="n">Element</span><span class="p">,</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">,</span> <span class="n">Store</span>
+<span class="kn">from</span> <span class="nn">.core.util</span> <span class="kn">import</span> <span class="n">isscalar</span>
+<span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">Rectangles</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">Polygons</span><span class="p">,</span> <span class="n">Points</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Curve</span>
+<span class="kn">from</span> <span class="nn">.plotting.links</span> <span class="kn">import</span> <span class="n">VertexTableLink</span><span class="p">,</span> <span class="n">DataLink</span><span class="p">,</span> <span class="n">RectanglesTableLink</span><span class="p">,</span> <span class="n">SelectionLink</span>
+<span class="kn">from</span> <span class="nn">.streams</span> <span class="kn">import</span> <span class="n">BoxEdit</span><span class="p">,</span> <span class="n">PolyDraw</span><span class="p">,</span> <span class="n">PolyEdit</span><span class="p">,</span> <span class="n">Selection1D</span><span class="p">,</span> <span class="n">PointDraw</span><span class="p">,</span> <span class="n">CurveEdit</span>
+
+
+<div class="viewcode-block" id="preprocess"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.preprocess">[docs]</a><span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Turns a param.depends watch call into a preprocessor method, i.e.</span>
+<span class="sd">    skips all downstream events triggered by it.</span>
+<span class="sd">    NOTE: This is a temporary hack while the addition of preprocessors</span>
+<span class="sd">          in param is under discussion. This only works for the first</span>
+<span class="sd">          method which depends on a particular parameter.</span>
+<span class="sd">          (see https://github.com/pyviz/param/issues/332)</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">_BATCH_WATCH</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">_BATCH_WATCH</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">_watchers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">_events</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="n">inner</span></div>
+
+
+<div class="viewcode-block" id="annotate"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.annotate">[docs]</a><span class="k">class</span> <span class="nc">annotate</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">ParameterizedFunction</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    The annotate function allows drawing, editing and annotating any</span>
+<span class="sd">    given Element (if it is supported). The annotate function returns</span>
+<span class="sd">    a Layout of the editable plot and an Overlay of table(s), which</span>
+<span class="sd">    allow editing the data of the element. The edited and annotated</span>
+<span class="sd">    data may be accessed using the element and selected properties.</span>
+<span class="sd">    """</span>
+
+    <span class="n">annotator</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">doc</span><span class="o">=</span><span class="s2">"""The current Annotator instance."""</span><span class="p">)</span>
+
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Annotations to associate with each object."""</span><span class="p">)</span>
+
+    <span class="n">edit_vertices</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to add tool to edit vertices."""</span><span class="p">)</span>
+
+    <span class="n">empty_value</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The value to insert on annotation columns when drawing a new</span>
+<span class="s2">        element."""</span><span class="p">)</span>
+
+    <span class="n">num_objects</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The maximum number of objects to draw."""</span><span class="p">)</span>
+
+    <span class="n">show_vertices</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to show vertices when drawing the Path."""</span><span class="p">)</span>
+
+    <span class="n">table_transforms</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">HookList</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Transform(s) to apply to element when converting data to Table.</span>
+<span class="s2">        The functions should accept the Annotator and the transformed</span>
+<span class="s2">        element as input."""</span><span class="p">)</span>
+
+    <span class="n">table_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'editable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'width'</span><span class="p">:</span> <span class="mi">400</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the editor table(s)."""</span><span class="p">)</span>
+
+    <span class="n">vertex_annotations</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Columns to annotate the Polygons with."""</span><span class="p">)</span>
+
+    <span class="n">vertex_style</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'nonselection_alpha'</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Options to apply to vertices during drawing and editing."""</span><span class="p">)</span>
+
+    <span class="n">_annotator_types</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">annotated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">annotated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">if</span> <span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span> <span class="o">==</span> <span class="s1">'bokeh'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">annotated</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">clone</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">selected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selected</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator</span><span class="o">.</span><span class="n">selected</span>
+        <span class="k">if</span> <span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span> <span class="o">==</span> <span class="s1">'bokeh'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">selected</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">clone</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">])</span>
+
+<div class="viewcode-block" id="annotate.compose"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.annotate.compose">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">annotators</span><span class="p">):</span>
+        <span class="sd">"""Composes multiple annotator layouts and elements</span>
+
+<span class="sd">        The composed Layout will contain all the elements in the</span>
+<span class="sd">        supplied annotators and an overlay of all editor tables.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            annotators: Annotator layouts or elements to compose</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new layout consisting of the overlaid plots and tables</span>
+<span class="sd">        """</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">tables</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">annotator</span> <span class="ow">in</span> <span class="n">annotators</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">annotator</span><span class="p">,</span> <span class="n">Layout</span><span class="p">):</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">annotator</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                <span class="n">tables</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">annotator</span><span class="p">,</span> <span class="n">annotate</span><span class="p">):</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">annotator</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+                <span class="n">tables</span> <span class="o">+=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">object</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">annotator</span><span class="o">.</span><span class="n">editor</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">annotator</span><span class="p">,</span> <span class="p">(</span><span class="n">HoloMap</span><span class="p">,</span> <span class="n">ViewableElement</span><span class="p">)):</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">annotator</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Cannot compose </span><span class="si">%s</span><span class="s2"> type with annotators."</span> <span class="o">%</span>
+                                 <span class="nb">type</span><span class="p">(</span><span class="n">annotator</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="n">tables</span> <span class="o">=</span> <span class="n">Overlay</span><span class="p">(</span><span class="n">tables</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s1">'Annotator'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">Overlay</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">.</span><span class="n">collate</span><span class="p">()</span> <span class="o">+</span> <span class="n">tables</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">overlay</span> <span class="o">=</span> <span class="n">element</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="p">]</span>
+
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">annotator_type</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">overlay</span><span class="p">:</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">eltype</span><span class="p">,</span> <span class="n">atype</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotator_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">eltype</span><span class="p">):</span>
+                    <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">getmro</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">))</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">eltype</span><span class="p">),</span> <span class="n">atype</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">annotator_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'An annotate call may only annotate a single element. '</span>
+                           <span class="s1">'If you want to annotate multiple elements call annotate '</span>
+                           <span class="s1">'on each one separately and then use the annotate.compose '</span>
+                           <span class="s1">'method to combine them into a single layout.'</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="n">annotator_type</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">matches</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">annotator</span> <span class="o">=</span> <span class="n">annotator_type</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+                <span class="n">tables</span> <span class="o">=</span> <span class="n">Overlay</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">object</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator</span><span class="o">.</span><span class="n">editor</span><span class="p">],</span> <span class="n">group</span><span class="o">=</span><span class="s1">'Annotator'</span><span class="p">)</span>
+                <span class="n">layout</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotator</span><span class="o">.</span><span class="n">plot</span> <span class="o">+</span> <span class="n">tables</span><span class="p">)</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">annotator_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">overlay</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">overlay</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">)</span> <span class="k">else</span> <span class="n">element</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Could not find an Element to annotate on'</span>
+                             <span class="s1">'</span><span class="si">%s</span><span class="s1"> object.'</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Annotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.Annotator">[docs]</a><span class="k">class</span> <span class="nc">Annotator</span><span class="p">(</span><span class="n">PaneBase</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    An Annotator allows drawing, editing and annotating a specific</span>
+<span class="sd">    type of element. Each Annotator consists of the `plot` to draw and</span>
+<span class="sd">    edit the element and the `editor`, which contains a list of tables,</span>
+<span class="sd">    which make it possible to annotate each object in the element with</span>
+<span class="sd">    additional properties defined in the `annotations`.</span>
+<span class="sd">    """</span>
+
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Annotations to associate with each object."""</span><span class="p">)</span>
+
+    <span class="n">default_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'responsive'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'min_height'</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                                       <span class="s1">'padding'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">'framewise'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the element."""</span><span class="p">)</span>
+
+    <span class="n">empty_value</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The value to insert on annotation columns when drawing a new</span>
+<span class="s2">        element."""</span><span class="p">)</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Element</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The Element to edit and annotate."""</span><span class="p">)</span>
+
+    <span class="n">num_objects</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The maximum number of objects to draw."""</span><span class="p">)</span>
+
+    <span class="n">table_transforms</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">HookList</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Transform(s) to apply to element when converting data to Table.</span>
+<span class="s2">        The functions should accept the Annotator and the transformed</span>
+<span class="s2">        element as input."""</span><span class="p">)</span>
+
+    <span class="n">table_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'editable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'width'</span><span class="p">:</span> <span class="mi">400</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the editor table(s)."""</span><span class="p">)</span>
+
+    <span class="c1"># Once generic editing tools are merged into bokeh this could</span>
+    <span class="c1"># include snapshot, restore and clear tools</span>
+    <span class="n">_tools</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Allows patching on custom behavior</span>
+    <span class="n">_extra_opts</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Triggers for updates to the table</span>
+    <span class="n">_triggers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'annotations'</span><span class="p">,</span> <span class="s1">'object'</span><span class="p">,</span> <span class="s1">'table_opts'</span><span class="p">]</span>
+
+    <span class="c1"># Links between plot and table</span>
+    <span class="n">_link_type</span> <span class="o">=</span> <span class="n">DataLink</span>
+    <span class="n">_selection_link_type</span> <span class="o">=</span> <span class="n">SelectionLink</span>
+
+    <span class="n">priority</span> <span class="o">=</span> <span class="mf">0.7</span>
+
+<div class="viewcode-block" id="Annotator.applies"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.Annotator.applies">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">applies</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">'holoviews'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">class_</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_element_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">class_</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_object_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_element</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table_row</span> <span class="o">=</span> <span class="n">Row</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">editor</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">((</span><span class="s1">'</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table_row</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">DynamicMap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_plot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="n">inputs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_stream</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">add_subscriber</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_update_object</span><span class="p">,</span> <span class="n">precedence</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selection</span> <span class="o">=</span> <span class="n">Selection1D</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_table</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_links</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triggers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">editor</span><span class="p">]</span>
+
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s1">'annotations'</span><span class="p">,</span> <span class="s1">'object'</span><span class="p">,</span> <span class="s1">'default_opts'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_get_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_element</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">_get_model</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">comm</span><span class="p">)</span>
+
+    <span class="nd">@preprocess</span>
+    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'object'</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">param</span><span class="o">.</span><span class="n">discard_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_element</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_table</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_update_links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'_link'</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_link_type</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'_selection_link'</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_link</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_selection_link</span> <span class="o">=</span> <span class="n">SelectionLink</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">param</span><span class="o">.</span><span class="n">discard_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">source</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">[()]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">element</span>
+
+    <span class="k">def</span> <span class="nf">_update_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">table_transforms</span><span class="p">:</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+            <span class="n">show_title</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">table_opts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_links</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table_row</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Annotator.select"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.Annotator.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Annotator.compose"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.Annotator.compose">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">annotators</span><span class="p">):</span>
+        <span class="sd">"""Composes multiple Annotator instances and elements</span>
+
+<span class="sd">        The composed Panel will contain all the elements in the</span>
+<span class="sd">        supplied Annotators and Tabs containing all editors.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            annotators: Annotator objects or elements to compose</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new Panel consisting of the overlaid plots and tables</span>
+<span class="sd">        """</span>
+        <span class="n">layers</span><span class="p">,</span> <span class="n">tables</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">annotators</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Annotator</span><span class="p">):</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+                <span class="n">tables</span> <span class="o">+=</span> <span class="n">a</span><span class="o">.</span><span class="n">tables</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Row</span><span class="p">(</span><span class="n">Overlay</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">.</span><span class="n">collate</span><span class="p">(),</span> <span class="n">Tabs</span><span class="p">(</span><span class="o">*</span><span class="n">tables</span><span class="p">))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">editor</span><span class="o">.</span><span class="n">_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">editor</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">selected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selection</span><span class="o">.</span><span class="n">index</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="PathAnnotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.PathAnnotator">[docs]</a><span class="k">class</span> <span class="nc">PathAnnotator</span><span class="p">(</span><span class="n">Annotator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Annotator which allows drawing and editing Paths and associating</span>
+<span class="sd">    values with each path and each vertex of a path using a table.</span>
+<span class="sd">    """</span>
+
+    <span class="n">edit_vertices</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to add tool to edit vertices."""</span><span class="p">)</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Path object to edit and annotate."""</span><span class="p">)</span>
+
+    <span class="n">show_vertices</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to show vertices when drawing the Path."""</span><span class="p">)</span>
+
+    <span class="n">vertex_annotations</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Columns to annotate the Polygons with."""</span><span class="p">)</span>
+
+    <span class="n">vertex_style</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'nonselection_alpha'</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Options to apply to vertices during drawing and editing."""</span><span class="p">)</span>
+
+    <span class="n">_vertex_table_link</span> <span class="o">=</span> <span class="n">VertexTableLink</span>
+
+    <span class="n">_triggers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'annotations'</span><span class="p">,</span> <span class="s1">'edit_vertices'</span><span class="p">,</span> <span class="s1">'object'</span><span class="p">,</span> <span class="s1">'table_opts'</span><span class="p">,</span>
+                 <span class="s1">'vertex_annotations'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table_row</span> <span class="o">=</span> <span class="n">Row</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">editor</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Vertices'</span> <span class="o">%</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table_row</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_init_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span> <span class="o">=</span> <span class="n">PolyDraw</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">num_objects</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_objects</span><span class="p">,</span>
+            <span class="n">show_vertices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">show_vertices</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Tool'</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span>
+            <span class="n">vertex_style</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_style</span><span class="p">,</span> <span class="n">empty_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">empty_value</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_vertices</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_stream</span> <span class="o">=</span> <span class="n">PolyEdit</span><span class="p">(</span>
+                <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Edit Tool'</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span>
+                <span class="n">vertex_style</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_style</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_process_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="p">):</span>
+            <span class="n">datatype</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="o">.</span><span class="n">datatype</span><span class="p">)</span>
+            <span class="n">datatype</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'multitabular'</span><span class="p">)</span>
+            <span class="n">datatype</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'multitabular'</span><span class="p">)</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+
+        <span class="c1"># Add annotation columns to poly data</span>
+        <span class="n">validate</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span>
+                <span class="n">validate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">init</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">[</span><span class="n">col</span><span class="p">]()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="s1">''</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span> <span class="n">init</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertex_annotations</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_annotations</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">init</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertex_annotations</span><span class="p">[</span><span class="n">col</span><span class="p">]()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">init</span> <span class="o">=</span> <span class="s1">''</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span> <span class="n">init</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Validate annotations</span>
+        <span class="n">poly_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">validate</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">validate</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">poly_data</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'annotations must refer to value dimensions '</span>
+                             <span class="s1">'which vary per path while at least one of '</span>
+                             <span class="s1">'</span><span class="si">%s</span><span class="s1"> varies by vertex.'</span> <span class="o">%</span> <span class="n">validate</span><span class="p">)</span>
+
+        <span class="c1"># Add options to element</span>
+        <span class="n">tools</span> <span class="o">=</span> <span class="p">[</span><span class="n">tool</span><span class="p">()</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">]</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span> <span class="n">color_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">default_opts</span><span class="p">)</span>
+        <span class="n">opts</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_opts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                                  <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">)</span><span class="o">.</span><span class="n">kwargs</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">_update_links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_links</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'_vertex_link'</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_link</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table_link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">element</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">element</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">datatype</span> <span class="o">==</span> <span class="s1">'multitabular'</span> <span class="ow">and</span>
+                <span class="n">element</span><span class="o">.</span><span class="n">data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">isscalar</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="n">col</span><span class="p">]):</span>
+                            <span class="n">path</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">with</span> <span class="n">param</span><span class="o">.</span><span class="n">discard_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">element</span>
+
+    <span class="k">def</span> <span class="nf">_update_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">annotations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">table_transforms</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+        <span class="n">table_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+                      <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">annotations</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">table_data</span><span class="p">,</span> <span class="n">annotations</span><span class="p">,</span> <span class="p">[],</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+            <span class="n">show_title</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">table_opts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span>
+            <span class="p">[],</span> <span class="n">table</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_annotations</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Vertices'</span> <span class="o">%</span> <span class="n">name</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">show_title</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">table_opts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_links</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table_row</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table_row</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_vertex_table</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">selected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">index</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PolyAnnotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.PolyAnnotator">[docs]</a><span class="k">class</span> <span class="nc">PolyAnnotator</span><span class="p">(</span><span class="n">PathAnnotator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Annotator which allows drawing and editing Polygons and associating</span>
+<span class="sd">    values with each polygon and each vertex of a Polygon using a table.</span>
+<span class="sd">    """</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Polygons</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">         Polygon element to edit and annotate."""</span><span class="p">)</span></div>
+
+
+
+<span class="k">class</span> <span class="nc">_GeomAnnotator</span><span class="p">(</span><span class="n">Annotator</span><span class="p">):</span>
+
+    <span class="n">default_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'responsive'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'min_height'</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                                       <span class="s1">'padding'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">'framewise'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the element."""</span><span class="p">)</span>
+
+    <span class="n">_stream_type</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">__abstract</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_init_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream_type</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">num_objects</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_objects</span><span class="p">,</span>
+            <span class="n">tooltip</span><span class="o">=</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Tool'</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">empty_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">empty_value</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_process_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">object</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="p">):</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+        <span class="c1"># Add annotations</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">object</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">init</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">[</span><span class="n">col</span><span class="p">]()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="s1">''</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span> <span class="n">init</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Add options</span>
+        <span class="n">tools</span> <span class="o">=</span> <span class="p">[</span><span class="n">tool</span><span class="p">()</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">]</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">default_opts</span><span class="p">)</span>
+        <span class="n">opts</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_opts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                                 <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">object</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">)</span><span class="o">.</span><span class="n">kwargs</span><span class="p">})</span>
+
+
+
+<div class="viewcode-block" id="PointAnnotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.PointAnnotator">[docs]</a><span class="k">class</span> <span class="nc">PointAnnotator</span><span class="p">(</span><span class="n">_GeomAnnotator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Annotator which allows drawing and editing Points and associating</span>
+<span class="sd">    values with each point using a table.</span>
+<span class="sd">    """</span>
+
+    <span class="n">default_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'responsive'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'min_height'</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                                       <span class="s1">'padding'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">'size'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                                       <span class="s1">'framewise'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the element."""</span><span class="p">)</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Points</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Points element to edit and annotate."""</span><span class="p">)</span>
+
+    <span class="n">_stream_type</span> <span class="o">=</span> <span class="n">PointDraw</span></div>
+
+
+<div class="viewcode-block" id="CurveAnnotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.CurveAnnotator">[docs]</a><span class="k">class</span> <span class="nc">CurveAnnotator</span><span class="p">(</span><span class="n">_GeomAnnotator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Annotator which allows editing a Curve element and associating values</span>
+<span class="sd">    with each vertex using a Table.</span>
+<span class="sd">    """</span>
+
+    <span class="n">default_opts</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'responsive'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'min_height'</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                                       <span class="s1">'padding'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">'framewise'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Opts to apply to the element."""</span><span class="p">)</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Curve</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Points element to edit and annotate."""</span><span class="p">)</span>
+
+    <span class="n">vertex_style</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'size'</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Options to apply to vertices during drawing and editing."""</span><span class="p">)</span>
+
+    <span class="n">_stream_type</span> <span class="o">=</span> <span class="n">CurveEdit</span>
+
+    <span class="k">def</span> <span class="nf">_init_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">param_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream_type</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">tooltip</span><span class="o">=</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> Tool'</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_style</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RectangleAnnotator"><a class="viewcode-back" href="../../reference_manual/holoviews.annotators.html#holoviews.annotators.RectangleAnnotator">[docs]</a><span class="k">class</span> <span class="nc">RectangleAnnotator</span><span class="p">(</span><span class="n">_GeomAnnotator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Annotator which allows drawing and editing Rectangles and associating</span>
+<span class="sd">    values with each point using a table.</span>
+<span class="sd">    """</span>
+
+    <span class="nb">object</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">Rectangles</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Points element to edit and annotate."""</span><span class="p">)</span>
+
+    <span class="n">_stream_type</span> <span class="o">=</span> <span class="n">BoxEdit</span>
+
+    <span class="n">_link_type</span> <span class="o">=</span> <span class="n">RectanglesTableLink</span></div>
+
+
+
+<span class="c1"># Register Annotators</span>
+<span class="n">annotate</span><span class="o">.</span><span class="n">_annotator_types</span><span class="o">.</span><span class="n">update</span><span class="p">([</span>
+    <span class="p">(</span><span class="n">Polygons</span><span class="p">,</span> <span class="n">PolyAnnotator</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Path</span><span class="p">,</span> <span class="n">PathAnnotator</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Points</span><span class="p">,</span> <span class="n">PointAnnotator</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Curve</span><span class="p">,</span> <span class="n">CurveAnnotator</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">Rectangles</span><span class="p">,</span> <span class="n">RectangleAnnotator</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="c1"># Alias: remove before 1.13.0 release</span>
+<span class="n">BoxAnnotator</span> <span class="o">=</span> <span class="n">RectangleAnnotator</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.mpl — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.mpl</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc_params_from_file</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span><span class="p">,</span> <span class="n">LinearSegmentedColormap</span>
+<span class="kn">from</span> <span class="nn">matplotlib.cm</span> <span class="kn">import</span> <span class="n">register_cmap</span>
+<span class="kn">from</span> <span class="nn">param</span> <span class="kn">import</span> <span class="n">concrete_descendents</span>
+<span class="kn">from</span> <span class="nn">colorcet</span> <span class="kn">import</span> <span class="n">kbc</span>
+
+<span class="kn">from</span> <span class="nn">...core</span> <span class="kn">import</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">Collator</span><span class="p">,</span> <span class="n">GridMatrix</span><span class="p">,</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">...core.options</span> <span class="kn">import</span> <span class="n">Cycle</span><span class="p">,</span> <span class="n">Palette</span><span class="p">,</span> <span class="n">Options</span>
+<span class="kn">from</span> <span class="nn">...core.overlay</span> <span class="kn">import</span> <span class="n">NdOverlay</span><span class="p">,</span> <span class="n">Overlay</span>
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="n">LooseVersion</span><span class="p">,</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">..plot</span> <span class="kn">import</span> <span class="n">PlotSelector</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">fire_colors</span>
+<span class="kn">from</span> <span class="nn">.annotation</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.chart</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.chart3d</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">ElementPlot</span>
+<span class="kn">from</span> <span class="nn">.geometry</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.graphs</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.heatmap</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.hex_tiles</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.path</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.plot</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.raster</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.sankey</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.stats</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.tabular</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa (API import)</span>
+
+<span class="kn">from</span> <span class="nn">.renderer</span> <span class="kn">import</span> <span class="n">MPLRenderer</span>
+
+
+<span class="n">mpl_ge_150</span> <span class="o">=</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="s1">'1.5.0'</span>
+
+<span class="k">if</span> <span class="n">pd</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">register_matplotlib_converters</span>
+        <span class="n">register_matplotlib_converters</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pandas.tseries</span> <span class="kn">import</span> <span class="n">converter</span>
+        <span class="n">converter</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="set_style"><a class="viewcode-back" href="../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.set_style">[docs]</a><span class="k">def</span> <span class="nf">set_style</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Select a style by name, e.g. set_style('default'). To revert to the</span>
+<span class="sd">    previous style use the key 'unset' or False.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">key</span> <span class="ow">or</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'unset'</span><span class="p">,</span> <span class="s1">'backup'</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s1">'backup'</span> <span class="ow">in</span> <span class="n">styles</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">styles</span><span class="p">[</span><span class="s1">'backup'</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'No style backed up to restore'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">styles</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">'</span><span class="si">%r</span><span class="s1"> not in available styles.'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="n">styles</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">new_style</span> <span class="o">=</span> <span class="n">rc_params_from_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">use_default_template</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">styles</span><span class="p">[</span><span class="s1">'backup'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_style</span><span class="p">)</span></div>
+
+
+<span class="c1"># Define matplotlib based style cycles and Palettes</span>
+<span class="k">def</span> <span class="nf">get_color_cycle</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">mpl_ge_150</span><span class="p">:</span>
+        <span class="n">cyl</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.prop_cycle'</span><span class="p">]</span>
+        <span class="c1"># matplotlib 1.5 verifies that axes.prop_cycle *is* a cycler</span>
+        <span class="c1"># but no guarantee that there's a `color` key.</span>
+        <span class="c1"># so users could have a custom rcParams w/ no color...</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cyl</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>  <span class="c1"># just return axes.color style below</span>
+    <span class="k">return</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.color_cycle'</span><span class="p">]</span>
+
+
+<span class="n">styles</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'default'</span><span class="p">:</span> <span class="s1">'./default.mplstyle'</span><span class="p">,</span>
+          <span class="s1">'default&gt;1.5'</span><span class="p">:</span> <span class="s1">'./default1.5.mplstyle'</span><span class="p">}</span>
+
+<span class="c1"># Define Palettes and cycles from matplotlib colormaps</span>
+<span class="n">Palette</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cm</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span> <span class="k">for</span> <span class="n">cm</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">datad</span>
+                          <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="s1">'spectral'</span> <span class="ow">in</span> <span class="n">cm</span> <span class="ow">or</span> <span class="s1">'Vega'</span> <span class="ow">in</span> <span class="n">cm</span><span class="p">)})</span>
+<span class="n">listed_cmaps</span> <span class="o">=</span> <span class="p">[</span><span class="n">cm</span> <span class="k">for</span> <span class="n">cm</span> <span class="ow">in</span> <span class="n">Palette</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">ListedColormap</span><span class="p">)]</span>
+<span class="n">Cycle</span><span class="o">.</span><span class="n">default_cycles</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cm</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span> <span class="k">for</span> <span class="n">cm</span> <span class="ow">in</span> <span class="n">listed_cmaps</span><span class="p">})</span>
+
+<span class="n">style_aliases</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'edgecolor'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'ec'</span><span class="p">,</span> <span class="s1">'ecolor'</span><span class="p">],</span> <span class="s1">'facecolor'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'fc'</span><span class="p">],</span>
+                 <span class="s1">'linewidth'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'lw'</span><span class="p">],</span> <span class="s1">'edgecolors'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'ec'</span><span class="p">,</span> <span class="s1">'edgecolor'</span><span class="p">],</span>
+                 <span class="s1">'size'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'s'</span><span class="p">],</span> <span class="s1">'color'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">],</span> <span class="s1">'markeredgecolor'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'mec'</span><span class="p">],</span>
+                 <span class="s1">'markeredgewidth'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'mew'</span><span class="p">],</span> <span class="s1">'markerfacecolor'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'mfc'</span><span class="p">],</span>
+                 <span class="s1">'markersize'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'ms'</span><span class="p">]}</span>
+
+<span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="s1">'matplotlib'</span><span class="p">]</span> <span class="o">=</span> <span class="n">MPLRenderer</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">Store</span><span class="o">.</span><span class="n">set_current_backend</span><span class="p">(</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+
+<span class="c1"># Defines a wrapper around GridPlot and RasterGridPlot</span>
+<span class="c1"># switching to RasterGridPlot if the plot only contains</span>
+<span class="c1"># Raster Elements</span>
+<span class="n">BasicGridPlot</span> <span class="o">=</span> <span class="n">GridPlot</span>
+<span class="k">def</span> <span class="nf">grid_selector</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+    <span class="n">raster_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Raster</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="n">all_raster</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="n">raster_fn</span><span class="p">,</span> <span class="p">[</span><span class="n">Element</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="s1">'RasterGridPlot'</span> <span class="k">if</span> <span class="n">all_raster</span> <span class="k">else</span> <span class="s1">'GridPlot'</span>
+
+<span class="n">GridPlot</span> <span class="o">=</span> <span class="n">PlotSelector</span><span class="p">(</span><span class="n">grid_selector</span><span class="p">,</span>
+                        <span class="n">plot_classes</span><span class="o">=</span><span class="p">[(</span><span class="s1">'GridPlot'</span><span class="p">,</span> <span class="n">BasicGridPlot</span><span class="p">),</span>
+                                      <span class="p">(</span><span class="s1">'RasterGridPlot'</span><span class="p">,</span> <span class="n">RasterGridPlot</span><span class="p">)])</span>
+
+<span class="c1"># Register default Elements</span>
+<span class="n">Store</span><span class="o">.</span><span class="n">register</span><span class="p">({</span><span class="n">Curve</span><span class="p">:</span> <span class="n">CurvePlot</span><span class="p">,</span>
+                <span class="n">Scatter</span><span class="p">:</span> <span class="n">PointPlot</span><span class="p">,</span>
+                <span class="n">Bars</span><span class="p">:</span> <span class="n">BarPlot</span><span class="p">,</span>
+                <span class="n">Histogram</span><span class="p">:</span> <span class="n">HistogramPlot</span><span class="p">,</span>
+                <span class="n">Points</span><span class="p">:</span> <span class="n">PointPlot</span><span class="p">,</span>
+                <span class="n">VectorField</span><span class="p">:</span> <span class="n">VectorFieldPlot</span><span class="p">,</span>
+                <span class="n">ErrorBars</span><span class="p">:</span> <span class="n">ErrorPlot</span><span class="p">,</span>
+                <span class="n">Spread</span><span class="p">:</span> <span class="n">SpreadPlot</span><span class="p">,</span>
+                <span class="n">Spikes</span><span class="p">:</span> <span class="n">SpikesPlot</span><span class="p">,</span>
+                <span class="n">BoxWhisker</span><span class="p">:</span> <span class="n">BoxPlot</span><span class="p">,</span>
+                <span class="n">Area</span><span class="p">:</span> <span class="n">AreaPlot</span><span class="p">,</span>
+
+                <span class="c1"># General plots</span>
+                <span class="n">GridSpace</span><span class="p">:</span> <span class="n">GridPlot</span><span class="p">,</span>
+                <span class="n">GridMatrix</span><span class="p">:</span> <span class="n">GridPlot</span><span class="p">,</span>
+                <span class="n">NdLayout</span><span class="p">:</span> <span class="n">LayoutPlot</span><span class="p">,</span>
+                <span class="n">Layout</span><span class="p">:</span> <span class="n">LayoutPlot</span><span class="p">,</span>
+                <span class="n">AdjointLayout</span><span class="p">:</span> <span class="n">AdjointLayoutPlot</span><span class="p">,</span>
+
+                <span class="c1"># Element plots</span>
+                <span class="n">NdOverlay</span><span class="p">:</span> <span class="n">OverlayPlot</span><span class="p">,</span>
+                <span class="n">Overlay</span><span class="p">:</span> <span class="n">OverlayPlot</span><span class="p">,</span>
+
+                <span class="c1"># Chart 3D</span>
+                <span class="n">Surface</span><span class="p">:</span> <span class="n">SurfacePlot</span><span class="p">,</span>
+                <span class="n">TriSurface</span><span class="p">:</span> <span class="n">TriSurfacePlot</span><span class="p">,</span>
+                <span class="n">Scatter3D</span><span class="p">:</span> <span class="n">Scatter3DPlot</span><span class="p">,</span>
+                <span class="n">Path3D</span><span class="p">:</span> <span class="n">Path3DPlot</span><span class="p">,</span>
+
+                <span class="c1"># Tabular plots</span>
+                <span class="n">ItemTable</span><span class="p">:</span> <span class="n">TablePlot</span><span class="p">,</span>
+                <span class="n">Table</span><span class="p">:</span> <span class="n">TablePlot</span><span class="p">,</span>
+                <span class="n">Collator</span><span class="p">:</span> <span class="n">TablePlot</span><span class="p">,</span>
+
+                <span class="c1"># Raster plots</span>
+                <span class="n">QuadMesh</span><span class="p">:</span> <span class="n">QuadMeshPlot</span><span class="p">,</span>
+                <span class="n">Raster</span><span class="p">:</span> <span class="n">RasterPlot</span><span class="p">,</span>
+                <span class="n">HeatMap</span><span class="p">:</span> <span class="n">PlotSelector</span><span class="p">(</span><span class="n">HeatMapPlot</span><span class="o">.</span><span class="n">is_radial</span><span class="p">,</span>
+                                      <span class="p">{</span><span class="kc">True</span><span class="p">:</span> <span class="n">RadialHeatMapPlot</span><span class="p">,</span>
+                                       <span class="kc">False</span><span class="p">:</span> <span class="n">HeatMapPlot</span><span class="p">},</span>
+                                      <span class="kc">True</span><span class="p">),</span>
+                <span class="n">Image</span><span class="p">:</span> <span class="n">RasterPlot</span><span class="p">,</span>
+                <span class="n">RGB</span><span class="p">:</span> <span class="n">RGBPlot</span><span class="p">,</span>
+                <span class="n">HSV</span><span class="p">:</span> <span class="n">RGBPlot</span><span class="p">,</span>
+
+                <span class="c1"># Graph Elements</span>
+                <span class="n">Graph</span><span class="p">:</span> <span class="n">GraphPlot</span><span class="p">,</span>
+                <span class="n">TriMesh</span><span class="p">:</span> <span class="n">TriMeshPlot</span><span class="p">,</span>
+                <span class="n">Chord</span><span class="p">:</span> <span class="n">ChordPlot</span><span class="p">,</span>
+                <span class="n">Nodes</span><span class="p">:</span> <span class="n">PointPlot</span><span class="p">,</span>
+                <span class="n">EdgePaths</span><span class="p">:</span> <span class="n">PathPlot</span><span class="p">,</span>
+                <span class="n">Sankey</span><span class="p">:</span> <span class="n">SankeyPlot</span><span class="p">,</span>
+
+                <span class="c1"># Annotation plots</span>
+                <span class="n">VLine</span><span class="p">:</span> <span class="n">VLinePlot</span><span class="p">,</span>
+                <span class="n">HLine</span><span class="p">:</span> <span class="n">HLinePlot</span><span class="p">,</span>
+                <span class="n">VSpan</span><span class="p">:</span> <span class="n">VSpanPlot</span><span class="p">,</span>
+                <span class="n">HSpan</span><span class="p">:</span> <span class="n">HSpanPlot</span><span class="p">,</span>
+                <span class="n">Slope</span><span class="p">:</span> <span class="n">SlopePlot</span><span class="p">,</span>
+                <span class="n">Arrow</span><span class="p">:</span> <span class="n">ArrowPlot</span><span class="p">,</span>
+                <span class="n">Spline</span><span class="p">:</span> <span class="n">SplinePlot</span><span class="p">,</span>
+                <span class="n">Text</span><span class="p">:</span> <span class="n">TextPlot</span><span class="p">,</span>
+                <span class="n">Labels</span><span class="p">:</span> <span class="n">LabelsPlot</span><span class="p">,</span>
+
+                <span class="c1"># Path plots</span>
+                <span class="n">Contours</span><span class="p">:</span> <span class="n">ContourPlot</span><span class="p">,</span>
+                <span class="n">Path</span><span class="p">:</span>     <span class="n">PathPlot</span><span class="p">,</span>
+                <span class="n">Box</span><span class="p">:</span>      <span class="n">PathPlot</span><span class="p">,</span>
+                <span class="n">Bounds</span><span class="p">:</span>   <span class="n">PathPlot</span><span class="p">,</span>
+                <span class="n">Ellipse</span><span class="p">:</span>  <span class="n">PathPlot</span><span class="p">,</span>
+                <span class="n">Polygons</span><span class="p">:</span> <span class="n">PolygonPlot</span><span class="p">,</span>
+
+                <span class="c1"># Geometry plots</span>
+                <span class="n">Rectangles</span><span class="p">:</span> <span class="n">RectanglesPlot</span><span class="p">,</span>
+                <span class="n">Segments</span><span class="p">:</span> <span class="n">SegmentPlot</span><span class="p">,</span>
+
+                <span class="c1"># Statistics elements</span>
+                <span class="n">Distribution</span><span class="p">:</span> <span class="n">DistributionPlot</span><span class="p">,</span>
+                <span class="n">Bivariate</span><span class="p">:</span> <span class="n">BivariatePlot</span><span class="p">,</span>
+                <span class="n">Violin</span><span class="p">:</span> <span class="n">ViolinPlot</span><span class="p">,</span>
+                <span class="n">HexTiles</span><span class="p">:</span> <span class="n">HexTilesPlot</span><span class="p">},</span>
+               <span class="s1">'matplotlib'</span><span class="p">,</span> <span class="n">style_aliases</span><span class="o">=</span><span class="n">style_aliases</span><span class="p">)</span>
+
+
+<span class="n">MPLPlot</span><span class="o">.</span><span class="n">sideplots</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">Histogram</span><span class="p">:</span> <span class="n">SideHistogramPlot</span><span class="p">,</span>
+                          <span class="n">Area</span><span class="p">:</span> <span class="n">SideAreaPlot</span><span class="p">,</span>
+                          <span class="n">GridSpace</span><span class="p">:</span> <span class="n">GridPlot</span><span class="p">,</span>
+                          <span class="n">Spikes</span><span class="p">:</span> <span class="n">SideSpikesPlot</span><span class="p">,</span>
+                          <span class="n">BoxWhisker</span><span class="p">:</span> <span class="n">SideBoxPlot</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">no_padding</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">concrete_descendents</span><span class="p">(</span><span class="n">ElementPlot</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">plot</span><span class="o">.</span><span class="n">padding</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Raster types, Path types and VectorField should have frames</span>
+<span class="k">for</span> <span class="n">framedcls</span> <span class="ow">in</span> <span class="p">[</span><span class="n">VectorFieldPlot</span><span class="p">,</span> <span class="n">ContourPlot</span><span class="p">,</span> <span class="n">PathPlot</span><span class="p">,</span> <span class="n">RasterPlot</span><span class="p">,</span>
+                  <span class="n">QuadMeshPlot</span><span class="p">,</span> <span class="n">HeatMapPlot</span><span class="p">,</span> <span class="n">PolygonPlot</span><span class="p">]:</span>
+    <span class="n">framedcls</span><span class="o">.</span><span class="n">show_frame</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">fire_cmap</span>   <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">"fire"</span><span class="p">,</span>   <span class="n">fire_colors</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">fire_colors</span><span class="p">))</span>
+<span class="n">fire_r_cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">"fire_r"</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">fire_colors</span><span class="p">)),</span>
+                                                <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">fire_colors</span><span class="p">))</span>
+<span class="n">register_cmap</span><span class="p">(</span><span class="s2">"fire"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">fire_cmap</span><span class="p">)</span>
+<span class="n">register_cmap</span><span class="p">(</span><span class="s2">"fire_r"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">fire_r_cmap</span><span class="p">)</span>
+
+<span class="n">register_cmap</span><span class="p">(</span><span class="s1">'kbc_r'</span><span class="p">,</span>
+              <span class="n">cmap</span><span class="o">=</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s1">'kbc_r'</span><span class="p">,</span>
+                                                     <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">kbc</span><span class="p">)),</span> <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">kbc</span><span class="p">)))</span>
+
+<span class="n">options</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+<span class="n">dflt_cmap</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">default_cmap</span>
+
+<span class="c1"># Default option definitions</span>
+<span class="c1"># Note: *No*short aliases here! e.g. use 'facecolor' instead of 'fc'</span>
+
+<span class="c1"># Charts</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Curve</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Scatter</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Points</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">show_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">ErrorBars</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Spread</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Bars</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Histogram</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Points</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Scatter3D</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Scatter3D</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Path3D</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Surface</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Surface</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'fire'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Spikes</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Area</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">BoxWhisker</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">boxprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span>
+                             <span class="n">whiskerprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">))</span>
+
+<span class="c1"># Geometries</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Rectangles</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+
+<span class="c1"># Rasters</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Image</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">default_gridded_cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Raster</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">default_gridded_cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">QuadMesh</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">default_gridded_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">HeatMap</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">default_heatmap_cmap</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
+                          <span class="n">annular_edgecolors</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">annular_linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                          <span class="n">xmarks_edgecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">xmarks_linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                          <span class="n">ymarks_edgecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">ymarks_linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                          <span class="n">linewidths</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">HeatMap</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">RGB</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="c1"># Composites</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Layout</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">sublabel_format</span><span class="o">=</span><span class="s1">'</span><span class="si">{Alpha}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">GridMatrix</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">shared_xaxis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">shared_yaxis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Annotations</span>
+<span class="n">options</span><span class="o">.</span><span class="n">VLine</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">HLine</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Slope</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">VSpan</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">HSpan</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Spline</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+
+<span class="n">options</span><span class="o">.</span><span class="n">Arrow</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">textsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="c1"># Paths</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Contours</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Contours</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Polygons</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+                           <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Rectangles</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Segments</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Box</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Bounds</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Ellipse</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+
+<span class="c1"># Interface</span>
+<span class="n">options</span><span class="o">.</span><span class="n">TimeSeries</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cycle</span><span class="p">())</span>
+
+<span class="c1"># Graphs</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Graph</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">node_edgecolors</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_facecolors</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span>
+                        <span class="n">edge_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">TriMesh</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">node_edgecolors</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_facecolors</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
+                          <span class="n">edge_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">edge_linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dflt_cmap</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Chord</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">node_edgecolors</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_facecolors</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span>
+                        <span class="n">edge_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edge_linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Chord</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Nodes</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span>
+                        <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">EdgePaths</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Sankey</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'plot'</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yaxis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                         <span class="n">aspect</span><span class="o">=</span><span class="mf">1.6</span><span class="p">,</span> <span class="n">show_frame</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Sankey</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">node_edgecolors</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+                         <span class="n">edge_alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Statistics</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Distribution</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">Violin</span> <span class="o">=</span> <span class="n">Options</span><span class="p">(</span><span class="s1">'style'</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="n">Cycle</span><span class="p">(),</span> <span class="n">showextrema</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

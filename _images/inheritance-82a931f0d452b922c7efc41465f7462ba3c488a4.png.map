@@ -1,0 +1,9 @@
+<map id="inheritancece389ef4f8" name="inheritancece389ef4f8">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="762,20,947,37"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.tabular.TablePlot" target="_top" title="A TablePlot can plot both TableViews and ViewMaps which display" alt="" coords="979,20,1148,37"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="548,4,730,20"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="562,36,716,53"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="345,20,516,37"/>
+<area shape="rect" id="node6" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="194,20,313,37"/>
+<area shape="rect" id="node7" title="params(name=String)" alt="" coords="4,20,162,37"/>
+</map>

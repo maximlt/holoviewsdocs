@@ -1,0 +1,11 @@
+<map id="inheritance3a501ba5b4" name="inheritance3a501ba5b4">
+<area shape="rect" id="node9" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="543,3,702,20"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="336,35,503,52"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="534,35,712,52"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="189,35,305,52"/>
+<area shape="rect" id="node5" href="holoviews.plotting.html#holoviews.plotting.plot.GenericOverlayPlot" target="_top" title="Plotting baseclass to render (Nd)Overlay objects. It implements" alt="" coords="748,35,924,52"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="743,3,929,20"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.plotly.element.OverlayPlot" target="_top" title="holoviews.plotting.plotly.element.OverlayPlot" alt="" coords="962,35,1147,52"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="3,35,158,52"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.plotly.element.ColorbarPlot" target="_top" title="holoviews.plotting.plotly.element.ColorbarPlot" alt="" coords="960,3,1149,20"/>
+</map>

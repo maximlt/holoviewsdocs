@@ -1,0 +1,11 @@
+<map id="inheritance8aac2116de" name="inheritance8aac2116de">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="712,15,848,27"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.graphs.GraphPlot" target="_top" title="holoviews.plotting.mpl.graphs.GraphPlot" alt="" coords="871,15,997,27"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="554,15,689,27"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="398,3,531,15"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="408,26,521,39"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.sankey.SankeyPlot" target="_top" title="holoviews.plotting.mpl.sankey.SankeyPlot" alt="" coords="1020,15,1149,27"/>
+<area shape="rect" id="node6" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="251,15,375,27"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="141,15,227,27"/>
+<area shape="rect" id="node9" title="params(name=String)" alt="" coords="3,15,118,27"/>
+</map>

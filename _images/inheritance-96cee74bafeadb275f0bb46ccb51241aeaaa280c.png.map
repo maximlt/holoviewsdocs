@@ -1,0 +1,7 @@
+<map id="inheritance9c4e936723" name="inheritance9c4e936723">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="616,30,843,55"/>
+<area shape="rect" id="node3" href="#holoviews.operation.stats.bivariate_kde" target="_top" title="Computes a 2D kernel density estimate (KDE) of the first two" alt="" coords="894,5,1143,30"/>
+<area shape="rect" id="node4" href="#holoviews.operation.stats.univariate_kde" target="_top" title="Computes a 1D kernel density estimate (KDE) along the supplied" alt="" coords="890,53,1147,78"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="285,30,569,55"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="5,30,238,55"/>
+</map>

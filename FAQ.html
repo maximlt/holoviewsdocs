@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ — HoloViews v1.14.7a1</title>
+<link href="_static/css/theme.css" rel="stylesheet"/>
+<link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/togglebutton.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="_static/favicon.ico" rel="shortcut icon">
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="roadmap.html" rel="next" title="HoloViews Roadmap, as of 3/2019"/>
+<link href="reference_manual/holoviews.util.html" rel="prev" title="holoviews.util Package"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="index.html">
+<img alt="logo" class="logo" src="_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="current reference internal nav-link" href="#">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="index.html">
+   Home
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="reference/index.html">
+   Reference Gallery
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="simple">
+</ul>
+</input></li>
+<li class="toctree-l1">
+<a class="reference internal" href="releases.html">
+   Releases
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="reference_manual/index.html">
+   API
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.annotators.html">
+     annotators
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="reference_manual/holoviews.core.html">
+     core
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.core.data.html">
+       holoviews.data Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.core.data.html">
+     core.data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.element.html">
+     element
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.ipython.html">
+     ipython
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.operation.html">
+     operation
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="reference_manual/holoviews.plotting.html">
+     plotting
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.bokeh.html">
+       holoviews.bokeh Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.mpl.html">
+       holoviews.mpl Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.plotly.html">
+       holoviews.plotly Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.plotting.bokeh.html">
+     plotting.bokeh
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.plotting.plotly.html">
+     plotting.plotly
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.selection.html">
+     selection
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.streams.html">
+     streams
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.util.html">
+     util
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   FAQ
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="roadmap.html">
+   Roadmap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference external" href="https://github.com/holoviz/holoviews">
+   Github source
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="about.html">
+   About
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<nav id="bd-toc-nav">
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>Here is a list of questions we have either been asked by users or
+potential pitfalls we hope to help users avoid:</p>
+<p><strong>Q: How should I use HoloViews as a short qualified import?</strong></p>
+<p><strong>A:</strong> We recommend importing HoloViews using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">holoviews</span> <span class="pre">as</span> <span class="pre">hv</span></code>.</p>
+<p><strong>Q: How do I specify axis labels?</strong></p>
+<p><strong>A:</strong> Axes are labeled with the label of the corresponding Dimension,
+which for a Pandas dataframe will default to the name of that column.
+If you want to define your own specific label to display for a
+dimension, you can provide a tuple containing the column name and your
+preferred label for it. For instance, if the column is named <cite>x_col</cite>,
+you can make the label ‘X Label’ using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">(</span><span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'X Label'</span><span class="p">),</span> <span class="s1">'y_col'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is the recommended way to specify labels in a declarative way,
+which will persist when applying operations to your data. You can also
+change the labels later, even after the object has been defined, by
+passing arguments (or an unpacked dictionary) to <code class="docutils literal notranslate"><span class="pre">redim.label</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">redim</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">x_col</span><span class="o">=</span><span class="s1">'X Label'</span><span class="p">,</span> <span class="n">y_col</span><span class="o">=</span><span class="s1">'Label for Y'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To override a label for plotting it is also possible to use the
+<cite>xlabel</cite> and <cite>ylabel</cite> plot options:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'X Label'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'Label for Y'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Q: How do I adjust the x/y/z axis bounds (matplotlib’s xlim, ylim)?</strong></p>
+<p><strong>A:</strong> Pass an unpacked dictionary containing the kdims/vdims’ names
+as keys and a tuple of the bounds as values into <code class="docutils literal notranslate"><span class="pre">redim.range</span></code>.</p>
+<p>This constrains the bounds of x_col to <cite>(0, max(x_col))</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">redim</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">x_col</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>As in the discussion of labels above, this approach allows you to declaratively associate ranges
+with the dimensions of your data in a way that will persist even if
+you apply operations to the object. This same method is applicable to
+adjust the limits of the colormapping range (i.e. <code class="docutils literal notranslate"><span class="pre">clim</span></code>).</p>
+<p>To override the range specifically for plotting it is also possible to
+set the <code class="docutils literal notranslate"><span class="pre">xlim</span></code> and <code class="docutils literal notranslate"><span class="pre">ylim</span></code> plot options:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This approach allows you to customize objects easily as a final step, but note that the values won’t be applied to the underlying data, and thus won’t be inherited if this object is subsequently used in an operation or data selection command.</p>
+<p><strong>Q: How do I control the auto-ranging/normalization of axis limits across frames in a HoloMap or objects in a Layout?</strong></p>
+<p><strong>A:</strong> Where feasible, HoloViews defaults to normalizing axis ranges
+across all objects that are presented together, so that they can be
+compared directly. If you don’t want objects that share a dimension to
+be normalized together in your layout, you can change the <code class="docutils literal notranslate"><span class="pre">axiswise</span></code>
+normalization option to True, making each object be normalized
+independently, e.g. for a layout of <cite>Curve</cite> objects use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">your_layout</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">opts</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">axiswise</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Alternatively you may also set <cite>shared_axes=False</cite> on the Layout itself:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">your_layout</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">shared_axes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similarly, if you have a HoloMap composed of multiple frames in an
+animation or controlled with widgets, you can make each frame be
+normalized independently by changing <code class="docutils literal notranslate"><span class="pre">framewise</span></code> to True:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">your_holomap</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">framewise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Q: Why doesn’t my DynamicMap respect the ``framewise=False`` option for axis normalization across frames?</strong></p>
+<p><strong>A:</strong> Unfortunately, HoloViews has no way of knowing the axis ranges
+of objects that might be returned by future calls to a DynamicMap’s
+callback function, and so there is no way for it to fully implement
+<code class="docutils literal notranslate"><span class="pre">framewise=False</span></code> normalization (even though such normalization
+is the default in HoloViews). Thus, as a special case, a DynamicMap
+(whether created specifically or as the return value of various
+operations that accept a <code class="docutils literal notranslate"><span class="pre">dynamic=True</span></code> argument) will by default
+compute its ranges <em>using data from the first frame only</em>. If that is not
+the behavior you want, you can either set <code class="docutils literal notranslate"><span class="pre">framewise=True</span></code> on it to enable
+normalization on every frame independently, or you can manually
+determine the appropriate axis range yourself and set that, e.g. with
+<code class="docutils literal notranslate"><span class="pre">.redim.range()</span></code> as described above.</p>
+<p><strong>Q: The default figure size is so tiny! How do I enlarge it?</strong></p>
+<p><strong>A:</strong> Depending on the selected backend…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for matplotlib:</span>
+<span class="n">hv_obj</span> <span class="o">=</span> <span class="n">hv_obj</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">fig_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># for bokeh:</span>
+<span class="n">hv_obj</span> <span class="o">=</span> <span class="n">hv_obj</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Q: How do I get a legend on my overlay figure?</strong></p>
+<p><strong>A:</strong> Legends are generated in two different ways, depending on the
+<code class="docutils literal notranslate"><span class="pre">Overlay</span></code> type you are using. When using <code class="docutils literal notranslate"><span class="pre">*</span></code> to generate a normal <code class="docutils literal notranslate"><span class="pre">Overlay</span></code>,
+the legends are generated from the labels of the Elements.
+Alternatively, you can construct an <code class="docutils literal notranslate"><span class="pre">NdOverlay</span></code>, where the key dimensions
+and values will become part of the legend. The
+<a class="reference external" href="user_guide/Dimensioned_Containers.html">Dimensioned Containers</a> user guide
+shows an example of an <code class="docutils literal notranslate"><span class="pre">NdOverlay</span></code> in action.</p>
+<p><strong>Q: How do I export a figure?</strong></p>
+<p><strong>A:</strong> The easiest way to save a figure is the <code class="docutils literal notranslate"><span class="pre">hv.save</span></code> utility,
+which allows saving plots in different formats depending on what is
+supported by the selected backend:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using bokeh</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'plot.html'</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'bokeh'</span><span class="p">)</span>
+
+<span class="c1"># Using matplotlib</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">'plot.svg'</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the backend is optional and will default to the currently
+activated backend (i.e. <code class="docutils literal notranslate"><span class="pre">hv.Store.current_backend</span></code>).</p>
+<p><strong>Q: Can I export and customize a bokeh or matplotlib figure directly?</strong></p>
+<p><strong>A:</strong> Sometimes it is useful to customize a plot further using the
+underlying plotting API used to render it. The <code class="docutils literal notranslate"><span class="pre">hv.render</span></code> method
+returns the rendered representation of a holoviews object as bokeh or
+matplotlib figure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using bokeh</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'bokeh'</span><span class="p">)</span>
+
+<span class="c1"># Using matplotlib</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the backend is optional and will default to the currently
+activated backend (i.e. <code class="docutils literal notranslate"><span class="pre">hv.Store.current_backend</span></code>).</p>
+<p>If the main reason you want access to the object is to somehow customize it before it is
+plotted, instead consider that it is possible to write so called <code class="docutils literal notranslate"><span class="pre">hooks</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hook</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+  <span class="c1"># The bokeh/matplotlib figure</span>
+  <span class="n">plot</span><span class="o">.</span><span class="n">state</span>
+
+      <span class="c1"># A dictionary of handles on plot subobjects, e.g. in matplotlib</span>
+      <span class="c1"># artist, axis, legend and in bokeh x_range, y_range, glyph, cds etc.</span>
+      <span class="n">plot</span><span class="o">.</span><span class="n">handles</span>
+
+<span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">hooks</span><span class="o">=</span><span class="p">[</span><span class="n">hook</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>These hooks can modify the backend specific representation, e.g. the
+matplotlib figure, before it is displayed, allowing arbitrary customizations to be
+applied which are not implemented or exposed by HoloViews itself.</p>
+<p><strong>Q: What if I need to do more complex customization supported by the backend but not exposed in HoloViews?</strong></p>
+<p><strong>A:</strong> If you need to, you can easily access the underlying Bokeh or
+Matplotlib figure and then use Bokeh or Matplotlib’s API directly on
+that object. For instance, if you want to force Bokeh to use a
+fixed list of tick labels for a HoloViews object <code class="docutils literal notranslate"><span class="pre">h</span></code>, you can
+grab the corresponding Bokeh figure <code class="docutils literal notranslate"><span class="pre">b</span></code>, edit it to your heart’s
+content as a Bokeh figure, and then show it as for any other Bokeh
+figure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'bokeh'</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">bokeh.models.tickers</span> <span class="kn">import</span> <span class="n">FixedTicker</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">FixedTicker</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
+<span class="n">show</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once you debug a modification like this manually as above, you’ll probably
+want to set it up to apply automatically whenever a Bokeh plot is generated
+for that HoloViews object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+<span class="kn">from</span> <span class="nn">bokeh.models.tickers</span> <span class="kn">import</span> <span class="n">FixedTicker</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'bokeh'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_axis</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">state</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">FixedTicker</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="s1">'x_col'</span><span class="p">,</span> <span class="s1">'y_col'</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">hooks</span><span class="o">=</span><span class="p">[</span><span class="n">update_axis</span><span class="p">])</span>
+<span class="n">h</span>
+</pre></div>
+</div>
+<p>Here, you’ve wrapped your Bokeh-API calls into a function, then
+supplied that to HoloViews so that it can be run automatically
+whenever object <code class="docutils literal notranslate"><span class="pre">h</span></code> is viewed.</p>
+<p><strong>Q: Can I avoid generating extremely large HTML files when exporting my notebook?</strong></p>
+<p><strong>A:</strong> It is very easy to visualize large volumes of data with
+HoloMaps, and all available display data is embedded in the HTML
+snapshot when sliders are used so that the result can be viewed
+without using a Python server process. It is therefore worth being
+aware of file size when authoring a notebook or web page to be
+published on the web. Useful tricks to reduce file size of HoloMaps
+include:</p>
+<ul class="simple">
+<li><p>Reducing the figure size.</p></li>
+<li><p>Selecting fewer frames for display (e.g selecting a smaller number
+of keys in any displayed <code class="docutils literal notranslate"><span class="pre">HoloMap</span></code> object)</p></li>
+<li><p>Displaying your data in a more highly compressed format such as
+<code class="docutils literal notranslate"><span class="pre">webm</span></code>, <code class="docutils literal notranslate"><span class="pre">mp4</span></code> or animated <code class="docutils literal notranslate"><span class="pre">gif</span></code>, while being aware that those
+formats may introduce visible artifacts.</p></li>
+<li><p>When using bokeh use lower precision dtypes (e.g. float16 vs. float64)</p></li>
+<li><p>Replace figures with lots of data with images prerendered
+by <a class="reference external" href="user_guide/Large_Data.html">datashade()</a>.</p></li>
+</ul>
+<p>It is also possible to generate web pages that do not actually include
+all of the data shown, by specifying a <code class="docutils literal notranslate"><span class="pre">DynamicMap</span></code> as described
+<a class="reference external" href="user_guide/Live_Data.html">Live Data</a> rather than a HoloMap. The
+DynamicMap will request data only as needed, and so requires a Python
+server to be running alongside the viewable web page. Such pages are
+more difficult to share by email or on web sites, but much more feasible
+for large datasets.</p>
+<p><strong>Q: I wish to use special characters in my title, but then attribute access becomes confusing.</strong></p>
+<p><strong>A:</strong> The title format <code class="docutils literal notranslate"><span class="pre">"{label}</span> <span class="pre">{group}</span> <span class="pre">{dimensions}"</span></code> is simply a default
+that you can override. If you want to use a lot of special characters
+in your titles, you can pick simple <code class="docutils literal notranslate"><span class="pre">group</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code> strings
+that let you refer to the object easily in the code, and then you can
+set the plot title directly, using the plot option
+<code class="docutils literal notranslate"><span class="pre">title="my</span> <span class="pre">new</span> <span class="pre">title"</span></code>.</p>
+<p>You can also use 2-tuples when specifying <code class="docutils literal notranslate"><span class="pre">group</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code> where
+the first item is the short name used for attribute access and the
+second name is the long descriptive name used in the title.</p>
+<p><strong>Q: Help! I don’t know how to index into my object!</strong></p>
+<p><strong>A:</strong> In any Python session, you can look at <code class="docutils literal notranslate"><span class="pre">print(obj)</span></code> to see
+the structure of <code class="docutils literal notranslate"><span class="pre">obj</span></code>. For
+an explanation of how this information helps you index into your
+object, see our <a class="reference external" href="user_guide/Composing_Elements.html">Composing Elements</a>
+user guide.</p>
+<p><strong>Q: How do I create a Layout or Overlay object from an arbitrary list?</strong></p>
+<p><strong>A:</strong> You can supply a list of <code class="docutils literal notranslate"><span class="pre">elements</span></code> directly to the <code class="docutils literal notranslate"><span class="pre">Layout</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Overlay</span></code> constructors. For instance, you can use
+<code class="docutils literal notranslate"><span class="pre">hv.Layout(elements)</span></code> or <code class="docutils literal notranslate"><span class="pre">hv.Overlay(elements)</span></code>.</p>
+<p><strong>Q: How do I provide keyword arguments for items with spaces?</strong></p>
+<p><strong>A:</strong> If your column names have spaces, you may predefine a dictionary
+using curly braces and unpack it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bounds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x col'</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="s1">'z col'</span><span class="p">:</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'x col'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'y col'</span><span class="p">,</span> <span class="s1">'z col'</span><span class="p">])</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">redim</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="o">**</span><span class="n">bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Q: How do I plot data without storing it first as a pandas/xarray object?</strong></p>
+<p><strong>A:</strong> HoloViews typically uses pandas and xarray objects in its examples,
+but it can accept standard Python data structures as well.
+Whatever data type is used, it needs to be provided to the first
+argument of the Element as <em>a single object</em>, so if you are using a
+pair of lists, be sure to pass them as a tuple, not as two separate
+arguments.</p>
+<p><strong>Q: Help! How do I find out the options for customizing the appearance of my object?</strong></p>
+<p><strong>A:</strong> If you are in the IPython/Jupyter Notebook you can use the cell magic
+<code class="docutils literal notranslate"><span class="pre">%%output</span> <span class="pre">info=True</span></code> at the top of your code cell. This will
+present the available style and plotting options for that object.</p>
+<p>The same information is also available in any Python session using
+<code class="docutils literal notranslate"><span class="pre">hv.help(obj)</span></code>. For more information on customizing the display
+of an object, see our <a class="reference external" href="user_guide/Customizing_Plots.html">Customizing Plots</a>
+user guide.</p>
+<p><strong>Q: Why are my .options(), .relabel(), .redim(), and similar settings not having any effect?</strong></p>
+<p><strong>A:</strong> By default, HoloViews object methods like .options and
+.redim return a <em>copy</em> of your object,
+rather than modifying your original object. In HoloViews,
+making a copy of the object is cheap, because only the metadata
+is copied, not the data, and returning a copy makes it simple
+to work with a variety of differently customized versions of any given
+object. You can use <code class="docutils literal notranslate"><span class="pre">.opts()</span></code> or pass <code class="docutils literal notranslate"><span class="pre">clone=False</span></code> to
+<code class="docutils literal notranslate"><span class="pre">.options()</span></code> if you wish to modify the object in place, or you can
+just reassign the new object to the old name (as in <code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span>
+<span class="pre">e.relabel("New</span> <span class="pre">Label")</span></code>).</p>
+<p><strong>Q: Why isn’t my %%opts cell magic being applied to my HoloViews object?</strong></p>
+<p><strong>A:</strong> %%opts is convenient because it tab-completes, but it can be confusing
+because of the “magic” way that it works. Specifically, if you use it at
+the top of a Jupyter notebook cell, the indicated options will be applied
+to the return value of that cell, if it’s a HoloViews object. So, if you
+want a given object to get customized, you need to make sure it is
+returned from the cell, or the options won’t ever be applied, and you
+should only access it after it has been returned, or the options won’t
+<em>yet</em> have been applied. For instance, if you use <cite>renderer.save()</cite>
+to export an object and only then return that object as the output of
+a cell, the exported object won’t have the options applied, because
+they don’t get applied until the object is returned
+(during IPython’s “display hooks” processing). So to make sure that
+options get applied, (a) return the object from a cell, and then (b)
+access it (e.g. for exporting) after the object has been returned.
+To avoid confusion, you may prefer to use .opts() directly on the
+object to ensure that the options have been applied before exporting.
+Example code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">opts</span> <span class="n">Curve</span> <span class="p">[</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">]</span>
+<span class="c1"># preceding cell</span>
+<span class="n">curve</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="c1"># next cell</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">renderer</span><span class="p">(</span><span class="s1">'bokeh'</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="s1">'example_curve'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Q: My output looks different from what is shown on the website</strong></p>
+<p><strong>A:</strong> HoloViews is organized as data structures that have
+corresponding plotting code implemented in different plotting-library
+backends, and each library will have differences in behavior.
+Moreover, the same library can give different results depending on its
+own internal options and versions. For instance, Matplotlib supports
+a variety of internal plotting backends, and these can have
+inconsistent output. HoloViews will not switch Matplotlib backends for
+you, but when using Matplotlib we strongly recommend selecting the
+‘agg’ backend for consistency:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="s1">'agg'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can generally set options explicitly to make the output more
+consistent across HoloViews backends, but in general HoloViews tries
+to use each backend’s defaults where possible.</p>
+<p><strong>Q: Why do my HoloViews and GeoViews objects work fine separately but are mismatched when overlaid?</strong></p>
+<p><strong>A:</strong> GeoViews works precisely the same as HoloViews, except that
+GeoViews is aware of geographic projections. If you take an
+<code class="docutils literal notranslate"><span class="pre">hv.Points</span></code> object in lon,lat coordinates and overlay it on a
+GeoViews map in Web Mercator, the HoloViews object will be in
+entirely the wrong coordinate system, with the HoloViews object all
+appearing at one tiny spot on the globe. If you declare the same
+object as <code class="docutils literal notranslate"><span class="pre">gv.Points</span></code>, then GeoViews will (a) assume it is in
+lon,lat coordinates (which HoloViews cannot assume, as it knows
+nothing of geography), and (b) convert it into the coordinates
+needed for display (e.g. Web Mercator). So, just make sure that
+anything with geographic coordinates is defined as a GeoViews object,
+and make sure to declare the coordinates (<code class="docutils literal notranslate"><span class="pre">crs=...</span></code>) if the data is
+in anything other than lon,lat.</p>
+<p><strong>Q: Where have my custom styles gone after unpickling my object?</strong></p>
+<p><strong>A:</strong> HoloViews objects are designed to pickle and unpickle your core
+data only, if you use Python’s <code class="docutils literal notranslate"><span class="pre">pickle.load</span></code> and
+<code class="docutils literal notranslate"><span class="pre">pickle.dump</span></code>. Because custom options are kept separate from
+your data, you need to use the corresponding methods <code class="docutils literal notranslate"><span class="pre">Store.dump</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Store.load</span></code> if you also want to save and restore per-object
+customization. You can import <code class="docutils literal notranslate"><span class="pre">Store</span></code> from the main namespace with
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">holoviews</span> <span class="pre">import</span> <span class="pre">Store</span></code>.</p>
+<p><strong>Q: Why are the sizing options so different between the Matplotlib and Bokeh backends?</strong></p>
+<p><strong>A:</strong> The way plot sizes are computed is handled in radically
+different ways by these backends, with Matplotlib building plots ‘inside
+out’ (from plot components with their own sizes) and Bokeh building
+them ‘outside in’ (fitting plot components into a given overall size).
+Thus there is not currently any way to specify sizes in a way that is
+comparable between the two backends.</p>
+<p><strong>Q: Why don’t you let me pass</strong> <em>matplotlib_option</em> <strong>as a style through to matplotlib?</strong></p>
+<p><strong>A:</strong> We have selected a subset of default allowable style options
+that are most commonly useful in order to hide the more arcane
+matplotlib options. If you do need such an option to be passed to
+the plotting system, you are welcome to declare that this is allowed.
+For instance, say you may want the <code class="docutils literal notranslate"><span class="pre">'filternorm'</span></code> option to be passed
+to matplotlib’s <code class="docutils literal notranslate"><span class="pre">imshow</span></code> command when displaying an <code class="docutils literal notranslate"><span class="pre">Image</span></code>
+element:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+<span class="kn">from</span> <span class="nn">holoviews</span> <span class="kn">import</span> <span class="n">Store</span>
+
+<span class="n">hv</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+<span class="n">Store</span><span class="o">.</span><span class="n">add_style_opts</span><span class="p">(</span><span class="n">hv</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="p">[</span><span class="s1">'filternorm'</span><span class="p">],</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'matplotlib'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you can freely use <code class="docutils literal notranslate"><span class="pre">'filternorm'</span></code> in <code class="docutils literal notranslate"><span class="pre">.opts()</span></code> and in the
+<code class="docutils literal notranslate"><span class="pre">%opts</span></code> line/cell magic, including tab-completion!</p>
+<p><strong>Q: What I want to change is about how HoloViews works, not about the underlying backend. Is that possible?</strong></p>
+<p><strong>A:</strong> Sure, if you need more customization and configurability than is
+possible with either HoloViews options or with extra backend-specific
+code as above, then you can always subclass the plotting class used
+for a HoloViews element and modify any of its behavior. You can also
+add your own Element types, which need corresponding plotting classes
+before they will be viewable in a given backend. The resulting objects
+will still interact normally with other HoloViews objects (e.g. in
+Layout or Overlay configurations).</p>
+</div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="reference_manual/holoviews.util.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">holoviews.util Package</p>
+</div>
+</a>
+<a class="right-next" href="roadmap.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">HoloViews Roadmap, as of 3/2019</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="last-updated">
+Last updated on 2021-12-08.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

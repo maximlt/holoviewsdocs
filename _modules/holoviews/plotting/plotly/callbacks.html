@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.plotly.callbacks — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.plotly.callbacks</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">weakref</span> <span class="kn">import</span> <span class="n">WeakValueDictionary</span>
+
+<span class="kn">from</span> <span class="nn">param.parameterized</span> <span class="kn">import</span> <span class="n">add_metaclass</span>
+
+<span class="kn">from</span> <span class="nn">...streams</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Stream</span><span class="p">,</span> <span class="n">Selection1D</span><span class="p">,</span> <span class="n">RangeXY</span><span class="p">,</span> <span class="n">RangeX</span><span class="p">,</span> <span class="n">RangeY</span><span class="p">,</span> <span class="n">BoundsXY</span><span class="p">,</span> <span class="n">BoundsX</span><span class="p">,</span> <span class="n">BoundsY</span><span class="p">,</span>
+    <span class="n">SelectionXY</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">_trace_to_subplot</span>
+
+<span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="n">Tiles</span>
+
+
+<div class="viewcode-block" id="PlotlyCallbackMetaClass"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.plotly.html#holoviews.plotting.plotly.callbacks.PlotlyCallbackMetaClass">[docs]</a><span class="k">class</span> <span class="nc">PlotlyCallbackMetaClass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Metaclass for PlotlyCallback classes.</span>
+
+<span class="sd">    We want each callback class to keep track of all of the instances of the class.</span>
+<span class="sd">    Using a meta class here lets us keep the logic for instance tracking in one place.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+        <span class="c1"># Create weak-value dictionary to hold instances of the class</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">instances</span> <span class="o">=</span> <span class="n">WeakValueDictionary</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">inst</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Store weak reference to the callback instance in the _instances</span>
+        <span class="c1"># WeakValueDictionary. This will allow instances to be garbage collected and</span>
+        <span class="c1"># the references will be automatically removed from the colleciton when this</span>
+        <span class="c1"># happens.</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
+
+        <span class="k">return</span> <span class="n">inst</span></div>
+
+
+<span class="nd">@add_metaclass</span><span class="p">(</span><span class="n">PlotlyCallbackMetaClass</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">PlotlyCallback</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">plot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">streams</span> <span class="o">=</span> <span class="n">streams</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_event</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_streams_from_property_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">property_value</span><span class="p">,</span> <span class="n">fig_dict</span><span class="p">):</span>
+        <span class="n">event_data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_event_data_from_property_update</span><span class="p">(</span>
+            <span class="nb">property</span><span class="p">,</span> <span class="n">property_value</span><span class="p">,</span> <span class="n">fig_dict</span>
+        <span class="p">)</span>
+        <span class="n">streams</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">trace_uid</span><span class="p">,</span> <span class="n">stream_data</span> <span class="ow">in</span> <span class="n">event_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">trace_uid</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instances</span><span class="p">:</span>
+                <span class="n">cb</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instances</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">unchanged</span> <span class="o">=</span> <span class="n">stream_data</span> <span class="o">==</span> <span class="n">cb</span><span class="o">.</span><span class="n">last_event</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">unchanged</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">if</span> <span class="n">unchanged</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">cb</span><span class="o">.</span><span class="n">last_event</span> <span class="o">=</span> <span class="n">stream_data</span>
+                <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">cb</span><span class="o">.</span><span class="n">streams</span><span class="p">:</span>
+                    <span class="n">stream</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">stream_data</span><span class="p">)</span>
+                    <span class="n">streams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">Stream</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">streams</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_event_data_from_property_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">property_value</span><span class="p">,</span> <span class="n">fig_dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">class</span> <span class="nc">Selection1DCallback</span><span class="p">(</span><span class="n">PlotlyCallback</span><span class="p">):</span>
+    <span class="n">callback_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"selected_data"</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_event_data_from_property_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">selected_data</span><span class="p">,</span> <span class="n">fig_dict</span><span class="p">):</span>
+
+        <span class="n">traces</span> <span class="o">=</span> <span class="n">fig_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">[])</span>
+
+        <span class="c1"># build event data and compute which trace UIDs are eligible</span>
+        <span class="c1"># Look up callback with UID</span>
+        <span class="c1"># graph reference and update the streams</span>
+        <span class="n">point_inds</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">selected_data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">selected_data</span><span class="p">[</span><span class="s1">'points'</span><span class="p">]:</span>
+                <span class="n">point_inds</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="s1">'curveNumber'</span><span class="p">],</span> <span class="p">[])</span>
+                <span class="n">point_inds</span><span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="s1">'curveNumber'</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="s1">'pointNumber'</span><span class="p">])</span>
+
+        <span class="n">event_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">new_index</span> <span class="o">=</span> <span class="n">point_inds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">trace_ind</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">new_index</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">event_data</span>
+
+
+<span class="k">class</span> <span class="nc">BoundsCallback</span><span class="p">(</span><span class="n">PlotlyCallback</span><span class="p">):</span>
+    <span class="n">callback_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"selected_data"</span><span class="p">]</span>
+    <span class="n">boundsx</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">boundsy</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_event_data_from_property_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">selected_data</span><span class="p">,</span> <span class="n">fig_dict</span><span class="p">):</span>
+        <span class="n">traces</span> <span class="o">=</span> <span class="n">fig_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">[])</span>
+
+        <span class="c1"># Initialize event data by clearing box selection on everything</span>
+        <span class="n">event_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span><span class="p">:</span>
+                <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsx</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsy</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+            <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_data</span>
+
+        <span class="n">range_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">selected_data</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"range"</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">update_event_data_xyaxis</span><span class="p">(</span><span class="n">range_data</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">event_data</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">update_event_data_mapbox</span><span class="p">(</span><span class="n">range_data</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">event_data</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">event_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_event_data_xyaxis</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">range_data</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">event_data</span><span class="p">):</span>
+        <span class="c1"># Process traces</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_type</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'scatter'</span><span class="p">)</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">_trace_to_subplot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">trace_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">'xaxis'</span><span class="p">,</span> <span class="s1">'yaxis'</span><span class="p">]:</span>
+                <span class="k">continue</span>
+
+            <span class="n">xref</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'xaxis'</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">)</span>
+            <span class="n">yref</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'yaxis'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">xref</span> <span class="ow">in</span> <span class="n">range_data</span> <span class="ow">and</span> <span class="n">yref</span> <span class="ow">in</span> <span class="n">range_data</span><span class="p">:</span>
+                <span class="n">new_bounds</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">range_data</span><span class="p">[</span><span class="n">xref</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">range_data</span><span class="p">[</span><span class="n">yref</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">range_data</span><span class="p">[</span><span class="n">xref</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">range_data</span><span class="p">[</span><span class="n">yref</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+                <span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bounds</span><span class="o">=</span><span class="n">new_bounds</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsx</span><span class="o">=</span><span class="p">(</span><span class="n">new_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+                <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsy</span><span class="o">=</span><span class="p">(</span><span class="n">new_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+                <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_event_data_mapbox</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">range_data</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">event_data</span><span class="p">):</span>
+        <span class="c1"># Process traces</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_type</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'scatter'</span><span class="p">)</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">_trace_to_subplot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">trace_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">'mapbox'</span><span class="p">]:</span>
+                <span class="k">continue</span>
+
+            <span class="n">mapbox_ref</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'subplot'</span><span class="p">,</span> <span class="s1">'mapbox'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mapbox_ref</span> <span class="ow">in</span> <span class="n">range_data</span><span class="p">:</span>
+                <span class="n">lon_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">range_data</span><span class="p">[</span><span class="n">mapbox_ref</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">range_data</span><span class="p">[</span><span class="n">mapbox_ref</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+                <span class="n">lat_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">range_data</span><span class="p">[</span><span class="n">mapbox_ref</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">range_data</span><span class="p">[</span><span class="n">mapbox_ref</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+
+                <span class="n">easting</span><span class="p">,</span> <span class="n">northing</span> <span class="o">=</span> <span class="n">Tiles</span><span class="o">.</span><span class="n">lon_lat_to_easting_northing</span><span class="p">(</span><span class="n">lon_bounds</span><span class="p">,</span> <span class="n">lat_bounds</span><span class="p">)</span>
+                <span class="n">new_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="n">easting</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">northing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">easting</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">northing</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bounds</span><span class="o">=</span><span class="n">new_bounds</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsx</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsx</span><span class="o">=</span><span class="p">(</span><span class="n">new_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+                <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">boundsy</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">boundsy</span><span class="o">=</span><span class="p">(</span><span class="n">new_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">stream_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+                <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_data</span>
+
+
+<span class="k">class</span> <span class="nc">BoundsXYCallback</span><span class="p">(</span><span class="n">BoundsCallback</span><span class="p">):</span>
+    <span class="n">boundsx</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">boundsy</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">BoundsXCallback</span><span class="p">(</span><span class="n">BoundsCallback</span><span class="p">):</span>
+    <span class="n">boundsx</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">BoundsYCallback</span><span class="p">(</span><span class="n">BoundsCallback</span><span class="p">):</span>
+    <span class="n">boundsy</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">RangeCallback</span><span class="p">(</span><span class="n">PlotlyCallback</span><span class="p">):</span>
+    <span class="n">callback_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"viewport"</span><span class="p">,</span> <span class="s2">"relayout_data"</span><span class="p">]</span>
+    <span class="n">x_range</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_event_data_from_property_update</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">property_value</span><span class="p">,</span> <span class="n">fig_dict</span><span class="p">):</span>
+        <span class="n">traces</span> <span class="o">=</span> <span class="n">fig_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">[])</span>
+
+        <span class="k">if</span> <span class="nb">property</span> <span class="o">==</span> <span class="s2">"viewport"</span><span class="p">:</span>
+            <span class="n">event_data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">build_event_data_from_viewport</span><span class="p">(</span><span class="n">traces</span><span class="p">,</span> <span class="n">property_value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">event_data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">build_event_data_from_relayout_data</span><span class="p">(</span><span class="n">traces</span><span class="p">,</span> <span class="n">property_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">event_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">build_event_data_from_viewport</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">property_value</span><span class="p">):</span>
+        <span class="c1"># Process traces</span>
+        <span class="n">event_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_type</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'scatter'</span><span class="p">)</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">_trace_to_subplot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">trace_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">'xaxis'</span><span class="p">,</span> <span class="s1">'yaxis'</span><span class="p">]:</span>
+                <span class="k">continue</span>
+
+            <span class="n">xaxis</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'xaxis'</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'xaxis'</span><span class="p">)</span>
+            <span class="n">yaxis</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'yaxis'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="s1">'yaxis'</span><span class="p">)</span>
+            <span class="n">xprop</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{xaxis}</span><span class="s1">.range'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xaxis</span><span class="o">=</span><span class="n">xaxis</span><span class="p">)</span>
+            <span class="n">yprop</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{yaxis}</span><span class="s1">.range'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yaxis</span><span class="o">=</span><span class="n">yaxis</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">property_value</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">y_range</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">elif</span> <span class="n">xprop</span> <span class="ow">in</span> <span class="n">property_value</span> <span class="ow">and</span> <span class="n">yprop</span> <span class="ow">in</span> <span class="n">property_value</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">property_value</span><span class="p">[</span><span class="n">xprop</span><span class="p">])</span>
+                <span class="n">y_range</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">property_value</span><span class="p">[</span><span class="n">yprop</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">xprop</span> <span class="o">+</span> <span class="s2">"[0]"</span> <span class="ow">in</span> <span class="n">property_value</span> <span class="ow">and</span> <span class="n">xprop</span> <span class="o">+</span> <span class="s2">"[1]"</span> <span class="ow">in</span> <span class="n">property_value</span> <span class="ow">and</span> \
+                    <span class="n">yprop</span> <span class="o">+</span> <span class="s2">"[0]"</span> <span class="ow">in</span> <span class="n">property_value</span> <span class="ow">and</span> <span class="n">yprop</span> <span class="o">+</span> <span class="s2">"[1]"</span> <span class="ow">in</span> <span class="n">property_value</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">property_value</span><span class="p">[</span><span class="n">xprop</span> <span class="o">+</span> <span class="s2">"[0]"</span><span class="p">],</span><span class="n">property_value</span><span class="p">[</span><span class="n">xprop</span> <span class="o">+</span> <span class="s2">"[1]"</span><span class="p">])</span>
+                <span class="n">y_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">property_value</span><span class="p">[</span><span class="n">yprop</span> <span class="o">+</span> <span class="s2">"[0]"</span><span class="p">],</span> <span class="n">property_value</span><span class="p">[</span><span class="n">yprop</span> <span class="o">+</span> <span class="s2">"[1]"</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">stream_data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">x_range</span><span class="p">:</span>
+                <span class="n">stream_data</span><span class="p">[</span><span class="s1">'x_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_range</span>
+
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">y_range</span><span class="p">:</span>
+                <span class="n">stream_data</span><span class="p">[</span><span class="s1">'y_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_range</span>
+
+            <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_data</span>
+        <span class="k">return</span> <span class="n">event_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">build_event_data_from_relayout_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">property_value</span><span class="p">):</span>
+        <span class="c1"># Process traces</span>
+        <span class="n">event_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traces</span><span class="p">):</span>
+            <span class="n">trace_type</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'scattermapbox'</span><span class="p">)</span>
+            <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">_trace_to_subplot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">trace_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">'mapbox'</span><span class="p">]:</span>
+                <span class="k">continue</span>
+
+            <span class="n">subplot_id</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subplot"</span><span class="p">,</span> <span class="s2">"mapbox"</span><span class="p">)</span>
+            <span class="n">derived_prop</span> <span class="o">=</span> <span class="n">subplot_id</span> <span class="o">+</span> <span class="s2">"._derived"</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">property_value</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">y_range</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">elif</span> <span class="s2">"coordinates"</span> <span class="ow">in</span> <span class="n">property_value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">derived_prop</span><span class="p">,</span> <span class="p">{}):</span>
+                <span class="n">coords</span> <span class="o">=</span> <span class="n">property_value</span><span class="p">[</span><span class="n">derived_prop</span><span class="p">][</span><span class="s2">"coordinates"</span><span class="p">]</span>
+                <span class="p">((</span><span class="n">lon_top_left</span><span class="p">,</span> <span class="n">lat_top_left</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">lon_top_right</span><span class="p">,</span> <span class="n">lat_top_right</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">lon_bottom_right</span><span class="p">,</span> <span class="n">lat_bottom_right</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">lon_bottom_left</span><span class="p">,</span> <span class="n">lat_bottom_left</span><span class="p">))</span> <span class="o">=</span> <span class="n">coords</span>
+
+                <span class="n">lon_left</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lon_top_left</span><span class="p">,</span> <span class="n">lon_bottom_left</span><span class="p">)</span>
+                <span class="n">lon_right</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lon_top_right</span><span class="p">,</span> <span class="n">lon_bottom_right</span><span class="p">)</span>
+                <span class="n">lat_bottom</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lat_bottom_left</span><span class="p">,</span> <span class="n">lat_bottom_right</span><span class="p">)</span>
+                <span class="n">lat_top</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lat_top_left</span><span class="p">,</span> <span class="n">lat_top_right</span><span class="p">)</span>
+
+                <span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span> <span class="o">=</span> <span class="n">Tiles</span><span class="o">.</span><span class="n">lon_lat_to_easting_northing</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">lon_left</span><span class="p">,</span> <span class="n">lon_right</span><span class="p">],</span> <span class="p">[</span><span class="n">lat_bottom</span><span class="p">,</span> <span class="n">lat_top</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x_range</span><span class="p">)</span>
+                <span class="n">y_range</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">stream_data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">x_range</span><span class="p">:</span>
+                <span class="n">stream_data</span><span class="p">[</span><span class="s1">'x_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_range</span>
+
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">y_range</span><span class="p">:</span>
+                <span class="n">stream_data</span><span class="p">[</span><span class="s1">'y_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_range</span>
+
+            <span class="n">event_data</span><span class="p">[</span><span class="n">trace_uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_data</span>
+
+        <span class="k">return</span> <span class="n">event_data</span>
+
+
+<span class="k">class</span> <span class="nc">RangeXYCallback</span><span class="p">(</span><span class="n">RangeCallback</span><span class="p">):</span>
+    <span class="n">x_range</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">RangeXCallback</span><span class="p">(</span><span class="n">RangeCallback</span><span class="p">):</span>
+    <span class="n">x_range</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">RangeYCallback</span><span class="p">(</span><span class="n">RangeCallback</span><span class="p">):</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="n">callbacks</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="n">_callbacks</span><span class="p">[</span><span class="s1">'plotly'</span><span class="p">]</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">Selection1D</span><span class="p">]</span> <span class="o">=</span> <span class="n">Selection1DCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">SelectionXY</span><span class="p">]</span> <span class="o">=</span> <span class="n">BoundsXYCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">BoundsXY</span><span class="p">]</span> <span class="o">=</span> <span class="n">BoundsXYCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">BoundsX</span><span class="p">]</span> <span class="o">=</span> <span class="n">BoundsXCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">BoundsY</span><span class="p">]</span> <span class="o">=</span> <span class="n">BoundsYCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">RangeXY</span><span class="p">]</span> <span class="o">=</span> <span class="n">RangeXYCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">RangeX</span><span class="p">]</span> <span class="o">=</span> <span class="n">RangeXCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">RangeY</span><span class="p">]</span> <span class="o">=</span> <span class="n">RangeYCallback</span>
+
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

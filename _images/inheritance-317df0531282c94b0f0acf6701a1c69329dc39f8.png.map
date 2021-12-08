@@ -1,0 +1,12 @@
+<map id="inheritance4d0722d243" name="inheritance4d0722d243">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.element.ColorbarPlot" target="_top" title="ColorbarPlot provides methods to create colormappers and colorbar" alt="" coords="781,3,933,16"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.bokeh.heatmap.HeatMapPlot" target="_top" title="holoviews.plotting.bokeh.heatmap.HeatMapPlot" alt="" coords="983,3,1140,16"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.bokeh.heatmap.RadialHeatMapPlot" target="_top" title="holoviews.plotting.bokeh.heatmap.RadialHeatMapPlot" alt="" coords="974,28,1149,41"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.bokeh.element.ElementPlot" target="_top" title="holoviews.plotting.bokeh.element.ElementPlot" alt="" coords="590,16,741,29"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.element.CompositeElementPlot" target="_top" title="A CompositeElementPlot is an Element plot type that coordinates" alt="" coords="765,28,949,41"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.bokeh.plot.BokehPlot" target="_top" title="Plotting baseclass for the Bokeh backends, implementing the basic" alt="" coords="428,3,561,16"/>
+<area shape="rect" id="node5" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="424,28,565,41"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="267,28,399,41"/>
+<area shape="rect" id="node10" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="150,28,242,41"/>
+<area shape="rect" id="node11" title="params(name=String)" alt="" coords="3,28,125,41"/>
+</map>

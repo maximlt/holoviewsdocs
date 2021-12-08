@@ -1,0 +1,34 @@
+<map id="inheritancee698a881b0" name="inheritancee698a881b0">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.callbacks.BoundsCallback" target="_top" title="Returns the bounds of a box_select tool." alt="" coords="210,69,406,85"/>
+<area shape="rect" id="node31" href="#holoviews.plotting.bokeh.callbacks.SelectionXYCallback" target="_top" title="Converts a bounds selection to numeric or categorical x&#45;range" alt="" coords="445,48,658,63"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.bokeh.callbacks.Callback" target="_top" title="Provides a baseclass to define callbacks, which return data from" alt="" coords="3,241,173,256"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.callbacks.BoundsXCallback" target="_top" title="Returns the bounds of a xbox_select tool." alt="" coords="207,122,409,137"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.bokeh.callbacks.BoundsYCallback" target="_top" title="Returns the bounds of a ybox_select tool." alt="" coords="207,152,409,167"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.bokeh.callbacks.CDSCallback" target="_top" title="A Stream callback that syncs the data on a bokeh ColumnDataSource" alt="" coords="214,181,401,197"/>
+<area shape="rect" id="node12" href="#holoviews.plotting.bokeh.callbacks.PointerXYCallback" target="_top" title="Returns the mouse x/y&#45;position on mousemove event." alt="" coords="205,211,411,227"/>
+<area shape="rect" id="node15" href="#holoviews.plotting.bokeh.callbacks.LassoCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.LassoCallback" alt="" coords="212,241,403,256"/>
+<area shape="rect" id="node19" href="#holoviews.plotting.bokeh.callbacks.PlotSizeCallback" target="_top" title="Returns the actual width and height of a plot once the layout" alt="" coords="208,271,408,286"/>
+<area shape="rect" id="node26" href="#holoviews.plotting.bokeh.callbacks.RangeXYCallback" target="_top" title="Returns the x/y&#45;axis ranges of a plot." alt="" coords="206,301,410,316"/>
+<area shape="rect" id="node28" href="#holoviews.plotting.bokeh.callbacks.ResetCallback" target="_top" title="Signals the Reset stream if an event has been triggered." alt="" coords="212,331,403,346"/>
+<area shape="rect" id="node29" href="#holoviews.plotting.bokeh.callbacks.SelectModeCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.SelectModeCallback" alt="" coords="202,360,414,376"/>
+<area shape="rect" id="node30" href="#holoviews.plotting.bokeh.callbacks.Selection1DCallback" target="_top" title="Returns the current selection on a ColumnDataSource." alt="" coords="202,390,414,405"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.bokeh.callbacks.BoxEditCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.BoxEditCallback" alt="" coords="694,3,891,19"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.bokeh.callbacks.GlyphDrawCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.GlyphDrawCallback" alt="" coords="447,77,656,93"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.bokeh.callbacks.CurveEditCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.CurveEditCallback" alt="" coords="690,33,895,48"/>
+<area shape="rect" id="node14" href="#holoviews.plotting.bokeh.callbacks.PolyDrawCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.PolyDrawCallback" alt="" coords="690,63,894,78"/>
+<area shape="rect" id="node20" href="#holoviews.plotting.bokeh.callbacks.PointDrawCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.PointDrawCallback" alt="" coords="689,93,896,108"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.bokeh.callbacks.DoubleTapCallback" target="_top" title="Returns the mouse x/y&#45;position on doubletap event." alt="" coords="688,123,896,138"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.bokeh.callbacks.TapCallback" target="_top" title="Returns the mouse x/y&#45;position on tap event." alt="" coords="460,137,643,152"/>
+<area shape="rect" id="node18" href="#holoviews.plotting.bokeh.callbacks.PanEndCallback" target="_top" title="Returns the mouse x/y&#45;position of a pan end event." alt="" coords="693,152,892,168"/>
+<area shape="rect" id="node24" href="#holoviews.plotting.bokeh.callbacks.PressUpCallback" target="_top" title="Returns the mouse x/y&#45;position of a pressup mouse event." alt="" coords="692,182,893,198"/>
+<area shape="rect" id="node32" href="#holoviews.plotting.bokeh.callbacks.SingleTapCallback" target="_top" title="Returns the mouse x/y&#45;position on tap event." alt="" coords="690,212,895,227"/>
+<area shape="rect" id="node11" href="#holoviews.plotting.bokeh.callbacks.DrawCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.DrawCallback" alt="" coords="457,167,646,182"/>
+<area shape="rect" id="node16" href="#holoviews.plotting.bokeh.callbacks.MouseEnterCallback" target="_top" title="Returns the mouse x/y&#45;position on mouseenter event, i.e. when" alt="" coords="445,197,658,212"/>
+<area shape="rect" id="node17" href="#holoviews.plotting.bokeh.callbacks.MouseLeaveCallback" target="_top" title="Returns the mouse x/y&#45;position on mouseleave event, i.e. when" alt="" coords="443,227,659,242"/>
+<area shape="rect" id="node21" href="#holoviews.plotting.bokeh.callbacks.PointerXCallback" target="_top" title="Returns the mouse x&#45;position on mousemove event." alt="" coords="451,256,652,272"/>
+<area shape="rect" id="node22" href="#holoviews.plotting.bokeh.callbacks.PointerYCallback" target="_top" title="Returns the mouse x/y&#45;position on mousemove event." alt="" coords="451,286,652,302"/>
+<area shape="rect" id="node13" href="#holoviews.plotting.bokeh.callbacks.FreehandDrawCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.FreehandDrawCallback" alt="" coords="925,48,1149,64"/>
+<area shape="rect" id="node23" href="#holoviews.plotting.bokeh.callbacks.PolyEditCallback" target="_top" title="holoviews.plotting.bokeh.callbacks.PolyEditCallback" alt="" coords="938,78,1137,94"/>
+<area shape="rect" id="node25" href="#holoviews.plotting.bokeh.callbacks.RangeXCallback" target="_top" title="Returns the x&#45;axis range of a plot." alt="" coords="452,316,651,331"/>
+<area shape="rect" id="node27" href="#holoviews.plotting.bokeh.callbacks.RangeYCallback" target="_top" title="Returns the y&#45;axis range of a plot." alt="" coords="452,346,651,361"/>
+</map>

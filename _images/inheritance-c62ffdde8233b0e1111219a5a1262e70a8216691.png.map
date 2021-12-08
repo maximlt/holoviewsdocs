@@ -1,0 +1,7 @@
+<map id="inheritance9eca5fcf49" name="inheritance9eca5fcf49">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.io.Exporter" target="_top" title="An Exporter is a parameterized function that accepts a HoloViews" alt="" coords="499,4,640,24"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.renderer.Renderer" target="_top" title="The job of a Renderer is to turn the plotting state held within" alt="" coords="678,4,867,24"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="231,4,461,24"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.plotly.renderer.PlotlyRenderer" target="_top" title="holoviews.plotting.plotly.renderer.PlotlyRenderer" alt="" coords="905,4,1148,24"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="4,4,193,24"/>
+</map>

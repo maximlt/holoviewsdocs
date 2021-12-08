@@ -1,0 +1,7 @@
+<map id="inheritance378f40ec43" name="inheritance378f40ec43">
+<area shape="rect" id="node1" href="#holoviews.core.data.interface.Interface" target="_top" title="holoviews.core.data.interface.Interface" alt="" coords="190,3,352,20"/>
+<area shape="rect" id="node3" href="#holoviews.core.data.multipath.MultiInterface" target="_top" title="MultiInterface allows wrapping around a list of tabular datasets" alt="" coords="383,3,566,20"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="3,3,158,20"/>
+<area shape="rect" id="node4" href="#holoviews.core.data.spatialpandas.SpatialPandasInterface" target="_top" title="holoviews.core.data.spatialpandas.SpatialPandasInterface" alt="" coords="597,3,836,20"/>
+<area shape="rect" id="node5" href="#holoviews.core.data.spatialpandas_dask.DaskSpatialPandasInterface" target="_top" title="holoviews.core.data.spatialpandas_dask.DaskSpatialPandasInterface" alt="" coords="867,3,1149,20"/>
+</map>

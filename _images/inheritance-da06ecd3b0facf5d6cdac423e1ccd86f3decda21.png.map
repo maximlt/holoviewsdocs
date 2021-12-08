@@ -1,0 +1,25 @@
+<map id="inheritance0d188fe22b" name="inheritance0d188fe22b">
+<area shape="rect" id="node1" href="holoviews.core.data.html#holoviews.core.data.Dataset" target="_top" title="Dataset provides a general baseclass for Element types that" alt="" coords="665,85,742,95"/>
+<area shape="rect" id="node18" href="#holoviews.element.raster.Image" target="_top" title="Image represents a regularly sampled 2D grid of an underlying" alt="" coords="942,104,1027,114"/>
+<area shape="rect" id="node20" href="#holoviews.element.geom.Geometry" target="_top" title="Geometry elements represent a collection of objects drawn in" alt="" coords="803,64,897,74"/>
+<area shape="rect" id="node2" href="holoviews.core.html#holoviews.core.element.Element" target="_top" title="Element is the atomic datastructure used to wrap some data with" alt="" coords="519,94,606,105"/>
+<area shape="rect" id="node9" href="holoviews.core.html#holoviews.core.element.Element2D" target="_top" title="holoviews.core.element.Element2D" alt="" coords="656,105,750,115"/>
+<area shape="rect" id="node3" href="holoviews.core.html#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="243,74,347,85"/>
+<area shape="rect" id="node6" href="holoviews.core.html#holoviews.core.dimension.ViewableElement" target="_top" title="A ViewableElement is a dimensioned datastructure that may be" alt="" coords="366,74,481,85"/>
+<area shape="rect" id="node4" href="holoviews.core.html#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="119,74,223,85"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="2,74,99,85"/>
+<area shape="rect" id="node7" title="Composable is a mix&#45;in class to allow Dimensioned objects to be" alt="" coords="377,94,470,105"/>
+<area shape="rect" id="node8" href="holoviews.core.html#holoviews.core.overlay.Overlayable" target="_top" title="Overlayable provides a mix&#45;in class to support the" alt="" coords="377,114,470,125"/>
+<area shape="rect" id="node10" href="holoviews.core.html#holoviews.core.element.Element3D" target="_top" title="holoviews.core.element.Element3D" alt="" coords="937,84,1031,94"/>
+<area shape="rect" id="node23" href="#holoviews.element.raster.Raster" target="_top" title="Raster is a basic 2D element type for presenting either numpy or" alt="" coords="807,146,893,156"/>
+<area shape="rect" id="node13" href="#holoviews.element.chart3d.Path3D" target="_top" title="Path3D is a 3D element representing a line through 3D space. The" alt="" coords="1054,44,1147,54"/>
+<area shape="rect" id="node15" href="#holoviews.element.chart3d.Scatter3D" target="_top" title="Scatter3D is a 3D element representing the position of a collection" alt="" coords="1051,64,1150,74"/>
+<area shape="rect" id="node17" href="#holoviews.element.chart3d.Surface" target="_top" title="A Surface represents a regularly sampled 2D grid with associated" alt="" coords="1054,104,1147,114"/>
+<area shape="rect" id="node19" href="#holoviews.element.chart3d.TriSurface" target="_top" title="TriSurface represents a set of coordinates in 3D space which" alt="" coords="1051,84,1150,94"/>
+<area shape="rect" id="node11" title="Layoutable provides a mix&#45;in class to support the" alt="" coords="250,94,339,105"/>
+<area shape="rect" id="node12" href="holoviews.core.html#holoviews.core.sheetcoords.SheetCoordinateSystem" target="_top" title="Provides methods to allow conversion between sheet and matrix" alt="" coords="782,126,918,136"/>
+<area shape="rect" id="node14" href="#holoviews.element.path.Path" target="_top" title="The Path element represents one or more of path geometries with" alt="" coords="945,44,1023,54"/>
+<area shape="rect" id="node16" href="#holoviews.element.geom.Points" target="_top" title="Points represents a set of coordinates in 2D space, which may" alt="" coords="942,64,1027,74"/>
+<area shape="rect" id="node21" href="#holoviews.element.selection.Selection2DExpr" target="_top" title="Mixin class for Cartesian 2D elements to add basic support for" alt="" coords="644,23,762,33"/>
+<area shape="rect" id="node22" href="#holoviews.element.selection.SelectionPolyExpr" target="_top" title="holoviews.element.selection.SelectionPolyExpr" alt="" coords="789,2,911,12"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="inheritanceba48098df2" name="inheritanceba48098df2">
+<area shape="rect" id="node1" href="#holoviews.core.data.dictionary.DictInterface" target="_top" title="Interface for simple dictionary&#45;based dataset format. The dictionary" alt="" coords="456,4,671,24"/>
+<area shape="rect" id="node3" href="#holoviews.core.data.grid.GridInterface" target="_top" title="Interface for simple dictionary&#45;based dataset format using a" alt="" coords="708,4,898,24"/>
+<area shape="rect" id="node2" href="#holoviews.core.data.interface.Interface" target="_top" title="holoviews.core.data.interface.Interface" alt="" coords="225,4,419,24"/>
+<area shape="rect" id="node5" href="#holoviews.core.data.xarray.XArrayInterface" target="_top" title="holoviews.core.data.xarray.XArrayInterface" alt="" coords="935,4,1148,24"/>
+<area shape="rect" id="node4" title="params(name=String)" alt="" coords="4,4,188,24"/>
+</map>

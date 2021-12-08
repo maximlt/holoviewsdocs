@@ -1,0 +1,28 @@
+<map id="inheritancef3933b9d0e" name="inheritancef3933b9d0e">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.accessors.Redim" target="_top" title="Utility that supports re&#45;dimensioning any HoloViews object via the" alt="" coords="7,82,95,93"/>
+<area shape="rect" id="node22" href="#holoviews.element.graphs.RedimGraph" target="_top" title="Extension for the redim utility that allows re&#45;dimensioning" alt="" coords="126,82,230,93"/>
+<area shape="rect" id="node2" href="holoviews.core.data.html#holoviews.core.data.Dataset" target="_top" title="Dataset provides a general baseclass for Element types that" alt="" coords="679,37,756,47"/>
+<area shape="rect" id="node14" href="#holoviews.element.geom.Geometry" target="_top" title="Geometry elements represent a collection of objects drawn in" alt="" coords="810,37,904,47"/>
+<area shape="rect" id="node18" href="#holoviews.element.graphs.Graph" target="_top" title="Graph is high&#45;level Element representing both nodes and edges." alt="" coords="813,17,901,27"/>
+<area shape="rect" id="node3" href="holoviews.core.html#holoviews.core.element.Element" target="_top" title="Element is the atomic datastructure used to wrap some data with" alt="" coords="533,27,620,37"/>
+<area shape="rect" id="node10" href="holoviews.core.html#holoviews.core.element.Element2D" target="_top" title="holoviews.core.element.Element2D" alt="" coords="671,17,764,27"/>
+<area shape="rect" id="node4" href="holoviews.core.html#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="257,7,361,17"/>
+<area shape="rect" id="node7" href="holoviews.core.html#holoviews.core.dimension.ViewableElement" target="_top" title="A ViewableElement is a dimensioned datastructure that may be" alt="" coords="380,7,495,17"/>
+<area shape="rect" id="node5" href="holoviews.core.html#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="126,17,230,28"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="2,53,99,63"/>
+<area shape="rect" id="node13" title="params(name=String)" alt="" coords="119,57,237,68"/>
+<area shape="rect" id="node8" title="Composable is a mix&#45;in class to allow Dimensioned objects to be" alt="" coords="391,27,484,37"/>
+<area shape="rect" id="node9" href="holoviews.core.html#holoviews.core.overlay.Overlayable" target="_top" title="Overlayable provides a mix&#45;in class to support the" alt="" coords="391,47,484,57"/>
+<area shape="rect" id="node11" title="Layoutable provides a mix&#45;in class to support the" alt="" coords="264,27,353,37"/>
+<area shape="rect" id="node12" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="261,67,356,78"/>
+<area shape="rect" id="node24" href="#holoviews.element.graphs.layout_chords" target="_top" title="layout_chords computes the locations of each node on a circle and" alt="" coords="384,87,491,98"/>
+<area shape="rect" id="node25" href="#holoviews.element.graphs.layout_nodes" target="_top" title="Accepts a Graph and lays out the corresponding nodes with the" alt="" coords="385,67,490,78"/>
+<area shape="rect" id="node15" href="#holoviews.element.geom.Points" target="_top" title="Points represents a set of coordinates in 2D space, which may" alt="" coords="942,72,1027,82"/>
+<area shape="rect" id="node20" href="#holoviews.element.path.Path" target="_top" title="The Path element represents one or more of path geometries with" alt="" coords="945,52,1023,62"/>
+<area shape="rect" id="node21" href="#holoviews.element.graphs.Nodes" target="_top" title="Nodes is a simple Element representing Graph nodes as a set of" alt="" coords="1055,72,1144,82"/>
+<area shape="rect" id="node16" href="#holoviews.element.selection.Selection2DExpr" target="_top" title="Mixin class for Cartesian 2D elements to add basic support for" alt="" coords="658,67,777,78"/>
+<area shape="rect" id="node26" href="#holoviews.element.selection.SelectionPolyExpr" target="_top" title="holoviews.element.selection.SelectionPolyExpr" alt="" coords="796,57,918,67"/>
+<area shape="rect" id="node17" href="#holoviews.element.graphs.Chord" target="_top" title="Chord is a special type of Graph which computes the locations of" alt="" coords="940,22,1028,33"/>
+<area shape="rect" id="node23" href="#holoviews.element.graphs.TriMesh" target="_top" title="A TriMesh represents a mesh of triangles represented as the" alt="" coords="938,2,1031,12"/>
+<area shape="rect" id="node19" href="#holoviews.element.graphs.EdgePaths" target="_top" title="EdgePaths is a simple Element representing the paths of edges" alt="" coords="1050,52,1150,62"/>
+</map>

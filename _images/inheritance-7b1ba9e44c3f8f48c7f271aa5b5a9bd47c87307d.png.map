@@ -1,0 +1,6 @@
+<map id="inheritance077379fcb8" name="inheritance077379fcb8">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.io.Archive" target="_top" title="An Archive is a means to collect and store a collection of" alt="" coords="292,5,464,31"/>
+<area shape="rect" id="node3" href="holoviews.core.html#holoviews.core.io.FileArchive" target="_top" title="A file archive stores files on disk, either unpacked in a" alt="" coords="512,5,705,31"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="5,5,244,31"/>
+<area shape="rect" id="node4" href="#holoviews.ipython.archive.NotebookArchive" target="_top" title="FileArchive that can automatically capture notebook data via the" alt="" coords="753,5,1032,31"/>
+</map>

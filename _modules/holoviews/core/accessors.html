@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.core.accessors — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.core.accessors</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Module for accessor objects for viewable HoloViews objects.</span>
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">FunctionType</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="kn">from</span> <span class="nn">param.parameterized</span> <span class="kn">import</span> <span class="n">add_metaclass</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">.pprint</span> <span class="kn">import</span> <span class="n">PrettyPrinter</span>
+
+
+<span class="k">class</span> <span class="nc">AccessorPipelineMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">classname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">classdict</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">'__call__'</span> <span class="ow">in</span> <span class="n">classdict</span><span class="p">:</span>
+            <span class="n">classdict</span><span class="p">[</span><span class="s1">'__call__'</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcs</span><span class="o">.</span><span class="n">pipelined</span><span class="p">(</span><span class="n">classdict</span><span class="p">[</span><span class="s1">'__call__'</span><span class="p">])</span>
+
+        <span class="n">inst</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">classname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">classdict</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">inst</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">pipelined</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="fm">__call__</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="fm">__call__</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">pipelined_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">..operation.element</span> <span class="kn">import</span> <span class="n">method</span> <span class="k">as</span> <span class="n">method_op</span><span class="p">,</span> <span class="n">factory</span>
+            <span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">MultiDimensionalMapping</span>
+            <span class="n">inst</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="s1">'_pipeline'</span><span class="p">):</span>
+                <span class="c1"># Wrapped object doesn't support the pipeline property</span>
+                <span class="k">return</span> <span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="n">inst_pipeline</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span> <span class="n">_pipeline</span><span class="p">)</span>
+            <span class="n">in_method</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_in_method</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">in_method</span><span class="p">:</span>
+                <span class="n">inst</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_in_method</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">in_method</span><span class="p">:</span>
+                    <span class="n">init_op</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span>
+                        <span class="n">output_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">inst</span><span class="p">),</span>
+                        <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="s1">'mode'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)},</span>
+                    <span class="p">)</span>
+                    <span class="n">call_op</span> <span class="o">=</span> <span class="n">method_op</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span>
+                        <span class="n">input_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">inst</span><span class="p">),</span>
+                        <span class="n">method_name</span><span class="o">=</span><span class="s1">'__call__'</span><span class="p">,</span>
+                        <span class="n">args</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span>
+                        <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">):</span>
+                        <span class="n">result</span><span class="o">.</span><span class="n">_pipeline</span> <span class="o">=</span> <span class="n">inst_pipeline</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span>
+                            <span class="n">operations</span><span class="o">=</span><span class="n">inst_pipeline</span><span class="o">.</span><span class="n">operations</span> <span class="o">+</span> <span class="p">[</span>
+                                <span class="n">init_op</span><span class="p">,</span> <span class="n">call_op</span>
+                            <span class="p">],</span>
+                            <span class="n">output_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">),</span>
+                        <span class="p">)</span>
+                    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">MultiDimensionalMapping</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                            <span class="n">getitem_op</span> <span class="o">=</span> <span class="n">method_op</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span>
+                                <span class="n">input_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">),</span>
+                                <span class="n">method_name</span><span class="o">=</span><span class="s1">'__getitem__'</span><span class="p">,</span>
+                                <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">key</span><span class="p">],</span>
+                            <span class="p">)</span>
+                            <span class="n">element</span><span class="o">.</span><span class="n">_pipeline</span> <span class="o">=</span> <span class="n">inst_pipeline</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span>
+                                <span class="n">operations</span><span class="o">=</span><span class="n">inst_pipeline</span><span class="o">.</span><span class="n">operations</span> <span class="o">+</span> <span class="p">[</span>
+                                    <span class="n">init_op</span><span class="p">,</span> <span class="n">call_op</span><span class="p">,</span> <span class="n">getitem_op</span>
+                                <span class="p">],</span>
+                                <span class="n">output_type</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">),</span>
+                            <span class="p">)</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">in_method</span><span class="p">:</span>
+                    <span class="n">inst</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_in_method</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">return</span> <span class="n">result</span>
+
+        <span class="k">return</span> <span class="n">pipelined_call</span>
+
+
+<div class="viewcode-block" id="Apply"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply">[docs]</a><span class="nd">@add_metaclass</span><span class="p">(</span><span class="n">AccessorPipelineMeta</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Apply</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Utility to apply a function or operation to all viewable elements</span>
+<span class="sd">    inside the object.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">obj</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apply_function</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="p">[],</span> <span class="n">link_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">link_dataset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">per_element</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies a function to all (Nd)Overlay or Element objects.</span>
+
+<span class="sd">        Any keyword arguments are passed through to the function. If</span>
+<span class="sd">        keyword arguments are instance parameters, or streams are</span>
+<span class="sd">        supplied the returned object will dynamically update in</span>
+<span class="sd">        response to changes in those objects.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            apply_function: A callable function</span>
+<span class="sd">                The function will be passed the return value of the</span>
+<span class="sd">                DynamicMap as the first argument and any supplied</span>
+<span class="sd">                stream values or keywords as additional keyword</span>
+<span class="sd">                arguments.</span>
+<span class="sd">            streams (list, optional): A list of Stream objects</span>
+<span class="sd">                The Stream objects can dynamically supply values which</span>
+<span class="sd">                will be passed to the function as keywords.</span>
+<span class="sd">            link_inputs (bool, optional): Whether to link the inputs</span>
+<span class="sd">                Determines whether Streams and Links attached to</span>
+<span class="sd">                original object will be inherited.</span>
+<span class="sd">            link_dataset (bool, optional): Whether to link the dataset</span>
+<span class="sd">                Determines whether the dataset will be inherited.</span>
+<span class="sd">            dynamic (bool, optional): Whether to make object dynamic</span>
+<span class="sd">                By default object is made dynamic if streams are</span>
+<span class="sd">                supplied, an instance parameter is supplied as a</span>
+<span class="sd">                keyword argument, or the supplied function is a</span>
+<span class="sd">                parameterized method.</span>
+<span class="sd">            per_element (bool, optional): Whether to apply per element</span>
+<span class="sd">                By default apply works on the leaf nodes, which</span>
+<span class="sd">                includes both elements and overlays. If set it will</span>
+<span class="sd">                apply directly to elements.</span>
+<span class="sd">            kwargs (dict, optional): Additional keyword arguments</span>
+<span class="sd">                Keyword arguments which will be supplied to the</span>
+<span class="sd">                function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new object where the function was applied to all</span>
+<span class="sd">            contained (Nd)Overlay or Element objects.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
+        <span class="kn">from</span> <span class="nn">.dimension</span> <span class="kn">import</span> <span class="n">ViewableElement</span>
+        <span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">Element</span>
+        <span class="kn">from</span> <span class="nn">.spaces</span> <span class="kn">import</span> <span class="n">HoloMap</span><span class="p">,</span> <span class="n">DynamicMap</span>
+        <span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">Dynamic</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">DynamicMap</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dynamic</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">samples</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">kdims</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Applying a function to a DynamicMap '</span>
+                                 <span class="s1">'and setting dynamic=False is only '</span>
+                                 <span class="s1">'possible if key dimensions define '</span>
+                                 <span class="s1">'a discrete parameter space.'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">[</span><span class="n">samples</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">HoloMap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">[</span><span class="n">samples</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="n">apply_function</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">link_inputs</span><span class="p">,</span> <span class="n">link_dataset</span><span class="p">,</span>
+                <span class="n">dynamic</span><span class="p">,</span> <span class="n">per_element</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">apply_function</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'_method_args'</span><span class="p">,</span> <span class="p">())</span>
+            <span class="n">method_name</span> <span class="o">=</span> <span class="n">apply_function</span>
+            <span class="k">def</span> <span class="nf">apply_function</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">'Applied method </span><span class="si">%s</span><span class="s1"> does not exist.'</span>
+                                         <span class="s1">'When declaring a method to apply '</span>
+                                         <span class="s1">'as a string ensure a corresponding '</span>
+                                         <span class="s1">'method exists on the object.'</span> <span class="o">%</span>
+                                         <span class="n">method_name</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">'panel'</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">panel.widgets.base</span> <span class="kn">import</span> <span class="n">Widget</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Widget</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span>
+                      <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">Element</span> <span class="k">if</span> <span class="n">per_element</span> <span class="k">else</span> <span class="n">ViewableElement</span>
+        <span class="n">applies</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="n">val</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                  <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">)</span>
+                  <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">owner</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">)}</span>
+
+        <span class="n">dependent_kws</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">FunctionType</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s1">'_dinfo'</span><span class="p">))</span> <span class="ow">or</span>
+            <span class="n">util</span><span class="o">.</span><span class="n">is_param_method</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">has_deps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">dynamic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">is_dynamic</span> <span class="o">=</span> <span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">streams</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">DynamicMap</span><span class="p">)</span> <span class="ow">or</span>
+                          <span class="n">util</span><span class="o">.</span><span class="n">is_param_method</span><span class="p">(</span><span class="n">apply_function</span><span class="p">,</span> <span class="n">has_deps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="ow">or</span>
+                          <span class="n">params</span> <span class="ow">or</span> <span class="n">dependent_kws</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_dynamic</span> <span class="o">=</span> <span class="n">dynamic</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">applies</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">HoloMap</span><span class="p">))</span> <span class="ow">and</span> <span class="n">is_dynamic</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Dynamic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">apply_function</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="n">streams</span><span class="p">,</span>
+                           <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">link_inputs</span><span class="o">=</span><span class="n">link_inputs</span><span class="p">,</span>
+                           <span class="n">link_dataset</span><span class="o">=</span><span class="n">link_dataset</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">applies</span><span class="p">:</span>
+            <span class="n">inner_kwargs</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">resolve_dependent_kwargs</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">apply_function</span><span class="p">,</span> <span class="s1">'dynamic'</span><span class="p">):</span>
+                <span class="n">inner_kwargs</span><span class="p">[</span><span class="s1">'dynamic'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">new_obj</span> <span class="o">=</span> <span class="n">apply_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">link_dataset</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_obj</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span> <span class="ow">and</span> <span class="n">new_obj</span><span class="o">.</span><span class="n">_dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">new_obj</span><span class="o">.</span><span class="n">_dataset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">dataset</span>
+            <span class="k">return</span> <span class="n">new_obj</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_deep_indexable</span><span class="p">:</span>
+            <span class="n">mapped</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">new_val</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">apply_function</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="n">dynamic</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="n">streams</span><span class="p">,</span>
+                                  <span class="n">link_inputs</span><span class="o">=</span><span class="n">link_inputs</span><span class="p">,</span> <span class="n">link_dataset</span><span class="o">=</span><span class="n">link_dataset</span><span class="p">,</span>
+                                  <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">new_val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">mapped</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">new_val</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">mapped</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="n">link_inputs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Apply.aggregate"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spreadfn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies a aggregate function to all ViewableElements.</span>
+
+<span class="sd">        See :py:meth:`Dimensioned.aggregate` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'_method_args'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">spreadfn</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'per_element'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'aggregate'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Apply.opts"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.opts">[docs]</a>    <span class="k">def</span> <span class="nf">opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies options to all ViewableElement objects.</span>
+
+<span class="sd">        See :py:meth:`Dimensioned.opts` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">..util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+        <span class="kn">from</span> <span class="nn">..streams</span> <span class="kn">import</span> <span class="n">Params</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+                <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">streams</span> <span class="o">=</span> <span class="n">Params</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">watch_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'streams'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'streams'</span><span class="p">,</span> <span class="p">[])</span> <span class="o">+</span> <span class="n">streams</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'_method_args'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'opts'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Apply.reduce"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="p">[],</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spreadfn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies a reduce function to all ViewableElement objects.</span>
+
+<span class="sd">        See :py:meth:`Dimensioned.opts` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'_method_args'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">spreadfn</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'per_element'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'reduce'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Apply.sample"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="p">[],</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Samples element values at supplied coordinates.</span>
+
+<span class="sd">        See :py:meth:`Dataset.sample` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'_method_args'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'per_element'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'sample'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Apply.select"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies a selection to all ViewableElement objects.</span>
+
+<span class="sd">        See :py:meth:`Dimensioned.opts` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'select'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Apply.transform"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Apply.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies transforms to all Datasets.</span>
+
+<span class="sd">        See :py:meth:`Dataset.transform` and :py:meth:`Apply.__call__`</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">..util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+        <span class="kn">from</span> <span class="nn">..streams</span> <span class="kn">import</span> <span class="n">Params</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+                <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">streams</span> <span class="o">=</span> <span class="n">Params</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">watch_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'streams'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'streams'</span><span class="p">,</span> <span class="p">[])</span> <span class="o">+</span> <span class="n">streams</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'_method_args'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'per_element'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Redim"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Redim">[docs]</a><span class="nd">@add_metaclass</span><span class="p">(</span><span class="n">AccessorPipelineMeta</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Redim</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Utility that supports re-dimensioning any HoloViews object via the</span>
+<span class="sd">    redim method.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="c1"># Can be 'dataset', 'dynamic' or None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"&lt;holoviews.core.dimension.redim method&gt;"</span>
+
+<div class="viewcode-block" id="Redim.replace_dimensions"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.accessors.Redim.replace_dimensions">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">replace_dimensions</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">overrides</span><span class="p">):</span>
+        <span class="sd">"""Replaces dimensions in list with dictionary of overrides.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dimensions: List of dimensions</span>
+<span class="sd">            overrides: Dictionary of dimension specs indexed by name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of dimensions with replacements applied</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.dimension</span> <span class="kn">import</span> <span class="n">Dimension</span>
+
+        <span class="n">replaced</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">overrides</span><span class="p">:</span>
+                <span class="n">override</span> <span class="o">=</span> <span class="n">overrides</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">d</span><span class="o">.</span><span class="n">label</span> <span class="ow">in</span> <span class="n">overrides</span><span class="p">:</span>
+                <span class="n">override</span> <span class="o">=</span> <span class="n">overrides</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">label</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">override</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="n">override</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">replaced</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">override</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+                <span class="n">replaced</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">override</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">override</span><span class="p">,</span> <span class="n">Dimension</span><span class="p">):</span>
+                <span class="n">replaced</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">override</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">override</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">replaced</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">override</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span>
+                                        <span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">override</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">'name'</span><span class="p">}))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Dimension can only be overridden '</span>
+                                 <span class="s1">'with another dimension or a dictionary '</span>
+                                 <span class="s1">'of attributes'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">replaced</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_filter_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">kdims</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a filtered version of the DynamicMap cache leaving only</span>
+<span class="sd">        keys consistently with the newly specified values</span>
+<span class="sd">        """</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dmap</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">kd</span><span class="o">.</span><span class="n">values</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kd</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">kd</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kdims</span><span class="p">,</span> <span class="n">key</span><span class="p">)):</span>
+                <span class="n">filtered</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">filtered</span>
+
+    <span class="k">def</span> <span class="nf">_transform_dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">,</span> <span class="n">dimension</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">kdims</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">kdims</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
+            <span class="n">dimension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">vdims</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">vdims</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
+            <span class="n">dimension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dimension</span>
+
+    <span class="k">def</span> <span class="nf">_create_expression_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="kn">from</span> <span class="nn">.dimension</span> <span class="kn">import</span> <span class="n">dimension_name</span>
+        <span class="kn">from</span> <span class="nn">..util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+
+        <span class="k">def</span> <span class="nf">_transform_expression</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dimension_name</span><span class="p">(</span><span class="n">expression</span><span class="o">.</span><span class="n">dimension</span><span class="p">)</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+                <span class="n">dimension</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">dimension</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dimension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform_dimension</span><span class="p">(</span>
+                    <span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">,</span> <span class="n">expression</span><span class="o">.</span><span class="n">dimension</span>
+                <span class="p">)</span>
+            <span class="n">expression</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
+            <span class="n">ops</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">expression</span><span class="o">.</span><span class="n">ops</span><span class="p">:</span>
+                <span class="n">new_op</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+                <span class="n">new_args</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">op</span><span class="p">[</span><span class="s1">'args'</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+                        <span class="n">arg</span> <span class="o">=</span> <span class="n">_transform_expression</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+                    <span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+                <span class="n">new_op</span><span class="p">[</span><span class="s1">'args'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">new_args</span><span class="p">)</span>
+                <span class="n">new_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">kw</span><span class="p">,</span> <span class="n">kwarg</span> <span class="ow">in</span> <span class="n">op</span><span class="p">[</span><span class="s1">'kwargs'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">kwarg</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+                        <span class="n">kwarg</span> <span class="o">=</span> <span class="n">_transform_expression</span><span class="p">(</span><span class="n">kwarg</span><span class="p">)</span>
+                    <span class="n">new_kwargs</span><span class="p">[</span><span class="n">kw</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwarg</span>
+                <span class="n">new_op</span><span class="p">[</span><span class="s1">'kwargs'</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_kwargs</span>
+                <span class="n">ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_op</span><span class="p">)</span>
+            <span class="n">expression</span><span class="o">.</span><span class="n">ops</span> <span class="o">=</span> <span class="n">ops</span>
+            <span class="k">return</span> <span class="n">expression</span>
+        <span class="k">return</span> <span class="n">_transform_expression</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Replace dimensions on the dataset and allows renaming</span>
+<span class="sd">        dimensions in the dataset. Dimension mapping should map</span>
+<span class="sd">        between the old dimension name and a dictionary of the new</span>
+<span class="sd">        attributes, a completely new dimension or a new string name.</span>
+<span class="sd">        """</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span>
+        <span class="n">redimmed</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">_deep_indexable</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="s1">'dataset'</span><span class="p">:</span>
+            <span class="n">deep_mapped</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">))</span>
+                           <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+            <span class="n">redimmed</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">deep_mapped</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">specs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">specs</span> <span class="o">=</span> <span class="p">[</span><span class="n">specs</span><span class="p">]</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span> <span class="k">for</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">specs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="s1">'dynamic'</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">redimmed</span>
+
+        <span class="n">kdims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_dimensions</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">)</span>
+        <span class="n">vdims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_dimensions</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">vdims</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">)</span>
+        <span class="n">zipped_dims</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">kdims</span><span class="o">+</span><span class="n">obj</span><span class="o">.</span><span class="n">vdims</span><span class="p">,</span> <span class="n">kdims</span><span class="o">+</span><span class="n">vdims</span><span class="p">)</span>
+        <span class="n">renames</span> <span class="o">=</span> <span class="p">{</span><span class="n">pk</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">nk</span> <span class="k">for</span> <span class="n">pk</span><span class="p">,</span> <span class="n">nk</span> <span class="ow">in</span> <span class="n">zipped_dims</span> <span class="k">if</span> <span class="n">pk</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">nk</span><span class="o">.</span><span class="n">name</span><span class="p">}</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">'dataset'</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">if</span> <span class="n">renames</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">renames</span><span class="p">)</span>
+            <span class="n">transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_expression_transform</span><span class="p">(</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">renames</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="n">transforms</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_transforms</span> <span class="o">+</span> <span class="p">[</span><span class="n">transform</span><span class="p">]</span>
+            <span class="n">clone</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="n">transforms</span><span class="o">=</span><span class="n">transforms</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'name'</span><span class="p">)</span> <span class="o">==</span> <span class="n">clone</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'name'</span><span class="p">):</span>
+                <span class="c1"># Ensure that plot_id is inherited as long as dimension</span>
+                <span class="c1"># name does not change</span>
+                <span class="n">clone</span><span class="o">.</span><span class="n">_plot_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_plot_id</span>
+            <span class="k">return</span> <span class="n">clone</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="s1">'dynamic'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">redimmed</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">Dynamic</span>
+        <span class="k">def</span> <span class="nf">dynamic_redim</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">**</span><span class="n">dynkwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">)</span>
+        <span class="n">dmap</span> <span class="o">=</span> <span class="n">Dynamic</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">streams</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">dynamic_redim</span><span class="p">)</span>
+        <span class="n">dmap</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter_cache</span><span class="p">(</span><span class="n">redimmed</span><span class="p">,</span> <span class="n">kdims</span><span class="p">))</span>
+        <span class="k">with</span> <span class="n">util</span><span class="o">.</span><span class="n">disable_constant</span><span class="p">(</span><span class="n">dmap</span><span class="p">):</span>
+            <span class="n">dmap</span><span class="o">.</span><span class="n">kdims</span> <span class="o">=</span> <span class="n">kdims</span>
+            <span class="n">dmap</span><span class="o">.</span><span class="n">vdims</span> <span class="o">=</span> <span class="n">vdims</span>
+        <span class="k">return</span> <span class="n">dmap</span>
+
+
+    <span class="k">def</span> <span class="nf">_redim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dims</span><span class="p">):</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:{</span><span class="n">name</span><span class="p">:</span><span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dims</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cyclic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'cyclic'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">value_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'value_format'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'range'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dim</span> <span class="ow">and</span> <span class="n">dim</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">dim</span><span class="o">.</span><span class="n">label</span> <span class="ow">and</span> <span class="n">dim</span><span class="o">.</span><span class="n">label</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Cannot override an existing Dimension label'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">soft_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'soft_range'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">nodata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'nodata'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'step'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'unit'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">ranges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redim</span><span class="p">(</span><span class="s1">'values'</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">ranges</span><span class="p">)</span></div>
+
+
+<span class="nd">@add_metaclass</span><span class="p">(</span><span class="n">AccessorPipelineMeta</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Opts</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">obj</span>
+
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">"""Returns the corresponding Options object.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            group: The options group. Flattens across groups if None.</span>
+<span class="sd">            backend: Current backend if None otherwise chosen backend.</span>
+<span class="sd">            defaults: Whether to include default option values</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Options object associated with the object containing the</span>
+<span class="sd">            applied option keywords.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.options</span> <span class="kn">import</span> <span class="n">Store</span><span class="p">,</span> <span class="n">Options</span>
+        <span class="n">keywords</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="n">Options</span><span class="o">.</span><span class="n">_option_groups</span> <span class="k">if</span> <span class="n">group</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="n">group</span><span class="p">]</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">backend</span> <span class="k">if</span> <span class="n">backend</span> <span class="k">else</span> <span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+            <span class="n">optsobj</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">lookup_options</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span>
+                                           <span class="n">defaults</span><span class="o">=</span><span class="n">defaults</span><span class="p">)</span>
+            <span class="n">keywords</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="o">**</span><span class="n">optsobj</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Options</span><span class="p">(</span><span class="o">**</span><span class="n">keywords</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Applies nested options definition.</span>
+
+<span class="sd">        Applies options on an object or nested group of objects in a</span>
+<span class="sd">        flat format. Unlike the .options method, .opts modifies the</span>
+<span class="sd">        options in place by default. If the options are to be set</span>
+<span class="sd">        directly on the object a simple format may be used, e.g.:</span>
+
+<span class="sd">            obj.opts(cmap='viridis', show_title=False)</span>
+
+<span class="sd">        If the object is nested the options must be qualified using</span>
+<span class="sd">        a type[.group][.label] specification, e.g.:</span>
+
+<span class="sd">            obj.opts('Image', cmap='viridis', show_title=False)</span>
+
+<span class="sd">        or using:</span>
+
+<span class="sd">            obj.opts({'Image': dict(cmap='viridis', show_title=False)})</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            *args: Sets of options to apply to object</span>
+<span class="sd">                Supports a number of formats including lists of Options</span>
+<span class="sd">                objects, a type[.group][.label] followed by a set of</span>
+<span class="sd">                keyword options to apply and a dictionary indexed by</span>
+<span class="sd">                type[.group][.label] specs.</span>
+<span class="sd">            backend (optional): Backend to apply options to</span>
+<span class="sd">                Defaults to current selected backend</span>
+<span class="sd">            clone (bool, optional): Whether to clone object</span>
+<span class="sd">                Options can be applied in place with clone=False</span>
+<span class="sd">            **kwargs: Keywords of options</span>
+<span class="sd">                Set of options to apply to the object</span>
+
+<span class="sd">        For backwards compatibility, this method also supports the</span>
+<span class="sd">        option group semantics now offered by the hv.opts.apply_groups</span>
+<span class="sd">        utility. This usage will be deprecated and for more</span>
+<span class="sd">        information see the apply_options_type docstring.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Returns the object or a clone with the options applied</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">apply_groups</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">deprecated_opts_signature</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">apply_groups</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Calling the .opts method with options broken down by options "</span>
+                       <span class="s2">"group (i.e. separate plot, style and norm groups) is deprecated. "</span>
+                       <span class="s2">"Use the .options method converting to the simplified format "</span>
+                       <span class="s2">"instead or use hv.opts.apply_groups for backward compatibility."</span><span class="p">)</span>
+                <span class="n">param</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch_opts</span><span class="p">(</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_dispatch_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_base_opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">==</span> <span class="s1">'holomap'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_holomap_opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">==</span> <span class="s1">'dynamicmap'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dynamicmap_opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""Clears any options applied to the object.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            clone: Whether to return a cleared clone or clear inplace</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The object cleared of any options applied to it</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">clone</span><span class="o">=</span><span class="n">clone</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_defaults</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""Prints a repr of the object including any applied options.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            show_defaults: Whether to include default options</span>
+<span class="sd">        """</span>
+        <span class="n">pprinter</span> <span class="o">=</span> <span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">show_options</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_defaults</span><span class="o">=</span><span class="n">show_defaults</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pprinter</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_holomap_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'clone'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">apply_groups</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">deprecated_opts_signature</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+                             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+
+        <span class="c1"># By default do not clone in .opts method</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">apply_groups</span> <span class="k">if</span> <span class="n">clone</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">clone</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span>
+
+    <span class="k">def</span> <span class="nf">_dynamicmap_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">Dynamic</span>
+
+        <span class="n">clone</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'clone'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">apply_groups</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">deprecated_opts_signature</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># By default do not clone in .opts method</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="p">(</span><span class="n">apply_groups</span> <span class="k">if</span> <span class="n">clone</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">clone</span><span class="p">)</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="k">if</span> <span class="n">clone</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="n">dmap</span> <span class="o">=</span> <span class="n">Dynamic</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="k">lambda</span> <span class="n">obj</span><span class="p">,</span> <span class="o">**</span><span class="n">dynkwargs</span><span class="p">:</span> <span class="n">obj</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+                       <span class="n">streams</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">streams</span><span class="p">,</span> <span class="n">link_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">clone</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">util</span><span class="o">.</span><span class="n">disable_constant</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">):</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">callback</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">dmap</span><span class="o">.</span><span class="n">callback</span>
+            <span class="n">dmap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span>
+            <span class="n">dmap</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+                                     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+        <span class="k">return</span> <span class="n">dmap</span>
+
+
+    <span class="k">def</span> <span class="nf">_base_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.options</span> <span class="kn">import</span> <span class="n">Options</span>
+
+        <span class="n">new_args</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Options</span><span class="p">)</span> <span class="ow">and</span> <span class="n">arg</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">arg</span> <span class="o">=</span> <span class="n">arg</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+        <span class="n">apply_groups</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">new_kwargs</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">deprecated_opts_signature</span><span class="p">(</span><span class="n">new_args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># By default do not clone in .opts method</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'clone'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">apply_groups</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">opts</span>
+            <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s1">'options'</span><span class="p">]</span> <span class="o">=</span> <span class="n">options</span>
+            <span class="k">return</span> <span class="n">opts</span><span class="o">.</span><span class="n">apply_groups</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="p">,</span> <span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">))</span>
+
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">'clone'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">clone</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">clone</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

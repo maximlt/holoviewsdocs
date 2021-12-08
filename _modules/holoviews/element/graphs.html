@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.element.graphs — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.element.graphs</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">FunctionType</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..core</span> <span class="kn">import</span> <span class="n">Dimension</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">Element2D</span>
+<span class="kn">from</span> <span class="nn">..core.accessors</span> <span class="kn">import</span> <span class="n">Redim</span>
+<span class="kn">from</span> <span class="nn">..core.util</span> <span class="kn">import</span> <span class="n">is_dataframe</span><span class="p">,</span> <span class="n">max_range</span><span class="p">,</span> <span class="n">search_indices</span>
+<span class="kn">from</span> <span class="nn">..core.operation</span> <span class="kn">import</span> <span class="n">Operation</span>
+<span class="kn">from</span> <span class="nn">.chart</span> <span class="kn">import</span> <span class="n">Points</span>
+<span class="kn">from</span> <span class="nn">.path</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="p">(</span><span class="n">split_path</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">circular_layout</span><span class="p">,</span> <span class="n">connect_edges</span><span class="p">,</span>
+                   <span class="n">connect_edges_pd</span><span class="p">,</span> <span class="n">quadratic_bezier</span><span class="p">,</span> <span class="n">connect_tri_edges_pd</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RedimGraph"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.RedimGraph">[docs]</a><span class="k">class</span> <span class="nc">RedimGraph</span><span class="p">(</span><span class="n">Redim</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Extension for the redim utility that allows re-dimensioning</span>
+<span class="sd">    Graph objects including their nodes and edgepaths.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">):</span>
+        <span class="n">redimmed</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">)</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">redimmed</span><span class="o">.</span><span class="n">data</span><span class="p">,)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="n">new_data</span> <span class="o">=</span> <span class="n">new_data</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">),)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+            <span class="n">new_data</span> <span class="o">=</span> <span class="n">new_data</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="o">**</span><span class="n">dimensions</span><span class="p">),)</span>
+        <span class="k">return</span> <span class="n">redimmed</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="layout_nodes"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.layout_nodes">[docs]</a><span class="k">class</span> <span class="nc">layout_nodes</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Accepts a Graph and lays out the corresponding nodes with the</span>
+<span class="sd">    supplied networkx layout function. If no layout function is</span>
+<span class="sd">    supplied uses a simple circular_layout function. Also supports</span>
+<span class="sd">    LayoutAlgorithm function provided in datashader layouts.</span>
+<span class="sd">    """</span>
+
+    <span class="n">only_nodes</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to return Nodes or Graph."""</span><span class="p">)</span>
+
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Callable</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        A NetworkX layout function"""</span><span class="p">)</span>
+
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Keyword arguments passed to the layout function."""</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">layout</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="n">FunctionType</span><span class="p">):</span>
+            <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">'weight'</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="n">weight</span><span class="p">]):</span>
+                    <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">][</span><span class="n">weight</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
+            <span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">idx</span><span class="p">,)</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">items</span><span class="p">())]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">layout</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'index'</span><span class="p">:</span> <span class="n">nodes</span><span class="p">})</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">dframe</span><span class="p">(),</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">circular_layout</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span> <span class="n">vals</span><span class="p">,</span> <span class="n">vdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">only_nodes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">nodes</span>
+        <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">clone</span><span class="p">((</span><span class="n">element</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Nodes"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Nodes">[docs]</a><span class="k">class</span> <span class="nc">Nodes</span><span class="p">(</span><span class="n">Points</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Nodes is a simple Element representing Graph nodes as a set of</span>
+<span class="sd">    Points.  Unlike regular Points, Nodes must define a third key</span>
+<span class="sd">    dimension corresponding to the node index.</span>
+<span class="sd">    """</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'x'</span><span class="p">),</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'y'</span><span class="p">),</span>
+                                <span class="n">Dimension</span><span class="p">(</span><span class="s1">'index'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Nodes'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EdgePaths"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.EdgePaths">[docs]</a><span class="k">class</span> <span class="nc">EdgePaths</span><span class="p">(</span><span class="n">Path</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    EdgePaths is a simple Element representing the paths of edges</span>
+<span class="sd">    connecting nodes in a graph.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'EdgePaths'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Graph"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph">[docs]</a><span class="k">class</span> <span class="nc">Graph</span><span class="p">(</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">Element2D</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Graph is high-level Element representing both nodes and edges.</span>
+<span class="sd">    A Graph may be defined in an abstract form representing just</span>
+<span class="sd">    the abstract edges between nodes and optionally may be made</span>
+<span class="sd">    concrete by supplying a Nodes Element defining the concrete</span>
+<span class="sd">    positions of each node. If the node positions are supplied</span>
+<span class="sd">    the EdgePaths (defining the concrete edges) can be inferred</span>
+<span class="sd">    automatically or supplied explicitly.</span>
+
+<span class="sd">    The constructor accepts regular columnar data defining the edges</span>
+<span class="sd">    or a tuple of the abstract edges and nodes, or a tuple of the</span>
+<span class="sd">    abstract edges, nodes, and edgepaths.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Graph'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'start'</span><span class="p">),</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'end'</span><span class="p">)],</span>
+                       <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">node_type</span> <span class="o">=</span> <span class="n">Nodes</span>
+
+    <span class="n">edge_type</span> <span class="o">=</span> <span class="n">EdgePaths</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,)</span><span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">_edgepaths</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">node_info</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">):</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nodes</span><span class="o">.</span><span class="n">ndims</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">node_info</span> <span class="o">=</span> <span class="n">nodes</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node_info</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">edgepaths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">):</span>
+            <span class="n">edgepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">node_info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_node_info</span><span class="p">(</span><span class="n">node_info</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">redim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RedimGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'dataset'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_add_node_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_info</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="p">[</span><span class="s1">'pandas'</span><span class="p">,</span> <span class="s1">'dictionary'</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node_info</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">):</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="s1">'key'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                                           <span class="n">node_info</span><span class="o">.</span><span class="n">kdims</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node_info</span><span class="o">.</span><span class="n">kdims</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_info</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The supplied node data does not match "</span>
+                             <span class="s2">"the number of nodes defined by the edges. "</span>
+                             <span class="s2">"Ensure that the number of nodes match"</span>
+                             <span class="s2">"or supply an index as the sole key "</span>
+                             <span class="s2">"dimension to allow the Graph to merge "</span>
+                             <span class="s2">"the data."</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">pd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node_info</span><span class="o">.</span><span class="n">kdims</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_info</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Graph cannot merge node data on index "</span>
+                                 <span class="s2">"dimension without pandas. Either ensure "</span>
+                                 <span class="s2">"the node data matches the order of nodes "</span>
+                                 <span class="s2">"as they appear in the edge data or install "</span>
+                                 <span class="s2">"pandas."</span><span class="p">)</span>
+            <span class="n">dimensions</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">node_info</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span>
+                                            <span class="n">node_info</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">),</span>
+                                            <span class="n">vdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">left_on</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">node_info_df</span> <span class="o">=</span> <span class="n">node_info</span><span class="o">.</span><span class="n">dframe</span><span class="p">()</span>
+            <span class="n">node_df</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">dframe</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node_info</span><span class="o">.</span><span class="n">kdims</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">node_info</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'index'</span><span class="p">)</span>
+                <span class="n">node_info_df</span> <span class="o">=</span> <span class="n">node_info_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s1">'index'</span> <span class="ow">in</span> <span class="n">node_info_df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">idx</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'index'</span><span class="p">:</span>
+                <span class="n">node_df</span> <span class="o">=</span> <span class="n">node_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'index'</span><span class="p">:</span> <span class="s1">'__index'</span><span class="p">})</span>
+                <span class="n">left_on</span> <span class="o">=</span> <span class="s1">'__index'</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">node_info_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span>
+                    <span class="n">node_df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">==</span> <span class="n">idx</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">node_info_df</span> <span class="o">=</span> <span class="n">node_info_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+            <span class="n">node_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">node_df</span><span class="p">,</span> <span class="n">node_info_df</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="n">left_on</span><span class="p">,</span>
+                               <span class="n">right_on</span><span class="o">=</span><span class="n">idx</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">node_df</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span>
+                                <span class="n">vdims</span><span class="o">=</span><span class="n">node_info</span><span class="o">.</span><span class="n">vdims</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+
+
+    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">mismatch</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">kd1</span><span class="p">,</span> <span class="n">kd2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">kdims</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">kd1</span> <span class="o">!=</span> <span class="n">kd2</span><span class="p">:</span>
+                <span class="n">mismatch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> != </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">kd1</span><span class="p">,</span> <span class="n">kd2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">mismatch</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Ensure that the first two key dimensions on '</span>
+                             <span class="s1">'Nodes and EdgePaths match: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mismatch</span><span class="p">))</span>
+        <span class="n">npaths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">nedges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nedges</span> <span class="o">!=</span> <span class="n">npaths</span><span class="p">:</span>
+            <span class="n">mismatch</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">npaths</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">edges</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">npaths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vals</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                    <span class="n">npaths</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">mismatch</span> <span class="o">=</span> <span class="n">npaths</span> <span class="o">!=</span> <span class="n">nedges</span>
+            <span class="k">if</span> <span class="n">mismatch</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Ensure that the number of edges supplied '</span>
+                                 <span class="s1">'to the Graph (</span><span class="si">%d</span><span class="s1">) matches the number of '</span>
+                                 <span class="s1">'edgepaths (</span><span class="si">%d</span><span class="s1">)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">nedges</span><span class="p">,</span> <span class="n">npaths</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Graph.clone"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shared_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">new_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="p">,)</span>
+            <span class="n">overrides</span><span class="p">[</span><span class="s1">'plot_id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_id</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="p">,)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">shared_data</span><span class="p">,</span> <span class="n">new_type</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span>
+                             <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.select"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_expr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selection_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selection_mode</span><span class="o">=</span><span class="s1">'edges'</span><span class="p">,</span> <span class="o">**</span><span class="n">selection</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Allows selecting data by the slices, sets and scalar values</span>
+<span class="sd">        along a particular dimension. The indices should be supplied as</span>
+<span class="sd">        keywords mapping between the selected dimension and</span>
+<span class="sd">        value. Additionally selection_specs (taking the form of a list</span>
+<span class="sd">        of type.group.label strings, types or functions) may be</span>
+<span class="sd">        supplied, which will ensure the selection is only applied if the</span>
+<span class="sd">        specs match the selected object.</span>
+
+<span class="sd">        Selecting by a node dimensions selects all edges and nodes that are</span>
+<span class="sd">        connected to the selected nodes. To select only edges between the</span>
+<span class="sd">        selected nodes set the selection_mode to 'nodes'.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">..util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+        <span class="k">if</span> <span class="n">selection_expr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selection_expr</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"""</span><span class="se">\</span>
+<span class="s2">The first positional argument to the Dataset.select method is expected to be a</span>
+<span class="s2">holoviews.util.transform.dim expression. Use the selection_specs keyword</span>
+<span class="s2">argument to specify a selection specification"""</span><span class="p">)</span>
+
+        <span class="n">selection</span> <span class="o">=</span> <span class="p">{</span><span class="n">dim</span><span class="p">:</span> <span class="n">sel</span> <span class="k">for</span> <span class="n">dim</span><span class="p">,</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">selection</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                     <span class="k">if</span> <span class="n">dim</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="s1">'ranges'</span><span class="p">)</span><span class="o">+</span><span class="p">[</span><span class="s1">'selection_mask'</span><span class="p">]}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">selection_specs</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span> <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">selection_specs</span><span class="p">)</span>
+            <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">selection</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">selection_expr</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">index_dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">vdims</span>
+        <span class="n">node_selection</span> <span class="o">=</span> <span class="p">{</span><span class="n">index_dim</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">selection</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                          <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">selection_expr</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">selection_expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keep_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="o">**</span><span class="n">node_selection</span><span class="p">))</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">selection</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">}</span>
+
+        <span class="c1"># Compute mask for edges if nodes were selected on</span>
+        <span class="n">nodemask</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">dimensions</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">selection_mode</span> <span class="o">==</span> <span class="s1">'edges'</span><span class="p">:</span>
+                <span class="n">mask1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">{</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">indices</span><span class="p">})</span>
+                <span class="n">mask2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">{</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">indices</span><span class="p">})</span>
+                <span class="n">nodemask</span> <span class="o">=</span> <span class="p">(</span><span class="n">mask1</span> <span class="o">|</span> <span class="n">mask2</span><span class="p">)</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nodemask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">{</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">indices</span><span class="p">,</span>
+                                                             <span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">indices</span><span class="p">})</span>
+
+        <span class="c1"># Compute mask for edge selection</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span>
+
+        <span class="c1"># Combine masks</span>
+        <span class="k">if</span> <span class="n">nodemask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">&amp;=</span> <span class="n">nodemask</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">nodemask</span>
+
+        <span class="c1"># Apply edge mask</span>
+        <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+                <span class="n">new_graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">))</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">new_graph</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">new_graph</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">unique_nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">]))</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">new_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[:,</span> <span class="p">:,</span> <span class="nb">list</span><span class="p">(</span><span class="n">unique_nodes</span><span class="p">)]</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+                <span class="n">edgepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_edgepaths</span>
+                <span class="n">paths</span> <span class="o">=</span> <span class="n">edgepaths</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_paths</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="n">mask</span><span class="p">))</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">paths</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">clone</span><span class="p">([</span><span class="n">paths</span><span class="o">.</span><span class="n">dframe</span><span class="p">()</span> <span class="k">if</span> <span class="n">pd</span> <span class="k">else</span> <span class="n">paths</span><span class="o">.</span><span class="n">array</span><span class="p">()])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">paths</span><span class="p">))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_split_edgepaths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">split_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Graph.range"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">data_range</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dimension_range</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="ow">and</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span>
+            <span class="n">node_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">data_range</span><span class="p">,</span> <span class="n">dimension_range</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+                <span class="n">path_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">data_range</span><span class="p">,</span> <span class="n">dimension_range</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">max_range</span><span class="p">([</span><span class="n">node_range</span><span class="p">,</span> <span class="n">path_range</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">node_range</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">data_range</span><span class="p">,</span> <span class="n">dimension_range</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.dimensions"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph.dimensions">[docs]</a>    <span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">'all'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">selection</span> <span class="o">==</span> <span class="s1">'ranges'</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">node_dims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">node_dims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">kdims</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">vdims</span>
+                <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'short'</span><span class="p">]:</span>
+                    <span class="n">node_dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">node_dims</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'long'</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">]:</span>
+                    <span class="n">node_dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">node_dims</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">dimensions</span><span class="o">+</span><span class="n">node_dims</span>
+        <span class="k">return</span> <span class="n">dimensions</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Computes the node positions the first time they are requested</span>
+<span class="sd">        if no explicit node information was supplied.</span>
+<span class="sd">        """</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">..operation.element</span> <span class="kn">import</span> <span class="n">chain</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">layout_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">only_nodes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">_dataset</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">_pipeline</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edgepaths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns the fixed EdgePaths or computes direct connections</span>
+<span class="sd">        between supplied nodes.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span>
+        <span class="k">if</span> <span class="n">pd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="n">connect_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="n">connect_edges_pd</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+
+<div class="viewcode-block" id="Graph.from_networkx"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Graph.from_networkx">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_networkx</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Generate a HoloViews Graph from a networkx.Graph object and</span>
+<span class="sd">        networkx layout function or dictionary of node positions.</span>
+<span class="sd">        Any keyword arguments will be passed to the layout</span>
+<span class="sd">        function. By default it will extract all node and edge</span>
+<span class="sd">        attributes from the networkx.Graph but explicit node</span>
+<span class="sd">        information may also be supplied. Any non-scalar attributes,</span>
+<span class="sd">        such as lists or dictionaries will be ignored.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            G (networkx.Graph): Graph to convert to Graph element</span>
+<span class="sd">            positions (dict or callable): Node positions</span>
+<span class="sd">                Node positions defined as a dictionary mapping from</span>
+<span class="sd">                node id to (x, y) tuple or networkx layout function</span>
+<span class="sd">                which computes a positions dictionary</span>
+<span class="sd">            kwargs (dict): Keyword arguments for layout function</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Graph element</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Unpack edges</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">start</span><span class="p">][</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+                    <span class="k">continue</span> <span class="c1"># Cannot handle list or dict attrs</span>
+                <span class="n">edges</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="c1"># Handle tuple node indexes (used in 2D grid Graphs)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">end</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+            <span class="n">edges</span><span class="p">[</span><span class="s1">'start'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+            <span class="n">edges</span><span class="p">[</span><span class="s1">'end'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+        <span class="n">edge_cols</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">)</span>
+                            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="s1">'start'</span><span class="p">])])</span>
+        <span class="n">edge_vdims</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">edge_cols</span><span class="p">]</span>
+        <span class="n">edge_data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">]</span><span class="o">+</span><span class="n">edge_cols</span><span class="p">)</span>
+
+        <span class="c1"># Unpack user node info</span>
+        <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span><span class="p">,</span> <span class="n">idim</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">node_columns</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">columns</span><span class="p">()</span>
+            <span class="n">idx_dim</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">info_cols</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_columns</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">idx_dim</span><span class="p">))</span>
+            <span class="n">node_info</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">vals</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">vals</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">node_columns</span><span class="p">[</span><span class="n">idx_dim</span><span class="p">],</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">))}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_cols</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">node_info</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">node_columns</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="c1"># Unpack node positions</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+            <span class="n">node_columns</span><span class="p">[</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">node_columns</span><span class="p">[</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)):</span>
+                    <span class="k">continue</span>
+                <span class="n">node_columns</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">info_cols</span><span class="p">):</span>
+                <span class="n">node_columns</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_info</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="c1"># Tuple node indexes handled as strings</span>
+            <span class="n">node_columns</span><span class="p">[</span><span class="n">idim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+        <span class="n">node_cols</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">node_columns</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">kdims</span>
+                            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_columns</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_columns</span><span class="p">[</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">])])</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">idim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">+</span><span class="n">node_cols</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="n">info_cols</span><span class="p">)</span>
+        <span class="n">node_data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">node_columns</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">)</span>
+
+        <span class="c1"># Construct nodes</span>
+        <span class="n">vdims</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">node_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">dim</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+                <span class="n">dim</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dim</span> <span class="o">=</span> <span class="n">col</span>
+            <span class="n">vdims</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">node_data</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">)</span>
+
+        <span class="c1"># Construct graph</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">((</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">),</span> <span class="n">vdims</span><span class="o">=</span><span class="n">edge_vdims</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="TriMesh"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.TriMesh">[docs]</a><span class="k">class</span> <span class="nc">TriMesh</span><span class="p">(</span><span class="n">Graph</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A TriMesh represents a mesh of triangles represented as the</span>
+<span class="sd">    simplices and nodes. The simplices represent a indices into the</span>
+<span class="sd">    nodes array. The mesh therefore follows a datastructure very</span>
+<span class="sd">    similar to a graph, with the abstract connectivity between nodes</span>
+<span class="sd">    stored on the TriMesh element itself, the node positions stored on</span>
+<span class="sd">    a Nodes element and the concrete paths making up each triangle</span>
+<span class="sd">    generated when required by accessing the edgepaths.</span>
+
+<span class="sd">    Unlike a Graph each simplex is represented as the node indices of</span>
+<span class="sd">    the three corners of each triangle.</span>
+<span class="sd">    """</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">'node1'</span><span class="p">,</span> <span class="s1">'node2'</span><span class="p">,</span> <span class="s1">'node3'</span><span class="p">],</span>
+                       <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Dimensions declaring the node indices of each triangle."""</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'TriMesh'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">point_type</span> <span class="o">=</span> <span class="n">Points</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">_edgepaths</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"TriMesh expects both simplices and nodes "</span>
+                                 <span class="s2">"to be supplied."</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">point_type</span><span class="p">):</span>
+            <span class="c1"># Add index to make it a valid Nodes object</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">Dataset</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="s1">'index'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">))))</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nodes</span><span class="o">.</span><span class="n">ndims</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">is_dataframe</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+                <span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">columns</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s1">'index'</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">coords</span><span class="o">+</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">point_type</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                    <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="s1">'index'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)))</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">"Nodes argument could not be interpreted, expected "</span>
+                        <span class="s2">"data with two or three columns representing the "</span>
+                        <span class="s2">"x/y positions and optionally the node indices."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">edgepaths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">):</span>
+            <span class="n">edgepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+
+<div class="viewcode-block" id="TriMesh.from_vertices"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.TriMesh.from_vertices">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_vertices</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Uses Delauney triangulation to compute triangle simplices for</span>
+<span class="sd">        each point.</span>
+<span class="sd">        """</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">Delaunay</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">"Generating triangles from points requires "</span>
+                              <span class="s2">"SciPy to be installed."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Points</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">Points</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(([],</span> <span class="p">[]))</span>
+        <span class="n">tris</span> <span class="o">=</span> <span class="n">Delaunay</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">((</span><span class="n">tris</span><span class="o">.</span><span class="n">simplices</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edgepaths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns the EdgePaths by generating a triangle for each simplex.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">edgepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">([],</span> <span class="n">kdims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+            <span class="k">return</span> <span class="n">edgepaths</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">connect_tri_edges_pd</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span>
+            <span class="n">pts</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+            <span class="n">pad_width</span><span class="o">=</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+            <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">edgepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">([</span><span class="n">paths</span><span class="p">],</span> <span class="n">kdims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span>
+                                   <span class="n">datatype</span><span class="o">=</span><span class="p">[</span><span class="s1">'multitabular'</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+        <span class="k">return</span> <span class="n">edgepaths</span>
+
+<div class="viewcode-block" id="TriMesh.select"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.TriMesh.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">selection</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Allows selecting data by the slices, sets and scalar values</span>
+<span class="sd">        along a particular dimension. The indices should be supplied as</span>
+<span class="sd">        keywords mapping between the selected dimension and</span>
+<span class="sd">        value. Additionally selection_specs (taking the form of a list</span>
+<span class="sd">        of type.group.label strings, types or functions) may be</span>
+<span class="sd">        supplied, which will ensure the selection is only applied if the</span>
+<span class="sd">        specs match the selected object.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Ensure that edgepaths are initialized so they can be selected on</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edgepaths</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selection_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                              <span class="n">selection_mode</span><span class="o">=</span><span class="s1">'nodes'</span><span class="p">,</span>
+                              <span class="o">**</span><span class="n">selection</span><span class="p">)</span></div></div>
+
+
+
+<div class="viewcode-block" id="layout_chords"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.layout_chords">[docs]</a><span class="k">class</span> <span class="nc">layout_chords</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    layout_chords computes the locations of each node on a circle and</span>
+<span class="sd">    the chords connecting them. The amount of radial angle devoted to</span>
+<span class="sd">    each node and the number of chords are scaled by the value</span>
+<span class="sd">    dimension of the Chord element. If the values are integers then</span>
+<span class="sd">    the number of chords is directly scaled by the value, if the</span>
+<span class="sd">    values are floats then the number of chords are apportioned such</span>
+<span class="sd">    that the lowest value edge is given one chord and all other nodes</span>
+<span class="sd">    are given nodes proportional to their weight. The max_chords</span>
+<span class="sd">    parameter scales the number of chords to be assigned to an edge.</span>
+
+<span class="sd">    The chords are computed by interpolating a cubic spline from the</span>
+<span class="sd">    source to the target node in the graph, the number of samples to</span>
+<span class="sd">    interpolate the spline with is given by the chord_samples</span>
+<span class="sd">    parameter.</span>
+<span class="sd">    """</span>
+
+    <span class="n">chord_samples</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Number of samples per chord for the spline interpolation."""</span><span class="p">)</span>
+
+    <span class="n">max_chords</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Maximum number of chords to render."""</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">nodes_el</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">_nodes</span>
+        <span class="k">if</span> <span class="n">nodes_el</span><span class="p">:</span>
+            <span class="n">idx_dim</span> <span class="o">=</span> <span class="n">nodes_el</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes_el</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">idx_dim</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">]))</span>
+
+        <span class="c1"># Compute indices and values for connectivity matrix</span>
+        <span class="n">max_chords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">max_chords</span>
+        <span class="n">src</span><span class="p">,</span> <span class="n">tgt</span> <span class="o">=</span> <span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">src_idx</span> <span class="o">=</span> <span class="n">search_indices</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+        <span class="n">tgt_idx</span> <span class="o">=</span> <span class="n">search_indices</span><span class="p">(</span><span class="n">tgt</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'uif'</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'int'</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'f'</span><span class="p">:</span>
+                    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">values</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+                <span class="k">if</span> <span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">max_chords</span><span class="p">:</span>
+                    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">values</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="o">*</span><span class="n">max_chords</span><span class="p">)</span>
+                    <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'int'</span><span class="p">)</span>
+
+        <span class="c1"># Compute connectivity matrix</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">src_idx</span><span class="p">,</span> <span class="n">tgt_idx</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span>
+
+        <span class="c1"># Compute weighted angular slice for each connection</span>
+        <span class="n">weights_of_areas</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">areas_in_radians</span> <span class="o">=</span> <span class="p">(</span><span class="n">weights_of_areas</span> <span class="o">/</span> <span class="n">weights_of_areas</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+        <span class="c1"># We add a zero in the begging for the cumulative sum</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">areas_in_radians</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">areas_in_radians</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+        <span class="c1"># Compute mid-points for node positions</span>
+        <span class="n">midpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'valid'</span><span class="p">)</span>
+        <span class="n">mxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">midpoints</span><span class="p">)</span>
+        <span class="n">mys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">midpoints</span><span class="p">)</span>
+
+        <span class="c1"># Compute angles of chords in each edge</span>
+        <span class="n">all_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">areas_in_radians</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">n_conn</span> <span class="o">=</span> <span class="n">weights_of_areas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_conn</span><span class="p">))</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">)))</span>
+            <span class="n">all_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="c1"># Draw each chord by interpolating quadratic splines</span>
+        <span class="c1"># Separate chords in each edge by NaNs</span>
+        <span class="n">empty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">]])</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">)):</span>
+            <span class="n">sidx</span><span class="p">,</span> <span class="n">tidx</span> <span class="o">=</span> <span class="n">src_idx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tgt_idx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">src_area</span><span class="p">,</span> <span class="n">tgt_area</span> <span class="o">=</span> <span class="n">all_areas</span><span class="p">[</span><span class="n">sidx</span><span class="p">],</span> <span class="n">all_areas</span><span class="p">[</span><span class="n">tidx</span><span class="p">]</span>
+            <span class="n">n_conns</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="n">tidx</span><span class="p">]</span>
+            <span class="n">subpaths</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n_conns</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">src_area</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">tgt_area</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">src_area</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">tgt_area</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">tgt_area</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">quadratic_bezier</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x0</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">y0</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span>
+                                     <span class="p">(</span><span class="n">x1</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">y1</span><span class="o">/</span><span class="mf">2.</span><span class="p">),</span> <span class="n">steps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">chord_samples</span><span class="p">)</span>
+                <span class="n">subpaths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+                <span class="n">subpaths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">empty</span><span class="p">)</span>
+            <span class="n">subpaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">subpaths</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">subpaths</span><span class="p">:</span>
+                <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">subpaths</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+
+        <span class="c1"># Construct Chord element from components</span>
+        <span class="k">if</span> <span class="n">nodes_el</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes_el</span><span class="p">,</span> <span class="n">Nodes</span><span class="p">):</span>
+                <span class="n">kdims</span> <span class="o">=</span> <span class="n">nodes_el</span><span class="o">.</span><span class="n">kdims</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">kdims</span> <span class="o">=</span> <span class="n">Nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">idx_dim</span><span class="p">]</span>
+            <span class="n">vdims</span> <span class="o">=</span> <span class="p">[</span><span class="n">vd</span> <span class="k">for</span> <span class="n">vd</span> <span class="ow">in</span> <span class="n">nodes_el</span><span class="o">.</span><span class="n">vdims</span> <span class="k">if</span> <span class="n">vd</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kdims</span><span class="p">]</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">nodes_el</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">vd</span><span class="p">)</span> <span class="k">for</span> <span class="n">vd</span> <span class="ow">in</span> <span class="n">vdims</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="n">Nodes</span><span class="o">.</span><span class="n">kdims</span>
+            <span class="n">values</span><span class="p">,</span> <span class="n">vdims</span> <span class="o">=</span> <span class="p">(),</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">node_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">mxs</span><span class="p">,</span> <span class="n">mys</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span><span class="o">+</span><span class="n">values</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node_data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">kdims</span><span class="o">+</span><span class="n">vdims</span><span class="p">)</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">Nodes</span><span class="p">(</span><span class="n">node_data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">)</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="n">EdgePaths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+        <span class="n">chord</span> <span class="o">=</span> <span class="n">Chord</span><span class="p">((</span><span class="n">element</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">),</span> <span class="n">compute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">chord</span><span class="o">.</span><span class="n">_angles</span> <span class="o">=</span> <span class="n">points</span>
+        <span class="k">return</span> <span class="n">chord</span></div>
+
+
+<div class="viewcode-block" id="Chord"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Chord">[docs]</a><span class="k">class</span> <span class="nc">Chord</span><span class="p">(</span><span class="n">Graph</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Chord is a special type of Graph which computes the locations of</span>
+<span class="sd">    each node on a circle and the chords connecting them. The amount</span>
+<span class="sd">    of radial angle devoted to each node and the number of chords are</span>
+<span class="sd">    scaled by a weight supplied as a value dimension.</span>
+
+<span class="sd">    If the values are integers then the number of chords is directly</span>
+<span class="sd">    scaled by the value, if the values are floats then the number of</span>
+<span class="sd">    chords are apportioned such that the lowest value edge is given</span>
+<span class="sd">    one chord and all other nodes are given nodes proportional to</span>
+<span class="sd">    their weight.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Chord'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">(([],</span> <span class="p">[],</span> <span class="p">[]),)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,)</span><span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">nodes</span><span class="o">.</span><span class="n">ndims</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">Nodes</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">kdims</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                        <span class="n">vdims</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Graph</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">compute</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+            <span class="n">chord</span> <span class="o">=</span> <span class="n">layout_chords</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">chord</span><span class="o">.</span><span class="n">nodes</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">chord</span><span class="o">.</span><span class="n">edgepaths</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">=</span> <span class="n">chord</span><span class="o">.</span><span class="n">_angles</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Nodes</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Expected Nodes object in data, found </span><span class="si">%s</span><span class="s2">."</span>
+                                <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="n">EdgePaths</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Expected EdgePaths object in data, found </span><span class="si">%s</span><span class="s2">."</span>
+                                <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edgepaths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

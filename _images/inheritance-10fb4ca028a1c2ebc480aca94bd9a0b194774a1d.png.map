@@ -1,0 +1,5 @@
+<map id="inheritance4188d0e961" name="inheritance4188d0e961">
+<area shape="rect" id="node1" href="#holoviews.core.sheetcoords.SheetCoordinateSystem" target="_top" title="Provides methods to allow conversion between sheet and matrix" alt="" coords="5,55,340,80"/>
+<area shape="rect" id="node2" href="#holoviews.core.sheetcoords.Slice" target="_top" title="Represents a slice of a SheetCoordinateSystem; i.e., an array" alt="" coords="388,5,607,31"/>
+<area shape="rect" id="node3" title="ndarray(shape, dtype=float, buffer=None, offset=0," alt="" coords="118,5,227,31"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="inheritancea4c95a0d66" name="inheritancea4c95a0d66">
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.chart.AreaPlot" target="_top" title="holoviews.plotting.plotly.chart.AreaPlot" alt="" coords="1005,3,1141,17"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.plotly.chart.BarPlot" target="_top" title="holoviews.plotting.plotly.chart.BarPlot" alt="" coords="825,138,957,152"/>
+<area shape="rect" id="node18" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="459,112,593,125"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="284,85,425,98"/>
+<area shape="rect" id="node6" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="451,85,601,98"/>
+<area shape="rect" id="node5" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="160,85,258,98"/>
+<area shape="rect" id="node11" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="627,98,785,112"/>
+<area shape="rect" id="node7" title="params(name=String)" alt="" coords="3,85,134,98"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.plotly.chart.ChartPlot" target="_top" title="holoviews.plotting.plotly.chart.ChartPlot" alt="" coords="822,57,960,71"/>
+<area shape="rect" id="node12" href="#holoviews.plotting.plotly.chart.CurvePlot" target="_top" title="holoviews.plotting.plotly.chart.CurvePlot" alt="" coords="1002,57,1143,71"/>
+<area shape="rect" id="node14" href="#holoviews.plotting.plotly.chart.ErrorBarsPlot" target="_top" title="holoviews.plotting.plotly.chart.ErrorBarsPlot" alt="" coords="997,84,1149,98"/>
+<area shape="rect" id="node16" href="#holoviews.plotting.plotly.chart.ScatterPlot" target="_top" title="holoviews.plotting.plotly.chart.ScatterPlot" alt="" coords="1001,111,1145,125"/>
+<area shape="rect" id="node17" href="#holoviews.plotting.plotly.chart.SpreadPlot" target="_top" title="holoviews.plotting.plotly.chart.SpreadPlot" alt="" coords="1001,30,1145,44"/>
+<area shape="rect" id="node13" href="#holoviews.plotting.plotly.element.ColorbarPlot" target="_top" title="holoviews.plotting.plotly.element.ColorbarPlot" alt="" coords="811,84,970,98"/>
+<area shape="rect" id="node15" href="#holoviews.plotting.plotly.chart.HistogramPlot" target="_top" title="holoviews.plotting.plotly.chart.HistogramPlot" alt="" coords="814,111,968,125"/>
+</map>

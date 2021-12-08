@@ -1,0 +1,7 @@
+<map id="inheritanceb1f96684b5" name="inheritanceb1f96684b5">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.io.Exporter" target="_top" title="An Exporter is a parameterized function that accepts a HoloViews" alt="" coords="495,4,635,24"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.renderer.Renderer" target="_top" title="The job of a Renderer is to turn the plotting state held within" alt="" coords="673,4,861,24"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="229,4,457,24"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.renderer.BokehRenderer" target="_top" title="holoviews.plotting.bokeh.renderer.BokehRenderer" alt="" coords="899,4,1148,24"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="4,4,191,24"/>
+</map>

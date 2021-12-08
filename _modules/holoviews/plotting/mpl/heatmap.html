@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.mpl.heatmap — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.mpl.heatmap</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Wedge</span><span class="p">,</span> <span class="n">Circle</span>
+<span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">LineCollection</span><span class="p">,</span> <span class="n">PatchCollection</span>
+
+<span class="kn">from</span> <span class="nn">...core.data</span> <span class="kn">import</span> <span class="n">GridInterface</span>
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="n">dimension_sanitizer</span><span class="p">,</span> <span class="n">is_nan</span>
+<span class="kn">from</span> <span class="nn">...core.spaces</span> <span class="kn">import</span> <span class="n">HoloMap</span>
+<span class="kn">from</span> <span class="nn">..mixins</span> <span class="kn">import</span> <span class="n">HeatMapMixin</span>
+<span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">ColorbarPlot</span>
+<span class="kn">from</span> <span class="nn">.raster</span> <span class="kn">import</span> <span class="n">QuadMeshPlot</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">filter_styles</span>
+
+
+<div class="viewcode-block" id="HeatMapPlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.heatmap.HeatMapPlot">[docs]</a><span class="k">class</span> <span class="nc">HeatMapPlot</span><span class="p">(</span><span class="n">HeatMapMixin</span><span class="p">,</span> <span class="n">QuadMeshPlot</span><span class="p">):</span>
+
+    <span class="n">clipping_colors</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{</span><span class="s1">'NaN'</span><span class="p">:</span> <span class="s1">'white'</span><span class="p">},</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Dictionary to specify colors for clipped values, allows</span>
+<span class="s2">        setting color for NaN values and for values above and below</span>
+<span class="s2">        the min and max value. The min, max or NaN color may specify</span>
+<span class="s2">        an RGB(A) color as a color hex string of the form #FFFFFF or</span>
+<span class="s2">        #FFFFFFFF or a length 3 or length 4 tuple specifying values in</span>
+<span class="s2">        the range 0-1 or a named HTML color."""</span><span class="p">)</span>
+
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span>
+
+    <span class="n">radial</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether the HeatMap should be radial"""</span><span class="p">)</span>
+
+    <span class="n">show_values</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to annotate each pixel with its value."""</span><span class="p">)</span>
+
+    <span class="n">xmarks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Add separation lines to the heatmap for better readability. By</span>
+<span class="s2">        default, does not show any separation lines. If parameter is of type</span>
+<span class="s2">        integer, draws the given amount of separations lines spread across</span>
+<span class="s2">        heatmap. If parameter is of type list containing integers, show</span>
+<span class="s2">        separation lines at given indices. If parameter is of type tuple, draw</span>
+<span class="s2">        separation lines at given categorical values. If parameter is of type</span>
+<span class="s2">        function, draw separation lines where function returns True for passed</span>
+<span class="s2">        heatmap category."""</span><span class="p">)</span>
+
+    <span class="n">ymarks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Add separation lines to the heatmap for better readability. By</span>
+<span class="s2">        default, does not show any separation lines. If parameter is of type</span>
+<span class="s2">        integer, draws the given amount of separations lines spread across</span>
+<span class="s2">        heatmap. If parameter is of type list containing integers, show</span>
+<span class="s2">        separation lines at given indices. If parameter is of type tuple, draw</span>
+<span class="s2">        separation lines at given categorical values. If parameter is of type</span>
+<span class="s2">        function, draw separation lines where function returns True for passed</span>
+<span class="s2">        heatmap category."""</span><span class="p">)</span>
+
+    <span class="n">xticks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Ticks along x-axis/segments specified as an integer, explicit list of</span>
+<span class="s2">        ticks or function. If `None`, no ticks are shown."""</span><span class="p">)</span>
+
+    <span class="n">yticks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Ticks along y-axis/annulars specified as an integer, explicit list of</span>
+<span class="s2">        ticks or function. If `None`, no ticks are shown."""</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_radial</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">heatmap</span><span class="p">):</span>
+        <span class="n">heatmap</span> <span class="o">=</span> <span class="n">heatmap</span><span class="o">.</span><span class="n">last</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">heatmap</span><span class="p">,</span> <span class="n">HoloMap</span><span class="p">)</span> <span class="k">else</span> <span class="n">heatmap</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">lookup_options</span><span class="p">(</span><span class="n">heatmap</span><span class="p">,</span> <span class="s1">'plot'</span><span class="p">)</span><span class="o">.</span><span class="n">options</span>
+        <span class="k">return</span> <span class="p">((</span><span class="nb">any</span><span class="p">(</span><span class="n">o</span> <span class="ow">in</span> <span class="n">opts</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'start_angle'</span><span class="p">,</span> <span class="s1">'radius_inner'</span><span class="p">,</span> <span class="s1">'radius_outer'</span><span class="p">))</span>
+                 <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'radial'</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">))</span> <span class="ow">or</span> <span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'radial'</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_annotate_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">annotations</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'annotations'</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+        <span class="n">handles</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">plot_coord</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">annotations</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">handles</span><span class="p">[</span><span class="n">plot_coord</span><span class="p">]</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">plot_coord</span><span class="p">,</span>
+                                              <span class="n">xycoords</span><span class="o">=</span><span class="s1">'data'</span><span class="p">,</span>
+                                              <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span>
+                                              <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handles</span>
+
+
+    <span class="k">def</span> <span class="nf">_annotate_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">):</span>
+        <span class="n">val_dim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">val_dim</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">xpos</span> <span class="o">=</span> <span class="n">xvals</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xvals</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+        <span class="n">ypos</span> <span class="o">=</span> <span class="n">yvals</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">yvals</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+        <span class="n">plot_coords</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">xpos</span><span class="p">,</span> <span class="n">ypos</span><span class="p">)</span>
+        <span class="n">annotations</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">plot_coord</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">plot_coords</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s1">'-'</span> <span class="k">if</span> <span class="n">is_nan</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="n">val_dim</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">annotations</span><span class="p">[</span><span class="n">plot_coord</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="k">return</span> <span class="n">annotations</span>
+
+
+    <span class="k">def</span> <span class="nf">_compute_ticks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span> <span class="n">xfactors</span><span class="p">,</span> <span class="n">yfactors</span><span class="p">):</span>
+        <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">kdims</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span><span class="p">:</span>
+            <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">ydim</span><span class="p">,</span> <span class="n">xdim</span>
+
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup_options</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s1">'plot'</span><span class="p">)</span><span class="o">.</span><span class="n">options</span>
+
+        <span class="n">xticks</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'xticks'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xticks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">xpos</span> <span class="o">=</span> <span class="n">xvals</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xvals</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">xfactors</span><span class="p">:</span>
+                <span class="n">xfactors</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">gridded</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">xdim</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="n">xdim</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">xfactors</span><span class="p">]</span>
+            <span class="n">xticks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xpos</span><span class="p">,</span> <span class="n">xlabels</span><span class="p">))</span>
+
+        <span class="n">yticks</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'yticks'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">yticks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ypos</span> <span class="o">=</span> <span class="n">yvals</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">yvals</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">yfactors</span><span class="p">:</span>
+                <span class="n">yfactors</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">gridded</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">ydim</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="n">ydim</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">yfactors</span><span class="p">]</span>
+            <span class="n">yticks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">ypos</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">xticks</span><span class="p">,</span> <span class="n">yticks</span>
+
+
+    <span class="k">def</span> <span class="nf">_draw_markers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">marks</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'x'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">marks</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'Only radial HeatMaps supports marks, to make the'</span>
+                           <span class="s1">'HeatMap quads more distinguishable set linewidths'</span>
+                           <span class="s1">'to a non-zero value.'</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="HeatMapPlot.init_artists"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.heatmap.HeatMapPlot.init_artists">[docs]</a>    <span class="k">def</span> <span class="nf">init_artists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">plot_args</span><span class="p">,</span> <span class="n">plot_kwargs</span><span class="p">):</span>
+        <span class="n">xfactors</span> <span class="o">=</span> <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'xfactors'</span><span class="p">)</span>
+        <span class="n">yfactors</span> <span class="o">=</span> <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'yfactors'</span><span class="p">)</span>
+        <span class="n">annotations</span> <span class="o">=</span> <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'annotations'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'annular'</span><span class="p">,</span> <span class="s1">'xmarks'</span><span class="p">,</span> <span class="s1">'ymarks'</span><span class="p">]</span>
+        <span class="n">plot_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                       <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">p</span> <span class="ow">in</span> <span class="n">k</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prefixes</span><span class="p">)}</span>
+        <span class="n">artist</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="o">*</span><span class="n">plot_args</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_values</span> <span class="ow">and</span> <span class="n">annotations</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotate_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">annotations</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_markers</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_frame</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xmarks</span><span class="p">,</span>
+                           <span class="n">plot_args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xfactors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'x'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_markers</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_frame</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ymarks</span><span class="p">,</span>
+                           <span class="n">plot_args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">yfactors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">'artist'</span><span class="p">:</span> <span class="n">artist</span><span class="p">}</span></div>
+
+
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">kdims</span>
+        <span class="n">aggregate</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">gridded</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">element</span><span class="o">.</span><span class="n">_unique</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'HeatMap element index is not unique,  ensure you '</span>
+                               <span class="s1">'aggregate the data before displaying it, e.g. '</span>
+                               <span class="s1">'using heatmap.aggregate(function=np.mean). '</span>
+                               <span class="s1">'Duplicate index values have been dropped.'</span><span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span><span class="p">:</span>
+            <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">ydim</span><span class="p">,</span> <span class="n">xdim</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">xtype</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">aggregate</span><span class="p">,</span> <span class="n">xdim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'SUO'</span><span class="p">:</span>
+            <span class="n">xvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xvals</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">xdim</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">xvals</span> <span class="o">=</span> <span class="n">GridInterface</span><span class="o">.</span><span class="n">_infer_interval_breaks</span><span class="p">(</span><span class="n">xvals</span><span class="p">)</span>
+
+        <span class="n">ytype</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">aggregate</span><span class="p">,</span> <span class="n">ydim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ytype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'SUO'</span><span class="p">:</span>
+            <span class="n">yvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">yvals</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">ydim</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">yvals</span> <span class="o">=</span> <span class="n">GridInterface</span><span class="o">.</span><span class="n">_infer_interval_breaks</span><span class="p">(</span><span class="n">yvals</span><span class="p">)</span>
+
+        <span class="n">xfactors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ranges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'factors'</span><span class="p">,</span> <span class="p">[]))</span>
+        <span class="n">yfactors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ranges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'factors'</span><span class="p">,</span> <span class="p">[]))</span>
+        <span class="n">xticks</span><span class="p">,</span> <span class="n">yticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_ticks</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span> <span class="n">xfactors</span><span class="p">,</span> <span class="n">yfactors</span><span class="p">)</span>
+
+        <span class="n">style</span><span class="p">[</span><span class="s1">'xfactors'</span><span class="p">]</span> <span class="o">=</span> <span class="n">xfactors</span>
+        <span class="n">style</span><span class="p">[</span><span class="s1">'yfactors'</span><span class="p">]</span> <span class="o">=</span> <span class="n">yfactors</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_values</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotate_values</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">gridded</span><span class="p">,</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">)</span>
+        <span class="n">vdim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_norm_kwargs</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">vdim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">,</span> <span class="n">data</span><span class="p">),</span> <span class="n">style</span><span class="p">,</span> <span class="p">{</span><span class="s1">'xticks'</span><span class="p">:</span> <span class="n">xticks</span><span class="p">,</span> <span class="s1">'yticks'</span><span class="p">:</span> <span class="n">yticks</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="RadialHeatMapPlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.heatmap.RadialHeatMapPlot">[docs]</a><span class="k">class</span> <span class="nc">RadialHeatMapPlot</span><span class="p">(</span><span class="n">ColorbarPlot</span><span class="p">):</span>
+
+    <span class="n">start_angle</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Define starting angle of the first annulars. By default, beings</span>
+<span class="s2">        at 12 o clock."""</span><span class="p">)</span>
+
+    <span class="n">max_radius</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Define the maximum radius which is used for the x and y range extents.</span>
+<span class="s2">        """</span><span class="p">)</span>
+
+    <span class="n">radius_inner</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Define the radius fraction of inner, empty space."""</span><span class="p">)</span>
+
+    <span class="n">radius_outer</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Define the radius fraction of outer space including the labels."""</span><span class="p">)</span>
+
+    <span class="n">radial</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether the HeatMap should be radial"""</span><span class="p">)</span>
+
+    <span class="n">show_values</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to annotate each pixel with its value."""</span><span class="p">)</span>
+
+    <span class="n">xmarks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Add separation lines between segments for better readability. By</span>
+<span class="s2">        default, does not show any separation lines. If parameter is of type</span>
+<span class="s2">        integer, draws the given amount of separations lines spread across</span>
+<span class="s2">        radial heatmap. If parameter is of type list containing integers, show</span>
+<span class="s2">        separation lines at given indices. If parameter is of type tuple, draw</span>
+<span class="s2">        separation lines at given segment values. If parameter is of type</span>
+<span class="s2">        function, draw separation lines where function returns True for passed</span>
+<span class="s2">        segment value."""</span><span class="p">)</span>
+
+    <span class="n">ymarks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Add separation lines between annulars for better readability. By</span>
+<span class="s2">        default, does not show any separation lines. If parameter is of type</span>
+<span class="s2">        integer, draws the given amount of separations lines spread across</span>
+<span class="s2">        radial heatmap. If parameter is of type list containing integers, show</span>
+<span class="s2">        separation lines at given indices. If parameter is of type tuple, draw</span>
+<span class="s2">        separation lines at given annular values. If parameter is of type</span>
+<span class="s2">        function, draw separation lines where function returns True for passed</span>
+<span class="s2">        annular value."""</span><span class="p">)</span>
+
+    <span class="n">xticks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Ticks along x-axis/segments specified as an integer, explicit list of</span>
+<span class="s2">        ticks or function. If `None`, no ticks are shown."""</span><span class="p">)</span>
+
+    <span class="n">yticks</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Ticks along y-axis/annulars specified as an integer, explicit list of</span>
+<span class="s2">        ticks or function. If `None`, no ticks are shown."""</span><span class="p">)</span>
+
+    <span class="n">projection</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ObjectSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'polar'</span><span class="p">,</span> <span class="n">objects</span><span class="o">=</span><span class="p">[</span><span class="s1">'polar'</span><span class="p">])</span>
+
+    <span class="n">_style_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'annular'</span><span class="p">,</span> <span class="s1">'xmarks'</span><span class="p">,</span> <span class="s1">'ymarks'</span><span class="p">]</span>
+
+    <span class="n">style_opts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'annular_edgecolors'</span><span class="p">,</span> <span class="s1">'annular_linewidth'</span><span class="p">,</span>
+                  <span class="s1">'xmarks_linewidth'</span><span class="p">,</span> <span class="s1">'xmarks_edgecolor'</span><span class="p">,</span> <span class="s1">'cmap'</span><span class="p">,</span>
+                  <span class="s1">'ymarks_linewidth'</span><span class="p">,</span> <span class="s1">'ymarks_edgecolor'</span><span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_map_order_to_ticks</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""Map elements from given `order` array to bins ranging from `start`</span>
+<span class="sd">        to `end`.</span>
+<span class="sd">        """</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reverse</span><span class="p">:</span>
+            <span class="n">bounds</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">mapping</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bounds</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">order</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">mapping</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_compute_separations</span><span class="p">(</span><span class="n">inner</span><span class="p">,</span> <span class="n">outer</span><span class="p">,</span> <span class="n">angles</span><span class="p">):</span>
+        <span class="sd">"""Compute x and y positions for separation lines for given angles.</span>
+
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">a</span><span class="p">,</span> <span class="n">inner</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">outer</span><span class="p">]])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_markers</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span> <span class="n">marker</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">marker</span><span class="p">):</span>
+            <span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ticks</span> <span class="k">if</span> <span class="n">marker</span><span class="p">(</span><span class="n">l</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">marker</span><span class="p">:</span>
+            <span class="n">nth_mark</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span> <span class="o">/</span> <span class="n">marker</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ticks</span><span class="p">[::</span><span class="n">nth_mark</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ticks</span> <span class="k">if</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">marker</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">marks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">marks</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_ticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span> <span class="n">ticker</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">ticker</span><span class="p">):</span>
+            <span class="n">ticks</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ticks</span> <span class="k">if</span> <span class="n">ticker</span><span class="p">(</span><span class="n">l</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">nth_mark</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span> <span class="o">/</span> <span class="n">ticker</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">ticks</span> <span class="o">=</span> <span class="n">ticks</span><span class="p">[::</span><span class="n">nth_mark</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+            <span class="n">nth_mark</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ticker</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">ticks</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="p">,</span> <span class="n">tl</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="n">tl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ticks</span><span class="p">[::</span><span class="n">nth_mark</span><span class="p">],</span> <span class="n">ticker</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">ticker</span><span class="p">:</span>
+            <span class="n">ticks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ticks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">ticks</span>
+
+
+<div class="viewcode-block" id="RadialHeatMapPlot.get_extents"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.heatmap.RadialHeatMapPlot.get_extents">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">range_type</span><span class="o">=</span><span class="s1">'combined'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">range_type</span> <span class="o">==</span> <span class="s1">'hard'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,)</span><span class="o">*</span><span class="mi">4</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_radius</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">radius_outer</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="c1"># dimension labels</span>
+        <span class="n">dim_labels</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="n">dimension_sanitizer</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dim_labels</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+
+        <span class="c1"># get raw values</span>
+        <span class="n">aggregate</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">gridded</span>
+        <span class="n">xvals</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">yvals</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">zvals</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># pretty print x and y dimension values if necessary</span>
+        <span class="k">def</span> <span class="nf">_pprint</span><span class="p">(</span><span class="n">dim_label</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">vals</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'SU'</span><span class="p">:</span>
+                <span class="n">dim</span> <span class="o">=</span> <span class="n">aggregate</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">dim_label</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">dim</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">vals</span>
+
+        <span class="n">xvals</span> <span class="o">=</span> <span class="n">_pprint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xvals</span><span class="p">)</span>
+        <span class="n">yvals</span> <span class="o">=</span> <span class="n">_pprint</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">yvals</span><span class="p">)</span>
+
+        <span class="c1"># annular wedges</span>
+        <span class="n">start_angle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_angle</span>
+        <span class="n">end_angle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_angle</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+        <span class="n">bins_segment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_angle</span><span class="p">,</span> <span class="n">end_angle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">xvals</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">segment_ticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_order_to_ticks</span><span class="p">(</span><span class="n">start_angle</span><span class="p">,</span> <span class="n">end_angle</span><span class="p">,</span>
+                                                 <span class="n">xvals</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">radius_max</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">radius_min</span> <span class="o">=</span> <span class="n">radius_max</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius_inner</span>
+        <span class="n">bins_annular</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">radius_min</span><span class="p">,</span> <span class="n">radius_max</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">yvals</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">radius_ticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_order_to_ticks</span><span class="p">(</span><span class="n">radius_min</span><span class="p">,</span> <span class="n">radius_max</span><span class="p">,</span>
+                                                <span class="n">yvals</span><span class="p">)</span>
+
+        <span class="n">patches</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yvals</span><span class="p">)):</span>
+            <span class="n">ybin</span> <span class="o">=</span> <span class="n">bins_annular</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xvals</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">xbin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">bins_segment</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">width</span> <span class="o">=</span> <span class="n">ybin</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ybin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">wedge</span> <span class="o">=</span> <span class="n">Wedge</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ybin</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xbin</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xbin</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="p">)</span>
+                <span class="n">patches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wedge</span><span class="p">)</span>
+
+        <span class="n">angles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_markers</span><span class="p">(</span><span class="n">segment_ticks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xmarks</span><span class="p">)</span>
+        <span class="n">xmarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_separations</span><span class="p">(</span><span class="n">radius_min</span><span class="p">,</span> <span class="n">radius_max</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+        <span class="n">radii</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_markers</span><span class="p">(</span><span class="n">radius_ticks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ymarks</span><span class="p">)</span>
+        <span class="n">ymarks</span> <span class="o">=</span> <span class="p">[</span><span class="n">Circle</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">radii</span><span class="p">]</span>
+
+        <span class="n">style</span><span class="p">[</span><span class="s1">'array'</span><span class="p">]</span> <span class="o">=</span> <span class="n">zvals</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_norm_kwargs</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="s1">'vmin'</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s1">'clim'</span><span class="p">]</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'vmin'</span><span class="p">),</span> <span class="n">style</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'vmax'</span><span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'annular'</span><span class="p">:</span> <span class="n">patches</span><span class="p">,</span> <span class="s1">'xseparator'</span><span class="p">:</span> <span class="n">xmarks</span><span class="p">,</span> <span class="s1">'yseparator'</span><span class="p">:</span> <span class="n">ymarks</span><span class="p">}</span>
+        <span class="n">xticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ticks</span><span class="p">(</span><span class="n">segment_ticks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xticks</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xticks</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">xticks</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="o">-</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xticks</span><span class="p">)),</span> <span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">xticks</span><span class="p">]</span>
+        <span class="n">yticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ticks</span><span class="p">(</span><span class="n">radius_ticks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">yticks</span><span class="p">)</span>
+        <span class="n">ticks</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'xticks'</span><span class="p">:</span> <span class="n">xticks</span><span class="p">,</span>  <span class="s1">'yticks'</span><span class="p">:</span> <span class="n">yticks</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">ticks</span>
+
+
+<div class="viewcode-block" id="RadialHeatMapPlot.init_artists"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.heatmap.RadialHeatMapPlot.init_artists">[docs]</a>    <span class="k">def</span> <span class="nf">init_artists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">plot_args</span><span class="p">,</span> <span class="n">plot_kwargs</span><span class="p">):</span>
+        <span class="c1"># Draw edges</span>
+        <span class="n">color_opts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'cmap'</span><span class="p">,</span> <span class="s1">'vmin'</span><span class="p">,</span> <span class="s1">'vmax'</span><span class="p">,</span> <span class="s1">'norm'</span><span class="p">,</span> <span class="s1">'array'</span><span class="p">]</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_groups</span> <span class="k">if</span> <span class="n">g</span> <span class="o">!=</span> <span class="s1">'annular'</span><span class="p">]</span>
+        <span class="n">edge_opts</span> <span class="o">=</span> <span class="n">filter_styles</span><span class="p">(</span><span class="n">plot_kwargs</span><span class="p">,</span> <span class="s1">'annular'</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
+        <span class="n">annuli</span> <span class="o">=</span> <span class="n">plot_args</span><span class="p">[</span><span class="s1">'annular'</span><span class="p">]</span>
+        <span class="n">edge_opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'interpolation'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">annuli</span> <span class="o">=</span> <span class="n">PatchCollection</span><span class="p">(</span><span class="n">annuli</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="o">**</span><span class="n">edge_opts</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">annuli</span><span class="p">)</span>
+
+        <span class="n">artists</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'artist'</span><span class="p">:</span> <span class="n">annuli</span><span class="p">}</span>
+
+        <span class="n">paths</span> <span class="o">=</span> <span class="n">plot_args</span><span class="p">[</span><span class="s1">'xseparator'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">paths</span><span class="p">:</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_groups</span> <span class="k">if</span> <span class="n">g</span> <span class="o">!=</span> <span class="s1">'xmarks'</span><span class="p">]</span>
+            <span class="n">xmark_opts</span> <span class="o">=</span> <span class="n">filter_styles</span><span class="p">(</span><span class="n">plot_kwargs</span><span class="p">,</span> <span class="s1">'xmarks'</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">color_opts</span><span class="p">)</span>
+            <span class="n">xmark_opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'edgecolors'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">xseparators</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="o">**</span><span class="n">xmark_opts</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">xseparators</span><span class="p">)</span>
+            <span class="n">artists</span><span class="p">[</span><span class="s1">'xseparator'</span><span class="p">]</span> <span class="o">=</span> <span class="n">xseparators</span>
+
+        <span class="n">paths</span> <span class="o">=</span> <span class="n">plot_args</span><span class="p">[</span><span class="s1">'yseparator'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">paths</span><span class="p">:</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_groups</span> <span class="k">if</span> <span class="n">g</span> <span class="o">!=</span> <span class="s1">'ymarks'</span><span class="p">]</span>
+            <span class="n">ymark_opts</span> <span class="o">=</span> <span class="n">filter_styles</span><span class="p">(</span><span class="n">plot_kwargs</span><span class="p">,</span> <span class="s1">'ymarks'</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">color_opts</span><span class="p">)</span>
+            <span class="n">ymark_opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'edgecolors'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">yseparators</span> <span class="o">=</span> <span class="n">PatchCollection</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
+                                          <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="o">**</span><span class="n">ymark_opts</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">yseparators</span><span class="p">)</span>
+            <span class="n">artists</span><span class="p">[</span><span class="s1">'yseparator'</span><span class="p">]</span> <span class="o">=</span> <span class="n">yseparators</span>
+
+        <span class="k">return</span> <span class="n">artists</span></div></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

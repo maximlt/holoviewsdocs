@@ -1,0 +1,10 @@
+<map id="inheritanceddace08fdd" name="inheritanceddace08fdd">
+<area shape="rect" id="node1" href="#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="377,62,531,78"/>
+<area shape="rect" id="node4" href="#holoviews.core.ndmapping.MultiDimensionalMapping" target="_top" title="An MultiDimensionalMapping is a Dimensioned mapping (like a" alt="" coords="560,62,761,78"/>
+<area shape="rect" id="node2" href="#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="194,62,349,78"/>
+<area shape="rect" id="node3" title="params(name=String)" alt="" coords="13,62,156,78"/>
+<area shape="rect" id="node5" href="#holoviews.core.ndmapping.NdMapping" target="_top" title="NdMapping supports the same indexing semantics as" alt="" coords="790,62,941,78"/>
+<area shape="rect" id="node6" href="#holoviews.core.ndmapping.UniformNdMapping" target="_top" title="A UniformNdMapping is a map of Dimensioned objects and is itself" alt="" coords="970,62,1149,78"/>
+<area shape="rect" id="node7" href="#holoviews.core.ndmapping.item_check" target="_top" title="Context manager to allow creating NdMapping types without" alt="" coords="9,33,159,48"/>
+<area shape="rect" id="node8" href="#holoviews.core.ndmapping.sorted_context" target="_top" title="Context manager to temporarily disable sorting on NdMapping" alt="" coords="3,3,165,18"/>
+</map>

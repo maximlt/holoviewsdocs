@@ -1,0 +1,11 @@
+<map id="inheritance75850bb25f" name="inheritance75850bb25f">
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.geometry.RectanglesPlot" target="_top" title="Rectanlges are polygons in 2D space where the key dimensions represent" alt="" coords="983,3,1149,17"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.geometry.SegmentPlot" target="_top" title="Segments are lines in 2D space where each two key dimensions specify a" alt="" coords="987,30,1145,44"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="804,30,957,44"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="625,30,777,44"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="449,16,599,30"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="461,43,588,57"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="283,30,423,44"/>
+<area shape="rect" id="node9" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="159,30,257,44"/>
+<area shape="rect" id="node10" title="params(name=String)" alt="" coords="3,30,133,44"/>
+</map>

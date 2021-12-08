@@ -1,0 +1,8 @@
+<map id="inheritancef3c3ffdc04" name="inheritancef3c3ffdc04">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.io.Exporter" target="_top" title="An Exporter is a parameterized function that accepts a HoloViews" alt="" coords="507,4,649,24"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.renderer.Renderer" target="_top" title="The job of a Renderer is to turn the plotting state held within" alt="" coords="687,4,878,24"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="235,4,466,24"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.renderer.MPLRenderer" target="_top" title="Exporter used to render data from matplotlib, either to a stream" alt="" coords="916,4,1148,24"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.renderer.OutputWarning" target="_top" title="holoviews.plotting.mpl.renderer.OutputWarning" alt="" coords="232,43,469,64"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="4,24,194,44"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="inheritanced7a3f30c5c" name="inheritanced7a3f30c5c">
+<area shape="rect" id="node2" href="#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="421,23,620,42"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.plot.GenericCompositePlot" target="_top" title="holoviews.plotting.plot.GenericCompositePlot" alt="" coords="676,4,900,24"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="682,42,894,62"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="226,42,364,62"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.plot.GenericAdjointLayoutPlot" target="_top" title="AdjointLayoutPlot allows placing up to three Views in a number of" alt="" coords="402,61,639,81"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.plot.GenericLayoutPlot" target="_top" title="A GenericLayoutPlot accepts either a Layout or a NdLayout and" alt="" coords="940,4,1145,24"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plot.GenericOverlayPlot" target="_top" title="Plotting baseclass to render (Nd)Overlay objects. It implements" alt="" coords="937,42,1148,62"/>
+<area shape="rect" id="node9" title="params(name=String)" alt="" coords="4,42,189,62"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.plot.PlotSelector" target="_top" title="Proxy that allows dynamic selection of a plotting class based on a" alt="" coords="8,4,185,24"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritancebbff4351eb" name="inheritancebbff4351eb">
+<area shape="rect" id="node1" href="#holoviews.plotting.plotly.selection.PlotlyOverlaySelectionDisplay" target="_top" title="Overlay selection display subclass for use with plotly backend" alt="" coords="625,5,1024,31"/>
+<area shape="rect" id="node2" href="holoviews.selection.html#holoviews.selection.OverlaySelectionDisplay" target="_top" title="Selection display base class that represents selections by overlaying" alt="" coords="292,5,577,31"/>
+<area shape="rect" id="node3" href="holoviews.selection.html#holoviews.selection.SelectionDisplay" target="_top" title="Base class for selection display classes. &#160;Selection display classes are" alt="" coords="5,5,244,31"/>
+</map>

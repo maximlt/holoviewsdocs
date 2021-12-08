@@ -1,0 +1,5 @@
+<map id="inheritanced91c9c6d72" name="inheritanced91c9c6d72">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.links.DataLinkCallback" target="_top" title="Merges the source and target ColumnDataSource" alt="" coords="351,5,657,31"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.bokeh.links.RectanglesTableLinkCallback" target="_top" title="holoviews.plotting.bokeh.links.RectanglesTableLinkCallback" alt="" coords="725,5,1101,31"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.links.RangeToolLinkCallback" target="_top" title="Attaches a RangeTool to the source plot and links it to the" alt="" coords="333,55,675,80"/>
+</map>

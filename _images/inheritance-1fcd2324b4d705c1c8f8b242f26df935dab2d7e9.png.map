@@ -1,0 +1,5 @@
+<map id="inheritancef6b3034157" name="inheritancef6b3034157">
+<area shape="rect" id="node1" href="#holoviews.core.data.interface.Interface" target="_top" title="holoviews.core.data.interface.Interface" alt="" coords="292,5,543,31"/>
+<area shape="rect" id="node3" href="#holoviews.core.data.multipath.MultiInterface" target="_top" title="MultiInterface allows wrapping around a list of tabular datasets" alt="" coords="591,5,872,31"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="5,5,244,31"/>
+</map>

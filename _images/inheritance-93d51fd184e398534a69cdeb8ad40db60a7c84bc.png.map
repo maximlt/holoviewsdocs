@@ -1,0 +1,12 @@
+<map id="inheritance4b660303f8" name="inheritance4b660303f8">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="814,3,970,17"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="634,30,788,44"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.element.LegendPlot" target="_top" title="holoviews.plotting.mpl.element.LegendPlot" alt="" coords="816,30,968,44"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="455,57,607,71"/>
+<area shape="rect" id="node7" href="holoviews.plotting.html#holoviews.plotting.plot.GenericOverlayPlot" target="_top" title="Plotting baseclass to render (Nd)Overlay objects. It implements" alt="" coords="636,57,786,71"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="467,30,596,44"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.element.OverlayPlot" target="_top" title="OverlayPlot supports compositors processing of Overlays across maps." alt="" coords="996,44,1149,58"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="287,44,429,58"/>
+<area shape="rect" id="node9" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="161,44,260,58"/>
+<area shape="rect" id="node10" title="params(name=String)" alt="" coords="3,44,135,58"/>
+</map>

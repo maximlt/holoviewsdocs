@@ -1,0 +1,6 @@
+<map id="inheritanceabf894e29f" name="inheritanceabf894e29f">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.selection.BokehOverlaySelectionDisplay" target="_top" title="Overlay selection display subclass for use with bokeh backend" alt="" coords="709,5,1119,31"/>
+<area shape="rect" id="node2" href="holoviews.selection.html#holoviews.selection.OverlaySelectionDisplay" target="_top" title="Selection display base class that represents selections by overlaying" alt="" coords="334,5,619,31"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.selection.TabularSelectionDisplay" target="_top" title="holoviews.plotting.bokeh.selection.TabularSelectionDisplay" alt="" coords="292,55,661,80"/>
+<area shape="rect" id="node4" href="holoviews.selection.html#holoviews.selection.SelectionDisplay" target="_top" title="Base class for selection display classes. &#160;Selection display classes are" alt="" coords="5,31,244,56"/>
+</map>

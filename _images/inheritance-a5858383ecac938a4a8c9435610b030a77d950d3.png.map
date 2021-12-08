@@ -1,0 +1,7 @@
+<map id="inheritance7bb7407369" name="inheritance7bb7407369">
+<area shape="rect" id="node1" href="#holoviews.util.parser.CompositorSpec" target="_top" title="The syntax for defining a set of compositor is as follows:" alt="" coords="292,55,536,80"/>
+<area shape="rect" id="node2" href="#holoviews.util.parser.Parser" target="_top" title="Base class for magic line parsers, designed for forgiving parsing" alt="" coords="32,80,217,105"/>
+<area shape="rect" id="node3" href="#holoviews.util.parser.OptsSpec" target="_top" title="An OptsSpec is a string specification that describes an" alt="" coords="312,104,516,129"/>
+<area shape="rect" id="node4" href="#holoviews.util.parser.ParserWarning" target="_top" title="holoviews.util.parser.ParserWarning" alt="" coords="297,5,531,31"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="5,5,244,31"/>
+</map>

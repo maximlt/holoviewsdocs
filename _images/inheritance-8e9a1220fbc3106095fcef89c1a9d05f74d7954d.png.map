@@ -1,0 +1,9 @@
+<map id="inheritance3ca8797223" name="inheritance3ca8797223">
+<area shape="rect" id="node1" href="#holoviews.core.dimension.Dimension" target="_top" title="Dimension objects are used to specify some important general" alt="" coords="291,5,525,30"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="5,30,237,54"/>
+<area shape="rect" id="node4" href="#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="283,53,533,78"/>
+<area shape="rect" id="node3" href="#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="579,53,827,78"/>
+<area shape="rect" id="node5" href="#holoviews.core.dimension.ViewableElement" target="_top" title="A ViewableElement is a dimensioned datastructure that may be" alt="" coords="874,53,1147,78"/>
+<area shape="rect" id="node6" href="#holoviews.core.dimension.ViewableTree" target="_top" title="A ViewableTree is an AttrTree with Viewable objects as its leaf" alt="" coords="885,101,1136,125"/>
+<area shape="rect" id="node7" href="#holoviews.core.tree.AttrTree" target="_top" title="An AttrTree offers convenient, multi&#45;level attribute access for" alt="" coords="612,101,795,125"/>
+</map>

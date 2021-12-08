@@ -1,0 +1,9 @@
+<map id="inheritancefbc28cefa6" name="inheritancefbc28cefa6">
+<area shape="rect" id="node1" title="Base class for implementing magic functions." alt="" coords="716,68,870,89"/>
+<area shape="rect" id="node3" href="#holoviews.ipython.magics.CompositorMagic" target="_top" title="Magic allowing easy definition of compositor operations." alt="" coords="911,5,1147,26"/>
+<area shape="rect" id="node5" href="#holoviews.ipython.magics.OptsMagic" target="_top" title="Magic for easy customising of normalization, plot and style options." alt="" coords="928,46,1131,68"/>
+<area shape="rect" id="node6" href="#holoviews.ipython.magics.OutputMagic" target="_top" title="holoviews.ipython.magics.OutputMagic" alt="" coords="923,88,1136,109"/>
+<area shape="rect" id="node7" href="#holoviews.ipython.magics.TimerMagic" target="_top" title="A line magic for measuring the execution time of multiple cells." alt="" coords="925,130,1133,151"/>
+<area shape="rect" id="node4" href="#holoviews.ipython.magics.OptsCompleter" target="_top" title="Implements the TAB&#45;completion for the %%opts magic." alt="" coords="5,26,230,47"/>
+<area shape="rect" id="node9" title="The base class for all classes that have descriptors." alt="" coords="30,68,204,89"/>
+</map>

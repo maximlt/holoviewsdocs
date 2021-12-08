@@ -1,0 +1,9 @@
+<map id="inheritance6d88d2ac18" name="inheritance6d88d2ac18">
+<area shape="rect" id="node7" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="551,4,713,20"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="341,36,510,53"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="542,36,722,53"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="192,36,309,53"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="754,20,943,37"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="4,36,160,53"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.tabular.TablePlot" target="_top" title="holoviews.plotting.plotly.tabular.TablePlot" alt="" coords="975,20,1148,37"/>
+</map>

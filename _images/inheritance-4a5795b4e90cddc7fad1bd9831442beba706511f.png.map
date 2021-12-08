@@ -1,0 +1,7 @@
+<map id="inheritance3c28778fb1" name="inheritance3c28778fb1">
+<area shape="rect" id="node5" href="#holoviews.core.data.interface.iloc" target="_top" title="iloc is small wrapper object that allows row, column based" alt="" coords="325,55,544,80"/>
+<area shape="rect" id="node6" href="#holoviews.core.data.interface.ndloc" target="_top" title="ndloc is a small wrapper object that allows ndarray&#45;like indexing" alt="" coords="319,104,550,129"/>
+<area shape="rect" id="node2" href="#holoviews.core.data.interface.DataError" target="_top" title="DataError is raised when the data cannot be interpreted" alt="" coords="5,55,261,80"/>
+<area shape="rect" id="node3" href="#holoviews.core.data.interface.Interface" target="_top" title="holoviews.core.data.interface.Interface" alt="" coords="309,5,560,31"/>
+<area shape="rect" id="node4" title="params(name=String)" alt="" coords="14,5,253,31"/>
+</map>

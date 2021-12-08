@@ -1,0 +1,22 @@
+<map id="inheritanceecf70b2a86" name="inheritanceecf70b2a86">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="598,324,813,347"/>
+<area shape="rect" id="node4" href="#holoviews.operation.element.chain" target="_top" title="Defining an Operation chain is an easy way to define a new" alt="" coords="905,5,1114,28"/>
+<area shape="rect" id="node5" href="#holoviews.operation.element.collapse" target="_top" title="Given an overlay of Element types, collapse into single Element" alt="" coords="897,51,1122,74"/>
+<area shape="rect" id="node6" href="#holoviews.operation.element.contours" target="_top" title="Given a Image with a single channel, annotate it with contour" alt="" coords="896,96,1123,120"/>
+<area shape="rect" id="node7" href="#holoviews.operation.element.convolve" target="_top" title="Apply a convolution to an overlay using the top layer as the" alt="" coords="896,142,1124,165"/>
+<area shape="rect" id="node8" href="#holoviews.operation.element.decimate" target="_top" title="Decimates any column based Element to a specified number of random" alt="" coords="894,187,1125,211"/>
+<area shape="rect" id="node9" href="#holoviews.operation.element.factory" target="_top" title="Simple operation that constructs any element that accepts some" alt="" coords="901,233,1118,256"/>
+<area shape="rect" id="node10" href="#holoviews.operation.element.function" target="_top" title="holoviews.operation.element.function" alt="" coords="898,278,1121,302"/>
+<area shape="rect" id="node11" href="#holoviews.operation.element.gradient" target="_top" title="Compute the gradient plot of the supplied Image." alt="" coords="898,324,1122,347"/>
+<area shape="rect" id="node13" href="#holoviews.operation.element.histogram" target="_top" title="Returns a Histogram of the input element data, binned into" alt="" coords="893,370,1127,393"/>
+<area shape="rect" id="node14" href="#holoviews.operation.element.image_overlay" target="_top" title="Operation to build a overlay of images to a specification from a" alt="" coords="880,415,1140,439"/>
+<area shape="rect" id="node15" href="#holoviews.operation.element.interpolate_curve" target="_top" title="Resamples a Curve using the defined interpolation method, e.g." alt="" coords="872,461,1147,484"/>
+<area shape="rect" id="node16" href="#holoviews.operation.element.method" target="_top" title="Operation that wraps a method call" alt="" coords="899,506,1120,530"/>
+<area shape="rect" id="node17" href="#holoviews.operation.element.operation" target="_top" title="The most generic operation that wraps any callable into an" alt="" coords="894,552,1126,575"/>
+<area shape="rect" id="node18" href="#holoviews.operation.element.threshold" target="_top" title="Threshold a given Image whereby all values higher than a given" alt="" coords="894,598,1125,621"/>
+<area shape="rect" id="node19" href="#holoviews.operation.element.transform" target="_top" title="Generic Operation to transform an input Image or RGBA" alt="" coords="894,643,1126,667"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="270,370,538,393"/>
+<area shape="rect" id="node3" href="#holoviews.operation.element.apply_when" target="_top" title="Applies a selection depending on the current zoom range. If the" alt="" coords="583,370,828,393"/>
+<area shape="rect" id="node12" href="#holoviews.operation.element.gridmatrix" target="_top" title="The gridmatrix operation takes an Element or HoloMap" alt="" coords="588,415,822,439"/>
+<area shape="rect" id="node20" title="params(name=String)" alt="" coords="5,370,225,393"/>
+</map>

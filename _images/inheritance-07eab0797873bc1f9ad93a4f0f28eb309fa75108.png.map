@@ -1,0 +1,7 @@
+<map id="inheritance646aa5a76d" name="inheritance646aa5a76d">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.util.ProgressIndicator" target="_top" title="Baseclass for any ProgressIndicator that indicates progress" alt="" coords="289,30,525,55"/>
+<area shape="rect" id="node3" href="#holoviews.ipython.widgets.ProgressBar" target="_top" title="A simple text progress bar suitable for both the IPython notebook" alt="" coords="572,30,822,55"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="5,30,241,55"/>
+<area shape="rect" id="node4" href="#holoviews.ipython.widgets.RemoteProgress" target="_top" title="Connect to a progress bar in a separate process with output_mode" alt="" coords="870,5,1147,30"/>
+<area shape="rect" id="node5" href="#holoviews.ipython.widgets.RunProgress" target="_top" title="RunProgress breaks up the execution of a slow running command so" alt="" coords="881,54,1136,79"/>
+</map>

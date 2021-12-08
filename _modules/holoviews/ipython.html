@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.ipython — HoloViews v1.14.7a1</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents">
+<link href="../../genindex.html" rel="index" title="Index">
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.ipython</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">SkipTest</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">holoviews</span>
+
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">version_info</span>
+<span class="kn">from</span> <span class="nn">IPython.core.completer</span> <span class="kn">import</span> <span class="n">IPCompleter</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">publish_display_data</span>
+<span class="kn">from</span> <span class="nn">param</span> <span class="kn">import</span> <span class="n">ipython</span> <span class="k">as</span> <span class="n">param_ext</span>
+
+<span class="kn">from</span> <span class="nn">..core.dimension</span> <span class="kn">import</span> <span class="n">LabelledData</span>
+<span class="kn">from</span> <span class="nn">..core.tree</span> <span class="kn">import</span> <span class="n">AttrTree</span>
+<span class="kn">from</span> <span class="nn">..core.options</span> <span class="kn">import</span> <span class="n">Store</span>
+<span class="kn">from</span> <span class="nn">..element.comparison</span> <span class="kn">import</span> <span class="n">ComparisonTestCase</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">extension</span>
+<span class="kn">from</span> <span class="nn">..plotting.renderer</span> <span class="kn">import</span> <span class="n">Renderer</span>
+<span class="kn">from</span> <span class="nn">.magics</span> <span class="kn">import</span> <span class="n">load_magics</span>
+<span class="kn">from</span> <span class="nn">.display_hooks</span> <span class="kn">import</span> <span class="n">display</span>  <span class="c1"># noqa (API import)</span>
+<span class="kn">from</span> <span class="nn">.display_hooks</span> <span class="kn">import</span> <span class="n">pprint_display</span><span class="p">,</span> <span class="n">png_display</span><span class="p">,</span> <span class="n">svg_display</span>
+
+
+<span class="n">AttrTree</span><span class="o">.</span><span class="n">_disabled_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_repr_'</span><span class="p">,</span><span class="s1">'_ipython_canary_method_should_not_exist'</span><span class="p">]</span>
+
+<div class="viewcode-block" id="show_traceback"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.show_traceback">[docs]</a><span class="k">def</span> <span class="nf">show_traceback</span><span class="p">():</span>
+    <span class="sd">"""</span>
+<span class="sd">    Display the full traceback after an abbreviated traceback has occurred.</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span> <span class="nn">.display_hooks</span> <span class="kn">import</span> <span class="n">FULL_TRACEBACK</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">FULL_TRACEBACK</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IPTestCase"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.IPTestCase">[docs]</a><span class="k">class</span> <span class="nc">IPTestCase</span><span class="p">(</span><span class="n">ComparisonTestCase</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    This class extends ComparisonTestCase to handle IPython specific</span>
+<span class="sd">    objects and support the execution of cells and magic.</span>
+<span class="sd">    """</span>
+
+<div class="viewcode-block" id="IPTestCase.setUp"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.IPTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">IPython</span>
+            <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">SVG</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="n">IPython</span><span class="o">.</span><span class="n">InteractiveShell</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ip</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">"IPython could not be started"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addTypeEqualityFunc</span><span class="p">(</span><span class="n">HTML</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">skip_comparison</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addTypeEqualityFunc</span><span class="p">(</span><span class="n">SVG</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">skip_comparison</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">skip_comparison</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span> <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">_object_find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">obj</span>
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">failureException</span><span class="p">(</span><span class="s2">"Could not find object </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+
+<div class="viewcode-block" id="IPTestCase.cell"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.IPTestCase.cell">[docs]</a>    <span class="k">def</span> <span class="nf">cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+        <span class="s2">"Run an IPython cell"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">run_cell</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="IPTestCase.cell_magic"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.IPTestCase.cell_magic">[docs]</a>    <span class="k">def</span> <span class="nf">cell_magic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s2">"Run an IPython cell magic"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IPTestCase.line_magic"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.IPTestCase.line_magic">[docs]</a>    <span class="k">def</span> <span class="nf">line_magic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s2">"Run an IPython line magic"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="notebook_extension"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.notebook_extension">[docs]</a><span class="k">class</span> <span class="nc">notebook_extension</span><span class="p">(</span><span class="n">extension</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Notebook specific extension to hv.extension that offers options for</span>
+<span class="sd">    controlling the notebook environment.</span>
+<span class="sd">    """</span>
+
+    <span class="n">css</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"Optional CSS rule set to apply to the notebook."</span><span class="p">)</span>
+
+    <span class="n">logo</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"Toggles display of HoloViews logo"</span><span class="p">)</span>
+
+    <span class="n">inline</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to inline JS and CSS resources.</span>
+<span class="s2">        If disabled, resources are loaded from CDN if one is available."""</span><span class="p">)</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Width of the notebook as a percentage of the browser screen window width."""</span><span class="p">)</span>
+
+    <span class="n">display_formats</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">'html'</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        A list of formats that are rendered to the notebook where</span>
+<span class="s2">        multiple formats may be selected at once (although only one</span>
+<span class="s2">        format will be displayed).</span>
+
+<span class="s2">        Although the 'html' format is supported across backends, other</span>
+<span class="s2">        formats supported by the current backend (e.g. 'png' and 'svg'</span>
+<span class="s2">        using the matplotlib backend) may be used. This may be useful to</span>
+<span class="s2">        export figures to other formats such as PDF with nbconvert."""</span><span class="p">)</span>
+
+    <span class="n">allow_jedi_completion</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Whether to allow jedi tab-completion to be enabled in IPython.</span>
+<span class="s2">       Disabled by default because many HoloViews features rely on</span>
+<span class="s2">       tab-completion machinery not supported when using jedi."""</span><span class="p">)</span>
+
+    <span class="n">case_sensitive_completion</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Whether to monkey patch IPython to use the correct tab-completion</span>
+<span class="s2">       behavior. """</span><span class="p">)</span>
+
+    <span class="n">_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">comms</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'comms'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="c1"># Abort if IPython not found</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'ip'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">get_ipython</span><span class="p">()</span> <span class="c1"># noqa (get_ipython)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Notebook archive relies on display hooks being set to work.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">nbformat</span> <span class="c1"># noqa (ensures availability)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">nbformat</span> <span class="c1"># noqa (ensures availability)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.archive</span> <span class="kn">import</span> <span class="n">notebook_archive</span>
+                <span class="n">holoviews</span><span class="o">.</span><span class="n">archive</span> <span class="o">=</span> <span class="n">notebook_archive</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"module 'tornado.web' has no attribute 'asynchronous'"</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># Not quite right, should be set when switching backends</span>
+        <span class="k">if</span> <span class="s1">'matplotlib'</span> <span class="ow">in</span> <span class="n">Store</span><span class="o">.</span><span class="n">renderers</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">notebook_extension</span><span class="o">.</span><span class="n">_loaded</span><span class="p">:</span>
+            <span class="n">svg_exporter</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="s1">'matplotlib'</span><span class="p">]</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="n">holomap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">fig</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">)</span>
+            <span class="n">holoviews</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">exporters</span> <span class="o">=</span> <span class="p">[</span><span class="n">svg_exporter</span><span class="p">]</span> <span class="o">+</span> <span class="n">holoviews</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">exporters</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ParamOverrides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span><span class="o">!=</span><span class="s1">'config'</span><span class="p">})</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">case_sensitive_completion</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">IPython.core</span> <span class="kn">import</span> <span class="n">completer</span>
+            <span class="n">completer</span><span class="o">.</span><span class="n">completions_sorting_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">completions_sorting_key</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">allow_jedi_completion</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">IPCompleter</span><span class="p">,</span> <span class="s1">'use_jedi'</span><span class="p">):</span>
+            <span class="n">ip</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">'config'</span><span class="p">,</span> <span class="s1">'IPCompleter.use_jedi = False'</span><span class="p">)</span>
+
+        <span class="n">resources</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_resources</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+        <span class="n">Store</span><span class="o">.</span><span class="n">display_formats</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">display_formats</span>
+        <span class="k">if</span> <span class="s1">'html'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">display_formats</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">display_formats</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Output magic unable to control displayed format '</span>
+                   <span class="s1">'as IPython notebook uses fixed precedence '</span>
+                   <span class="s1">'between </span><span class="si">%r</span><span class="s1">'</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">display_formats</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;b&gt;Warning&lt;/b&gt;: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">msg</span><span class="p">))</span>
+
+        <span class="n">loaded</span> <span class="o">=</span> <span class="n">notebook_extension</span><span class="o">.</span><span class="n">_loaded</span>
+        <span class="k">if</span> <span class="n">loaded</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">param_ext</span><span class="o">.</span><span class="n">load_ipython_extension</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">load_magics</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+            <span class="n">Store</span><span class="o">.</span><span class="n">output_settings</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+            <span class="n">Store</span><span class="o">.</span><span class="n">set_display_hook</span><span class="p">(</span><span class="s1">'html+js'</span><span class="p">,</span> <span class="n">LabelledData</span><span class="p">,</span> <span class="n">pprint_display</span><span class="p">)</span>
+            <span class="n">Store</span><span class="o">.</span><span class="n">set_display_hook</span><span class="p">(</span><span class="s1">'png'</span><span class="p">,</span> <span class="n">LabelledData</span><span class="p">,</span> <span class="n">png_display</span><span class="p">)</span>
+            <span class="n">Store</span><span class="o">.</span><span class="n">set_display_hook</span><span class="p">(</span><span class="s1">'svg'</span><span class="p">,</span> <span class="n">LabelledData</span><span class="p">,</span> <span class="n">svg_display</span><span class="p">)</span>
+            <span class="n">notebook_extension</span><span class="o">.</span><span class="n">_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">css</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">width</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">css</span> <span class="o">+=</span> <span class="s1">'&lt;style&gt;div.container { width: </span><span class="si">%s%%</span><span class="s1"> }&lt;/style&gt;'</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">css</span><span class="p">:</span>
+            <span class="n">css</span> <span class="o">+=</span> <span class="s1">'&lt;style&gt;</span><span class="si">%s</span><span class="s1">&lt;/style&gt;'</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">css</span>
+
+        <span class="k">if</span> <span class="n">css</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">css</span><span class="p">))</span>
+
+        <span class="n">resources</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span>
+
+        <span class="kn">from</span> <span class="nn">panel</span> <span class="kn">import</span> <span class="n">config</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">'comms'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">comms</span><span class="p">:</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">comms</span> <span class="o">=</span> <span class="n">comms</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">resources</span> <span class="k">if</span> <span class="n">r</span> <span class="o">!=</span> <span class="s1">'holoviews'</span><span class="p">]:</span>
+            <span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">load_nb</span><span class="p">(</span><span class="n">inline</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">inline</span><span class="p">)</span>
+        <span class="n">Renderer</span><span class="o">.</span><span class="n">load_nb</span><span class="p">(</span><span class="n">inline</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">inline</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="s1">'kernel'</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">:</span>
+            <span class="n">Renderer</span><span class="o">.</span><span class="n">comm_manager</span><span class="o">.</span><span class="n">get_client_comm</span><span class="p">(</span><span class="n">notebook_extension</span><span class="o">.</span><span class="n">_process_comm_msg</span><span class="p">,</span>
+                                                  <span class="s2">"hv-extension-comm"</span><span class="p">)</span>
+
+        <span class="c1"># Create a message for the logo (if shown)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_hvjs</span><span class="p">(</span><span class="n">logo</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">logo</span><span class="p">,</span>
+                       <span class="n">bokeh_logo</span><span class="o">=</span>  <span class="n">p</span><span class="o">.</span><span class="n">logo</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">'bokeh'</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">),</span>
+                       <span class="n">mpl_logo</span><span class="o">=</span>    <span class="n">p</span><span class="o">.</span><span class="n">logo</span> <span class="ow">and</span> <span class="p">((</span><span class="s1">'matplotlib'</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">)</span>
+                                                <span class="ow">or</span> <span class="n">resources</span><span class="o">==</span><span class="p">[</span><span class="s1">'holoviews'</span><span class="p">]),</span>
+                       <span class="n">plotly_logo</span><span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">logo</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">'plotly'</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">))</span>
+
+<div class="viewcode-block" id="notebook_extension.completions_sorting_key"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.notebook_extension.completions_sorting_key">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">completions_sorting_key</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="s2">"Fixed version of IPyton.completer.completions_sorting_key"</span>
+        <span class="n">prio1</span><span class="p">,</span> <span class="n">prio2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'__'</span><span class="p">):</span>  <span class="n">prio1</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'_'</span><span class="p">):</span> <span class="n">prio1</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'='</span><span class="p">):</span>     <span class="n">prio1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'</span><span class="si">%%</span><span class="s1">'</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="s2">"%"</span> <span class="ow">in</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
+                <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:];</span>   <span class="n">prio2</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'%'</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="s2">"%"</span> <span class="ow">in</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:];</span>   <span class="n">prio2</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">prio1</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">prio2</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_get_resources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Finds the list of resources from the keyword parameters and pops</span>
+<span class="sd">        them out of the params dictionary.</span>
+<span class="sd">        """</span>
+        <span class="n">resources</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">disabled</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'holoviews'</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+                <span class="n">resources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                <span class="n">setting</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">setting</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">resource</span> <span class="o">!=</span> <span class="s1">'matplotlib'</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">resource</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">:</span>
+                        <span class="n">resources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">setting</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">disabled</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+
+        <span class="n">unmatched_args</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">unmatched_args</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;b&gt;Warning:&lt;/b&gt; Unrecognized resources </span><span class="si">%s</span><span class="s1">'</span>
+                         <span class="o">%</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unmatched_args</span><span class="p">)))</span>
+
+        <span class="n">resources</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">resources</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">disabled</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">'holoviews'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">disabled</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">'holoviews'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">):</span>
+            <span class="n">resources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'holoviews'</span><span class="p">]</span> <span class="o">+</span> <span class="n">resources</span>
+        <span class="k">return</span> <span class="n">resources</span>
+
+<div class="viewcode-block" id="notebook_extension.load_hvjs"><a class="viewcode-back" href="../../reference_manual/holoviews.ipython.html#holoviews.ipython.notebook_extension.load_hvjs">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_hvjs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">logo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bokeh_logo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mpl_logo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plotly_logo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">JS</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">'HoloViewsJS successfully loaded.'</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Displays javascript and CSS to initialize HoloViews widgets.</span>
+<span class="sd">        """</span>
+        <span class="kn">import</span> <span class="nn">jinja2</span>
+
+        <span class="n">templateLoader</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+        <span class="n">jinjaEnv</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">templateLoader</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">jinjaEnv</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">'load_notebook.html'</span><span class="p">)</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">({</span><span class="s1">'logo'</span><span class="p">:</span>        <span class="n">logo</span><span class="p">,</span>
+                                <span class="s1">'bokeh_logo'</span><span class="p">:</span>  <span class="n">bokeh_logo</span><span class="p">,</span>
+                                <span class="s1">'mpl_logo'</span><span class="p">:</span>    <span class="n">mpl_logo</span><span class="p">,</span>
+                                <span class="s1">'plotly_logo'</span><span class="p">:</span> <span class="n">plotly_logo</span><span class="p">,</span>
+                                <span class="s1">'message'</span><span class="p">:</span>     <span class="n">message</span><span class="p">})</span>
+        <span class="n">publish_display_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'text/html'</span><span class="p">:</span> <span class="n">html</span><span class="p">})</span></div></div>
+
+
+<span class="n">notebook_extension</span><span class="o">.</span><span class="n">add_delete_action</span><span class="p">(</span><span class="n">Renderer</span><span class="o">.</span><span class="n">_delete_plot</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">load_ipython_extension</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+    <span class="n">notebook_extension</span><span class="p">(</span><span class="n">ip</span><span class="o">=</span><span class="n">ip</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">unload_ipython_extension</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+    <span class="n">notebook_extension</span><span class="o">.</span><span class="n">_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

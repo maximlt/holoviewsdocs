@@ -1,0 +1,7 @@
+<map id="inheritance1f466cad3a" name="inheritance1f466cad3a">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.util.CFTimeConverter" target="_top" title="Defines conversions for cftime types by extending nc_time_axis." alt="" coords="611,55,893,80"/>
+<area shape="rect" id="node2" title="Converter for `datetime.date` and `datetime.datetime` data, or for" alt="" coords="322,55,527,80"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.util.EqHistNormalize" target="_top" title="holoviews.plotting.mpl.util.EqHistNormalize" alt="" coords="287,5,563,31"/>
+<area shape="rect" id="node4" title="A class which, when called, linearly normalizes data into the" alt="" coords="31,5,213,31"/>
+<area shape="rect" id="node5" title="The minimal interface for a converter to take custom data types (or" alt="" coords="5,55,239,80"/>
+</map>

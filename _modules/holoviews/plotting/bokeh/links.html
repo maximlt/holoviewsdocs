@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.bokeh.links — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.bokeh.links</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">CustomJS</span><span class="p">,</span> <span class="n">ToolbarBox</span>
+
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="n">isscalar</span>
+<span class="kn">from</span> <span class="nn">..links</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Link</span><span class="p">,</span> <span class="n">RectanglesTableLink</span><span class="p">,</span> <span class="n">DataLink</span><span class="p">,</span> <span class="n">RangeToolLink</span><span class="p">,</span>
+    <span class="n">SelectionLink</span><span class="p">,</span> <span class="n">VertexTableLink</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..plot</span> <span class="kn">import</span> <span class="n">GenericElementPlot</span><span class="p">,</span> <span class="n">GenericOverlayPlot</span>
+
+
+<span class="k">class</span> <span class="nc">LinkCallback</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">source_model</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">target_model</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source_handles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">target_handles</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">on_source_events</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">on_source_changes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">on_target_events</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">on_target_changes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">source_code</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">target_code</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root_model</span> <span class="o">=</span> <span class="n">root_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link</span> <span class="o">=</span> <span class="n">link</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_plot</span> <span class="o">=</span> <span class="n">source_plot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_plot</span> <span class="o">=</span> <span class="n">target_plot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+
+        <span class="n">references</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">get_param_values</span><span class="p">()</span>
+                      <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'source'</span><span class="p">,</span> <span class="s1">'target'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">)}</span>
+
+        <span class="k">for</span> <span class="n">sh</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_handles</span><span class="o">+</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">source_model</span><span class="p">]:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">'source'</span><span class="p">,</span> <span class="n">sh</span><span class="p">])</span>
+            <span class="n">references</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="n">sh</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">get_param_values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'source'</span><span class="p">,</span> <span class="s1">'target'</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">references</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">if</span> <span class="n">target_plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">sh</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_handles</span><span class="o">+</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_model</span><span class="p">]:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">'target'</span><span class="p">,</span> <span class="n">sh</span><span class="p">])</span>
+                <span class="n">references</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="n">sh</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_model</span> <span class="ow">in</span> <span class="n">source_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span>
+            <span class="n">src_model</span> <span class="o">=</span> <span class="n">source_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">source_model</span><span class="p">]</span>
+            <span class="n">src_cb</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">references</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">source_code</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_source_changes</span><span class="p">:</span>
+                <span class="n">src_model</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">src_cb</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_source_events</span><span class="p">:</span>
+                <span class="n">src_model</span><span class="o">.</span><span class="n">js_on_event</span><span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">src_cb</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">src_cb</span> <span class="o">=</span> <span class="n">src_cb</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">src_cb</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">target_plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_model</span> <span class="ow">in</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_code</span><span class="p">:</span>
+            <span class="n">tgt_model</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_model</span><span class="p">]</span>
+            <span class="n">tgt_cb</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">references</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_code</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_target_changes</span><span class="p">:</span>
+                <span class="n">tgt_model</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">tgt_cb</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_target_events</span><span class="p">:</span>
+                <span class="n">tgt_model</span><span class="o">.</span><span class="n">js_on_event</span><span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">tgt_cb</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tgt_cb</span> <span class="o">=</span> <span class="n">tgt_cb</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tgt_cb</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">find_links</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">root_plot</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Traverses the supplied plot and searches for any Links on</span>
+<span class="sd">        the plotted objects.</span>
+<span class="sd">        """</span>
+        <span class="n">plot_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">GenericElementPlot</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">GenericOverlayPlot</span><span class="p">)</span>
+        <span class="n">plots</span> <span class="o">=</span> <span class="n">root_plot</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">plot_fn</span><span class="p">])</span>
+        <span class="n">potentials</span> <span class="o">=</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">find_link</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span> <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">]</span>
+        <span class="n">source_links</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">potentials</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">plot</span><span class="p">,</span> <span class="n">links</span> <span class="ow">in</span> <span class="n">source_links</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">_requires_target</span><span class="p">:</span>
+                    <span class="c1"># If link has no target don't look further</span>
+                    <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">link</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+                    <span class="k">continue</span>
+                <span class="n">potentials</span> <span class="o">=</span> <span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">find_link</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">]</span>
+                <span class="n">tgt_links</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">potentials</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">tgt_links</span><span class="p">:</span>
+                    <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">link</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">tgt_links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">found</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">find_link</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Searches a GenericElementPlot for a Link.</span>
+<span class="sd">        """</span>
+        <span class="n">registry</span> <span class="o">=</span> <span class="n">Link</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">plot</span><span class="o">.</span><span class="n">link_sources</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">link</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">links</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">l</span> <span class="k">for</span> <span class="n">src</span><span class="p">,</span> <span class="n">links</span> <span class="ow">in</span> <span class="n">registry</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">links</span>
+                    <span class="k">if</span> <span class="n">src</span> <span class="ow">is</span> <span class="n">source</span> <span class="ow">or</span> <span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">_plot_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                                         <span class="n">src</span><span class="o">.</span><span class="n">_plot_id</span> <span class="o">==</span> <span class="n">source</span><span class="o">.</span><span class="n">_plot_id</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">links</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">link</span><span class="o">.</span><span class="n">target</span> <span class="ow">is</span> <span class="n">source</span><span class="p">)</span> <span class="ow">or</span>
+                    <span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                     <span class="n">link</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">_plot_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                     <span class="n">link</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">_plot_id</span> <span class="o">==</span> <span class="n">source</span><span class="o">.</span><span class="n">_plot_id</span><span class="p">)):</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="p">[</span><span class="n">link</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Should be subclassed to check if the source and target plots</span>
+<span class="sd">        are compatible to perform the linking.</span>
+<span class="sd">        """</span>
+
+
+<div class="viewcode-block" id="RangeToolLinkCallback"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.links.RangeToolLinkCallback">[docs]</a><span class="k">class</span> <span class="nc">RangeToolLinkCallback</span><span class="p">(</span><span class="n">LinkCallback</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Attaches a RangeTool to the source plot and links it to the</span>
+<span class="sd">    specified axes on the target plot</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">bokeh.models.tools</span> <span class="kn">import</span> <span class="n">RangeTool</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'RangeToolLink requires bokeh &gt;= 0.13'</span><span class="p">)</span>
+        <span class="n">toolbars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">root_model</span><span class="o">.</span><span class="n">select</span><span class="p">({</span><span class="s1">'type'</span><span class="p">:</span> <span class="n">ToolbarBox</span><span class="p">}))</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">'x'</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="s1">'x_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'x_range'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">'y'</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="s1">'y_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'y_range'</span><span class="p">]</span>
+        <span class="n">tool</span> <span class="o">=</span> <span class="n">RangeTool</span><span class="p">(</span><span class="o">**</span><span class="n">axes</span><span class="p">)</span>
+        <span class="n">source_plot</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">toolbars</span><span class="p">:</span>
+            <span class="n">toolbar</span> <span class="o">=</span> <span class="n">toolbars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">toolbar</span>
+            <span class="n">toolbar</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DataLinkCallback"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.links.DataLinkCallback">[docs]</a><span class="k">class</span> <span class="nc">DataLinkCallback</span><span class="p">(</span><span class="n">LinkCallback</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Merges the source and target ColumnDataSource</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="p">):</span>
+        <span class="n">src_cds</span> <span class="o">=</span> <span class="n">source_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span>
+        <span class="n">tgt_cds</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">src_cds</span> <span class="ow">is</span> <span class="n">tgt_cds</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">src_len</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">src_cds</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+        <span class="n">tgt_len</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tgt_cds</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="n">src_len</span> <span class="ow">and</span> <span class="n">tgt_len</span> <span class="ow">and</span> <span class="p">(</span><span class="n">src_len</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">tgt_len</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'DataLink source data length must match target '</span>
+                            <span class="s1">'data length, found source length of </span><span class="si">%d</span><span class="s1"> and '</span>
+                            <span class="s1">'target length of </span><span class="si">%d</span><span class="s1">.'</span> <span class="o">%</span> <span class="p">(</span><span class="n">src_len</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tgt_len</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="c1"># Ensure the data sources are compatible (i.e. overlapping columns are equal)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tgt_cds</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">src_cds</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">src_cds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="k">continue</span> <span class="c1"># Skip ragged arrays</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="n">isscalar</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">==</span> <span class="n">col</span><span class="p">)</span> <span class="ow">or</span>
+                    <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'iufc'</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span><span class="o">==</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">())</span> <span class="ow">or</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">src_cds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">equal_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'DataLink can only be applied if overlapping '</span>
+                                 <span class="s1">'dimension values are equal, </span><span class="si">%s</span><span class="s1"> column on source '</span>
+                                 <span class="s1">'does not match target'</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span>
+
+        <span class="n">src_cds</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tgt_cds</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">renderer</span> <span class="o">=</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'glyph_renderer'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">renderer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="s1">'data_source'</span> <span class="ow">in</span> <span class="n">renderer</span><span class="o">.</span><span class="n">properties</span><span class="p">():</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data_source</span><span class="o">=</span><span class="n">src_cds</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">src_cds</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="s1">'view'</span><span class="p">):</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">src_cds</span><span class="p">)</span>
+        <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">src_cds</span>
+        <span class="n">target_plot</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'cds'</span><span class="p">]</span> <span class="o">=</span> <span class="n">src_cds</span>
+        <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="n">target_plot</span><span class="o">.</span><span class="n">callbacks</span><span class="p">:</span>
+            <span class="n">callback</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">plot_id</span><span class="o">=</span><span class="n">root_model</span><span class="o">.</span><span class="n">ref</span><span class="p">[</span><span class="s1">'id'</span><span class="p">])</span></div>
+
+
+<span class="k">class</span> <span class="nc">SelectionLinkCallback</span><span class="p">(</span><span class="n">LinkCallback</span><span class="p">):</span>
+
+    <span class="n">source_model</span> <span class="o">=</span> <span class="s1">'selected'</span>
+    <span class="n">target_model</span> <span class="o">=</span> <span class="s1">'selected'</span>
+
+    <span class="n">on_source_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'indices'</span><span class="p">]</span>
+    <span class="n">on_target_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'indices'</span><span class="p">]</span>
+
+    <span class="n">source_handles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'cds'</span><span class="p">]</span>
+    <span class="n">target_handles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'cds'</span><span class="p">]</span>
+
+    <span class="n">source_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    target_selected.indices = source_selected.indices</span>
+<span class="s2">    target_cds.properties.selected.change.emit()</span>
+<span class="s2">    """</span>
+
+    <span class="n">target_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    source_selected.indices = target_selected.indices</span>
+<span class="s2">    source_cds.properties.selected.change.emit()</span>
+<span class="s2">    """</span>
+
+<div class="viewcode-block" id="RectanglesTableLinkCallback"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.links.RectanglesTableLinkCallback">[docs]</a><span class="k">class</span> <span class="nc">RectanglesTableLinkCallback</span><span class="p">(</span><span class="n">DataLinkCallback</span><span class="p">):</span>
+
+    <span class="n">source_model</span> <span class="o">=</span> <span class="s1">'cds'</span>
+    <span class="n">target_model</span> <span class="o">=</span> <span class="s1">'cds'</span>
+
+    <span class="n">source_handles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'glyph'</span><span class="p">]</span>
+
+    <span class="n">on_source_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'selected'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">]</span>
+    <span class="n">on_target_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'patching'</span><span class="p">]</span>
+
+    <span class="n">source_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    var xs = source_cds.data[source_glyph.x.field]</span>
+<span class="s2">    var ys = source_cds.data[source_glyph.y.field]</span>
+<span class="s2">    var ws = source_cds.data[source_glyph.width.field]</span>
+<span class="s2">    var hs = source_cds.data[source_glyph.height.field]</span>
+
+<span class="s2">    var x0 = []</span>
+<span class="s2">    var x1 = []</span>
+<span class="s2">    var y0 = []</span>
+<span class="s2">    var y1 = []</span>
+<span class="s2">    for (var i = 0; i &lt; xs.length; i++) {</span>
+<span class="s2">      var hw = ws[i]/2.</span>
+<span class="s2">      var hh = hs[i]/2.</span>
+<span class="s2">      x0.push(xs[i]-hw)</span>
+<span class="s2">      x1.push(xs[i]+hw)</span>
+<span class="s2">      y0.push(ys[i]-hh)</span>
+<span class="s2">      y1.push(ys[i]+hh)</span>
+<span class="s2">    }</span>
+<span class="s2">    target_cds.data[columns[0]] = x0</span>
+<span class="s2">    target_cds.data[columns[1]] = y0</span>
+<span class="s2">    target_cds.data[columns[2]] = x1</span>
+<span class="s2">    target_cds.data[columns[3]] = y1</span>
+<span class="s2">    """</span>
+
+    <span class="n">target_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    var x0s = target_cds.data[columns[0]]</span>
+<span class="s2">    var y0s = target_cds.data[columns[1]]</span>
+<span class="s2">    var x1s = target_cds.data[columns[2]]</span>
+<span class="s2">    var y1s = target_cds.data[columns[3]]</span>
+
+<span class="s2">    var xs = []</span>
+<span class="s2">    var ys = []</span>
+<span class="s2">    var ws = []</span>
+<span class="s2">    var hs = []</span>
+<span class="s2">    for (var i = 0; i &lt; x0s.length; i++) {</span>
+<span class="s2">      var x0 = Math.min(x0s[i], x1s[i])</span>
+<span class="s2">      var y0 = Math.min(y0s[i], y1s[i])</span>
+<span class="s2">      var x1 = Math.max(x0s[i], x1s[i])</span>
+<span class="s2">      var y1 = Math.max(y0s[i], y1s[i])</span>
+<span class="s2">      xs.push((x0+x1)/2.)</span>
+<span class="s2">      ys.push((y0+y1)/2.)</span>
+<span class="s2">      ws.push(x1-x0)</span>
+<span class="s2">      hs.push(y1-y0)</span>
+<span class="s2">    }</span>
+<span class="s2">    source_cds.data['x'] = xs</span>
+<span class="s2">    source_cds.data['y'] = ys</span>
+<span class="s2">    source_cds.data['width'] = ws</span>
+<span class="s2">    source_cds.data['height'] = hs</span>
+<span class="s2">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">DataLinkCallback</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="p">)</span>
+        <span class="n">LinkCallback</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_model</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">,</span> <span class="n">target_plot</span><span class="p">)</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">kd</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">kd</span> <span class="ow">in</span> <span class="n">source_plot</span><span class="o">.</span><span class="n">current_frame</span><span class="o">.</span><span class="n">kdims</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src_cb</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span> <span class="o">=</span> <span class="n">columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tgt_cb</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span> <span class="o">=</span> <span class="n">columns</span></div>
+
+
+<span class="k">class</span> <span class="nc">VertexTableLinkCallback</span><span class="p">(</span><span class="n">LinkCallback</span><span class="p">):</span>
+
+    <span class="n">source_model</span> <span class="o">=</span> <span class="s1">'cds'</span>
+    <span class="n">target_model</span> <span class="o">=</span> <span class="s1">'cds'</span>
+
+    <span class="n">on_source_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'selected'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">,</span> <span class="s1">'patching'</span><span class="p">]</span>
+    <span class="n">on_target_changes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'data'</span><span class="p">,</span> <span class="s1">'patching'</span><span class="p">]</span>
+
+    <span class="n">source_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    var index = source_cds.selected.indices[0];</span>
+<span class="s2">    if (index == undefined) {</span>
+<span class="s2">      var xs_column = [];</span>
+<span class="s2">      var ys_column = [];</span>
+<span class="s2">    } else {</span>
+<span class="s2">      var xs_column = source_cds.data['xs'][index];</span>
+<span class="s2">      var ys_column = source_cds.data['ys'][index];</span>
+<span class="s2">    }</span>
+<span class="s2">    if (xs_column == undefined) {</span>
+<span class="s2">      var xs_column = [];</span>
+<span class="s2">      var ys_column = [];</span>
+<span class="s2">    }</span>
+<span class="s2">    var xs = []</span>
+<span class="s2">    var ys = []</span>
+<span class="s2">    var empty = []</span>
+<span class="s2">    for (var i = 0; i &lt; xs_column.length; i++) {</span>
+<span class="s2">      xs.push(xs_column[i])</span>
+<span class="s2">      ys.push(ys_column[i])</span>
+<span class="s2">      empty.push(null)</span>
+<span class="s2">    }</span>
+<span class="s2">    var [x, y] = vertex_columns</span>
+<span class="s2">    target_cds.data[x] = xs</span>
+<span class="s2">    target_cds.data[y] = ys</span>
+<span class="s2">    var length = xs.length</span>
+<span class="s2">    for (var col in target_cds.data) {</span>
+<span class="s2">      if (vertex_columns.indexOf(col) != -1) { continue; }</span>
+<span class="s2">      else if (col in source_cds.data) {</span>
+<span class="s2">        var path = source_cds.data[col][index];</span>
+<span class="s2">        if ((path == undefined)) {</span>
+<span class="s2">          var data = empty;</span>
+<span class="s2">        } else if (path.length == length) {</span>
+<span class="s2">          var data = source_cds.data[col][index];</span>
+<span class="s2">        } else {</span>
+<span class="s2">          var data = empty;</span>
+<span class="s2">        }</span>
+<span class="s2">      } else {</span>
+<span class="s2">        var data = empty;</span>
+<span class="s2">      }</span>
+<span class="s2">      target_cds.data[col] = data;</span>
+<span class="s2">    }</span>
+<span class="s2">    target_cds.change.emit()</span>
+<span class="s2">    target_cds.data = target_cds.data</span>
+<span class="s2">    """</span>
+
+    <span class="n">target_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    if (!source_cds.selected.indices.length) { return }</span>
+<span class="s2">    var [x, y] = vertex_columns</span>
+<span class="s2">    var xs_column = target_cds.data[x]</span>
+<span class="s2">    var ys_column = target_cds.data[y]</span>
+<span class="s2">    var xs = []</span>
+<span class="s2">    var ys = []</span>
+<span class="s2">    var points = []</span>
+<span class="s2">    for (var i = 0; i &lt; xs_column.length; i++) {</span>
+<span class="s2">      xs.push(xs_column[i])</span>
+<span class="s2">      ys.push(ys_column[i])</span>
+<span class="s2">      points.push(i)</span>
+<span class="s2">    }</span>
+<span class="s2">    var index = source_cds.selected.indices[0]</span>
+<span class="s2">    var xpaths = source_cds.data['xs']</span>
+<span class="s2">    var ypaths = source_cds.data['ys']</span>
+<span class="s2">    var length = source_cds.data['xs'].length</span>
+<span class="s2">    for (var col in target_cds.data) {</span>
+<span class="s2">      if ((col == x) || (col == y)) { continue; }</span>
+<span class="s2">      if (!(col in source_cds.data)) {</span>
+<span class="s2">        var empty = []</span>
+<span class="s2">        for (var i = 0; i &lt; length; i++)</span>
+<span class="s2">          empty.push([])</span>
+<span class="s2">        source_cds.data[col] = empty</span>
+<span class="s2">      }</span>
+<span class="s2">      source_cds.data[col][index] = target_cds.data[col]</span>
+<span class="s2">      for (var p of points) {</span>
+<span class="s2">        for (var pindex = 0; pindex &lt; xpaths.length; pindex++) {</span>
+<span class="s2">          if (pindex != index) { continue }</span>
+<span class="s2">          var xs = xpaths[pindex]</span>
+<span class="s2">          var ys = ypaths[pindex]</span>
+<span class="s2">          var column = source_cds.data[col][pindex]</span>
+<span class="s2">          if (column.length != xs.length) {</span>
+<span class="s2">            for (var ind = 0; ind &lt; xs.length; ind++) {</span>
+<span class="s2">              column.push(null)</span>
+<span class="s2">            }</span>
+<span class="s2">          }</span>
+<span class="s2">          for (var ind = 0; ind &lt; xs.length; ind++) {</span>
+<span class="s2">            if ((xs[ind] == xpaths[index][p]) &amp;&amp; (ys[ind] == ypaths[index][p])) {</span>
+<span class="s2">              column[ind] = target_cds.data[col][p]</span>
+<span class="s2">              xs[ind] = xs[p];</span>
+<span class="s2">              ys[ind] = ys[p];</span>
+<span class="s2">            }</span>
+<span class="s2">          }</span>
+<span class="s2">        }</span>
+<span class="s2">      }</span>
+<span class="s2">    }</span>
+<span class="s2">    xpaths[index] = xs;</span>
+<span class="s2">    ypaths[index] = ys;</span>
+<span class="s2">    source_cds.change.emit()</span>
+<span class="s2">    source_cds.properties.data.change.emit();</span>
+<span class="s2">    source_cds.data = source_cds.data</span>
+<span class="s2">    """</span>
+
+
+<span class="n">callbacks</span> <span class="o">=</span> <span class="n">Link</span><span class="o">.</span><span class="n">_callbacks</span><span class="p">[</span><span class="s1">'bokeh'</span><span class="p">]</span>
+
+<span class="n">callbacks</span><span class="p">[</span><span class="n">RangeToolLink</span><span class="p">]</span> <span class="o">=</span> <span class="n">RangeToolLinkCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">DataLink</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataLinkCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">SelectionLink</span><span class="p">]</span> <span class="o">=</span> <span class="n">SelectionLinkCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">VertexTableLink</span><span class="p">]</span> <span class="o">=</span> <span class="n">VertexTableLinkCallback</span>
+<span class="n">callbacks</span><span class="p">[</span><span class="n">RectanglesTableLink</span><span class="p">]</span> <span class="o">=</span> <span class="n">RectanglesTableLinkCallback</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<map id="inheritance4846707464" name="inheritance4846707464">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="350,61,500,76"/>
+<area shape="rect" id="node4" href="holoviews.core.html#holoviews.core.dimension.ViewableElement" target="_top" title="A ViewableElement is a dimensioned datastructure that may be" alt="" coords="528,61,693,76"/>
+<area shape="rect" id="node2" href="holoviews.core.html#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="171,61,322,76"/>
+<area shape="rect" id="node3" title="params(name=String)" alt="" coords="3,61,143,76"/>
+<area shape="rect" id="node5" href="holoviews.core.html#holoviews.core.element.Element" target="_top" title="Element is the atomic datastructure used to wrap some data with" alt="" coords="721,32,846,47"/>
+<area shape="rect" id="node8" href="holoviews.core.html#holoviews.core.element.Element2D" target="_top" title="holoviews.core.element.Element2D" alt="" coords="874,32,1009,47"/>
+<area shape="rect" id="node6" title="Composable is a mix&#45;in class to allow Dimensioned objects to be" alt="" coords="544,3,677,18"/>
+<area shape="rect" id="node7" href="holoviews.core.html#holoviews.core.overlay.Overlayable" target="_top" title="Overlayable provides a mix&#45;in class to support the" alt="" coords="543,32,678,47"/>
+<area shape="rect" id="node10" href="#holoviews.element.tiles.Tiles" target="_top" title="The Tiles element represents tile sources, specified as URL" alt="" coords="1037,32,1149,47"/>
+<area shape="rect" id="node9" title="Layoutable provides a mix&#45;in class to support the" alt="" coords="361,3,489,18"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="inheritanceeb94dfc82e" name="inheritanceeb94dfc82e">
+<area shape="rect" id="node1" href="#holoviews.core.boundingregion.AARectangle" target="_top" title="Axis&#45;aligned rectangle class." alt="" coords="15,104,303,129"/>
+<area shape="rect" id="node2" href="#holoviews.core.boundingregion.BoundingBox" target="_top" title="A rectangular bounding box defined either by two points forming" alt="" coords="402,55,691,80"/>
+<area shape="rect" id="node4" href="#holoviews.core.boundingregion.BoundingEllipse" target="_top" title="Similar to BoundingBox, but the region is the ellipse" alt="" coords="780,55,1085,80"/>
+<area shape="rect" id="node3" href="#holoviews.core.boundingregion.BoundingRegion" target="_top" title="Abstract bounding region class, for any portion of a 2D plane." alt="" coords="5,55,313,80"/>
+<area shape="rect" id="node5" href="#holoviews.core.boundingregion.BoundingRegionParameter" target="_top" title="Parameter whose value can be any BoundingRegion instance, enclosing a" alt="" coords="361,5,732,31"/>
+<area shape="rect" id="node6" title="An attribute descriptor for declaring parameters." alt="" coords="52,5,267,31"/>
+</map>

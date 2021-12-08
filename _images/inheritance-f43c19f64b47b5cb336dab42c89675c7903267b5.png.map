@@ -1,0 +1,13 @@
+<map id="inheritance5d62e1a122" name="inheritance5d62e1a122">
+<area shape="rect" id="node1" href="#holoviews.core.io.Archive" target="_top" title="An Archive is a means to collect and store a collection of" alt="" coords="351,5,523,31"/>
+<area shape="rect" id="node7" href="#holoviews.core.io.FileArchive" target="_top" title="A file archive stores files on disk, either unpacked in a" alt="" coords="631,5,824,31"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="5,55,244,80"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="292,55,583,80"/>
+<area shape="rect" id="node9" href="#holoviews.core.io.Reference" target="_top" title="A Reference allows access to an object to be deferred until it is" alt="" coords="343,104,532,129"/>
+<area shape="rect" id="node3" href="#holoviews.core.io.Deserializer" target="_top" title="A generic importer that supports any arbitrary de&#45;serializer." alt="" coords="872,5,1071,31"/>
+<area shape="rect" id="node4" href="#holoviews.core.io.Importer" target="_top" title="An Importer is a parameterized function that accepts some data in" alt="" coords="639,55,816,80"/>
+<area shape="rect" id="node11" href="#holoviews.core.io.Unpickler" target="_top" title="The inverse of Pickler used to load the .hvz file format which is" alt="" coords="879,55,1063,80"/>
+<area shape="rect" id="node5" href="#holoviews.core.io.Exporter" target="_top" title="An Exporter is a parameterized function that accepts a HoloViews" alt="" coords="638,104,817,129"/>
+<area shape="rect" id="node8" href="#holoviews.core.io.Pickler" target="_top" title="The recommended pickler for serializing HoloViews object to a .hvz" alt="" coords="887,104,1055,129"/>
+<area shape="rect" id="node10" href="#holoviews.core.io.Serializer" target="_top" title="A generic exporter that supports any arbitrary serializer" alt="" coords="879,153,1063,179"/>
+</map>

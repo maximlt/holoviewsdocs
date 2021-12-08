@@ -1,0 +1,10 @@
+<map id="inheritance820278db0b" name="inheritance820278db0b">
+<area shape="rect" id="node1" href="#holoviews.ipython.preprocessors.OptsMagicProcessor" target="_top" title="Preprocessor to convert notebooks to Python source to convert use of" alt="" coords="960,3,1146,17"/>
+<area shape="rect" id="node2" title="A configurable preprocessor" alt="" coords="776,43,931,57"/>
+<area shape="rect" id="node3" href="#holoviews.ipython.preprocessors.OutputMagicProcessor" target="_top" title="Preprocessor to convert notebooks to Python source to convert use of" alt="" coords="957,30,1149,43"/>
+<area shape="rect" id="node4" href="#holoviews.ipython.preprocessors.StripMagicsProcessor" target="_top" title="Preprocessor to convert notebooks to Python source to strips out all" alt="" coords="958,56,1148,70"/>
+<area shape="rect" id="node5" href="#holoviews.ipython.preprocessors.Substitute" target="_top" title="An nbconvert preprocessor that substitutes one set of HTML data" alt="" coords="977,83,1128,97"/>
+<area shape="rect" id="node6" title="Global configurable class for shared config" alt="" coords="621,43,750,57"/>
+<area shape="rect" id="node7" title="A parent class for Configurables that log." alt="" coords="428,43,595,57"/>
+<area shape="rect" id="node10" title="The base class for all classes that have descriptors." alt="" coords="3,43,115,57"/>
+</map>

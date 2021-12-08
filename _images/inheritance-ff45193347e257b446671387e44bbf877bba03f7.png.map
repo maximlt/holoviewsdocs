@@ -1,0 +1,9 @@
+<map id="inheritance7ed2bd6f57" name="inheritance7ed2bd6f57">
+<area shape="rect" id="node1" href="#holoviews.util.Dynamic" target="_top" title="Dynamically applies a callable to the Elements in any HoloViews" alt="" coords="634,5,791,31"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="292,80,583,105"/>
+<area shape="rect" id="node4" title="Base class for pyviz extensions, which allow defining shared cleanup" alt="" coords="631,55,795,80"/>
+<area shape="rect" id="node5" href="#holoviews.util.opts" target="_top" title="Utility function to set options at the global level or to provide an" alt="" coords="647,104,778,129"/>
+<area shape="rect" id="node6" href="#holoviews.util.output" target="_top" title="Helper used to set HoloViews display options." alt="" coords="641,153,784,179"/>
+<area shape="rect" id="node3" href="#holoviews.util.extension" target="_top" title="Helper utility used to load holoviews extensions. These can be" alt="" coords="843,55,1005,80"/>
+<area shape="rect" id="node7" title="params(name=String)" alt="" coords="5,80,244,105"/>
+</map>

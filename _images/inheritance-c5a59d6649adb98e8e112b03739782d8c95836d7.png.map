@@ -1,0 +1,7 @@
+<map id="inheritancebb5816afae" name="inheritancebb5816afae">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="448,4,613,22"/>
+<area shape="rect" id="node3" href="#holoviews.operation.normalization.Normalization" target="_top" title="Base class for all normalization operation." alt="" coords="648,4,867,22"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="208,4,414,22"/>
+<area shape="rect" id="node4" href="#holoviews.operation.normalization.raster_normalization" target="_top" title="Normalizes elements of type Raster." alt="" coords="901,4,1148,22"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="4,4,174,22"/>
+</map>

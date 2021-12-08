@@ -1,0 +1,1197 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.util Package — HoloViews v1.14.7a1</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../about.html" rel="author" title="About these documents"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../FAQ.html" rel="next" title="FAQ"/>
+<link href="holoviews.streams.html" rel="prev" title="streams Module"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#util-package">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     util
+    </span>
+</code>
+   Package
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#command-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     command
+    </span>
+</code>
+   Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parser-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     parser
+    </span>
+</code>
+   Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#settings-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     settings
+    </span>
+</code>
+   Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#transform-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     transform
+    </span>
+</code>
+   Module
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/holoviews/1.14.7a1?urlpath=lab/tree/examples/reference_manual/holoviews.util.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<div class="section" id="holoviews-util-package">
+<h1>holoviews.util Package<a class="headerlink" href="#holoviews-util-package" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils"/>
+<div class="section" id="util-package">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of holoviews.util" class="inheritance graphviz" src="../_images/inheritance-ff45193347e257b446671387e44bbf877bba03f7.png" usemap="#inheritance7ed2bd6f57"/></div>
+<map id="inheritance7ed2bd6f57" name="inheritance7ed2bd6f57">
+<area alt="" coords="634,5,791,31" href="#holoviews.util.Dynamic" id="node1" shape="rect" target="_top" title="Dynamically applies a callable to the Elements in any HoloViews"/>
+<area alt="" coords="647,104,778,129" href="#holoviews.util.opts" id="node5" shape="rect" target="_top" title="Utility function to set options at the global level or to provide an"/>
+<area alt="" coords="641,153,784,179" href="#holoviews.util.output" id="node6" shape="rect" target="_top" title="Helper used to set HoloViews display options."/>
+<area alt="" coords="843,55,1005,80" href="#holoviews.util.extension" id="node3" shape="rect" target="_top" title="Helper utility used to load holoviews extensions. These can be"/>
+</map><span class="target" id="module-holoviews.util"></span><dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.Dynamic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">Dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#Dynamic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.Dynamic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">param.parameterized.ParameterizedFunction</span></code></p>
+<p>Dynamically applies a callable to the Elements in any HoloViews
+object. Will return a DynamicMap wrapping the original map object,
+which will lazily evaluate when a key is requested. By default
+Dynamic applies a no-op, making it useful for converting HoloMaps
+to a DynamicMap.</p>
+<p>Any supplied kwargs will be passed to the callable and any streams
+will be instantiated on the returned DynamicMap. If the supplied
+operation is a method on a parameterized object which was
+decorated with parameter dependencies Dynamic will automatically
+create a stream to watch the parameter changes. This default
+behavior may be disabled by setting watch=False.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">operation</span></code> = param.Callable(label=’Operation’)</dt><dd><p>Operation or user-defined callable to apply dynamically</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">kwargs</span></code> = param.Dict(class_=&lt;class ‘dict’&gt;, default={}, label=’Kwargs’)</dt><dd><p>Keyword arguments passed to the function.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">link_inputs</span></code> = param.Boolean(bounds=(0, 1), default=True, label=’Link inputs’)</dt><dd><p>If Dynamic is applied to another DynamicMap, determines whether
+         linked streams attached to its Callable inputs are
+         transferred to the output of the utility.
+
+         For example if the Dynamic utility is applied to a DynamicMap
+         with an RangeXY, this switch determines whether the
+         corresponding visualization should update this stream with
+         range changes originating from the newly generated axes.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">link_dataset</span></code> = param.Boolean(bounds=(0, 1), default=True, label=’Link dataset’)</dt><dd><p>Determines whether the output of the operation should inherit
+         the .dataset property of the input to the operation. Helpful
+         for tracking data providence for user supplied functions,
+         which do not make use of the clone method. Should be disabled
+         for operations where the output is not derived from the input
+         and instead depends on some external state.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">shared_data</span></code> = param.Boolean(bounds=(0, 1), default=False, label=’Shared data’)</dt><dd><p>Whether the cloned DynamicMap will share the same cache.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">streams</span></code> = param.ClassSelector(class_=(&lt;class ‘list’&gt;, &lt;class ‘dict’&gt;), default=[], label=’Streams’)</dt><dd><p>List of streams to attach to the returned DynamicMap</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.Dynamic.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.Dynamic.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of this class, copying parameters from any
+existing instance provided.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.Dynamic.script_repr">
+<span class="sig-name descname"><span class="pre">script_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>    <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.Dynamic.script_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.examples">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">examples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'holoviews-examples'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/Users/mliquet/work/dev/holoviews/holoviews/util/__init__.py'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#examples"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.examples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the notebooks to the supplied path.</p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.extension">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#extension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyviz_comms.extension</span></code></p>
+<p>Helper utility used to load holoviews extensions. These can be
+plotting extensions, element extensions or anything else that can be
+registered to work with HoloViews.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.extension.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.extension.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of this class, copying parameters from any
+existing instance provided.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.extension.register_backend_callback">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_backend_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#extension.register_backend_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.extension.register_backend_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a hook which is run when a backend is loaded</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.extension.script_repr">
+<span class="sig-name descname"><span class="pre">script_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>    <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.extension.script_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.opts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#opts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.opts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">param.parameterized.ParameterizedFunction</span></code></p>
+<p>Utility function to set options at the global level or to provide an
+Options object that can be used with the .options method of an
+element or container.</p>
+<p>Option objects can be generated and validated in a tab-completable
+way (in appropriate environments such as Jupyter notebooks) using
+completers such as opts.Curve, opts.Image, opts.Overlay, etc.</p>
+<p>To set opts globally you can pass these option objects into opts.defaults:</p>
+<p>opts.defaults(<a href="#id1"><span class="problematic" id="id2">*</span></a>options)</p>
+<p>For instance:</p>
+<p>opts.defaults(opts.Curve(color=’red’))</p>
+<p>To set opts on a specific object, you can supply these option
+objects to the .options method.</p>
+<p>For instance:</p>
+<p>curve = hv.Curve([1,2,3])
+curve.options(opts.Curve(color=’red’))</p>
+<p>The options method also accepts lists of Option objects.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">strict</span></code> = param.Boolean(bounds=(0, 1), default=False, label=’Strict’)</dt><dd><p>Whether to be strict about the options specification. If not set
+       to strict (default), any invalid keywords are simply skipped. If
+       strict, invalid keywords prevent the options being applied.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.opts.apply_groups">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#opts.apply_groups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.opts.apply_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies nested options definition grouped by type.</p>
+<p>Applies options on an object or nested group of objects,
+returning a new object with the options applied. This method
+accepts the separate option namespaces explicitly (i.e. ‘plot’,
+‘style’, and ‘norm’).</p>
+<p>If the options are to be set directly on the object a
+simple format may be used, e.g.:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>opts.apply_groups(obj, style={‘cmap’: ‘viridis’},</dt><dd><p>plot={‘show_title’: False})</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If the object is nested the options must be qualified using
+a type[.group][.label] specification, e.g.:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>opts.apply_groups(obj, {‘Image’: {‘plot’:  {‘show_title’: False},</dt><dd><p>‘style’: {‘cmap’: ‘viridis}}})</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If no opts are supplied all options on the object will be reset.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>options (dict): Options specification</dt><dd><p>Options specification should be indexed by
+type[.group][.label] or option type (‘plot’, ‘style’,
+‘norm’).</p>
+</dd>
+<dt>backend (optional): Backend to apply options to</dt><dd><p>Defaults to current selected backend</p>
+</dd>
+<dt>clone (bool, optional): Whether to clone object</dt><dd><p>Options can be applied inplace with clone=False</p>
+</dd>
+<dt><a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: Keywords of options by type</dt><dd><p>Applies options directly to the object by type
+(e.g. ‘plot’, ‘style’, ‘norm’) specified as
+dictionaries.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Returns the object or a clone with the options applied</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.opts.defaults">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">defaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#opts.defaults"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.opts.defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default options for a session.</p>
+<p>Set default options for a session. whether in a Python script or
+a Jupyter notebook.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p><a href="#id5"><span class="problematic" id="id6">*</span></a>options: Option objects used to specify the defaults.
+backend:  The plotting extension the options apply to</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.opts.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.opts.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of this class, copying parameters from any
+existing instance provided.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.opts.script_repr">
+<span class="sig-name descname"><span class="pre">script_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>    <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.opts.script_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.output">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">param.parameterized.ParameterizedFunction</span></code></p>
+<p>Helper used to set HoloViews display options.
+Arguments are supplied as a series of keywords in any order:</p>
+<p>backend      : The backend used by HoloViews
+fig          : The static figure format
+holomap      : The display type for holomaps
+widgets      : The widget mode for widgets
+fps          : The frames per second used for animations
+max_frames   : The max number of frames rendered (default 500)
+size         : The percentage size of displayed output
+dpi          : The rendered dpi of the figure
+filename    : The filename of the saved output, if any (default None)
+info    : The information to page about the displayed objects (default False)
+css     : Optional css style attributes to apply to the figure image tag
+widget_location : The position of the widgets relative to the plot</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.output.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.output.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of this class, copying parameters from any
+existing instance provided.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.output.script_repr">
+<span class="sig-name descname"><span class="pre">script_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span>    <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.output.script_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.render">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the HoloViews object to the corresponding object in the
+specified backend, e.g. a Matplotlib or Bokeh figure.</p>
+<p>The backend defaults to the currently declared default
+backend. The resulting object can then be used with other objects
+in the specified backend. For instance, if you want to make a
+multi-part Bokeh figure using a plot type only available in
+HoloViews, you can use this function to return a Bokeh figure that
+you can use like any hand-constructed Bokeh figure in a Bokeh
+layout.</p>
+<dl class="simple">
+<dt>obj: HoloViews object</dt><dd><p>The HoloViews object to render</p>
+</dd>
+<dt>backend: string</dt><dd><p>A valid HoloViews rendering backend</p>
+</dd>
+<dt><a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs: dict</dt><dd><p>Additional keyword arguments passed to the renderer,
+e.g. fps for animations</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>renderered:</dt><dd><p>The rendered representation of the HoloViews object, e.g.
+if backend=’matplotlib’ a matplotlib Figure or FuncAnimation</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.renderer">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">renderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#renderer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.renderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper utility to access the active renderer for a given extension.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.save">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cdn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toolbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the supplied object to file.</p>
+<p>The available output formats depend on the backend being used. By
+default and if the filename is a string the output format will be
+inferred from the file extension. Otherwise an explicit format
+will need to be specified. For ambiguous file extensions such as
+html it may be necessary to specify an explicit fmt to override
+the default, e.g. in the case of ‘html’ output the widgets will
+default to fmt=’widgets’, which may be changed to scrubber widgets
+using fmt=’scrubber’.</p>
+<dl class="simple">
+<dt>obj: HoloViews object</dt><dd><p>The HoloViews object to save to file</p>
+</dd>
+<dt>filename: string or IO object</dt><dd><p>The filename or BytesIO/StringIO object to save to</p>
+</dd>
+<dt>fmt: string</dt><dd><p>The format to save the object as, e.g. png, svg, html, or gif
+and if widgets are desired either ‘widgets’ or ‘scrubber’</p>
+</dd>
+<dt>backend: string</dt><dd><p>A valid HoloViews rendering backend, e.g. bokeh or matplotlib</p>
+</dd>
+<dt>resources: string or bokeh.resource.Resources</dt><dd><p>Bokeh resources used to load bokehJS components. Defaults to
+CDN, to embed resources inline for offline usage use ‘inline’
+or bokeh.resources.INLINE.</p>
+</dd>
+<dt>toolbar: bool or None</dt><dd><p>Whether to include toolbars in the exported plot. If None,
+display the toolbar unless fmt is <cite>png</cite> and backend is <cite>bokeh</cite>.
+If <cite>True</cite>, always include the toolbar.  If <cite>False</cite>, do not include the
+toolbar.</p>
+</dd>
+<dt>title: string</dt><dd><p>Custom title for exported HTML file</p>
+</dd>
+<dt><a href="#id9"><span class="problematic" id="id10">**</span></a>kwargs: dict</dt><dd><p>Additional keyword arguments passed to the renderer,
+e.g. fps for animations</p>
+</dd>
+</dl>
+</dd></dl>
+</div>
+<hr class="docutils"/>
+<div class="section" id="command-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">command</span></code> Module<a class="headerlink" href="#command-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-holoviews.util.command"></span><p>python -m holoviews.util.command Conversion_Example.ipynb
+OR
+holoviews Conversion_Example.ipynb</p>
+</div>
+<hr class="docutils"/>
+<div class="section" id="parser-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code> Module<a class="headerlink" href="#parser-module" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of holoviews.util.parser" class="inheritance graphviz" src="../_images/inheritance-a5858383ecac938a4a8c9435610b030a77d950d3.png" usemap="#inheritance7bb7407369"/></div>
+<map id="inheritance7bb7407369" name="inheritance7bb7407369">
+<area alt="" coords="292,55,536,80" href="#holoviews.util.parser.CompositorSpec" id="node1" shape="rect" target="_top" title="The syntax for defining a set of compositor is as follows:"/>
+<area alt="" coords="32,80,217,105" href="#holoviews.util.parser.Parser" id="node2" shape="rect" target="_top" title="Base class for magic line parsers, designed for forgiving parsing"/>
+<area alt="" coords="312,104,516,129" href="#holoviews.util.parser.OptsSpec" id="node3" shape="rect" target="_top" title="An OptsSpec is a string specification that describes an"/>
+<area alt="" coords="297,5,531,31" href="#holoviews.util.parser.ParserWarning" id="node4" shape="rect" target="_top" title="holoviews.util.parser.ParserWarning"/>
+</map><span class="target" id="module-holoviews.util.parser"></span><p>The magics offered by the HoloViews IPython extension are powerful and
+support rich, compositional specifications. To avoid the the brittle,
+convoluted code that results from trying to support the syntax in pure
+Python, this file defines suitable parsers using pyparsing that are
+cleaner and easier to understand.</p>
+<p>Pyparsing is required by matplotlib and will therefore be available if
+HoloViews is being used in conjunction with matplotlib.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.parser.CompositorSpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.parser.</span></span><span class="sig-name descname"><span class="pre">CompositorSpec</span></span><a class="reference internal" href="../_modules/holoviews/util/parser.html#CompositorSpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.CompositorSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#holoviews.util.parser.Parser" title="holoviews.util.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">holoviews.util.parser.Parser</span></code></a></p>
+<p>The syntax for defining a set of compositor is as follows:</p>
+<p>[ mode op(spec) [settings] value ]+</p>
+<p>The components are:</p>
+<p>mode      : Operation mode, either ‘data’ or ‘display’.
+group     : Value identifier with capitalized initial letter.
+op        : The name of the operation to apply.
+spec      : Overlay specification of form (A * B) where A and B are</p>
+<blockquote>
+<div><p>dotted path specifications.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>settings<span class="classifier">Optional list of keyword arguments to be used as</span></dt><dd><p>parameters to the operation (in square brackets).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.CompositorSpec.collect_tokens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collect_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.parser.CompositorSpec.collect_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect the tokens from a (potentially) nested parse result.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.CompositorSpec.parse">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#CompositorSpec.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.CompositorSpec.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse compositor specifications, returning a list Compositors</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.CompositorSpec.todict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">todict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'parens'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.parser.CompositorSpec.todict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).</p>
+<p>The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.parser.</span></span><span class="sig-name descname"><span class="pre">OptsSpec</span></span><a class="reference internal" href="../_modules/holoviews/util/parser.html#OptsSpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.OptsSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#holoviews.util.parser.Parser" title="holoviews.util.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">holoviews.util.parser.Parser</span></code></a></p>
+<p>An OptsSpec is a string specification that describes an
+OptionTree. It is a list of tree path specifications (using dotted
+syntax) separated by keyword lists for any of the style, plotting
+or normalization options. These keyword lists are denoted
+‘plot(..)’, ‘style(…)’ and ‘norm(…)’  respectively.  These
+three groups may be specified even more concisely using keyword
+lists delimited by square brackets, parentheses and braces
+respectively.  All these sets are optional and may be supplied in
+any order.</p>
+<p>For instance, the following string:</p>
+<p>Image (interpolation=None) plot(show_title=False) Curve style(color=’r’)</p>
+<p>Would specify an OptionTree where Image has “interpolation=None”
+for style and ‘show_title=False’ for plot options. The Curve has a
+style set such that color=’r’.</p>
+<p>The parser is fairly forgiving; commas between keywords are
+optional and additional spaces are often allowed. The only
+restriction is that keywords <em>must</em> be immediately followed by the
+‘=’ sign (no space).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.apply_deprecations">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply_deprecations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#OptsSpec.apply_deprecations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.OptsSpec.apply_deprecations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert any potentially deprecated paths and issue appropriate warnings</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.collect_tokens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collect_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.parser.OptsSpec.collect_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect the tokens from a (potentially) nested parse result.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.parse">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#OptsSpec.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.OptsSpec.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse an options specification, returning a dictionary with
+path keys and {‘plot’:&lt;options&gt;, ‘style’:&lt;options&gt;} values.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.parse_options">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#OptsSpec.parse_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.OptsSpec.parse_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to parse but returns a list of Options objects instead
+of the dictionary format.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.process_normalization">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_normalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse_group</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#OptsSpec.process_normalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.OptsSpec.process_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a normalization parse group (i.e. the contents of the
+braces), validate the option list and compute the appropriate
+integer value for the normalization plotting option.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.OptsSpec.todict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">todict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'parens'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.parser.OptsSpec.todict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).</p>
+<p>The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.parser.Parser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.parser.</span></span><span class="sig-name descname"><span class="pre">Parser</span></span><a class="reference internal" href="../_modules/holoviews/util/parser.html#Parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for magic line parsers, designed for forgiving parsing
+of keyword lists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.Parser.collect_tokens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collect_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#Parser.collect_tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.Parser.collect_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect the tokens from a (potentially) nested parse result.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.parser.Parser.todict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">todict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parseresult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'parens'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#Parser.todict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.Parser.todict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).</p>
+<p>The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.parser.ParserWarning">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.parser.</span></span><span class="sig-name descname"><span class="pre">ParserWarning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holomap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widgets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widget_location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/parser.html#ParserWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.parser.ParserWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">param.parameterized.Parameterized</span></code></p>
+</dd></dl>
+</div>
+<hr class="docutils"/>
+<div class="section" id="settings-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">settings</span></code> Module<a class="headerlink" href="#settings-module" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of holoviews.util.settings" class="inheritance graphviz" src="../_images/inheritance-84db90024865eeb3de4b64a769c7f3236f24a30f.png" usemap="#inheritance159927ddf8"/></div>
+<map id="inheritance159927ddf8" name="inheritance159927ddf8">
+<area alt="" coords="5,5,260,31" href="#holoviews.util.settings.KeywordSettings" id="node1" shape="rect" target="_top" title="Base class for options settings used to specified collections of"/>
+<area alt="" coords="308,5,551,31" href="#holoviews.util.settings.OutputSettings" id="node2" shape="rect" target="_top" title="Class for controlling display and output settings."/>
+</map><span class="target" id="module-holoviews.util.settings"></span><dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.settings.KeywordSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.settings.</span></span><span class="sig-name descname"><span class="pre">KeywordSettings</span></span><a class="reference internal" href="../_modules/holoviews/util/settings.html#KeywordSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.KeywordSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for options settings used to specified collections of
+keyword options.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.KeywordSettings.extract_keywords">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/settings.html#KeywordSettings.extract_keywords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.KeywordSettings.extract_keywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given the keyword string, parse a dictionary of options.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.KeywordSettings.get_options">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnfn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/settings.html#KeywordSettings.get_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.KeywordSettings.get_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a keyword specification, validate and compute options</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.KeywordSettings.update_options">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/settings.html#KeywordSettings.update_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.KeywordSettings.update_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows updating options depending on class attributes
+and unvalidated options.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.settings.OutputSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.settings.</span></span><span class="sig-name descname"><span class="pre">OutputSettings</span></span><a class="reference internal" href="../_modules/holoviews/util/settings.html#OutputSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.OutputSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#holoviews.util.settings.KeywordSettings" title="holoviews.util.settings.KeywordSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">holoviews.util.settings.KeywordSettings</span></code></a></p>
+<p>Class for controlling display and output settings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.OutputSettings.extract_keywords">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.settings.OutputSettings.extract_keywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given the keyword string, parse a dictionary of options.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.OutputSettings.get_options">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnfn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.settings.OutputSettings.get_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a keyword specification, validate and compute options</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.settings.OutputSettings.update_options">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/settings.html#OutputSettings.update_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.OutputSettings.update_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch default options and backend if new backend is supplied in
+items.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.settings.list_formats">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.settings.</span></span><span class="sig-name descname"><span class="pre">list_formats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/settings.html#list_formats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.settings.list_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of supported formats for a particular
+backend.</p>
+</dd></dl>
+</div>
+<hr class="docutils"/>
+<div class="section" id="transform-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">transform</span></code> Module<a class="headerlink" href="#transform-module" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of holoviews.util.transform" class="inheritance graphviz" src="../_images/inheritance-7f101520e9853f8625abf08076c195ef1f3e4349.png" usemap="#inheritance576f49656b"/></div>
+<map id="inheritance576f49656b" name="inheritance576f49656b">
+<area alt="" coords="240,29,445,55" href="#holoviews.util.transform.df_dim" id="node1" shape="rect" target="_top" title="A subclass of dim which provides access to the DataFrame namespace"/>
+<area alt="" coords="5,55,192,80" href="#holoviews.util.transform.dim" id="node2" shape="rect" target="_top" title="dim transform objects are a way to express deferred transforms on"/>
+<area alt="" coords="240,79,445,104" href="#holoviews.util.transform.xr_dim" id="node4" shape="rect" target="_top" title="A subclass of dim which provides access to the xarray DataArray"/>
+<area alt="" coords="6,5,191,31" href="#holoviews.util.transform.iloc" id="node3" shape="rect" target="_top" title="Implements integer array indexing for dim expressions."/>
+</map><span class="target" id="module-holoviews.util.transform"></span><dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">df_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#df_dim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.df_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#holoviews.util.transform.dim" title="holoviews.util.transform.dim"><code class="xref py py-class docutils literal notranslate"><span class="pre">holoviews.util.transform.dim</span></code></a></p>
+<p>A subclass of dim which provides access to the DataFrame namespace
+along with tab-completion and type coercion allowing the expression
+to be applied on any columnar dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.applies">
+<span class="sig-name descname"><span class="pre">applies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.applies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the dim transform can be applied to the
+Dataset, i.e. whether all referenced dimensions can be
+resolved.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expanded</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the transform on the supplied dataset.</p>
+<dl>
+<dt>Args:</dt><dd><blockquote>
+<div><p>dataset: Dataset object to evaluate the expression on
+flat: Whether to flatten the returned array
+expanded: Whether to use the expanded expand values
+ranges: Dictionary for ranges for normalization
+all_values: Whether to evaluate on all values</p>
+<blockquote>
+<div><p>Whether to evaluate on all available values, for some
+element types, such as Graphs, this may include values
+not included in the referenced column</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>keep_index: For data types that support indexes, whether the index</dt><dd><p>should be preserved in the result.</p>
+</dd>
+<dt>compute: For data types that support lazy evaluation, whether</dt><dd><p>the result should be computed before it is returned.</p>
+</dd>
+<dt>strict: Whether to strictly check for dimension matches</dt><dd><p>(if False, counts any dimensions with matching names as the same)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>values: NumPy array computed by evaluating the expression</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.bin">
+<span class="sig-name descname"><span class="pre">bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bins continuous values.</p>
+<p>Bins continuous using the provided bins and assigns labels
+either computed from each bins center point or from the
+supplied labels.</p>
+<dl>
+<dt>Args:</dt><dd><p>bins: List or array containing the bin boundaries
+labels: List of labels to assign to each bin</p>
+<blockquote>
+<div><p>If the bins are length N the labels should be length N-1</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.categorize">
+<span class="sig-name descname"><span class="pre">categorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.categorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces discrete values with supplied categories</p>
+<p>Replaces discrete values in input array into a fixed set of
+categories defined either as a list or dictionary.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>categories: List or dict of categories to map inputs to
+default: Default value to assign if value not in categories</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a clone of the dim expression optionally overriding
+the dim and ops.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.lognorm">
+<span class="sig-name descname"><span class="pre">lognorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.lognorm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Unity-based normalization log scale.</dt><dd><p>Apply the same transformation as matplotlib.colors.LogNorm</p>
+</dd>
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unity-based normalization to scale data into 0-1 range.</p>
+<blockquote>
+<div><p>(values - min) / (max - min)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.pipe">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to give multidimensional transforms a more intuitive syntax.
+For a custom function ‘func’ with signature (<a href="#id11"><span class="problematic" id="id12">*</span></a>args, <a href="#id13"><span class="problematic" id="id14">**</span></a>kwargs), call as
+dim.pipe(func, <a href="#id15"><span class="problematic" id="id16">*</span></a>args, <a href="#id17"><span class="problematic" id="id18">**</span></a>kwargs).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.df_dim.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a custom dim transform function which can from then
+on be referenced by the key.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="holoviews.util.transform.df_dim.str">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">str</span></span><a class="headerlink" href="#holoviews.util.transform.df_dim.str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Casts values to strings or provides str accessor.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>dim transform objects are a way to express deferred transforms on
+Datasets. dim transforms support all mathematical and bitwise
+operators, NumPy ufuncs and methods, and provide a number of
+useful methods for normalizing, binning and categorizing data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.applies">
+<span class="sig-name descname"><span class="pre">applies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.applies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.applies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the dim transform can be applied to the
+Dataset, i.e. whether all referenced dimensions can be
+resolved.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expanded</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the transform on the supplied dataset.</p>
+<dl>
+<dt>Args:</dt><dd><blockquote>
+<div><p>dataset: Dataset object to evaluate the expression on
+flat: Whether to flatten the returned array
+expanded: Whether to use the expanded expand values
+ranges: Dictionary for ranges for normalization
+all_values: Whether to evaluate on all values</p>
+<blockquote>
+<div><p>Whether to evaluate on all available values, for some
+element types, such as Graphs, this may include values
+not included in the referenced column</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>keep_index: For data types that support indexes, whether the index</dt><dd><p>should be preserved in the result.</p>
+</dd>
+<dt>compute: For data types that support lazy evaluation, whether</dt><dd><p>the result should be computed before it is returned.</p>
+</dd>
+<dt>strict: Whether to strictly check for dimension matches</dt><dd><p>(if False, counts any dimensions with matching names as the same)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>values: NumPy array computed by evaluating the expression</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.bin">
+<span class="sig-name descname"><span class="pre">bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.bin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bins continuous values.</p>
+<p>Bins continuous using the provided bins and assigns labels
+either computed from each bins center point or from the
+supplied labels.</p>
+<dl>
+<dt>Args:</dt><dd><p>bins: List or array containing the bin boundaries
+labels: List of labels to assign to each bin</p>
+<blockquote>
+<div><p>If the bins are length N the labels should be length N-1</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.categorize">
+<span class="sig-name descname"><span class="pre">categorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.categorize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.categorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces discrete values with supplied categories</p>
+<p>Replaces discrete values in input array into a fixed set of
+categories defined either as a list or dictionary.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>categories: List or dict of categories to map inputs to
+default: Default value to assign if value not in categories</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a clone of the dim expression optionally overriding
+the dim and ops.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.lognorm">
+<span class="sig-name descname"><span class="pre">lognorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.lognorm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.lognorm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Unity-based normalization log scale.</dt><dd><p>Apply the same transformation as matplotlib.colors.LogNorm</p>
+</dd>
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unity-based normalization to scale data into 0-1 range.</p>
+<blockquote>
+<div><p>(values - min) / (max - min)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.pipe">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.pipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to give multidimensional transforms a more intuitive syntax.
+For a custom function ‘func’ with signature (<a href="#id19"><span class="problematic" id="id20">*</span></a>args, <a href="#id21"><span class="problematic" id="id22">**</span></a>kwargs), call as
+dim.pipe(func, <a href="#id23"><span class="problematic" id="id24">*</span></a>args, <a href="#id25"><span class="problematic" id="id26">**</span></a>kwargs).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#dim.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.dim.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a custom dim transform function which can from then
+on be referenced by the key.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="holoviews.util.transform.dim.str">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">str</span></span><a class="headerlink" href="#holoviews.util.transform.dim.str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Casts values to strings or provides str accessor.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.transform.easting_northing_to_lon_lat">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">easting_northing_to_lon_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">easting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">northing</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#easting_northing_to_lon_lat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.easting_northing_to_lon_lat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Projects the given easting, northing values into
+longitude, latitude coordinates.</p>
+<p>easting and northing values are assumed to be in Web Mercator
+(aka Pseudo-Mercator or EPSG:3857) coordinates.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>easting
+northing</p>
+</dd>
+<dt>Returns:</dt><dd><p>(longitude, latitude)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.transform.iloc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">iloc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#iloc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.iloc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implements integer array indexing for dim expressions.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.transform.lognorm">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">lognorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#lognorm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.lognorm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Unity-based normalization on log scale.</dt><dd><p>Apply the same transformation as matplotlib.colors.LogNorm</p>
+</dd>
+<dt>Args:</dt><dd><p>values: Array of values to be normalized
+min (float, optional): Lower bound of normalization range
+max (float, optional): Upper bound of normalization range</p>
+</dd>
+<dt>Returns:</dt><dd><p>Array of normalized values</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.transform.lon_lat_to_easting_northing">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">lon_lat_to_easting_northing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#lon_lat_to_easting_northing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.lon_lat_to_easting_northing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Projects the given longitude, latitude values into Web Mercator
+(aka Pseudo-Mercator or EPSG:3857) coordinates.</p>
+<p>Longitude and latitude can be provided as scalars, Pandas columns,
+or Numpy arrays, and will be returned in the same form.  Lists
+or tuples will be converted to Numpy arrays.</p>
+<dl>
+<dt>Args:</dt><dd><p>longitude
+latitude</p>
+</dd>
+<dt>Returns:</dt><dd><p>(easting, northing)</p>
+</dd>
+<dt>Examples:</dt><dd><p>easting, northing = lon_lat_to_easting_northing(-74,40.71)</p>
+<dl class="simple">
+<dt>easting, northing = lon_lat_to_easting_northing(</dt><dd><p>np.array([-74]),np.array([40.71])</p>
+</dd>
+</dl>
+<p>)</p>
+<p>df=pandas.DataFrame(dict(longitude=np.array([-74]),latitude=np.array([40.71])))
+df.loc[:, ‘longitude’], df.loc[:, ‘latitude’] = lon_lat_to_easting_northing(</p>
+<blockquote>
+<div><p>df.longitude,df.latitude</p>
+</div></blockquote>
+<p>)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="holoviews.util.transform.norm">
+<span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unity-based normalization to scale data into 0-1 range.</p>
+<blockquote>
+<div><p>(values - min) / (max - min)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>values: Array of values to be normalized
+min (float, optional): Lower bound of normalization range
+max (float, optional): Upper bound of normalization range</p>
+</dd>
+<dt>Returns:</dt><dd><p>Array of normalized values</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">holoviews.util.transform.</span></span><span class="sig-name descname"><span class="pre">xr_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/holoviews/util/transform.html#xr_dim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#holoviews.util.transform.xr_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#holoviews.util.transform.dim" title="holoviews.util.transform.dim"><code class="xref py py-class docutils literal notranslate"><span class="pre">holoviews.util.transform.dim</span></code></a></p>
+<p>A subclass of dim which provides access to the xarray DataArray
+namespace along with tab-completion and type coercion allowing
+the expression to be applied on any gridded dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.applies">
+<span class="sig-name descname"><span class="pre">applies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.applies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the dim transform can be applied to the
+Dataset, i.e. whether all referenced dimensions can be
+resolved.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expanded</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the transform on the supplied dataset.</p>
+<dl>
+<dt>Args:</dt><dd><blockquote>
+<div><p>dataset: Dataset object to evaluate the expression on
+flat: Whether to flatten the returned array
+expanded: Whether to use the expanded expand values
+ranges: Dictionary for ranges for normalization
+all_values: Whether to evaluate on all values</p>
+<blockquote>
+<div><p>Whether to evaluate on all available values, for some
+element types, such as Graphs, this may include values
+not included in the referenced column</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>keep_index: For data types that support indexes, whether the index</dt><dd><p>should be preserved in the result.</p>
+</dd>
+<dt>compute: For data types that support lazy evaluation, whether</dt><dd><p>the result should be computed before it is returned.</p>
+</dd>
+<dt>strict: Whether to strictly check for dimension matches</dt><dd><p>(if False, counts any dimensions with matching names as the same)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>values: NumPy array computed by evaluating the expression</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.bin">
+<span class="sig-name descname"><span class="pre">bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bins continuous values.</p>
+<p>Bins continuous using the provided bins and assigns labels
+either computed from each bins center point or from the
+supplied labels.</p>
+<dl>
+<dt>Args:</dt><dd><p>bins: List or array containing the bin boundaries
+labels: List of labels to assign to each bin</p>
+<blockquote>
+<div><p>If the bins are length N the labels should be length N-1</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.categorize">
+<span class="sig-name descname"><span class="pre">categorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.categorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces discrete values with supplied categories</p>
+<p>Replaces discrete values in input array into a fixed set of
+categories defined either as a list or dictionary.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>categories: List or dict of categories to map inputs to
+default: Default value to assign if value not in categories</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a clone of the dim expression optionally overriding
+the dim and ops.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.lognorm">
+<span class="sig-name descname"><span class="pre">lognorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.lognorm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Unity-based normalization log scale.</dt><dd><p>Apply the same transformation as matplotlib.colors.LogNorm</p>
+</dd>
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unity-based normalization to scale data into 0-1 range.</p>
+<blockquote>
+<div><p>(values - min) / (max - min)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>limits: tuple of (min, max) defining the normalization range</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.pipe">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to give multidimensional transforms a more intuitive syntax.
+For a custom function ‘func’ with signature (<a href="#id27"><span class="problematic" id="id28">*</span></a>args, <a href="#id29"><span class="problematic" id="id30">**</span></a>kwargs), call as
+dim.pipe(func, <a href="#id31"><span class="problematic" id="id32">*</span></a>args, <a href="#id33"><span class="problematic" id="id34">**</span></a>kwargs).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#holoviews.util.transform.xr_dim.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a custom dim transform function which can from then
+on be referenced by the key.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="holoviews.util.transform.xr_dim.str">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">str</span></span><a class="headerlink" href="#holoviews.util.transform.xr_dim.str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Casts values to strings or provides str accessor.</p>
+</dd></dl>
+</dd></dl>
+<hr class="docutils"/>
+</div>
+</div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="holoviews.streams.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">streams Module</p>
+</div>
+</a>
+<a class="right-next" href="../FAQ.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">FAQ</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="last-updated">
+Last updated on 2021-12-08.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

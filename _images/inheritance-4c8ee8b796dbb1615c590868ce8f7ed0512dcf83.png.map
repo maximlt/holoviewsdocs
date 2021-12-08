@@ -1,0 +1,13 @@
+<map id="inheritance2153e1f28d" name="inheritance2153e1f28d">
+<area shape="rect" id="node1" href="#holoviews.core.util.Config" target="_top" title="Set of boolean configuration values to change HoloViews&#39; global" alt="" coords="672,104,845,129"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="292,153,583,179"/>
+<area shape="rect" id="node8" href="#holoviews.core.util.ndmapping_groupby" target="_top" title="Apply a groupby operation to an NdMapping, using pandas to improve" alt="" coords="631,153,887,179"/>
+<area shape="rect" id="node11" href="#holoviews.core.util.sanitize_identifier_fn" target="_top" title="Sanitizes group/label values for use in AttrTree attribute" alt="" coords="631,203,887,228"/>
+<area shape="rect" id="node3" href="#holoviews.core.util.HashableJSON" target="_top" title="Extends JSONEncoder to generate a hashable string for as many types" alt="" coords="324,104,551,129"/>
+<area shape="rect" id="node4" title="Extensible JSON &lt;http://json.org&gt; encoder for Python data structures." alt="" coords="31,104,218,129"/>
+<area shape="rect" id="node5" href="#holoviews.core.util.ProgressIndicator" target="_top" title="Baseclass for any ProgressIndicator that indicates progress" alt="" coords="318,203,557,228"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="5,179,244,204"/>
+<area shape="rect" id="node7" href="#holoviews.core.util.VersionError" target="_top" title="Raised when there is a library version mismatch." alt="" coords="20,55,229,80"/>
+<area shape="rect" id="node9" href="#holoviews.core.util.periodic" target="_top" title="Run a callback count times with a given period without blocking." alt="" coords="347,5,528,31"/>
+<area shape="rect" id="node10" title="A class that represents a thread of control." alt="" coords="63,5,187,31"/>
+</map>

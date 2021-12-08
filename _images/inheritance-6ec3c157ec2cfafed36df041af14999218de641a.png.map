@@ -1,0 +1,12 @@
+<map id="inheritance3a70949e0e" name="inheritance3a70949e0e">
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.graphs.ChordPlot" target="_top" title="holoviews.plotting.mpl.graphs.ChordPlot" alt="" coords="1021,3,1147,15"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="711,26,847,39"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.graphs.GraphPlot" target="_top" title="holoviews.plotting.mpl.graphs.GraphPlot" alt="" coords="870,26,996,39"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="553,26,688,39"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="398,14,530,26"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="408,38,520,50"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.mpl.graphs.TriMeshPlot" target="_top" title="holoviews.plotting.mpl.graphs.TriMeshPlot" alt="" coords="1019,26,1149,39"/>
+<area shape="rect" id="node9" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="250,26,375,39"/>
+<area shape="rect" id="node10" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="141,26,227,39"/>
+<area shape="rect" id="node11" title="params(name=String)" alt="" coords="3,26,118,39"/>
+</map>

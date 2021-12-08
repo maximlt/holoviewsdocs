@@ -1,0 +1,12 @@
+<map id="inheritanceb797483a5f" name="inheritanceb797483a5f">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="640,13,762,24"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.path.PathPlot" target="_top" title="holoviews.plotting.mpl.path.PathPlot" alt="" coords="783,13,885,24"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="498,13,619,24"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="358,2,477,13"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="367,24,468,35"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.path.ContourPlot" target="_top" title="holoviews.plotting.mpl.path.ContourPlot" alt="" coords="906,13,1017,24"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.path.PolygonPlot" target="_top" title="PolygonPlot draws the polygon paths in the supplied Polygons" alt="" coords="1038,13,1150,24"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="225,13,337,24"/>
+<area shape="rect" id="node9" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="127,13,204,24"/>
+<area shape="rect" id="node10" title="params(name=String)" alt="" coords="2,13,106,24"/>
+</map>

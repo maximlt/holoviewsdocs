@@ -1,0 +1,22 @@
+<map id="inheritancecd48cde56d" name="inheritancecd48cde56d">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.annotation.ABLine2D" target="_top" title="Draw a line based on its slope and y&#45;intercept. Additional arguments are" alt="" coords="278,161,430,175"/>
+<area shape="rect" id="node2" title="A line &#45; the line can have both a solid linestyle connecting all" alt="" coords="163,161,246,175"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.annotation.AnnotationPlot" target="_top" title="AnnotationPlot handles the display of all annotation elements." alt="" coords="804,109,970,122"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.annotation.ArrowPlot" target="_top" title="Draw an arrow using the information supplied to the Arrow annotation" alt="" coords="997,3,1148,16"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.annotation.HLinePlot" target="_top" title="Draw a horizontal line on the axis" alt="" coords="997,29,1148,43"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.annotation.HSpanPlot" target="_top" title="Draw a horizontal span on the axis" alt="" coords="996,56,1149,69"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.mpl.annotation.SlopePlot" target="_top" title="holoviews.plotting.mpl.annotation.SlopePlot" alt="" coords="998,82,1147,96"/>
+<area shape="rect" id="node11" href="#holoviews.plotting.mpl.annotation.SplinePlot" target="_top" title="Draw the supplied Spline annotation (see Spline docstring)" alt="" coords="997,109,1148,122"/>
+<area shape="rect" id="node12" href="#holoviews.plotting.mpl.annotation.TextPlot" target="_top" title="Draw the Text annotation object" alt="" coords="1000,135,1145,149"/>
+<area shape="rect" id="node13" href="#holoviews.plotting.mpl.annotation.VLinePlot" target="_top" title="Draw a vertical line on the axis" alt="" coords="998,162,1147,175"/>
+<area shape="rect" id="node14" href="#holoviews.plotting.mpl.annotation.VSpanPlot" target="_top" title="Draw a vertical span on the axis" alt="" coords="996,188,1149,202"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="629,135,778,149"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="812,188,963,202"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.mpl.annotation.LabelsPlot" target="_top" title="holoviews.plotting.mpl.annotation.LabelsPlot" alt="" coords="996,215,1149,228"/>
+<area shape="rect" id="node15" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="456,122,603,135"/>
+<area shape="rect" id="node16" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="467,148,592,162"/>
+<area shape="rect" id="node17" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="285,135,423,148"/>
+<area shape="rect" id="node18" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="157,135,253,148"/>
+<area shape="rect" id="node19" title="params(name=String)" alt="" coords="3,135,131,148"/>
+<area shape="rect" id="node20" title="Abstract base class for objects that render into a FigureCanvas." alt="" coords="28,161,106,175"/>
+</map>

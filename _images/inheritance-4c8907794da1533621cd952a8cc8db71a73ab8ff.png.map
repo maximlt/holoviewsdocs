@@ -1,0 +1,12 @@
+<map id="inheritance7656a90e5b" name="inheritance7656a90e5b">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.element.ColorbarPlot" target="_top" title="ColorbarPlot provides methods to create colormappers and colorbar" alt="" coords="795,3,953,16"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.bokeh.geometry.RectanglesPlot" target="_top" title="holoviews.plotting.bokeh.geometry.RectanglesPlot" alt="" coords="979,29,1149,43"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.bokeh.geometry.SegmentPlot" target="_top" title="Segments are lines in 2D space where each two each dimensions specify a" alt="" coords="982,3,1146,16"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.bokeh.element.ElementPlot" target="_top" title="holoviews.plotting.bokeh.element.ElementPlot" alt="" coords="613,29,769,43"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.bokeh.element.LegendPlot" target="_top" title="holoviews.plotting.bokeh.element.LegendPlot" alt="" coords="797,56,951,69"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.bokeh.plot.BokehPlot" target="_top" title="Plotting baseclass for the Bokeh backends, implementing the basic" alt="" coords="445,16,582,29"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="440,42,587,56"/>
+<area shape="rect" id="node9" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="277,42,415,56"/>
+<area shape="rect" id="node11" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="156,42,251,56"/>
+<area shape="rect" id="node12" title="params(name=String)" alt="" coords="3,42,130,56"/>
+</map>

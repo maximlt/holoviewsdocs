@@ -1,0 +1,6 @@
+<map id="inheritance7bda7f25bf" name="inheritance7bda7f25bf">
+<area shape="rect" id="node1" href="#holoviews.core.data.cudf.cuDFInterface" target="_top" title="The cuDFInterface allows a Dataset objects to wrap a cuDF" alt="" coords="899,5,1147,30"/>
+<area shape="rect" id="node2" href="#holoviews.core.data.pandas.PandasInterface" target="_top" title="holoviews.core.data.pandas.PandasInterface" alt="" coords="573,5,852,30"/>
+<area shape="rect" id="node3" href="#holoviews.core.data.interface.Interface" target="_top" title="holoviews.core.data.interface.Interface" alt="" coords="283,5,526,30"/>
+<area shape="rect" id="node4" title="params(name=String)" alt="" coords="5,5,237,30"/>
+</map>

@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.core.data.multipath — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.core.data.multipath</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">..element</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span> <span class="nn">..ndmapping</span> <span class="kn">import</span> <span class="n">NdMapping</span><span class="p">,</span> <span class="n">item_check</span><span class="p">,</span> <span class="n">sorted_context</span>
+<span class="kn">from</span> <span class="nn">.dictionary</span> <span class="kn">import</span> <span class="n">DictInterface</span>
+<span class="kn">from</span> <span class="nn">.interface</span> <span class="kn">import</span> <span class="n">Interface</span><span class="p">,</span> <span class="n">DataError</span>
+
+
+<div class="viewcode-block" id="MultiInterface"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface">[docs]</a><span class="k">class</span> <span class="nc">MultiInterface</span><span class="p">(</span><span class="n">Interface</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    MultiInterface allows wrapping around a list of tabular datasets</span>
+<span class="sd">    including dataframes, the columnar dictionary format or 2D tabular</span>
+<span class="sd">    NumPy arrays. Using the split method the list of tabular data can</span>
+<span class="sd">    be split into individual datasets.</span>
+
+<span class="sd">    The interface makes the data appear a list of tabular datasets as</span>
+<span class="sd">    a single dataset. The interface may be used to represent geometries</span>
+<span class="sd">    so the behavior depends on the type of geometry being represented.</span>
+<span class="sd">    """</span>
+
+    <span class="n">types</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="n">datatype</span> <span class="o">=</span> <span class="s1">'multitabular'</span>
+
+    <span class="n">subtypes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'dictionary'</span><span class="p">,</span> <span class="s1">'dataframe'</span><span class="p">,</span> <span class="s1">'array'</span><span class="p">,</span> <span class="s1">'dask'</span><span class="p">]</span>
+
+    <span class="n">geom_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Polygon'</span><span class="p">,</span> <span class="s1">'Ring'</span><span class="p">,</span> <span class="s1">'Line'</span><span class="p">,</span> <span class="s1">'Point'</span><span class="p">]</span>
+
+    <span class="n">multi</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">eltype</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="n">Polygons</span><span class="p">,</span> <span class="n">Path</span>
+
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dims</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'kdims'</span><span class="p">:</span> <span class="n">eltype</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="s1">'vdims'</span><span class="p">:</span> <span class="n">eltype</span><span class="o">.</span><span class="n">vdims</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">kdims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dims</span><span class="p">[</span><span class="s1">'kdims'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kdims</span>
+        <span class="k">if</span> <span class="n">vdims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dims</span><span class="p">[</span><span class="s1">'vdims'</span><span class="p">]</span> <span class="o">=</span> <span class="n">vdims</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">interface</span>  <span class="o">=</span> <span class="p">[</span><span class="n">Interface</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">st</span><span class="p">)</span><span class="o">.</span><span class="n">applies</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">subtypes</span> <span class="k">if</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">Interface</span><span class="o">.</span><span class="n">interfaces</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">interface</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'MultiInterface data must be a list of tabular data types.'</span><span class="p">)</span>
+        <span class="n">prev_interface</span><span class="p">,</span> <span class="n">prev_dims</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">datatype</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">subtypes</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">Polygons</span><span class="o">.</span><span class="n">_hole_key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                    <span class="n">datatype</span> <span class="o">=</span> <span class="p">[</span><span class="n">dt</span> <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">datatype</span>
+                                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Interface</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span> <span class="s1">'has_holes'</span><span class="p">)]</span>
+                <span class="n">geom_type</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'geom_type'</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">geom_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">geom_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_types</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s2">"Geometry type '</span><span class="si">%s</span><span class="s2">' not recognized, "</span>
+                                    <span class="s2">"must be one of </span><span class="si">%s</span><span class="s2">."</span> <span class="o">%</span> <span class="p">(</span><span class="n">geom_type</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_types</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">datatype</span> <span class="o">=</span> <span class="p">[</span><span class="n">dt</span> <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">datatype</span>
+                                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Interface</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span> <span class="s1">'geom_type'</span><span class="p">)]</span>
+            <span class="n">d</span><span class="p">,</span> <span class="n">interface</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">,</span>
+                                                         <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">prev_interface</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">prev_interface</span> <span class="o">!=</span> <span class="n">interface</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'MultiInterface subpaths must all have matching datatype.'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">dims</span><span class="p">[</span><span class="s1">'kdims'</span><span class="p">]</span> <span class="o">!=</span> <span class="n">prev_dims</span><span class="p">[</span><span class="s1">'kdims'</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'MultiInterface subpaths must all have matching kdims.'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">dims</span><span class="p">[</span><span class="s1">'vdims'</span><span class="p">]</span> <span class="o">!=</span> <span class="n">prev_dims</span><span class="p">[</span><span class="s1">'vdims'</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'MultiInterface subpaths must all have matching vdims.'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+            <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="n">prev_interface</span><span class="p">,</span> <span class="n">prev_dims</span> <span class="o">=</span> <span class="n">interface</span><span class="p">,</span> <span class="n">dims</span>
+        <span class="k">return</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="p">{}</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="kn">from</span> <span class="nn">holoviews.element</span> <span class="kn">import</span> <span class="n">Polygons</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">validate_vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">vdims</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">Polygons</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span> <span class="ow">is</span> <span class="n">DictInterface</span><span class="p">:</span>
+                <span class="n">holes</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">holes</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">holes</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'Polygons holes must be declared as a list-of-lists.'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+                <span class="n">subholes</span> <span class="o">=</span> <span class="n">holes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">coords</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+                <span class="n">splits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">coords</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float'</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subholes</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">splits</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'Polygons with holes containing multi-geometries '</span>
+                                    <span class="s1">'must declare a list of holes for each geometry.'</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geom_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">holoviews.element</span> <span class="kn">import</span> <span class="n">Polygons</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">Points</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+            <span class="n">eltype</span> <span class="o">=</span> <span class="n">dataset</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">eltype</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="s1">'geom_type'</span><span class="p">):</span>
+                    <span class="n">geom_type</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">geom_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">geom_type</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">Polygons</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">'Polygon'</span>
+        <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">'Line'</span>
+        <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">Points</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">'Point'</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_inner_dataset_template</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">validate_vdims</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a Dataset template used as a wrapper around the data</span>
+<span class="sd">        contained within the multi-interface dataset.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Dataset</span>
+        <span class="n">vdims</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">vdims</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">'level'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">datatype</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">subtypes</span><span class="p">,</span>
+                       <span class="n">kdims</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span>
+                       <span class="n">_validate_vdims</span><span class="o">=</span><span class="n">validate_vdims</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">assigned</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new_data</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+            <span class="n">assigned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">assigned</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dimension_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="c1"># Note: Required to make empty datasets work at all (should fix)</span>
+            <span class="c1"># Other interfaces declare equivalent of empty array</span>
+            <span class="c1"># which defaults to float type</span>
+            <span class="k">return</span> <span class="nb">float</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">dimension_type</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">ranges</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+
+        <span class="c1"># Backward compatibility for Contours/Polygons level</span>
+        <span class="n">level</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">'level'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dim</span> <span class="ow">is</span> <span class="n">dataset</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">ranges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">util</span><span class="o">.</span><span class="n">max_range</span><span class="p">(</span><span class="n">ranges</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_holes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">has_holes</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">holes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="n">holes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">holes</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">holes</span> <span class="o">+=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">holes</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">holes</span>
+
+<div class="viewcode-block" id="MultiInterface.isscalar"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.isscalar">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">isscalar</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">per_geom</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Tests if dimension is scalar in each subpath.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">geom_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">combined</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">unique</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">unique_iterator</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">elif</span> <span class="n">per_geom</span> <span class="ow">and</span> <span class="n">geom_type</span> <span class="o">!=</span> <span class="s1">'Point'</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">unique</span> <span class="o">=</span> <span class="n">unique</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">unique</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">combined</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">combined</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+                <span class="n">combined</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="MultiInterface.select"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.select">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">selection_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">selection</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Applies selectiong on all the subpaths.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="n">Polygons</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">elif</span> <span class="n">selection_mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">selection_mask</span><span class="p">,</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">b</span><span class="p">]</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">skipped</span> <span class="o">=</span> <span class="p">(</span><span class="n">Polygons</span><span class="o">.</span><span class="n">_hole_key</span><span class="p">,)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="s1">'geo_column'</span><span class="p">):</span>
+            <span class="n">skipped</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">geo_column</span><span class="p">(</span><span class="n">ds</span><span class="p">),)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">selection_mask</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span>
+            <span class="n">sel</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">selection_mask</span><span class="p">)</span>
+            <span class="n">is_dict</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_dict</span><span class="p">)</span> <span class="ow">or</span>
+                <span class="p">(</span><span class="n">is_dict</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="kc">False</span> <span class="k">if</span> <span class="n">util</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+                                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sel</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">skipped</span><span class="p">))):</span>
+                <span class="k">continue</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="MultiInterface.select_paths"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.select_paths">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">select_paths</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Allows selecting paths with usual NumPy slicing index.</span>
+<span class="sd">        """</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([{</span><span class="mi">0</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">])[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">]</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">'Aggregation currently not implemented'</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">groupby</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">container_type</span><span class="p">,</span> <span class="n">group_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Get dimensions information</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">]</span>
+        <span class="n">kdims</span> <span class="o">=</span> <span class="p">[</span><span class="n">kdim</span> <span class="k">for</span> <span class="n">kdim</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">kdims</span> <span class="k">if</span> <span class="n">kdim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">]</span>
+
+        <span class="c1"># Update the kwargs appropriately for Element group types</span>
+        <span class="n">group_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">group_type</span> <span class="o">=</span> <span class="nb">list</span> <span class="k">if</span> <span class="n">group_type</span> <span class="o">==</span> <span class="s1">'raw'</span> <span class="k">else</span> <span class="n">group_type</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">group_type</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+            <span class="n">group_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">get_param_values</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
+            <span class="n">group_kwargs</span><span class="p">[</span><span class="s1">'kdims'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kdims</span>
+        <span class="n">group_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Find all the keys along supplied dimensions</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'MultiInterface can only apply groupby '</span>
+                                 <span class="s1">'on scalar dimensions, </span><span class="si">%s</span><span class="s1"> dimension '</span>
+                                 <span class="s1">'is not scalar'</span> <span class="o">%</span> <span class="n">d</span><span class="p">)</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+        <span class="c1"># Iterate over the unique entries applying selection masks</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Dataset</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">)</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">vals</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)))</span>
+        <span class="n">grouped_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">unique_key</span> <span class="ow">in</span> <span class="n">util</span><span class="o">.</span><span class="n">unique_iterator</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">select_mask</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">unique_key</span><span class="p">)))</span>
+            <span class="n">selection</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span> <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span><span class="p">]</span>
+            <span class="n">group_data</span> <span class="o">=</span> <span class="n">group_type</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="o">**</span><span class="n">group_kwargs</span><span class="p">)</span>
+            <span class="n">grouped_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">unique_key</span><span class="p">,</span> <span class="n">group_data</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">container_type</span><span class="p">,</span> <span class="n">NdMapping</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">item_check</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">sorted_context</span><span class="p">(</span><span class="kc">False</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">container_type</span><span class="p">(</span><span class="n">grouped_data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">dimensions</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">container_type</span><span class="p">(</span><span class="n">grouped_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">'Sampling operation on subpaths not supported'</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MultiInterface.shape"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.shape">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns the shape of all subpaths, making it appear like a</span>
+<span class="sd">        single array of concatenated subpaths separated by NaN values.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()))</span>
+        <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">'Point'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()))</span>
+
+        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+            <span class="n">rows</span> <span class="o">+=</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span></div>
+
+<div class="viewcode-block" id="MultiInterface.length"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.length">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns the length of the multi-tabular dataset making it appear</span>
+<span class="sd">        like a single array of concatenated subpaths separated by NaN</span>
+<span class="sd">        values.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">'Point'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">length</span> <span class="o">+=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">length</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimension</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'float'</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dimension</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="p">[],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">by</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">by</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">sorting</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">by</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">by</span><span class="p">]</span>
+            <span class="n">sorting</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">arglexsort</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sorting</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">nonzero</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reindex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">new_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">redim</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">new_data</span>
+
+<div class="viewcode-block" id="MultiInterface.values"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.values">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">compute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">keep_index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a single concatenated array of all subpaths separated</span>
+<span class="sd">        by NaN values. If expanded keyword is False an array of arrays</span>
+<span class="sd">        is returned.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="n">values</span><span class="p">,</span> <span class="n">scalars</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="n">all_scalar</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">geom_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">is_points</span> <span class="o">=</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s1">'Point'</span>
+        <span class="n">is_geom</span> <span class="o">=</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">dvals</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">values</span><span class="p">(</span>
+                <span class="n">ds</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">flat</span><span class="p">,</span> <span class="n">compute</span><span class="p">,</span> <span class="n">keep_index</span>
+            <span class="p">)</span>
+            <span class="n">scalar</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">unique_array</span><span class="p">(</span><span class="n">dvals</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_geom</span>
+            <span class="n">gt</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="s1">'geom_type'</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="n">gt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">gt</span> <span class="o">=</span> <span class="n">geom_type</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">gt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'Polygon'</span><span class="p">,</span> <span class="s1">'Ring'</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">scalar</span> <span class="ow">or</span> <span class="n">expanded</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="ow">not</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s1">'Points'</span><span class="p">):</span>
+                <span class="n">gvals</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">dvals</span> <span class="o">=</span> <span class="n">ensure_ring</span><span class="p">(</span><span class="n">gvals</span><span class="p">,</span> <span class="n">dvals</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">scalar</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">expanded</span><span class="p">:</span>
+                <span class="n">dvals</span> <span class="o">=</span> <span class="n">dvals</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">all_scalar</span> <span class="o">&amp;=</span> <span class="n">scalar</span>
+
+            <span class="n">scalars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scalar</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">dvals</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dvals</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_points</span> <span class="ow">and</span> <span class="n">expanded</span><span class="p">:</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="k">elif</span> <span class="n">expanded</span> <span class="ow">or</span> <span class="p">(</span><span class="n">all_scalar</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_geom</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_points</span> <span class="ow">and</span> <span class="n">expanded</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="k">if</span> <span class="n">values</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+            <span class="n">array</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">s</span> <span class="k">else</span> <span class="n">a</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">scalars</span><span class="p">,</span> <span class="n">values</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="n">array</span></div>
+
+<div class="viewcode-block" id="MultiInterface.split"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.MultiInterface.split">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">datatype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Splits a multi-interface Dataset into regular Datasets using</span>
+<span class="sd">        regular tabular interfaces.</span>
+<span class="sd">        """</span>
+        <span class="n">objs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">datatype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">:</span> <span class="n">end</span><span class="p">]:</span>
+                <span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">clone</span><span class="p">([</span><span class="n">d</span><span class="p">]))</span>
+            <span class="k">return</span> <span class="n">objs</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">objs</span>
+
+        <span class="n">geom_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">clone</span><span class="p">([])</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]:</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">datatype</span> <span class="o">==</span> <span class="s1">'array'</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="o">==</span> <span class="s1">'dataframe'</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">dframe</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'columns'</span><span class="p">,</span> <span class="s1">'dictionary'</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="s1">'geom_type'</span><span class="p">):</span>
+                    <span class="n">gt</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">gt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">gt</span> <span class="o">=</span> <span class="n">geom_type</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">obj</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">kdims</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">geom_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'Polygon'</span><span class="p">,</span> <span class="s1">'Ring'</span><span class="p">)</span> <span class="ow">or</span>
+                        <span class="n">xd</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">obj</span> <span class="ow">or</span> <span class="n">yd</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">):</span>
+                        <span class="n">obj</span><span class="p">[</span><span class="n">xd</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">xd</span><span class="p">)</span>
+                        <span class="n">obj</span><span class="p">[</span><span class="n">yd</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">yd</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">obj</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">columns</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">gt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="s1">'geom_type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gt</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> datatype not support"</span> <span class="o">%</span> <span class="n">datatype</span><span class="p">)</span>
+            <span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">objs</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_dimension</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">dim_pos</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">vdim</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">elif</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">util</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Added dimension values must be scalar or '</span>
+                             <span class="s1">'match the length of the data.'</span><span class="p">)</span>
+
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">array_type</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">datatype</span> <span class="o">==</span> <span class="s1">'array'</span>
+        <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+            <span class="n">template</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="k">if</span> <span class="n">array_type</span><span class="p">:</span>
+                <span class="n">ds</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">columns</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ds</span> <span class="o">=</span> <span class="n">template</span>
+            <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">dim_pos</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vdim</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">new_data</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">iloc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="n">scalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_inner_dataset_template</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">geom_type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">'Point'</span><span class="p">:</span>
+            <span class="n">geoms</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">select_paths</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">rows</span><span class="p">)</span>
+            <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">geoms</span><span class="p">:</span>
+                <span class="n">template</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+                <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">new_data</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="n">template</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="o">+</span><span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">rows</span> <span class="o">&gt;=</span> <span class="n">count</span><span class="p">:</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">rows</span><span class="o">-</span><span class="n">count</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+                    <span class="k">return</span> <span class="n">data</span> <span class="k">if</span> <span class="n">scalar</span> <span class="k">else</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">rows</span><span class="o">.</span><span class="n">start</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">count</span><span class="o">+</span><span class="n">length</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="k">elif</span> <span class="n">rows</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">rows</span><span class="o">.</span><span class="n">stop</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">rows</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="n">count</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">stop</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">rows</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="n">count</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">dataset</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">".iloc step slicing currently not supported for"</span>
+                                          <span class="s2">"the multi-tabular data format."</span><span class="p">)</span>
+                <span class="n">slc</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
+                <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">slc</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sub_rows</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="n">count</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">count</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">count</span><span class="o">+</span><span class="n">length</span><span class="p">)]</span>
+                <span class="n">new</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sub_rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new</span><span class="p">):</span>
+                    <span class="n">new_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="n">length</span>
+        <span class="k">return</span> <span class="n">new_data</span></div>
+
+
+<div class="viewcode-block" id="ensure_ring"><a class="viewcode-back" href="../../../../reference_manual/holoviews.core.data.html#holoviews.core.data.multipath.ensure_ring">[docs]</a><span class="k">def</span> <span class="nf">ensure_ring</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">"""Ensure the (multi-)geometry forms a ring.</span>
+
+<span class="sd">    Checks the start- and end-point of each geometry to ensure they</span>
+<span class="sd">    form a ring, if not the start point is inserted at the end point.</span>
+<span class="sd">    If a values array is provided (which must match the geometry in</span>
+<span class="sd">    length) then the insertion will occur on the values instead,</span>
+<span class="sd">    ensuring that they will match the ring geometry.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        geom: 2-D array of geometry coordinates</span>
+<span class="sd">        values: Optional array of values</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Array where values have been inserted and ring closing indexes</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">geom</span>
+
+    <span class="n">breaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float'</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">breaks</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ends</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">breaks</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="n">starts</span><span class="p">],</span> <span class="n">geom</span><span class="p">[</span><span class="n">ends</span><span class="p">],</span> <span class="n">ends</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="n">starts</span><span class="p">])</span>
+    <span class="n">unpacked</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">zipped</span>
+                     <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="o">!=</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()]))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">unpacked</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">values</span>
+    <span class="n">inserts</span><span class="p">,</span> <span class="n">inds</span> <span class="o">=</span> <span class="n">unpacked</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">inds</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">inserts</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
+
+
+<span class="n">Interface</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MultiInterface</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

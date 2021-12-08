@@ -1,0 +1,7 @@
+<map id="inheritance593e05f2ce" name="inheritance593e05f2ce">
+<area shape="rect" id="node1" href="#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="655,5,887,31"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="292,5,583,31"/>
+<area shape="rect" id="node3" href="#holoviews.core.operation.OperationCallable" target="_top" title="OperationCallable allows wrapping an Operation and the objects it is" alt="" coords="631,55,911,80"/>
+<area shape="rect" id="node4" href="#holoviews.core.spaces.Callable" target="_top" title="Callable allows wrapping callbacks on one or more DynamicMaps" alt="" coords="333,55,541,80"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="5,31,244,56"/>
+</map>

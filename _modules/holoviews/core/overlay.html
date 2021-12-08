@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.core.overlay — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.core.overlay</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Supplies Layer and related classes that allow overlaying of Views,</span>
+<span class="sd">including Overlay. A Layer is the final extension of View base class</span>
+<span class="sd">that allows Views to be overlayed on top of each other.</span>
+
+<span class="sd">Also supplies ViewMap which is the primary multi-dimensional Map type</span>
+<span class="sd">for indexing, slicing and animating collections of Views.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">from</span> <span class="nn">.dimension</span> <span class="kn">import</span> <span class="n">Dimension</span><span class="p">,</span> <span class="n">Dimensioned</span><span class="p">,</span> <span class="n">ViewableElement</span><span class="p">,</span> <span class="n">ViewableTree</span>
+<span class="kn">from</span> <span class="nn">.ndmapping</span> <span class="kn">import</span> <span class="n">UniformNdMapping</span>
+<span class="kn">from</span> <span class="nn">.layout</span> <span class="kn">import</span> <span class="n">Composable</span><span class="p">,</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">,</span> <span class="n">Layoutable</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">sanitize_identifier</span><span class="p">,</span> <span class="n">unique_array</span><span class="p">,</span> <span class="n">dimensioned_streams</span>
+
+
+<div class="viewcode-block" id="Overlayable"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Overlayable">[docs]</a><span class="k">class</span> <span class="nc">Overlayable</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Overlayable provides a mix-in class to support the</span>
+<span class="sd">    mul operation for overlaying multiple elements.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="s2">"Overlay object with other object."</span>
+        <span class="c1"># Local import to break the import cyclic dependency</span>
+        <span class="kn">from</span> <span class="nn">.spaces</span> <span class="kn">import</span> <span class="n">DynamicMap</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DynamicMap</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">.spaces</span> <span class="kn">import</span> <span class="n">Callable</span>
+            <span class="k">def</span> <span class="nf">dynamic_mul</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="n">element</span> <span class="o">=</span> <span class="n">other</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+                <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">element</span>
+            <span class="n">callback</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="n">dynamic_mul</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+            <span class="n">callback</span><span class="o">.</span><span class="n">_is_overlay</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">shared_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+                               <span class="n">streams</span><span class="o">=</span><span class="n">dimensioned_streams</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">ViewableElement</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="bp">NotImplemented</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">UniformNdMapping</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">CompositeOverlay</span><span class="p">):</span>
+                    <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+                    <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">AdjointLayout</span><span class="p">,</span> <span class="n">ViewableTree</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Overlay</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span></div>
+
+
+<div class="viewcode-block" id="CompositeOverlay"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.CompositeOverlay">[docs]</a><span class="k">class</span> <span class="nc">CompositeOverlay</span><span class="p">(</span><span class="n">ViewableElement</span><span class="p">,</span> <span class="n">Composable</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    CompositeOverlay provides a common baseclass for Overlay classes.</span>
+<span class="sd">    """</span>
+
+    <span class="n">_deep_indexable</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="CompositeOverlay.hist"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.CompositeOverlay.hist">[docs]</a>    <span class="k">def</span> <span class="nf">hist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">bin_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="n">adjoin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""Computes and adjoins histogram along specified dimension(s).</span>
+
+<span class="sd">        Defaults to first value dimension if present otherwise falls</span>
+<span class="sd">        back to first key dimension.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dimension: Dimension(s) to compute histogram on,</span>
+<span class="sd">                Falls back the plot dimensions by default.</span>
+<span class="sd">            num_bins (int, optional): Number of bins</span>
+<span class="sd">            bin_range (tuple optional): Lower and upper bounds of bins</span>
+<span class="sd">            adjoin (bool, optional): Whether to adjoin histogram</span>
+<span class="sd">            index (int, optional): Index of layer to apply hist to</span>
+<span class="sd">            show_legend (bool, optional): Show legend in histogram</span>
+<span class="sd">                (don't show legend by default).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            AdjointLayout of element and histogram or just the</span>
+<span class="sd">            histogram</span>
+<span class="sd">        """</span>
+        <span class="c1"># Get main layer to get plot dimensions</span>
+        <span class="n">main_layer_int_index</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"main_layer"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span>
+        <span class="c1"># Validate index, and extract as integer if not None</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">valid_ind</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="n">valid_label</span> <span class="o">=</span> <span class="n">index</span> <span class="ow">in</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="n">valid_ind</span><span class="p">,</span> <span class="n">valid_label</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Please supply a suitable index or label for the histogram data"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">valid_ind</span><span class="p">:</span>
+                <span class="n">main_layer_int_index</span> <span class="o">=</span> <span class="n">index</span>
+            <span class="k">if</span> <span class="n">valid_label</span><span class="p">:</span>
+                <span class="n">main_layer_int_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dimension</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Fallback to default dimensions of main element</span>
+            <span class="n">dimension</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="n">main_layer_int_index</span><span class="p">]</span><span class="o">.</span><span class="n">kdims</span><span class="p">]</span>
+        <span class="c1"># Compute histogram for each dimension and each element in OverLay</span>
+        <span class="n">hists_per_dim</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">dim</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">([</span>  <span class="c1"># All histograms for a given dimension</span>
+                <span class="p">(</span>
+                    <span class="n">elem_key</span><span class="p">,</span> <span class="n">elem</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+                        <span class="n">adjoin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">bin_range</span><span class="o">=</span><span class="n">bin_range</span><span class="p">,</span>
+                        <span class="n">num_bins</span><span class="o">=</span><span class="n">num_bins</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">elem_key</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="p">])</span>
+            <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dimension</span>
+        <span class="p">}</span>
+        <span class="c1"># Create new Overlays of histograms</span>
+        <span class="n">hists_overlay_per_dim</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">dim</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">hists</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">dim</span><span class="p">,</span> <span class="n">hists</span> <span class="ow">in</span> <span class="n">hists_per_dim</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">adjoin</span><span class="p">:</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span>
+            <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="n">main_layer_int_index</span><span class="p">]</span><span class="o">.</span><span class="n">kdims</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">dim</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">hists_overlay_per_dim</span><span class="p">:</span>
+                    <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span> <span class="o">&lt;&lt;</span> <span class="n">hists_overlay_per_dim</span><span class="p">[</span><span class="n">dim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">layout</span><span class="o">.</span><span class="n">main_layer</span> <span class="o">=</span> <span class="n">main_layer_int_index</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">hists_overlay_per_dim</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="n">hists_overlay_per_dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">layout</span></div>
+
+
+<div class="viewcode-block" id="CompositeOverlay.dimension_values"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.CompositeOverlay.dimension_values">[docs]</a>    <span class="k">def</span> <span class="nf">dimension_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">"""Return the values along the requested dimension.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dimension: The dimension to return values for</span>
+<span class="sd">            expanded (bool, optional): Whether to expand values</span>
+<span class="sd">                Whether to return the expanded values, behavior depends</span>
+<span class="sd">                on the type of data:</span>
+<span class="sd">                  * Columnar: If false returns unique values</span>
+<span class="sd">                  * Geometry: If false returns scalar values per geometry</span>
+<span class="sd">                  * Gridded: If false returns 1D coordinates</span>
+<span class="sd">            flat (bool, optional): Whether to flatten array</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            NumPy array of values along the requested dimension</span>
+<span class="sd">        """</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="n">el</span><span class="o">.</span><span class="n">dimensions</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">dimension</span><span class="p">))</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">expanded</span><span class="p">,</span> <span class="n">flat</span><span class="p">)</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">()</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">vals</span> <span class="k">if</span> <span class="n">expanded</span> <span class="k">else</span> <span class="n">unique_array</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Overlay"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Overlay">[docs]</a><span class="k">class</span> <span class="nc">Overlay</span><span class="p">(</span><span class="n">ViewableTree</span><span class="p">,</span> <span class="n">CompositeOverlay</span><span class="p">,</span> <span class="n">Layoutable</span><span class="p">,</span> <span class="n">Overlayable</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    An Overlay consists of multiple Elements (potentially of</span>
+<span class="sd">    heterogeneous type) presented one on top each other with a</span>
+<span class="sd">    particular z-ordering.</span>
+
+<span class="sd">    Overlays along with elements constitute the only valid leaf types of</span>
+<span class="sd">    a Layout and in fact extend the Layout structure. Overlays are</span>
+<span class="sd">    constructed using the * operator (building an identical structure</span>
+<span class="sd">    to the + operator).</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">'_fixed'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">'_group'</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">'_label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Allows transparently slicing the Elements in the Overlay</span>
+<span class="sd">        to select specific layers in an Overlay use the .get method.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">Overlay</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+
+
+<div class="viewcode-block" id="Overlay.get"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Overlay.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""Get a layer in the Overlay.</span>
+
+<span class="sd">        Get a particular layer in the Overlay using its path string</span>
+<span class="sd">        or an integer index.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            identifier: Index or path string of the item to return</span>
+<span class="sd">            default: Value to return if no item is found</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The indexed layer of the Overlay</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">identifier</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">values</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">default</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Overlay.collate"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Overlay.collate">[docs]</a>    <span class="k">def</span> <span class="nf">collate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Collates any objects in the Overlay resolving any issues</span>
+<span class="sd">        the recommended nesting structure.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Overlay.decollate"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Overlay.decollate">[docs]</a>    <span class="k">def</span> <span class="nf">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""Packs Overlay of DynamicMaps into a single DynamicMap that returns an Overlay</span>
+
+<span class="sd">        Decollation allows packing an Overlay of DynamicMaps into a single DynamicMap</span>
+<span class="sd">        that returns an Overlay of simple (non-dynamic) elements. All nested streams</span>
+<span class="sd">        are lifted to the resulting DynamicMap, and are available in the `streams`</span>
+<span class="sd">        property.  The `callback` property of the resulting DynamicMap is a pure,</span>
+<span class="sd">        stateless function of the stream values. To avoid stream parameter name</span>
+<span class="sd">        conflicts, the resulting DynamicMap is configured with</span>
+<span class="sd">        positional_stream_args=True, and the callback function accepts stream values</span>
+<span class="sd">        as positional dict arguments.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DynamicMap that returns an Overlay</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.decollate</span> <span class="kn">import</span> <span class="n">decollate</span>
+        <span class="k">return</span> <span class="n">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">el</span><span class="o">.</span><span class="n">_auxiliary_component</span><span class="p">]</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">el</span><span class="o">.</span><span class="n">group</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">}</span>
+        <span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="nb">type</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">values</span><span class="p">:</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">values</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">vtype</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">types</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">group</span><span class="p">,</span> <span class="n">vtype</span> <span class="o">=</span> <span class="p">[],</span> <span class="s1">''</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">group</span> <span class="o">!=</span> <span class="n">vtype</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">group</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="nd">@group</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sanitize_identifier</span><span class="o">.</span><span class="n">allowable</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Supplied group </span><span class="si">%s</span><span class="s2"> contains invalid characters."</span> <span class="o">%</span>
+                             <span class="n">group</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_group</span> <span class="o">=</span> <span class="n">group</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">el</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span>
+                  <span class="k">if</span> <span class="ow">not</span> <span class="n">el</span><span class="o">.</span><span class="n">_auxiliary_component</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">''</span>
+
+    <span class="nd">@label</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sanitize_identifier</span><span class="o">.</span><span class="n">allowable</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Supplied group </span><span class="si">%s</span><span class="s2"> contains invalid characters."</span> <span class="o">%</span>
+                             <span class="n">label</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">label</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ddims</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dimension_names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">el</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">dim</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dimension_names</span><span class="p">:</span>
+                    <span class="n">dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+                    <span class="n">dimension_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dim</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dimensions</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+
+<div class="viewcode-block" id="NdOverlay"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdOverlay">[docs]</a><span class="k">class</span> <span class="nc">NdOverlay</span><span class="p">(</span><span class="n">Overlayable</span><span class="p">,</span> <span class="n">UniformNdMapping</span><span class="p">,</span> <span class="n">CompositeOverlay</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    An NdOverlay allows a group of NdOverlay to be overlaid together. NdOverlay can</span>
+<span class="sd">    be indexed out of an overlay and an overlay is an iterable that iterates</span>
+<span class="sd">    over the contained layers.</span>
+<span class="sd">    """</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'Element'</span><span class="p">)],</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        List of dimensions the NdOverlay can be indexed by."""</span><span class="p">)</span>
+
+    <span class="n">_deep_indexable</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overlays</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">overlays</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+<div class="viewcode-block" id="NdOverlay.decollate"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdOverlay.decollate">[docs]</a>    <span class="k">def</span> <span class="nf">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""Packs NdOverlay of DynamicMaps into a single DynamicMap that returns an</span>
+<span class="sd">        NdOverlay</span>
+
+<span class="sd">        Decollation allows packing a NdOverlay of DynamicMaps into a single DynamicMap</span>
+<span class="sd">        that returns an NdOverlay of simple (non-dynamic) elements. All nested streams</span>
+<span class="sd">        are lifted to the resulting DynamicMap, and are available in the `streams`</span>
+<span class="sd">        property.  The `callback` property of the resulting DynamicMap is a pure,</span>
+<span class="sd">        stateless function of the stream values. To avoid stream parameter name</span>
+<span class="sd">        conflicts, the resulting DynamicMap is configured with</span>
+<span class="sd">        positional_stream_args=True, and the callback function accepts stream values</span>
+<span class="sd">        as positional dict arguments.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DynamicMap that returns an NdOverlay</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.decollate</span> <span class="kn">import</span> <span class="n">decollate</span>
+        <span class="k">return</span> <span class="n">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">_k</span> <span class="k">for</span> <span class="n">_k</span><span class="p">,</span> <span class="n">_v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="n">Dimensioned</span><span class="p">)]))</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'Overlayable'</span><span class="p">]</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

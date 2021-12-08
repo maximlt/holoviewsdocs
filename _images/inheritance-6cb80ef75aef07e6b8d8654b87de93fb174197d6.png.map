@@ -1,0 +1,12 @@
+<map id="inheritancef0cb66cb4f" name="inheritancef0cb66cb4f">
+<area shape="rect" id="node1" href="holoviews.element.html#holoviews.element.comparison.Comparison" target="_top" title="Class used for comparing two HoloViews objects, including complex" alt="" coords="279,83,480,101"/>
+<area shape="rect" id="node3" href="holoviews.element.html#holoviews.element.comparison.ComparisonTestCase" target="_top" title="Class to integrate the Comparison class with unittest.TestCase." alt="" coords="518,56,758,74"/>
+<area shape="rect" id="node2" href="holoviews.element.html#holoviews.element.comparison.ComparisonInterface" target="_top" title="This class is designed to allow equality testing to work" alt="" coords="4,83,241,101"/>
+<area shape="rect" id="node5" href="#holoviews.ipython.IPTestCase" target="_top" title="This class extends ComparisonTestCase to handle IPython specific" alt="" coords="792,56,935,74"/>
+<area shape="rect" id="node4" title="A class whose instances are single test cases." alt="" coords="324,48,435,66"/>
+<area shape="rect" id="node6" href="#holoviews.ipython.notebook_extension" target="_top" title="Notebook specific extension to hv.extension that offers options for" alt="" coords="969,4,1148,22"/>
+<area shape="rect" id="node7" href="holoviews.util.html#holoviews.util.extension" target="_top" title="Helper utility used to load holoviews extensions. These can be" alt="" coords="805,4,922,22"/>
+<area shape="rect" id="node8" title="Base class for pyviz extensions, which allow defining shared cleanup" alt="" coords="579,4,697,22"/>
+<area shape="rect" id="node9" title="params(name=String)" alt="" coords="37,4,208,22"/>
+<area shape="rect" id="node10" title="params(name=String)" alt="" coords="276,4,483,22"/>
+</map>

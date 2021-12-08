@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.core.layout — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.core.layout</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Supplies Pane, Layout, NdLayout and AdjointLayout. Pane extends View</span>
+<span class="sd">to allow multiple Views to be presented side-by-side in a NdLayout. An</span>
+<span class="sd">AdjointLayout allows one or two Views to be adjoined to a primary View</span>
+<span class="sd">to act as supplementary elements.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.dimension</span> <span class="kn">import</span> <span class="n">Dimension</span><span class="p">,</span> <span class="n">Dimensioned</span><span class="p">,</span> <span class="n">ViewableElement</span><span class="p">,</span> <span class="n">ViewableTree</span>
+<span class="kn">from</span> <span class="nn">.ndmapping</span> <span class="kn">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">NdMapping</span><span class="p">,</span> <span class="n">UniformNdMapping</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">traversal</span>
+
+
+<span class="k">class</span> <span class="nc">Layoutable</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Layoutable provides a mix-in class to support the</span>
+<span class="sd">    add operation for creating a layout from the operands.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="s2">"Compose objects into a Layout"</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"unsupported operand type(s) for +: </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">. "</span>
+                            <span class="s2">"If you are trying to use a reduction like `sum(elements)` "</span>
+                            <span class="s2">"to combine a list of elements, we recommend you use "</span>
+                            <span class="s2">"`Layout(elements)` (and similarly `Overlay(elements)` for "</span>
+                            <span class="s2">"making an overlay from a list) instead."</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Layout</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Composable</span><span class="p">(</span><span class="n">Layoutable</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Composable is a mix-in class to allow Dimensioned objects to be</span>
+<span class="sd">    embedded within Layouts and GridSpaces.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__lshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="s2">"Compose objects into an AdjointLayout"</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">ViewableElement</span><span class="p">,</span> <span class="n">NdMapping</span><span class="p">,</span> <span class="n">Empty</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">AdjointLayout</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">AdjointLayout</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">+</span><span class="p">[</span><span class="bp">self</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'Cannot append </span><span class="si">{0}</span><span class="s1"> to a AdjointLayout'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+
+
+
+<div class="viewcode-block" id="Empty"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Empty">[docs]</a><span class="k">class</span> <span class="nc">Empty</span><span class="p">(</span><span class="n">Dimensioned</span><span class="p">,</span> <span class="n">Composable</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Empty may be used to define an empty placeholder in a Layout. It</span>
+<span class="sd">    can be placed in a Layout just like any regular Element and</span>
+<span class="sd">    container type via the + operator or by passing it to the Layout</span>
+<span class="sd">    constructor as a part of a list.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Empty'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AdjointLayout"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.AdjointLayout">[docs]</a><span class="k">class</span> <span class="nc">AdjointLayout</span><span class="p">(</span><span class="n">Layoutable</span><span class="p">,</span> <span class="n">Dimensioned</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    An AdjointLayout provides a convenient container to lay out some</span>
+<span class="sd">    marginal plots next to a primary plot. This is often useful to</span>
+<span class="sd">    display the marginal distributions of a plot next to the primary</span>
+<span class="sd">    plot. AdjointLayout accepts a list of up to three elements, which</span>
+<span class="sd">    are laid out as follows with the names 'main', 'top' and 'right':</span>
+
+<span class="sd">     _______________</span>
+<span class="sd">    |     3     |   |</span>
+<span class="sd">    |___________|___|</span>
+<span class="sd">    |           |   |  1:  main</span>
+<span class="sd">    |           |   |  2:  right</span>
+<span class="sd">    |     1     | 2 |  3:  top</span>
+<span class="sd">    |           |   |</span>
+<span class="sd">    |___________|___|</span>
+<span class="sd">    """</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'AdjointLayout'</span><span class="p">)],</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">layout_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'main'</span><span class="p">,</span> <span class="s1">'right'</span><span class="p">,</span> <span class="s1">'top'</span><span class="p">]</span>
+
+    <span class="n">_deep_indexable</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">_auxiliary_component</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main_layer</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># The index of the main layer if .main is an overlay</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'AdjointLayout accepts no more than three elements.'</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">wrong_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_order</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">wrong_pos</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'Wrong AdjointLayout positions provided.'</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout_order</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">layer1</span> <span class="o">=</span> <span class="n">other</span> <span class="k">if</span> <span class="n">reverse</span> <span class="k">else</span> <span class="bp">self</span>
+        <span class="n">layer2</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">reverse</span> <span class="k">else</span> <span class="n">other</span>
+        <span class="n">adjoined_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer1</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer2</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">):</span>
+            <span class="n">adjoined_items</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer1</span><span class="o">.</span><span class="n">main</span><span class="o">*</span><span class="n">layer2</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">layer1</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">layer2</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">layer1</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span> <span class="o">==</span> <span class="n">layer2</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span>
+                    <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer1</span><span class="o">.</span><span class="n">right</span><span class="o">*</span><span class="n">layer2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">adjoined_items</span> <span class="o">+=</span> <span class="p">[</span><span class="n">layer1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">layer2</span><span class="o">.</span><span class="n">right</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">layer1</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer1</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">layer2</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">layer1</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">layer2</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">layer1</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span> <span class="o">==</span> <span class="n">layer2</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span>
+                    <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer1</span><span class="o">.</span><span class="n">top</span><span class="o">*</span><span class="n">layer2</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">adjoined_items</span> <span class="o">+=</span> <span class="p">[</span><span class="n">layer1</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">layer2</span><span class="o">.</span><span class="n">top</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">layer1</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer1</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">layer2</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">adjoined_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer2</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">adjoined_items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"AdjointLayouts could not be overlaid, "</span>
+                                 <span class="s2">"the dimensions of the adjoined plots "</span>
+                                 <span class="s2">"do not match and the AdjointLayout can "</span>
+                                 <span class="s2">"hold no more than two adjoined plots."</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer1</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">):</span>
+            <span class="n">adjoined_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer1</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">o</span><span class="p">]</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_order</span>
+                              <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">layer1</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+            <span class="n">adjoined_items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">layer1</span><span class="o">.</span><span class="n">main</span> <span class="o">*</span> <span class="n">layer2</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer2</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">):</span>
+            <span class="n">adjoined_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer2</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">o</span><span class="p">]</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_order</span>
+                              <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">layer2</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+            <span class="n">adjoined_items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">layer1</span> <span class="o">*</span> <span class="n">layer2</span><span class="o">.</span><span class="n">main</span>
+
+        <span class="k">if</span> <span class="n">adjoined_items</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">adjoined_items</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Group inherited from main element"</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">group</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">group</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">'AdjointLayout'</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Label inherited from main element"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">label</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span> <span class="k">else</span> <span class="s1">''</span>
+
+
+    <span class="c1"># Both group and label need empty setters due to param inheritance</span>
+    <span class="nd">@group</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="nd">@label</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="AdjointLayout.relabel"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.AdjointLayout.relabel">[docs]</a>    <span class="k">def</span> <span class="nf">relabel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">"""Clone object and apply new group and/or label.</span>
+
+<span class="sd">        Applies relabeling to child up to the supplied depth.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            label (str, optional): New label to apply to returned object</span>
+<span class="sd">            group (str, optional): New group to apply to returned object</span>
+<span class="sd">            depth (int, optional): Depth to which relabel will be applied</span>
+<span class="sd">                If applied to container allows applying relabeling to</span>
+<span class="sd">                contained objects up to the specified depth</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Returns relabelled object</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AdjointLayout.get"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.AdjointLayout.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns the viewable corresponding to the supplied string</span>
+<span class="sd">        or integer based key.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key: Numeric or string index: 0) 'main' 1) 'right' 2) 'top'</span>
+<span class="sd">            default: Value returned if key not found</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Indexed value or supplied default</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="n">default</span></div>
+
+
+<div class="viewcode-block" id="AdjointLayout.dimension_values"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.AdjointLayout.dimension_values">[docs]</a>    <span class="k">def</span> <span class="nf">dimension_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">"""Return the values along the requested dimension.</span>
+
+<span class="sd">        Applies to the main object in the AdjointLayout.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dimension: The dimension to return values for</span>
+<span class="sd">            expanded (bool, optional): Whether to expand values</span>
+<span class="sd">                Whether to return the expanded values, behavior depends</span>
+<span class="sd">                on the type of data:</span>
+<span class="sd">                  * Columnar: If false returns unique values</span>
+<span class="sd">                  * Geometry: If false returns scalar values per geometry</span>
+<span class="sd">                  * Gridded: If false returns 1D coordinates</span>
+<span class="sd">            flat (bool, optional): Whether to flatten array</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            NumPy array of values along the requested dimension</span>
+<span class="sd">        """</span>
+        <span class="n">dimension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">expanded</span><span class="p">,</span> <span class="n">flat</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="s2">"Index into the AdjointLayout by index or label"</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">data_slice</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data_slice</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span>
+            <span class="k">if</span> <span class="n">data_slice</span><span class="p">:</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data_slice</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data_slice</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">data_slice</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">key</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">data_slice</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">([</span><span class="n">el</span><span class="p">[</span><span class="n">data_slice</span><span class="p">]</span>
+                                                               <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">"Key </span><span class="si">{0}</span><span class="s2"> not found in AdjointLayout."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'main'</span><span class="p">,</span> <span class="s1">'right'</span><span class="p">,</span> <span class="s1">'top'</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="n">ViewableElement</span><span class="p">,</span> <span class="n">UniformNdMapping</span><span class="p">,</span> <span class="n">Empty</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'AdjointLayout only accepts Element types.'</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">'Position </span><span class="si">%s</span><span class="s1"> not valid in AdjointLayout.'</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__lshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="s2">"Add another plot to the AdjointLayout"</span>
+        <span class="n">views</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_order</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">AdjointLayout</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">views</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">other</span><span class="p">])</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ddims</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Returns the main element in the AdjointLayout"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'main'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Returns the right marginal element in the AdjointLayout"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'right'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Returns the top marginal element in the AdjointLayout"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'top'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">last</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">NdMapping</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+
+
+    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+
+    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Number of items in the AdjointLayout"</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="NdLayout"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdLayout">[docs]</a><span class="k">class</span> <span class="nc">NdLayout</span><span class="p">(</span><span class="n">Layoutable</span><span class="p">,</span> <span class="n">UniformNdMapping</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    NdLayout is a UniformNdMapping providing an n-dimensional</span>
+<span class="sd">    data structure to display the contained Elements and containers</span>
+<span class="sd">    in a layout. Using the cols method the NdLayout can be rearranged</span>
+<span class="sd">    with the desired number of columns.</span>
+<span class="sd">    """</span>
+
+    <span class="n">data_type</span> <span class="o">=</span> <span class="p">(</span><span class="n">ViewableElement</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">,</span> <span class="n">UniformNdMapping</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_items</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_style</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">initial_items</span><span class="o">=</span><span class="n">initial_items</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">uniform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">traversal</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Tuple indicating the number of rows and columns in the NdLayout."</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+        <span class="n">nrows</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="n">last_row_cols</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="k">return</span> <span class="n">nrows</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">last_row_cols</span> <span class="k">else</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="NdLayout.grid_items"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdLayout.grid_items">[docs]</a>    <span class="k">def</span> <span class="nf">grid_items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Compute a dict of {(row,column): (key, value)} elements from the</span>
+<span class="sd">        current set of items and specified number of columns.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">[]:</span>  <span class="k">return</span> <span class="p">{}</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="k">return</span> <span class="p">{(</span><span class="n">idx</span> <span class="o">//</span> <span class="n">cols</span><span class="p">,</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">cols</span><span class="p">):</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">())}</span></div>
+
+
+<div class="viewcode-block" id="NdLayout.cols"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdLayout.cols">[docs]</a>    <span class="k">def</span> <span class="nf">cols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncols</span><span class="p">):</span>
+        <span class="sd">"""Sets the maximum number of columns in the NdLayout.</span>
+
+<span class="sd">        Any items beyond the set number of cols will flow onto a new</span>
+<span class="sd">        row. The number of columns control the indexing and display</span>
+<span class="sd">        semantics of the NdLayout.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ncols (int): Number of columns to set on the NdLayout</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="n">ncols</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns another NdLayout constituted of the last views of the</span>
+<span class="sd">        individual elements (if they are maps).</span>
+<span class="sd">        """</span>
+        <span class="n">last_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">NdMapping</span><span class="p">):</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">clone</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">last_key</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">last</span><span class="p">)))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">):</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="n">last_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">last_items</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="NdLayout.clone"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.NdLayout.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+        <span class="sd">"""Clones the NdLayout, overriding data and parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: New data replacing the existing data</span>
+<span class="sd">            shared_data (bool, optional): Whether to use existing data</span>
+<span class="sd">            new_type (optional): Type to cast object to</span>
+<span class="sd">            *args: Additional arguments to pass to constructor</span>
+<span class="sd">            **overrides: New keyword arguments to pass to constructor</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Cloned NdLayout object</span>
+<span class="sd">        """</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span>
+        <span class="n">clone</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="n">clone</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">return</span> <span class="n">clone</span></div></div>
+
+
+<div class="viewcode-block" id="Layout"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Layout">[docs]</a><span class="k">class</span> <span class="nc">Layout</span><span class="p">(</span><span class="n">Layoutable</span><span class="p">,</span> <span class="n">ViewableTree</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A Layout is an ViewableTree with ViewableElement objects as leaf</span>
+<span class="sd">    values. Unlike ViewableTree, a Layout supports a rich display,</span>
+<span class="sd">    displaying leaf items in a grid style layout. In addition to the</span>
+<span class="sd">    usual ViewableTree indexing, Layout supports indexing of items by</span>
+<span class="sd">    their row and column index in the layout.</span>
+
+<span class="sd">    The maximum number of columns in such a layout may be controlled</span>
+<span class="sd">    with the cols method.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Layout'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">_deep_indexable</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">'_max_cols'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Layout.decollate"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Layout.decollate">[docs]</a>    <span class="k">def</span> <span class="nf">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""Packs Layout of DynamicMaps into a single DynamicMap that returns a Layout</span>
+
+<span class="sd">        Decollation allows packing a Layout of DynamicMaps into a single DynamicMap</span>
+<span class="sd">        that returns a Layout of simple (non-dynamic) elements. All nested streams are</span>
+<span class="sd">        lifted to the resulting DynamicMap, and are available in the `streams`</span>
+<span class="sd">        property.  The `callback` property of the resulting DynamicMap is a pure,</span>
+<span class="sd">        stateless function of the stream values. To avoid stream parameter name</span>
+<span class="sd">        conflicts, the resulting DynamicMap is configured with</span>
+<span class="sd">        positional_stream_args=True, and the callback function accepts stream values</span>
+<span class="sd">        as positional dict arguments.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DynamicMap that returns a Layout</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.decollate</span> <span class="kn">import</span> <span class="n">decollate</span>
+        <span class="k">return</span> <span class="n">decollate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Tuple indicating the number of rows and columns in the Layout."</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+        <span class="n">nrows</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="n">last_row_cols</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="k">return</span> <span class="n">nrows</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">last_row_cols</span> <span class="k">else</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="s2">"Allows indexing Layout by row and column or path"</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">"Element out of range."</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">"A Layout may not be sliced, ensure that you "</span>
+                           <span class="s2">"are slicing on a leaf (i.e. not a branch) of the Layout."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span> <span class="k">return</span> <span class="bp">self</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">key</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">row</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">+</span> <span class="n">col</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="ow">or</span> <span class="n">col</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">'Index </span><span class="si">%s</span><span class="s1"> is outside available item range'</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Layout.clone"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Layout.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+        <span class="sd">"""Clones the Layout, overriding data and parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: New data replacing the existing data</span>
+<span class="sd">            shared_data (bool, optional): Whether to use existing data</span>
+<span class="sd">            new_type (optional): Type to cast object to</span>
+<span class="sd">            *args: Additional arguments to pass to constructor</span>
+<span class="sd">            **overrides: New keyword arguments to pass to constructor</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Cloned Layout object</span>
+<span class="sd">        """</span>
+        <span class="n">clone</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span>
+        <span class="n">clone</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="k">return</span> <span class="n">clone</span></div>
+
+
+<div class="viewcode-block" id="Layout.cols"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Layout.cols">[docs]</a>    <span class="k">def</span> <span class="nf">cols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncols</span><span class="p">):</span>
+        <span class="sd">"""Sets the maximum number of columns in the NdLayout.</span>
+
+<span class="sd">        Any items beyond the set number of cols will flow onto a new</span>
+<span class="sd">        row. The number of columns control the indexing and display</span>
+<span class="sd">        semantics of the NdLayout.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ncols (int): Number of columns to set on the NdLayout</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="n">ncols</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Layout.relabel"><a class="viewcode-back" href="../../../reference_manual/holoviews.core.html#holoviews.core.Layout.relabel">[docs]</a>    <span class="k">def</span> <span class="nf">relabel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">"""Clone object and apply new group and/or label.</span>
+
+<span class="sd">        Applies relabeling to children up to the supplied depth.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            label (str, optional): New label to apply to returned object</span>
+<span class="sd">            group (str, optional): New group to apply to returned object</span>
+<span class="sd">            depth (int, optional): Depth to which relabel will be applied</span>
+<span class="sd">                If applied to container allows applying relabeling to</span>
+<span class="sd">                contained objects up to the specified depth</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Returns relabelled object</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">grid_items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)):</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">())}</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.spaces</span> <span class="kn">import</span> <span class="n">HoloMap</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">ViewableElement</span><span class="p">,</span> <span class="n">HoloMap</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">([</span><span class="n">other</span><span class="o">*</span><span class="n">v</span> <span class="k">if</span> <span class="n">reverse</span> <span class="k">else</span> <span class="n">v</span><span class="o">*</span><span class="n">other</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">_max_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_cols</span>
+        <span class="k">return</span> <span class="n">layout</span>
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">_k</span> <span class="k">for</span> <span class="n">_k</span><span class="p">,</span> <span class="n">_v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="n">Dimensioned</span><span class="p">)</span>
+                                                 <span class="ow">or</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="n">Layout</span><span class="p">))]))</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

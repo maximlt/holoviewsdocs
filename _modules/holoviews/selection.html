@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.selection — HoloViews v1.14.7a1</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents">
+<link href="../../genindex.html" rel="index" title="Index">
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.selection</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="kn">from</span> <span class="nn">param.parameterized</span> <span class="kn">import</span> <span class="n">bothmethod</span>
+
+<span class="kn">from</span> <span class="nn">.core.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">.core.dimension</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">.core.element</span> <span class="kn">import</span> <span class="n">Element</span><span class="p">,</span> <span class="n">Layout</span>
+<span class="kn">from</span> <span class="nn">.core.options</span> <span class="kn">import</span> <span class="n">CallbackError</span><span class="p">,</span> <span class="n">Store</span>
+<span class="kn">from</span> <span class="nn">.core.overlay</span> <span class="kn">import</span> <span class="n">NdOverlay</span><span class="p">,</span> <span class="n">Overlay</span>
+<span class="kn">from</span> <span class="nn">.core.layout</span> <span class="kn">import</span> <span class="n">AdjointLayout</span>
+<span class="kn">from</span> <span class="nn">.core.spaces</span> <span class="kn">import</span> <span class="n">GridSpace</span>
+<span class="kn">from</span> <span class="nn">.streams</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Stream</span><span class="p">,</span> <span class="n">SelectionExprSequence</span><span class="p">,</span> <span class="n">CrossFilterSet</span><span class="p">,</span>
+    <span class="n">Derived</span><span class="p">,</span> <span class="n">PlotReset</span><span class="p">,</span> <span class="n">SelectMode</span><span class="p">,</span> <span class="n">Pipe</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">DynamicMap</span>
+
+
+<span class="k">class</span> <span class="nc">_Cmap</span><span class="p">(</span><span class="n">Stream</span><span class="p">):</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">_SelectionExprOverride</span><span class="p">(</span><span class="n">Stream</span><span class="p">):</span>
+    <span class="n">selection_expr</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">            dim expression of the current selection override"""</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">_SelectionExprLayers</span><span class="p">(</span><span class="n">Derived</span><span class="p">):</span>
+    <span class="n">exprs</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr_override</span><span class="p">,</span> <span class="n">cross_filter_set</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">expr_override</span><span class="p">,</span> <span class="n">cross_filter_set</span><span class="p">],</span> <span class="n">exclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">transform_function</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">stream_values</span><span class="p">,</span> <span class="n">constants</span><span class="p">):</span>
+        <span class="n">override_expr_values</span> <span class="o">=</span> <span class="n">stream_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">cross_filter_set_values</span> <span class="o">=</span> <span class="n">stream_values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">override_expr_values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'selection_expr'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"exprs"</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="n">override_expr_values</span><span class="p">[</span><span class="s2">"selection_expr"</span><span class="p">]]}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"exprs"</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="n">cross_filter_set_values</span><span class="p">[</span><span class="s2">"selection_expr"</span><span class="p">]]}</span>
+
+
+<span class="n">_Styles</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="s1">'Styles'</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">_RegionElement</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="s2">"RegionElement"</span><span class="p">,</span> <span class="n">region_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+
+<span class="n">_SelectionStreams</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+    <span class="s1">'SelectionStreams'</span><span class="p">,</span>
+    <span class="s1">'style_stream exprs_stream cmap_streams '</span>
+<span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">_base_link_selections</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">ParameterizedFunction</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Baseclass for linked selection functions.</span>
+
+<span class="sd">    Subclasses override the _build_selection_streams class method to construct</span>
+<span class="sd">    a _SelectionStreams namedtuple instance that includes the required streams</span>
+<span class="sd">    for implementing linked selections.</span>
+
+<span class="sd">    Subclasses also override the _expr_stream_updated method. This allows</span>
+<span class="sd">    subclasses to control whether new selections override prior selections or</span>
+<span class="sd">    whether they are combined with prior selections</span>
+<span class="sd">    """</span>
+
+    <span class="n">link_inputs</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to link any streams on the input to the output."""</span><span class="p">)</span>
+
+    <span class="n">show_regions</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether to highlight the selected regions."""</span><span class="p">)</span>
+
+    <span class="nd">@bothmethod</span>
+    <span class="k">def</span> <span class="nf">instance</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">inst</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="c1"># Init private properties</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span> <span class="o">=</span> <span class="n">CrossFilterSet</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">cross_filter_mode</span><span class="p">)</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_selection_override</span> <span class="o">=</span> <span class="n">_SelectionExprOverride</span><span class="p">()</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_selection_expr_streams</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_plot_reset_streams</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Init selection streams</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_selection_streams</span> <span class="o">=</span> <span class="n">self_or_cls</span><span class="o">.</span><span class="n">_build_selection_streams</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">inst</span>
+
+    <span class="k">def</span> <span class="nf">_update_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s1">'replace'</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s1">'overwrite'</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s1">'append'</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s1">'union'</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s1">'intersect'</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s1">'intersect'</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s1">'subtract'</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s1">'inverse'</span>
+
+    <span class="k">def</span> <span class="nf">_register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Register an Element or DynamicMap that may be capable of generating</span>
+<span class="sd">        selection expressions in response to user interaction events</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">Table</span>
+
+        <span class="c1"># Create stream that produces element that displays region of selection</span>
+        <span class="n">selection_expr_seq</span> <span class="o">=</span> <span class="n">SelectionExprSequence</span><span class="p">(</span>
+            <span class="n">hvobj</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">selection_mode</span><span class="p">,</span>
+            <span class="n">include_region</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">show_regions</span><span class="p">,</span>
+            <span class="n">index_cols</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">index_cols</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="p">[</span><span class="n">hvobj</span><span class="p">]</span> <span class="o">=</span> <span class="n">selection_expr_seq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">append_input_stream</span><span class="p">(</span><span class="n">selection_expr_seq</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_plot_reset_streams</span><span class="p">[</span><span class="n">hvobj</span><span class="p">]</span> <span class="o">=</span> <span class="n">PlotReset</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">hvobj</span><span class="p">)</span>
+
+        <span class="c1"># Register reset</span>
+        <span class="k">def</span> <span class="nf">clear_stream_history</span><span class="p">(</span><span class="n">resetting</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">selection_expr_seq</span><span class="o">.</span><span class="n">history_stream</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">resetting</span><span class="p">:</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">clear_history</span><span class="p">()</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">event</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="n">Table</span><span class="p">):</span>
+            <span class="n">mode_stream</span> <span class="o">=</span> <span class="n">SelectMode</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">hvobj</span><span class="p">)</span>
+            <span class="n">mode_stream</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_update_mode</span><span class="p">,</span> <span class="s1">'mode'</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_plot_reset_streams</span><span class="p">[</span><span class="n">hvobj</span><span class="p">]</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">clear_stream_history</span><span class="p">,</span> <span class="p">[</span><span class="s1">'resetting'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Apply kwargs as params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Store</span><span class="o">.</span><span class="n">renderers</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Cannot peform link_selections operation "</span>
+                               <span class="s2">"since the selected backend </span><span class="si">%r</span><span class="s2"> is not "</span>
+                               <span class="s2">"loaded. Load the plotting extension with "</span>
+                               <span class="s2">"hv.extension or import the plotting "</span>
+                               <span class="s2">"backend explicitly."</span> <span class="o">%</span> <span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span><span class="p">)</span>
+
+        <span class="c1"># Perform transform</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_transform</span><span class="p">(</span><span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">_selection_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="o">=</span><span class="p">()):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Transform an input HoloViews object into a dynamic object with linked</span>
+<span class="sd">        selections enabled.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span> <span class="nn">.plotting.util</span> <span class="kn">import</span> <span class="n">initialize_dynamic</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="n">DynamicMap</span><span class="p">):</span>
+            <span class="n">callback</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">callback</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">callback</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Overlay</span><span class="p">([</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_transform</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">callback</span><span class="o">.</span><span class="n">inputs</span>
+                <span class="p">])</span><span class="o">.</span><span class="n">collate</span><span class="p">()</span>
+
+            <span class="n">initialize_dynamic</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">hvobj</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_register</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span>
+                <span class="n">chart</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">registry</span><span class="p">[</span><span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span><span class="p">][</span><span class="n">hvobj</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">chart</span><span class="o">.</span><span class="n">selection_display</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span><span class="o">.</span><span class="n">build_selection</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_streams</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">cache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cache</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">hvobj</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">)</span> <span class="ow">and</span>
+                  <span class="nb">getattr</span><span class="p">(</span><span class="n">hvobj</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"dynamic_mul"</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">Overlay</span><span class="p">([</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_transform</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">operations</span><span class="o">=</span><span class="n">operations</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">callback</span><span class="o">.</span><span class="n">inputs</span>
+                <span class="p">])</span><span class="o">.</span><span class="n">collate</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">hvobj</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"dynamic_operation"</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">callback</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_transform</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">operations</span><span class="o">=</span><span class="n">operations</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                    <span class="n">callback</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># This is a DynamicMap that we don't know how to recurse into.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">"linked selection: Encountered DynamicMap that we don't know "</span>
+                    <span class="s2">"how to recurse into:</span><span class="se">\n</span><span class="si">{!r}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">hvobj</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+            <span class="c1"># Register hvobj to receive selection expression callbacks</span>
+            <span class="n">chart</span> <span class="o">=</span> <span class="n">Store</span><span class="o">.</span><span class="n">registry</span><span class="p">[</span><span class="n">Store</span><span class="o">.</span><span class="n">current_backend</span><span class="p">][</span><span class="nb">type</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="s1">'selection_display'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">element</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">link_inputs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_register</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">chart</span><span class="o">.</span><span class="n">selection_display</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="o">.</span><span class="n">build_selection</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_streams</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">cache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cache</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">hvobj</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="p">(</span><span class="n">Layout</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">,</span> <span class="n">NdOverlay</span><span class="p">,</span> <span class="n">GridSpace</span><span class="p">,</span> <span class="n">AdjointLayout</span><span class="p">)):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_transform</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">operations</span><span class="p">))</span>
+                                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="n">NdOverlay</span><span class="p">):</span>
+                <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                    <span class="n">new</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">[()]):</span>
+                            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">new</span><span class="p">):</span>
+                                <span class="n">new</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+                            <span class="n">new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">el</span><span class="p">))</span>
+                    <span class="k">return</span> <span class="n">Overlay</span><span class="p">([</span><span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">new</span><span class="p">])</span>
+                <span class="n">new_hvobj</span> <span class="o">=</span> <span class="n">DynamicMap</span><span class="p">(</span><span class="n">compose</span><span class="p">)</span>
+                <span class="n">new_hvobj</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="n">inputs</span><span class="p">[:]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_hvobj</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">new_hvobj</span><span class="p">,</span> <span class="s1">'collate'</span><span class="p">):</span>
+                    <span class="n">new_hvobj</span> <span class="o">=</span> <span class="n">new_hvobj</span><span class="o">.</span><span class="n">collate</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">new_hvobj</span>
+        <span class="k">else</span><span class="p">:</span>
+             <span class="c1"># Unsupported object</span>
+            <span class="k">return</span> <span class="n">hvobj</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_build_selection_streams</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Subclasses should override this method to return a _SelectionStreams</span>
+<span class="sd">        instance</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_expr_stream_updated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">selection_expr</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">region_element</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Called when one of the registered HoloViews objects produces a new</span>
+<span class="sd">        selection expression.  Subclasses should override this method, and</span>
+<span class="sd">        they should use the input expression to update the `exprs_stream`</span>
+<span class="sd">        property of the _SelectionStreams instance that was produced by</span>
+<span class="sd">        the _build_selection_streams.</span>
+
+<span class="sd">        Subclasses have the flexibility to control whether the new selection</span>
+<span class="sd">        express overrides previous selections, or whether it is combined with</span>
+<span class="sd">        previous selections.</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="link_selections"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.link_selections">[docs]</a><span class="k">class</span> <span class="nc">link_selections</span><span class="p">(</span><span class="n">_base_link_selections</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Operation which automatically links selections between elements</span>
+<span class="sd">    in the supplied HoloViews object. Can be used a single time or</span>
+<span class="sd">    be used as an instance to apply the linked selections across</span>
+<span class="sd">    multiple objects.</span>
+<span class="sd">    """</span>
+
+    <span class="n">cross_filter_mode</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Selector</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">'overwrite'</span><span class="p">,</span> <span class="s1">'intersect'</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="s1">'intersect'</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Determines how to combine selections across different</span>
+<span class="s2">        elements."""</span><span class="p">)</span>
+
+    <span class="n">index_cols</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        If provided, selection switches to index mode where all queries</span>
+<span class="s2">        are expressed solely in terms of discrete values along the</span>
+<span class="s2">        index_cols.  All Elements given to link_selections must define the index_cols, either as explicit dimensions or by sharing an underlying Dataset that defines them."""</span><span class="p">)</span>
+
+    <span class="n">selection_expr</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        dim expression of the current selection or None to indicate</span>
+<span class="s2">        that everything is selected."""</span><span class="p">)</span>
+
+    <span class="n">selected_color</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Color of selected data, or None to use the original color of</span>
+<span class="s2">        each element."""</span><span class="p">)</span>
+
+    <span class="n">selection_mode</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Selector</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">'overwrite'</span><span class="p">,</span> <span class="s1">'intersect'</span><span class="p">,</span> <span class="s1">'union'</span><span class="p">,</span> <span class="s1">'inverse'</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="s1">'overwrite'</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Determines how to combine successive selections on the same</span>
+<span class="s2">        element."""</span><span class="p">)</span>
+
+    <span class="n">unselected_alpha</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Magnitude</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Alpha of unselected data."""</span><span class="p">)</span>
+
+    <span class="n">unselected_color</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Color of unselected data."""</span><span class="p">)</span>
+
+<div class="viewcode-block" id="link_selections.instance"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.link_selections.instance">[docs]</a>    <span class="nd">@bothmethod</span>
+    <span class="k">def</span> <span class="nf">instance</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">inst</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="c1"># Initialize private properties</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_obj_selections</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_obj_regions</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_reset_regions</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># _datasets caches</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_datasets</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">inst</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">self_or_cls</span><span class="o">.</span><span class="n">_install_param_callbacks</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">inst</span></div>
+
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s1">'selection_expr'</span><span class="p">,</span> <span class="n">watch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_update_pipes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sel_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selection_expr</span>
+        <span class="k">for</span> <span class="n">pipe</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">raw</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">:</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">_plot_id</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">if</span> <span class="n">sel_expr</span> <span class="ow">in</span> <span class="n">ds_cache</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">ds_cache</span><span class="p">[</span><span class="n">sel_expr</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">pipe</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ds_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">sel_ds</span> <span class="o">=</span> <span class="n">SelectionDisplay</span><span class="o">.</span><span class="n">_select</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">sel_expr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">)</span>
+            <span class="n">ds_cache</span><span class="p">[</span><span class="n">sel_expr</span><span class="p">]</span> <span class="o">=</span> <span class="n">sel_ds</span>
+            <span class="n">pipe</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sel_ds</span><span class="o">.</span><span class="n">data</span> <span class="k">if</span> <span class="n">raw</span> <span class="k">else</span> <span class="n">sel_ds</span><span class="p">)</span>
+
+<div class="viewcode-block" id="link_selections.selection_param"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.link_selections.selection_param">[docs]</a>    <span class="k">def</span> <span class="nf">selection_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a parameter which reflects the current selection</span>
+<span class="sd">        when applied to the supplied data, making it easy to create</span>
+<span class="sd">        a callback which depends on the current selection.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A Dataset type or data which can be cast to a Dataset</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A parameter which reflects the current selection</span>
+<span class="sd">        """</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">):</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pipe</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">raw</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pipe</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">data</span></div>
+
+<div class="viewcode-block" id="link_selections.filter"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.link_selections.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">selection_expr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Filters the provided data based on the current state of the</span>
+<span class="sd">        current selection expression.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A Dataset type or data which can be cast to a Dataset</span>
+<span class="sd">            selection_expr: Optionally provide your own selection expression</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The filtered data</span>
+<span class="sd">        """</span>
+        <span class="n">expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selection_expr</span> <span class="k">if</span> <span class="n">selection_expr</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">selection_expr</span>
+        <span class="k">if</span> <span class="n">expr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="n">is_dataset</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_dataset</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">filtered</span> <span class="k">if</span> <span class="n">is_dataset</span> <span class="k">else</span> <span class="n">filtered</span><span class="o">.</span><span class="n">data</span></div>
+
+    <span class="nd">@bothmethod</span>
+    <span class="k">def</span> <span class="nf">_install_param_callbacks</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">update_selection_mode</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="c1"># Reset selection state of streams</span>
+            <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">selection_mode</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">update_selection_mode</span><span class="p">,</span> <span class="p">[</span><span class="s1">'selection_mode'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">update_cross_filter_mode</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">cross_filter_mode</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">update_cross_filter_mode</span><span class="p">,</span> <span class="p">[</span><span class="s1">'cross_filter_mode'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">update_show_region</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">include_region</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">show_regions</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">event</span><span class="p">()</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">update_show_region</span><span class="p">,</span> <span class="p">[</span><span class="s1">'show_regions'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">update_selection_expr</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="n">new_selection_expr</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">selection_expr</span>
+            <span class="n">current_selection_expr</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">selection_expr</span>
+            <span class="k">if</span> <span class="nb">repr</span><span class="p">(</span><span class="n">new_selection_expr</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">current_selection_expr</span><span class="p">):</span>
+                <span class="c1"># Disable regions if setting selection_expr directly</span>
+                <span class="k">if</span> <span class="n">inst</span><span class="o">.</span><span class="n">show_regions</span><span class="p">:</span>
+                    <span class="n">inst</span><span class="o">.</span><span class="n">show_regions</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">inst</span><span class="o">.</span><span class="n">_selection_override</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">selection_expr</span><span class="o">=</span><span class="n">new_selection_expr</span><span class="p">)</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">update_selection_expr</span><span class="p">,</span> <span class="p">[</span><span class="s1">'selection_expr'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">selection_expr_changed</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="n">new_selection_expr</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">selection_expr</span>
+            <span class="k">if</span> <span class="nb">repr</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">selection_expr</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">new_selection_expr</span><span class="p">):</span>
+                <span class="n">inst</span><span class="o">.</span><span class="n">selection_expr</span> <span class="o">=</span> <span class="n">new_selection_expr</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+            <span class="n">selection_expr_changed</span><span class="p">,</span> <span class="p">[</span><span class="s1">'selection_expr'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Clear selection expr sequence history on plot reset</span>
+        <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">_selection_expr_streams</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">def</span> <span class="nf">clear_stream_history</span><span class="p">(</span><span class="n">resetting</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">resetting</span><span class="p">:</span>
+                    <span class="n">stream</span><span class="o">.</span><span class="n">clear_history</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"registering reset for "</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
+            <span class="n">stream</span><span class="o">.</span><span class="n">plot_reset_stream</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span>
+                <span class="n">clear_stream_history</span><span class="p">,</span> <span class="p">[</span><span class="s1">'resetting'</span><span class="p">]</span>
+            <span class="p">)</span>
+
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_build_selection_streams</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
+        <span class="c1"># Colors stream</span>
+        <span class="n">style_stream</span> <span class="o">=</span> <span class="n">_Styles</span><span class="p">(</span>
+            <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_color</span><span class="p">,</span> <span class="n">inst</span><span class="o">.</span><span class="n">selected_color</span><span class="p">],</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_alpha</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Cmap streams</span>
+        <span class="n">cmap_streams</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">_Cmap</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_cmap</span><span class="p">),</span>
+            <span class="n">_Cmap</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">selected_cmap</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">update_colors</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_color</span><span class="p">,</span> <span class="n">inst</span><span class="o">.</span><span class="n">selected_color</span><span class="p">]</span>
+            <span class="n">style_stream</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_alpha</span><span class="p">)</span>
+            <span class="n">cmap_streams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">unselected_cmap</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cmap_streams</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cmap_streams</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">event</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">selected_cmap</span><span class="p">)</span>
+
+        <span class="n">inst</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">update_colors</span><span class="p">,[</span><span class="s1">'unselected_color'</span><span class="p">,</span> <span class="s1">'selected_color'</span><span class="p">,</span> <span class="s1">'unselected_alpha'</span><span class="p">])</span>
+
+        <span class="c1"># Exprs stream</span>
+        <span class="n">exprs_stream</span> <span class="o">=</span> <span class="n">_SelectionExprLayers</span><span class="p">(</span>
+            <span class="n">inst</span><span class="o">.</span><span class="n">_selection_override</span><span class="p">,</span> <span class="n">inst</span><span class="o">.</span><span class="n">_cross_filter_stream</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_SelectionStreams</span><span class="p">(</span>
+            <span class="n">style_stream</span><span class="o">=</span><span class="n">style_stream</span><span class="p">,</span>
+            <span class="n">exprs_stream</span><span class="o">=</span><span class="n">exprs_stream</span><span class="p">,</span>
+            <span class="n">cmap_streams</span><span class="o">=</span><span class="n">cmap_streams</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unselected_cmap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        The datashader colormap for unselected data</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unselected_color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">_color_to_cmap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unselected_color</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">selected_cmap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        The datashader colormap for selected data</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_color</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">_color_to_cmap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">selected_color</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SelectionDisplay"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.SelectionDisplay">[docs]</a><span class="k">class</span> <span class="nc">SelectionDisplay</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Base class for selection display classes.  Selection display classes are</span>
+<span class="sd">    responsible for transforming an element (or DynamicMap that produces an</span>
+<span class="sd">    element) into a HoloViews object that represents the current selection</span>
+<span class="sd">    state.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">build_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_streams</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span> <span class="n">region_stream</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_select</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">selection_expr</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">Curve</span><span class="p">,</span> <span class="n">Spread</span>
+        <span class="kn">from</span> <span class="nn">.util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selection_expr</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dataset</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">dataset</span><span class="o">.</span><span class="n">_plot_id</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+                <span class="n">ds_cache</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">_plot_id</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">selection_expr</span> <span class="ow">in</span> <span class="n">ds_cache</span><span class="p">:</span>
+                    <span class="n">mask</span> <span class="o">=</span> <span class="n">ds_cache</span><span class="p">[</span><span class="n">selection_expr</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ds_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ds_cache</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">_plot_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">dataset</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">gridded</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">mask</span> <span class="o">=</span> <span class="n">selection_expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">selection</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">~</span><span class="n">mask</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">dataset</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">multi</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">mask</span> <span class="o">=</span> <span class="n">selection_expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">selection</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="p">(</span><span class="n">Curve</span><span class="p">,</span> <span class="n">Spread</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="s1">'mask'</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">mask</span> <span class="o">=</span> <span class="n">selection_expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">keep_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">selection</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">~</span><span class="n">mask</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">mask</span> <span class="o">=</span> <span class="n">selection_expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keep_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">selection</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selection_mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">key_error</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'"'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">CallbackError</span><span class="p">(</span><span class="s2">"linked_selection aborted because it could not "</span>
+                                    <span class="s2">"display selection for all elements: </span><span class="si">%s</span><span class="s2"> on '</span><span class="si">%r</span><span class="s2">'."</span>
+                                    <span class="o">%</span> <span class="p">(</span><span class="n">key_error</span><span class="p">,</span> <span class="n">element</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CallbackError</span><span class="p">(</span><span class="s2">"linked_selection aborted because it could not "</span>
+                                    <span class="s2">"display selection for all elements: </span><span class="si">%s</span><span class="s2">."</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+            <span class="n">ds_cache</span><span class="p">[</span><span class="n">selection_expr</span><span class="p">]</span> <span class="o">=</span> <span class="n">mask</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">selection</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="k">return</span> <span class="n">selection</span></div>
+
+
+
+<div class="viewcode-block" id="NoOpSelectionDisplay"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.NoOpSelectionDisplay">[docs]</a><span class="k">class</span> <span class="nc">NoOpSelectionDisplay</span><span class="p">(</span><span class="n">SelectionDisplay</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Selection display class that returns input element unchanged. For use with</span>
+<span class="sd">    elements that don't support displaying selections.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="nf">build_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_streams</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span> <span class="n">region_stream</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">hvobj</span></div>
+
+
+<div class="viewcode-block" id="OverlaySelectionDisplay"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.OverlaySelectionDisplay">[docs]</a><span class="k">class</span> <span class="nc">OverlaySelectionDisplay</span><span class="p">(</span><span class="n">SelectionDisplay</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Selection display base class that represents selections by overlaying</span>
+<span class="sd">    colored subsets on top of the original element in an Overlay container.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_prop</span><span class="o">=</span><span class="s1">'color'</span><span class="p">,</span> <span class="n">is_cmap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">supports_region</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color_prop</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_prop</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color_props</span> <span class="o">=</span> <span class="n">color_prop</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cmap</span> <span class="o">=</span> <span class="n">is_cmap</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supports_region</span> <span class="o">=</span> <span class="n">supports_region</span>
+
+    <span class="k">def</span> <span class="nf">_get_color_kwarg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">color_prop</span><span class="p">:</span> <span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_cmap</span> <span class="k">else</span> <span class="n">color</span>
+                <span class="k">for</span> <span class="n">color_prop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_props</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">build_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_streams</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span> <span class="n">region_stream</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">Histogram</span>
+
+        <span class="n">num_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">selection_streams</span><span class="o">.</span><span class="n">style_stream</span><span class="o">.</span><span class="n">colors</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">num_layers</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Overlay</span><span class="p">()</span>
+
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">layer_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">):</span>
+            <span class="n">streams</span> <span class="o">=</span> <span class="p">[</span><span class="n">selection_streams</span><span class="o">.</span><span class="n">exprs_stream</span><span class="p">]</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">if</span> <span class="n">layer_number</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">hvobj</span>
+            <span class="n">cmap_stream</span> <span class="o">=</span> <span class="n">selection_streams</span><span class="o">.</span><span class="n">cmap_streams</span><span class="p">[</span><span class="n">layer_number</span><span class="p">]</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_build_layer_callback</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="p">[</span><span class="n">cmap_stream</span><span class="p">]</span><span class="o">+</span><span class="n">streams</span><span class="p">,</span>
+                <span class="n">layer_number</span><span class="o">=</span><span class="n">layer_number</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span> <span class="n">per_element</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layer_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">):</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="n">layer_number</span><span class="p">]</span>
+            <span class="n">cmap_stream</span> <span class="o">=</span> <span class="n">selection_streams</span><span class="o">.</span><span class="n">cmap_streams</span><span class="p">[</span><span class="n">layer_number</span><span class="p">]</span>
+            <span class="n">streams</span> <span class="o">=</span> <span class="p">[</span><span class="n">selection_streams</span><span class="o">.</span><span class="n">style_stream</span><span class="p">,</span> <span class="n">cmap_stream</span><span class="p">]</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_apply_style_callback</span><span class="p">,</span> <span class="n">layer_number</span><span class="o">=</span><span class="n">layer_number</span><span class="p">,</span>
+                <span class="n">streams</span><span class="o">=</span><span class="n">streams</span><span class="p">,</span> <span class="n">per_element</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="n">layers</span><span class="p">[</span><span class="n">layer_number</span><span class="p">]</span> <span class="o">=</span> <span class="n">layer</span>
+
+        <span class="c1"># Build region layer</span>
+        <span class="k">if</span> <span class="n">region_stream</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports_region</span><span class="p">:</span>
+            <span class="k">def</span> <span class="nf">update_region</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">region_element</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="n">unselected_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">region_element</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">region_element</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">_empty_region</span><span class="p">()</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_region_element</span><span class="p">(</span><span class="n">region_element</span><span class="p">,</span> <span class="n">unselected_color</span><span class="p">)</span>
+
+            <span class="n">streams</span> <span class="o">=</span> <span class="p">[</span><span class="n">region_stream</span><span class="p">,</span> <span class="n">selection_streams</span><span class="o">.</span><span class="n">style_stream</span><span class="p">]</span>
+            <span class="n">region</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">update_region</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">link_dataset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="n">eltype</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">type</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hvobj</span><span class="p">,</span> <span class="n">DynamicMap</span><span class="p">)</span> <span class="k">else</span> <span class="nb">type</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="s1">'_selection_dims'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">eltype</span><span class="p">,</span> <span class="n">Histogram</span><span class="p">):</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Overlay</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">.</span><span class="n">collate</span><span class="p">()</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_inject_cmap_in_pipeline</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
+        <span class="n">operations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">operations</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s1">'cmap'</span><span class="p">):</span>
+                <span class="n">op</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+            <span class="n">operations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="n">operations</span><span class="o">=</span><span class="n">operations</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_build_layer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">exprs</span><span class="p">,</span> <span class="n">layer_number</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">exprs</span><span class="p">[</span><span class="n">layer_number</span><span class="p">],</span> <span class="n">cache</span><span class="p">)</span>
+        <span class="n">pipeline</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pipeline</span>
+        <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pipeline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inject_cmap_in_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">cmap</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="ow">is</span> <span class="n">selection</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">selection</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_apply_style_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">layer_number</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">layer_number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">opts</span><span class="p">[</span><span class="s1">'colorbar'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">opts</span><span class="p">[</span><span class="s1">'cmap'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmap</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">layer_number</span><span class="p">]</span> <span class="k">if</span> <span class="n">colors</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_element_layer</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_build_element_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">layer_color</span><span class="p">,</span> <span class="n">layer_alpha</span><span class="p">,</span> <span class="n">selection_expr</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_style_region_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region_element</span><span class="p">,</span> <span class="n">unselected_cmap</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ColorListSelectionDisplay"><a class="viewcode-back" href="../../reference_manual/holoviews.selection.html#holoviews.selection.ColorListSelectionDisplay">[docs]</a><span class="k">class</span> <span class="nc">ColorListSelectionDisplay</span><span class="p">(</span><span class="n">SelectionDisplay</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Selection display class for elements that support coloring by a</span>
+<span class="sd">    vectorized color list.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_prop</span><span class="o">=</span><span class="s1">'color'</span><span class="p">,</span> <span class="n">alpha_prop</span><span class="o">=</span><span class="s1">'alpha'</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_prop</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">alpha_prop</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backend</span> <span class="o">=</span> <span class="n">backend</span>
+
+    <span class="k">def</span> <span class="nf">build_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_streams</span><span class="p">,</span> <span class="n">hvobj</span><span class="p">,</span> <span class="n">operations</span><span class="p">,</span> <span class="n">region_stream</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">def</span> <span class="nf">_build_selection</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">.plotting.util</span> <span class="kn">import</span> <span class="n">linear_gradient</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">dataset</span>
+            <span class="n">selection_exprs</span> <span class="o">=</span> <span class="n">exprs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">unselected_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Use darker version of unselected_color if not selected color provided</span>
+            <span class="n">unselected_color</span> <span class="o">=</span> <span class="n">unselected_color</span> <span class="ow">or</span> <span class="s2">"#e6e9ec"</span>
+            <span class="n">backup_clr</span> <span class="o">=</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="n">unselected_color</span><span class="p">,</span> <span class="s2">"#000000"</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">selected_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="ow">or</span> <span class="n">backup_clr</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+            <span class="n">clrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">unselected_color</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">selected_colors</span><span class="p">))</span>
+
+            <span class="n">color_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'int8'</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">clrs</span><span class="p">)),</span> <span class="n">selection_exprs</span><span class="p">,</span> <span class="n">selected_colors</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">expr</span><span class="p">:</span>
+                    <span class="n">color_inds</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">color_inds</span><span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ds</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span>
+
+            <span class="n">colors</span> <span class="o">=</span> <span class="n">clrs</span><span class="p">[</span><span class="n">color_inds</span><span class="p">]</span>
+            <span class="n">color_opts</span> <span class="o">=</span> <span class="p">{</span><span class="n">color_prop</span><span class="p">:</span> <span class="n">colors</span> <span class="k">for</span> <span class="n">color_prop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_props</span><span class="p">}</span>
+            <span class="k">return</span> <span class="n">el</span><span class="o">.</span><span class="n">pipeline</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">backend</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">color_opts</span><span class="p">)</span>
+
+        <span class="n">sel_streams</span> <span class="o">=</span> <span class="p">[</span><span class="n">selection_streams</span><span class="o">.</span><span class="n">style_stream</span><span class="p">,</span> <span class="n">selection_streams</span><span class="o">.</span><span class="n">exprs_stream</span><span class="p">]</span>
+        <span class="n">hvobj</span> <span class="o">=</span> <span class="n">hvobj</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_build_selection</span><span class="p">,</span> <span class="n">streams</span><span class="o">=</span><span class="n">sel_streams</span><span class="p">,</span> <span class="n">per_element</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operations</span><span class="p">:</span>
+            <span class="n">hvobj</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">hvobj</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">hvobj</span></div>
+
+
+<span class="k">def</span> <span class="nf">_color_to_cmap</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Create a light to dark cmap list from a base color</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span> <span class="nn">.plotting.util</span> <span class="kn">import</span> <span class="n">linear_gradient</span>
+    <span class="c1"># Lighten start color by interpolating toward white</span>
+    <span class="n">start_color</span> <span class="o">=</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="s2">"#ffffff"</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># Darken end color by interpolating toward black</span>
+    <span class="n">end_color</span> <span class="o">=</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s2">"#000000"</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="n">start_color</span><span class="p">,</span> <span class="n">end_color</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

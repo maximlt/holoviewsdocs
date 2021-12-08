@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.element.path — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.element.path</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">The path module provides a set of elements to draw paths and polygon</span>
+<span class="sd">geometries in 2D space. In addition to three general elements are</span>
+<span class="sd">Path, Contours and Polygons, it defines a number of elements to</span>
+<span class="sd">quickly draw common shapes.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">from</span> <span class="nn">..core</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">..core.data</span> <span class="kn">import</span> <span class="n">MultiInterface</span>
+<span class="kn">from</span> <span class="nn">..core.dimension</span> <span class="kn">import</span> <span class="n">Dimension</span>
+<span class="kn">from</span> <span class="nn">..core.util</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">.geom</span> <span class="kn">import</span> <span class="n">Geometry</span>
+<span class="kn">from</span> <span class="nn">.selection</span> <span class="kn">import</span> <span class="n">SelectionPolyExpr</span>
+
+
+<div class="viewcode-block" id="Path"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Path">[docs]</a><span class="k">class</span> <span class="nc">Path</span><span class="p">(</span><span class="n">SelectionPolyExpr</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    The Path element represents one or more of path geometries with</span>
+<span class="sd">    associated values. Each path geometry may be split into</span>
+<span class="sd">    sub-geometries on NaN-values and may be associated with scalar</span>
+<span class="sd">    values or array values varying along its length. In analogy to</span>
+<span class="sd">    GEOS geometry types a Path is a collection of LineString and</span>
+<span class="sd">    MultiLineString geometries with associated values.</span>
+
+<span class="sd">    Like all other elements a Path may be defined through an</span>
+<span class="sd">    extensible list of interfaces. Natively, HoloViews provides the</span>
+<span class="sd">    MultiInterface which allows representing paths as lists of regular</span>
+<span class="sd">    columnar data objects including arrays, dataframes and</span>
+<span class="sd">    dictionaries of column arrays and scalars.</span>
+
+<span class="sd">    The canonical representation is a list of dictionaries storing the</span>
+<span class="sd">    x- and y-coordinates along with any other values:</span>
+
+<span class="sd">        [{'x': 1d-array, 'y': 1d-array, 'value': scalar, 'continuous': 1d-array}, ...]</span>
+
+<span class="sd">    Alternatively Path also supports a single columnar data-structure</span>
+<span class="sd">    to specify an individual path:</span>
+
+<span class="sd">        {'x': 1d-array, 'y': 1d-array, 'value': scalar, 'continuous': 1d-array}</span>
+
+<span class="sd">    Both scalar values and values continuously varying along the</span>
+<span class="sd">    geometries coordinates a Path may be used vary visual properties</span>
+<span class="sd">    of the paths such as the color. Since not all formats allow</span>
+<span class="sd">    storing scalar values as actual scalars, arrays that are the same</span>
+<span class="sd">    length as the coordinates but have only one unique value are also</span>
+<span class="sd">    considered scalar.</span>
+
+<span class="sd">    The easiest way of accessing the individual geometries is using</span>
+<span class="sd">    the `Path.split` method, which returns each path geometry as a</span>
+<span class="sd">    separate entity, while the other methods assume a flattened</span>
+<span class="sd">    representation where all paths are separated by NaN values.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">"Path"</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">datatype</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ObjectSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'multitabular'</span><span class="p">,</span> <span class="s1">'spatialpandas'</span><span class="p">,</span> <span class="s1">'dask_spatialpandas'</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># Add support for (x, ys) where ys defines multiple paths</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Path x and y values must be the same length."</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">data</span><span class="p">):</span>
+            <span class="c1"># Allow unpacking of a list of Path elements</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="n">kdims</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">kdims</span> <span class="o">!=</span> <span class="n">kdims</span><span class="p">:</span>
+                    <span class="n">redim</span> <span class="o">=</span> <span class="p">{</span><span class="n">okd</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">nkd</span> <span class="k">for</span> <span class="n">okd</span><span class="p">,</span> <span class="n">nkd</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">kdims</span><span class="p">,</span> <span class="n">kdims</span><span class="p">)}</span>
+                    <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">redim</span><span class="p">(</span><span class="o">**</span><span class="n">redim</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">multi</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="n">paths</span> <span class="o">+=</span> <span class="n">path</span><span class="o">.</span><span class="n">data</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">paths</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selection_mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> only support slice indexing"</span> <span class="o">%</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="n">xkey</span><span class="p">,</span> <span class="n">ykey</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="n">xstart</span><span class="p">,</span> <span class="n">xstop</span> <span class="o">=</span> <span class="n">xkey</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">xkey</span><span class="o">.</span><span class="n">stop</span>
+        <span class="n">ystart</span><span class="p">,</span> <span class="n">ystop</span> <span class="o">=</span> <span class="n">ykey</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">ykey</span><span class="o">.</span><span class="n">stop</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">extents</span><span class="o">=</span><span class="p">(</span><span class="n">xstart</span><span class="p">,</span> <span class="n">ystart</span><span class="p">,</span> <span class="n">xstop</span><span class="p">,</span> <span class="n">ystop</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Path.select"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Path.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_expr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selection_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">selection</span><span class="p">):</span>
+        <span class="sd">"""Applies selection by dimension name</span>
+
+<span class="sd">        Applies a selection along the dimensions of the object using</span>
+<span class="sd">        keyword arguments. The selection may be narrowed to certain</span>
+<span class="sd">        objects using selection_specs. For container objects the</span>
+<span class="sd">        selection will be applied to all children as well.</span>
+
+<span class="sd">        Selections may select a specific value, slice or set of values:</span>
+
+<span class="sd">        * value: Scalar values will select rows along with an exact</span>
+<span class="sd">                 match, e.g.:</span>
+
+<span class="sd">            ds.select(x=3)</span>
+
+<span class="sd">        * slice: Slices may be declared as tuples of the upper and</span>
+<span class="sd">                 lower bound, e.g.:</span>
+
+<span class="sd">            ds.select(x=(0, 3))</span>
+
+<span class="sd">        * values: A list of values may be selected using a list or</span>
+<span class="sd">                  set, e.g.:</span>
+
+<span class="sd">            ds.select(x=[0, 1, 2])</span>
+
+<span class="sd">        * predicate expression: A holoviews.dim expression, e.g.:</span>
+
+<span class="sd">            from holoviews import dim</span>
+<span class="sd">            ds.select(selection_expr=dim('x') % 2 == 0)</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            selection_expr: holoviews.dim predicate expression</span>
+<span class="sd">                specifying selection.</span>
+<span class="sd">            selection_specs: List of specs to match on</span>
+<span class="sd">                A list of types, functions, or type[.group][.label]</span>
+<span class="sd">                strings specifying which objects to apply the</span>
+<span class="sd">                selection on.</span>
+<span class="sd">            **selection: Dictionary declaring selections by dimension</span>
+<span class="sd">                Selections can be scalar values, tuple ranges, lists</span>
+<span class="sd">                of discrete values and boolean arrays</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Returns an Dimensioned object containing the selected data</span>
+<span class="sd">            or a scalar if a single value was selected</span>
+<span class="sd">        """</span>
+        <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="n">selection</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">y_range</span> <span class="o">=</span> <span class="n">selection</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">sel</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selection_expr</span><span class="p">,</span> <span class="n">selection_specs</span><span class="p">,</span>
+                             <span class="o">**</span><span class="n">selection</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x_range</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">y_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sel</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="n">x_range</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">y_range</span> <span class="o">=</span> <span class="n">y_range</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y_range</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sel</span><span class="p">[</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Path.split"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Path.split">[docs]</a>    <span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        The split method allows splitting a Path type into a list of</span>
+<span class="sd">        subpaths of the same type. A start and/or end may be supplied</span>
+<span class="sd">        to select a subset of paths.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">multi</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">[]</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="o">==</span> <span class="s1">'array'</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="o">==</span> <span class="s1">'dataframe'</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dframe</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'columns'</span><span class="p">,</span> <span class="s1">'dictionary'</span><span class="p">):</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">datatype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> datatype not support"</span> <span class="o">%</span> <span class="n">datatype</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">obj</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">datatype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Contours"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Contours">[docs]</a><span class="k">class</span> <span class="nc">Contours</span><span class="p">(</span><span class="n">Path</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    The Contours element is a subtype of a Path which is characterized</span>
+<span class="sd">    by the fact that each path geometry may only be associated with</span>
+<span class="sd">    scalar values. It supports all the same data formats as a `Path`</span>
+<span class="sd">    but does not allow continuously varying values along the path</span>
+<span class="sd">    geometry's coordinates. Conceptually Contours therefore represent</span>
+<span class="sd">    iso-contours or isoclines, i.e. a function of two variables which</span>
+<span class="sd">    describes a curve along which the function has a constant value.</span>
+
+<span class="sd">    The canonical representation is a list of dictionaries storing the</span>
+<span class="sd">    x- and y-coordinates along with any other (scalar) values:</span>
+
+<span class="sd">        [{'x': 1d-array, 'y': 1d-array, 'value': scalar}, ...]</span>
+
+<span class="sd">    Alternatively Contours also supports a single columnar</span>
+<span class="sd">    data-structure to specify an individual contour:</span>
+
+<span class="sd">        {'x': 1d-array, 'y': 1d-array, 'value': scalar, 'continuous': 1d-array}</span>
+
+<span class="sd">    Since not all formats allow storing scalar values as actual</span>
+<span class="sd">    scalars arrays which are the same length as the coordinates but</span>
+<span class="sd">    have only one unique value are also considered scalar. This is</span>
+<span class="sd">    strictly enforced, ensuring that each path geometry represents</span>
+<span class="sd">    a valid iso-contour.</span>
+
+<span class="sd">    The easiest way of accessing the individual geometries is using</span>
+<span class="sd">    the `Contours.split` method, which returns each path geometry as a</span>
+<span class="sd">    separate entity, while the other methods assume a flattened</span>
+<span class="sd">    representation where all paths are separated by NaN values.</span>
+<span class="sd">    """</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Contours optionally accept a value dimension, corresponding</span>
+<span class="s2">        to the supplied values."""</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Contours'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">_level_vdim</span> <span class="o">=</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'Level'</span><span class="p">)</span> <span class="c1"># For backward compatibility</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">data</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Polygons"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Polygons">[docs]</a><span class="k">class</span> <span class="nc">Polygons</span><span class="p">(</span><span class="n">Contours</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    The Polygons element represents one or more polygon geometries</span>
+<span class="sd">    with associated scalar values. Each polygon geometry may be split</span>
+<span class="sd">    into sub-geometries on NaN-values and may be associated with</span>
+<span class="sd">    scalar values. In analogy to GEOS geometry types a Polygons</span>
+<span class="sd">    element is a collection of Polygon and MultiPolygon</span>
+<span class="sd">    geometries. Polygon geometries are defined as a set of coordinates</span>
+<span class="sd">    describing the exterior bounding ring and any number of interior</span>
+<span class="sd">    holes.</span>
+
+<span class="sd">    Like all other elements a Polygons element may be defined through</span>
+<span class="sd">    an extensible list of interfaces. Natively HoloViews provides the</span>
+<span class="sd">    MultiInterface which allows representing paths as lists of regular</span>
+<span class="sd">    columnar data objects including arrays, dataframes and</span>
+<span class="sd">    dictionaries of column arrays and scalars.</span>
+
+<span class="sd">    The canonical representation is a list of dictionaries storing the</span>
+<span class="sd">    x- and y-coordinates, a list-of-lists of arrays representing the</span>
+<span class="sd">    holes, along with any other values:</span>
+
+<span class="sd">        [{'x': 1d-array, 'y': 1d-array, 'holes': list-of-lists-of-arrays, 'value': scalar}, ...]</span>
+
+<span class="sd">    Alternatively Polygons also supports a single columnar</span>
+<span class="sd">    data-structure to specify an individual polygon:</span>
+
+<span class="sd">        {'x': 1d-array, 'y': 1d-array, 'holes': list-of-lists-of-arrays, 'value': scalar}</span>
+
+<span class="sd">    The list-of-lists format of the holes corresponds to the potential</span>
+<span class="sd">    for each coordinate array to be split into a multi-geometry</span>
+<span class="sd">    through NaN-separators. Each sub-geometry separated by the NaNs</span>
+<span class="sd">    therefore has an unambiguous mapping to a list of holes. If a</span>
+<span class="sd">    (multi-)polygon has no holes, the 'holes' key may be ommitted.</span>
+
+<span class="sd">    Any value dimensions stored on a Polygons geometry must be scalar,</span>
+<span class="sd">    just like the Contours element. Since not all formats allow</span>
+<span class="sd">    storing scalar values as actual scalars arrays which are the same</span>
+<span class="sd">    length as the coordinates but have only one unique value are also</span>
+<span class="sd">    considered scalar.</span>
+
+<span class="sd">    The easiest way of accessing the individual geometries is using</span>
+<span class="sd">    the `Polygons.split` method, which returns each path geometry as a</span>
+<span class="sd">    separate entity, while the other methods assume a flattened</span>
+<span class="sd">    representation where all paths are separated by NaN values.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">"Polygons"</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Polygons optionally accept a value dimension, corresponding</span>
+<span class="s2">        to the supplied value."""</span><span class="p">)</span>
+
+    <span class="n">_level_vdim</span> <span class="o">=</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'Value'</span><span class="p">)</span>
+
+    <span class="c1"># Defines which key the DictInterface uses to look for holes</span>
+    <span class="n">_hole_key</span> <span class="o">=</span> <span class="s1">'holes'</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">has_holes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Detects whether any polygon in the Polygons element defines</span>
+<span class="sd">        holes. Useful to avoid expanding Polygons unless necessary.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">has_holes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Polygons.holes"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Polygons.holes">[docs]</a>    <span class="k">def</span> <span class="nf">holes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a list-of-lists-of-lists of hole arrays. The three levels</span>
+<span class="sd">        of nesting reflects the structure of the polygons:</span>
+
+<span class="sd">          1. The first level of nesting corresponds to the list of geometries</span>
+<span class="sd">          2. The second level corresponds to each Polygon in a MultiPolygon</span>
+<span class="sd">          3. The third level of nesting allows for multiple holes per Polygon</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">holes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="BaseShape"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.BaseShape">[docs]</a><span class="k">class</span> <span class="nc">BaseShape</span><span class="p">(</span><span class="n">Path</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A BaseShape is a Path that can be succinctly expressed by a small</span>
+<span class="sd">    number of parameters instead of a full path specification. For</span>
+<span class="sd">    instance, a circle may be expressed by the center position and</span>
+<span class="sd">    radius instead of an explicit list of path coordinates.</span>
+<span class="sd">    """</span>
+
+    <span class="n">__abstract</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Dataset</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([],</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">MultiInterface</span>
+
+<div class="viewcode-block" id="BaseShape.clone"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.BaseShape.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Returns a clone of the object with matching parameter values</span>
+<span class="sd">        containing the specified args and kwargs.</span>
+<span class="sd">        """</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">overrides</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'link'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">get_param_values</span><span class="p">(),</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">'id'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">:</span>
+            <span class="n">settings</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">link</span><span class="p">:</span>
+            <span class="n">settings</span><span class="p">[</span><span class="s1">'plot_id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_id</span>
+
+        <span class="n">pos_args</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s1">'__pos_params'</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">pos_args</span><span class="p">),</span>
+                              <span class="o">**</span><span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                                 <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pos_args</span><span class="p">})</span></div></div>
+
+
+
+<div class="viewcode-block" id="Box"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Box">[docs]</a><span class="k">class</span> <span class="nc">Box</span><span class="p">(</span><span class="n">BaseShape</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Draw a centered box of a given width at the given position with</span>
+<span class="sd">    the specified aspect ratio (if any).</span>
+<span class="sd">    """</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The x-position of the box center."</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The y-position of the box center."</span><span class="p">)</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The width of the box."</span><span class="p">)</span>
+
+    <span class="n">height</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The height of the box."</span><span class="p">)</span>
+
+    <span class="n">orientation</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Orientation in the Cartesian coordinate system, the</span>
+<span class="s2">       counterclockwise angle in radians between the first axis and the</span>
+<span class="s2">       horizontal."""</span><span class="p">)</span>
+
+    <span class="n">aspect</span><span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Optional multiplier applied to the box size to compute the</span>
+<span class="s2">       width in cases where only the length value is set."""</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Box'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The assigned group name."</span><span class="p">)</span>
+
+    <span class="n">__pos_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'x'</span><span class="p">,</span><span class="s1">'y'</span><span class="p">,</span> <span class="s1">'height'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">'aspect'</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Aspect parameter not supported when supplying '</span>
+                                 <span class="s1">'(width, height) specification.'</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="p">)</span> <span class="o">=</span> <span class="n">spec</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="n">spec</span><span class="p">),</span> <span class="n">spec</span>
+
+        <span class="n">params</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="n">half_width</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aspect</span><span class="p">)</span><span class="o">/</span> <span class="mf">2.0</span>
+        <span class="n">half_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mf">2.0</span>
+        <span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">half_width</span><span class="p">,</span> <span class="o">-</span><span class="n">half_height</span><span class="p">,</span> <span class="n">half_width</span><span class="p">,</span> <span class="n">half_height</span><span class="p">)</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">b</span><span class="p">),(</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">)])</span>
+        <span class="n">rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">)],</span>
+                        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">)]])</span>
+
+        <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">rot</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">xs</span><span class="o">+</span><span class="n">x</span><span class="p">,</span> <span class="n">ys</span><span class="o">+</span><span class="n">y</span><span class="p">])]</span></div>
+
+
+<div class="viewcode-block" id="Ellipse"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Ellipse">[docs]</a><span class="k">class</span> <span class="nc">Ellipse</span><span class="p">(</span><span class="n">BaseShape</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Draw an axis-aligned ellipse at the specified x,y position with</span>
+<span class="sd">    the given orientation.</span>
+
+<span class="sd">    The simplest (default) Ellipse is a circle, specified using:</span>
+
+<span class="sd">    Ellipse(x,y, diameter)</span>
+
+<span class="sd">    A circle is a degenerate ellipse where the width and height are</span>
+<span class="sd">    equal. To specify these explicitly, you can use:</span>
+
+<span class="sd">    Ellipse(x,y, (width, height))</span>
+
+<span class="sd">    There is also an aspect parameter allowing you to generate an ellipse</span>
+<span class="sd">    by specifying a multiplicating factor that will be applied to the</span>
+<span class="sd">    height only.</span>
+
+<span class="sd">    Note that as a subclass of Path, internally an Ellipse is a</span>
+<span class="sd">    sequence of (x,y) sample positions. Ellipse could also be</span>
+<span class="sd">    implemented as an annotation that uses a dedicated ellipse artist.</span>
+<span class="sd">    """</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The x-position of the ellipse center."</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The y-position of the ellipse center."</span><span class="p">)</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The width of the ellipse."</span><span class="p">)</span>
+
+    <span class="n">height</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The height of the ellipse."</span><span class="p">)</span>
+
+    <span class="n">orientation</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Orientation in the Cartesian coordinate system, the</span>
+<span class="s2">       counterclockwise angle in radians between the first axis and the</span>
+<span class="s2">       horizontal."""</span><span class="p">)</span>
+
+    <span class="n">aspect</span><span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">       Optional multiplier applied to the diameter to compute the width</span>
+<span class="s2">       in cases where only the diameter value is set."""</span><span class="p">)</span>
+
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The sample count used to draw the ellipse."</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Ellipse'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The assigned group name."</span><span class="p">)</span>
+
+    <span class="n">__pos_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'x'</span><span class="p">,</span><span class="s1">'y'</span><span class="p">,</span> <span class="s1">'height'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">'aspect'</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Aspect parameter not supported when supplying '</span>
+                                 <span class="s1">'(width, height) specification.'</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="o">=</span> <span class="n">spec</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="n">spec</span><span class="p">),</span> <span class="n">spec</span>
+
+        <span class="n">params</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">)</span>
+        <span class="n">half_width</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aspect</span><span class="p">)</span><span class="o">/</span> <span class="mf">2.0</span>
+        <span class="n">half_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mf">2.0</span>
+        <span class="c1">#create points</span>
+        <span class="n">ellipse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">half_width</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span>
+                     <span class="n">half_height</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">))))</span>
+        <span class="c1">#rotate ellipse and add offset</span>
+        <span class="n">rot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">)],</span>
+               <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">orientation</span><span class="p">)]])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">rot</span><span class="p">,</span> <span class="n">ellipse</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">])]</span></div>
+
+
+<div class="viewcode-block" id="Bounds"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Bounds">[docs]</a><span class="k">class</span> <span class="nc">Bounds</span><span class="p">(</span><span class="n">BaseShape</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    An arbitrary axis-aligned bounding rectangle defined by the (left,</span>
+<span class="sd">    bottom, right, top) coordinate positions.</span>
+
+<span class="sd">    If supplied a single real number as input, this value will be</span>
+<span class="sd">    treated as the radius of a square, zero-center box which will be</span>
+<span class="sd">    used to compute the corresponding lbrt tuple.</span>
+<span class="sd">    """</span>
+
+    <span class="n">lbrt</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Tuple</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">          The (left, bottom, right, top) coordinates of the bounding box."""</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Bounds'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"The assigned group name."</span><span class="p">)</span>
+
+    <span class="n">__pos_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'lbrt'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lbrt</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lbrt</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">lbrt</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">lbrt</span><span class="p">,</span> <span class="o">-</span><span class="n">lbrt</span><span class="p">,</span> <span class="n">lbrt</span><span class="p">,</span> <span class="n">lbrt</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">lbrt</span><span class="o">=</span><span class="n">lbrt</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lbrt</span>
+        <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">OrderedDict</span><span class="p">([(</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">l</span><span class="p">])),</span>
+                                  <span class="p">(</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">]))])]</span></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<map id="inheritance465b474ec9" name="inheritance465b474ec9">
+<area shape="rect" id="node1" href="#holoviews.core.options.AbbreviatedException" target="_top" title="Raised by the abbreviate_exception context manager when it is" alt="" coords="7,449,298,475"/>
+<area shape="rect" id="node2" href="#holoviews.core.options.CallbackError" target="_top" title="An error raised during a callback." alt="" coords="32,400,273,425"/>
+<area shape="rect" id="node3" href="#holoviews.core.options.Compositor" target="_top" title="A Compositor is a way of specifying an operation to be automatically" alt="" coords="348,301,577,327"/>
+<area shape="rect" id="node4" title="params(name=String)" alt="" coords="33,351,272,376"/>
+<area shape="rect" id="node5" href="#holoviews.core.options.Cycle" target="_top" title="A simple container class that specifies cyclic options. A typical" alt="" coords="366,351,559,376"/>
+<area shape="rect" id="node6" href="#holoviews.core.options.Keywords" target="_top" title="A keywords objects represents a set of Python keywords. It is" alt="" coords="353,400,572,425"/>
+<area shape="rect" id="node11" href="#holoviews.core.options.Palette" target="_top" title="Palettes allow easy specifying a discrete sampling" alt="" coords="625,351,828,376"/>
+<area shape="rect" id="node7" href="#holoviews.core.options.OptionError" target="_top" title="Custom exception raised when there is an attempt to apply invalid" alt="" coords="38,301,267,327"/>
+<area shape="rect" id="node8" href="#holoviews.core.options.OptionTree" target="_top" title="A subclass of AttrTree that is used to define the inheritance" alt="" coords="349,252,576,277"/>
+<area shape="rect" id="node9" href="#holoviews.core.tree.AttrTree" target="_top" title="An AttrTree offers convenient, multi&#45;level attribute access for" alt="" coords="59,252,247,277"/>
+<area shape="rect" id="node10" href="#holoviews.core.options.Options" target="_top" title="An Options object holds a collection of keyword options. In" alt="" coords="49,203,256,228"/>
+<area shape="rect" id="node12" href="#holoviews.core.options.SkipRendering" target="_top" title="A SkipRendering exception in the plotting code will make the display" alt="" coords="29,153,277,179"/>
+<area shape="rect" id="node13" href="#holoviews.core.options.Store" target="_top" title="The Store is what links up HoloViews objects to their" alt="" coords="57,104,249,129"/>
+<area shape="rect" id="node14" href="#holoviews.core.options.StoreOptions" target="_top" title="A collection of utilities for advanced users for creating and" alt="" coords="33,55,272,80"/>
+<area shape="rect" id="node15" href="#holoviews.core.options.abbreviated_exception" target="_top" title="Context manager used to to abbreviate tracebacks using an" alt="" coords="5,5,300,31"/>
+</map>

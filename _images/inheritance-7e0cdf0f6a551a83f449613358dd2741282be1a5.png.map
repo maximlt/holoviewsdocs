@@ -1,0 +1,9 @@
+<map id="inheritance36741c89b1" name="inheritance36741c89b1">
+<area shape="rect" id="node7" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="560,4,724,20"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="347,37,519,53"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="551,37,734,53"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="195,37,315,53"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="766,20,959,37"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="4,37,163,53"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.tiles.TilePlot" target="_top" title="holoviews.plotting.plotly.tiles.TilePlot" alt="" coords="991,20,1148,37"/>
+</map>

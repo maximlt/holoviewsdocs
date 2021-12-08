@@ -1,0 +1,17 @@
+<map id="inheritance40c19db063" name="inheritance40c19db063">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.chart.ChartPlot" target="_top" title="Baseclass to plot Chart elements." alt="" coords="719,15,838,27"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.chart.PointPlot" target="_top" title="Note that the &#39;cmap&#39;, &#39;vmin&#39; and &#39;vmax&#39; style arguments control" alt="" coords="870,15,987,27"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.mpl.element.ElementPlot" target="_top" title="holoviews.plotting.mpl.element.ElementPlot" alt="" coords="553,27,688,39"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.element.ColorbarPlot" target="_top" title="holoviews.plotting.mpl.element.ColorbarPlot" alt="" coords="711,39,846,51"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.mpl.chart3d.Scatter3DPlot" target="_top" title="Subclass of PointPlot allowing plotting of Points" alt="" coords="1011,3,1149,15"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.chart3d.Plot3D" target="_top" title="Plot3D provides a common baseclass for mplot3d based" alt="" coords="870,39,987,51"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.mpl.path.PathPlot" target="_top" title="holoviews.plotting.mpl.path.PathPlot" alt="" coords="872,74,985,86"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.mpl.chart3d.Path3DPlot" target="_top" title="Allows plotting paths on a 3D axis." alt="" coords="1014,74,1146,86"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.mpl.chart3d.SurfacePlot" target="_top" title="Plots surfaces wireframes and contours in 3D space." alt="" coords="1014,26,1146,39"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.mpl.chart3d.TriSurfacePlot" target="_top" title="Plots a trisurface given a TriSurface element, containing" alt="" coords="1010,50,1149,62"/>
+<area shape="rect" id="node11" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="398,15,530,27"/>
+<area shape="rect" id="node12" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="408,39,520,51"/>
+<area shape="rect" id="node13" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="250,27,374,39"/>
+<area shape="rect" id="node14" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="141,27,227,39"/>
+<area shape="rect" id="node15" title="params(name=String)" alt="" coords="3,27,118,39"/>
+</map>

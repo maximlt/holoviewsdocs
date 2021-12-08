@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.ipython.widgets — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.ipython.widgets</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">SkipTest</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">IPython</span>
+    <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">clear_output</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">raise</span> <span class="n">SkipTest</span><span class="p">(</span><span class="s2">"IPython extension requires IPython &gt;= 0.12"</span><span class="p">)</span>
+
+<span class="c1"># IPython 0.13 does not have version_info</span>
+<span class="n">ipython2</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">IPython</span><span class="p">,</span> <span class="s1">'version_info'</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">IPython</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">from</span> <span class="nn">..core.util</span> <span class="kn">import</span> <span class="n">ProgressIndicator</span>
+
+
+<div class="viewcode-block" id="ProgressBar"><a class="viewcode-back" href="../../../reference_manual/holoviews.ipython.html#holoviews.ipython.widgets.ProgressBar">[docs]</a><span class="k">class</span> <span class="nc">ProgressBar</span><span class="p">(</span><span class="n">ProgressIndicator</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A simple text progress bar suitable for both the IPython notebook</span>
+<span class="sd">    and the IPython interactive prompt.</span>
+
+<span class="sd">    ProgressBars are automatically nested if a previous instantiated</span>
+<span class="sd">    progress bars has not achieved 100% completion.</span>
+<span class="sd">    """</span>
+
+    <span class="n">display</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ObjectSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'stdout'</span><span class="p">,</span>
+                  <span class="n">objects</span><span class="o">=</span><span class="p">[</span><span class="s1">'stdout'</span><span class="p">,</span> <span class="s1">'disabled'</span><span class="p">,</span> <span class="s1">'broadcast'</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Parameter to control display of the progress bar. By default,</span>
+<span class="s2">        progress is shown on stdout but this may be disabled e.g. for</span>
+<span class="s2">        jobs that log standard output to file.</span>
+
+<span class="s2">        If the output mode is set to 'broadcast', a socket is opened on</span>
+<span class="s2">        a stated port to broadcast the completion percentage. The</span>
+<span class="s2">        RemoteProgress class may then be used to view the progress from</span>
+<span class="s2">        a different process."""</span><span class="p">)</span>
+
+    <span class="n">width</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The width of the progress bar as the number of characters"""</span><span class="p">)</span>
+
+    <span class="n">fill_char</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'#'</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The character used to fill the progress bar."""</span><span class="p">)</span>
+
+    <span class="n">blank_char</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">' '</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The character for the blank portion of the progress bar."""</span><span class="p">)</span>
+
+    <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        If enabled, the progress bar will disappear and display the</span>
+<span class="s2">        total elapsed time once 100</span><span class="si">% c</span><span class="s2">ompletion is reached."""</span><span class="p">)</span>
+
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">current_progress</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_display</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">ProgressBar</span><span class="o">.</span><span class="n">current_progress</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentage</span><span class="p">):</span>
+        <span class="s2">" Update the progress bar within the specified percent_range"</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">percentage</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">((</span><span class="n">percentage</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">span</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span> <span class="o">==</span> <span class="s1">'disabled'</span><span class="p">:</span> <span class="k">return</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span> <span class="o">==</span> <span class="s1">'stdout'</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">percentage</span><span class="o">==</span><span class="mi">100</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">elapsed_time</span><span class="p">:</span>
+                <span class="n">elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span>
+                <span class="k">if</span> <span class="n">clear_output</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ipython2</span><span class="p">:</span> <span class="n">clear_output</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">clear_output</span> <span class="ow">and</span> <span class="n">ipython2</span><span class="p">:</span> <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\r</span><span class="s1">'</span> <span class="o">+</span> <span class="p">(</span><span class="s1">'100</span><span class="si">%%</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%02d</span><span class="s1">:</span><span class="si">%02d</span><span class="s1">:</span><span class="si">%02d</span><span class="s1">'</span>
+                                   <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">elapsed</span><span class="o">//</span><span class="mi">3600</span><span class="p">,</span>
+                                      <span class="n">elapsed</span><span class="o">//</span><span class="mi">60</span><span class="p">,</span> <span class="n">elapsed</span><span class="o">%</span><span class="mi">60</span><span class="p">))</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">pg</span><span class="o">.</span><span class="n">out</span> <span class="k">for</span> <span class="n">pg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_progress</span><span class="p">])</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_stdout_display</span><span class="p">(</span><span class="n">percentage</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">percentage</span> <span class="o">==</span> <span class="mi">100</span> <span class="ow">and</span> <span class="n">ProgressBar</span><span class="o">.</span><span class="n">current_progress</span><span class="p">:</span>
+                <span class="n">ProgressBar</span><span class="o">.</span><span class="n">current_progress</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="s1">'socket'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s1">'socket'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_socket</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s1">'socket'</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="s1">'socket'</span><span class="p">]</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">'</span><span class="si">%s</span><span class="s1">|</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">percentage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">))</span>
+
+
+    <span class="k">def</span> <span class="nf">_stdout_display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">clear_output</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ipython2</span><span class="p">:</span> <span class="n">clear_output</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">clear_output</span> <span class="ow">and</span> <span class="n">ipython2</span><span class="p">:</span> <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">percent_per_char</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">char_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">percentage</span><span class="o">/</span><span class="n">percent_per_char</span><span class="p">)</span>
+                         <span class="k">if</span> <span class="n">percentage</span><span class="o">&lt;</span><span class="mf">100.0</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+        <span class="n">blank_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">char_count</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_progress</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">''</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span>  <span class="n">prefix</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">[</span><span class="si">%s%s</span><span class="s2">] </span><span class="si">%0.1f%%</span><span class="s2">"</span> <span class="o">%</span>
+                              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">+</span><span class="s1">':</span><span class="se">\n</span><span class="s1">'</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="k">else</span> <span class="s1">''</span><span class="p">,</span>
+                               <span class="bp">self</span><span class="o">.</span><span class="n">fill_char</span> <span class="o">*</span> <span class="n">char_count</span><span class="p">,</span>
+                               <span class="s1">' '</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fill_char</span><span class="p">)</span> <span class="o">*</span> <span class="n">blank_count</span><span class="p">,</span>
+                               <span class="n">percentage</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">display</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">pg</span><span class="o">.</span><span class="n">out</span> <span class="k">for</span> <span class="n">pg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_progress</span><span class="p">]))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">_get_socket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_port</span><span class="o">=</span><span class="mi">8080</span><span class="p">,</span> <span class="n">max_port</span><span class="o">=</span><span class="mi">8100</span><span class="p">,</span> <span class="n">max_tries</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">zmq</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+        <span class="n">sock</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUB</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">port</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">bind_to_random_port</span><span class="p">(</span><span class="s1">'tcp://*'</span><span class="p">,</span>
+                                            <span class="n">min_port</span><span class="o">=</span><span class="n">min_port</span><span class="p">,</span>
+                                            <span class="n">max_port</span><span class="o">=</span><span class="n">max_port</span><span class="p">,</span>
+                                            <span class="n">max_tries</span><span class="o">=</span><span class="n">max_tries</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">"Progress broadcast bound to port </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">port</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">sock</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">"No suitable port found for progress broadcast."</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="RemoteProgress"><a class="viewcode-back" href="../../../reference_manual/holoviews.ipython.html#holoviews.ipython.widgets.RemoteProgress">[docs]</a><span class="k">class</span> <span class="nc">RemoteProgress</span><span class="p">(</span><span class="n">ProgressBar</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Connect to a progress bar in a separate process with output_mode</span>
+<span class="sd">    set to 'broadcast' in order to display the results (to stdout).</span>
+<span class="sd">    """</span>
+
+    <span class="n">hostname</span><span class="o">=</span><span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Hostname where progress is being broadcast."""</span><span class="p">)</span>
+
+    <span class="n">port</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">8080</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"Target port on hostname."</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">zmq</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+        <span class="n">sock</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUB</span><span class="p">)</span>
+        <span class="n">sock</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+        <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'tcp://'</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hostname</span> <span class="o">+</span><span class="s1">':'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">))</span>
+        <span class="c1"># Get progress via socket</span>
+        <span class="n">percent</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">message</span><span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+                <span class="p">[</span><span class="n">percent_str</span><span class="p">,</span> <span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'|'</span><span class="p">)</span>
+                <span class="n">percent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">percent_str</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">RemoteProgress</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">percent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">"Exited at </span><span class="si">%.3f%%</span><span class="s2"> completion"</span> <span class="o">%</span> <span class="n">percent</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">"Could not process socket message: </span><span class="si">%r</span><span class="s2">"</span>
+                                  <span class="o">%</span> <span class="n">message</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RunProgress"><a class="viewcode-back" href="../../../reference_manual/holoviews.ipython.html#holoviews.ipython.widgets.RunProgress">[docs]</a><span class="k">class</span> <span class="nc">RunProgress</span><span class="p">(</span><span class="n">ProgressBar</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    RunProgress breaks up the execution of a slow running command so</span>
+<span class="sd">    that the level of completion can be displayed during execution.</span>
+
+<span class="sd">    This class is designed to run commands that take a single numeric</span>
+<span class="sd">    argument that acts additively. Namely, it is expected that a slow</span>
+<span class="sd">    running command 'run_hook(X+Y)' can be arbitrarily broken up into</span>
+<span class="sd">    multiple, faster executing calls 'run_hook(X)' and 'run_hook(Y)'</span>
+<span class="sd">    without affecting the overall result.</span>
+
+<span class="sd">    For instance, this is suitable for simulations where the numeric</span>
+<span class="sd">    argument is the simulated time - typically, advancing 10 simulated</span>
+<span class="sd">    seconds takes about twice as long as advancing by 5 seconds.</span>
+<span class="sd">    """</span>
+
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The run interval used to break up updates to the progress bar."""</span><span class="p">)</span>
+
+    <span class="n">run_hook</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Callable</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">param</span><span class="o">.</span><span class="n">Dynamic</span><span class="o">.</span><span class="n">time_fn</span><span class="o">.</span><span class="n">advance</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        By default updates time in param which is very fast and does</span>
+<span class="s2">        not need a progress bar. Should be set to some slower running</span>
+<span class="s2">        callable where display of progress level is desired."""</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Execute the run_hook to a total of value, breaking up progress</span>
+<span class="sd">        updates by the value specified by interval.</span>
+<span class="sd">        """</span>
+        <span class="n">completed</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">completed</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">)</span>
+            <span class="n">completed</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interval</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">completed</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
+        <span class="n">remaining</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">completed</span>
+        <span class="k">if</span> <span class="n">remaining</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_hook</span><span class="p">(</span><span class="n">remaining</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="progress"><a class="viewcode-back" href="../../../reference_manual/holoviews.ipython.html#holoviews.ipython.widgets.progress">[docs]</a><span class="k">def</span> <span class="nf">progress</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">enum</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A helper utility to display a progress bar when iterating over a</span>
+<span class="sd">    collection of a fixed length or a generator (with a declared</span>
+<span class="sd">    length).</span>
+
+<span class="sd">    If enum=True, then equivalent to enumerate with a progress bar.</span>
+<span class="sd">    """</span>
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">ProgressBar</span><span class="p">()</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span> <span class="k">if</span> <span class="n">length</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">length</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+        <span class="n">progress</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="n">length</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">enum</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">val</span></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<map id="inheritancee37d63cbd3" name="inheritancee37d63cbd3">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="631,29,863,55"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.util.apply_nodata" target="_top" title="holoviews.plotting.util.apply_nodata" alt="" coords="911,29,1143,55"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="292,29,583,55"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.util.CMapInfo" target="_top" title="CMapInfo(name, provider, category, source, bg)" alt="" coords="20,5,229,31"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.util.Warning" target="_top" title="holoviews.plotting.util.Warning" alt="" coords="337,79,538,104"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="5,55,244,80"/>
+</map>

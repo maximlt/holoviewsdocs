@@ -1,0 +1,9 @@
+<map id="inheritance0cf8f6052a" name="inheritance0cf8f6052a">
+<area shape="rect" id="node1" href="holoviews.core.html#holoviews.core.operation.Operation" target="_top" title="An Operation process an Element or HoloMap at the level of" alt="" coords="591,49,801,72"/>
+<area shape="rect" id="node5" href="#holoviews.operation.timeseries.resample" target="_top" title="Resamples a timeseries of dates with a frequency and function." alt="" coords="887,5,1125,28"/>
+<area shape="rect" id="node6" href="#holoviews.operation.timeseries.rolling" target="_top" title="Applies a function over a rolling window." alt="" coords="896,94,1116,117"/>
+<area shape="rect" id="node7" href="#holoviews.operation.timeseries.rolling_outlier_std" target="_top" title="Detect outliers using the standard deviation within a rolling window." alt="" coords="865,49,1147,72"/>
+<area shape="rect" id="node2" title="params(name=String)" alt="" coords="264,48,527,71"/>
+<area shape="rect" id="node3" href="#holoviews.operation.timeseries.RollingBase" target="_top" title="Parameters shared between `rolling` and `rolling_outlier_std`." alt="" coords="570,94,822,117"/>
+<area shape="rect" id="node4" title="params(name=String)" alt="" coords="5,71,221,94"/>
+</map>

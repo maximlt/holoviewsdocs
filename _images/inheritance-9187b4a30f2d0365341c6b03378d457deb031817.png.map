@@ -1,0 +1,13 @@
+<map id="inheritance4fa3a2798c" name="inheritance4fa3a2798c">
+<area shape="rect" id="node1" href="#holoviews.plotting.bokeh.plot.AdjointLayoutPlot" target="_top" title="holoviews.plotting.bokeh.plot.AdjointLayoutPlot" alt="" coords="758,3,951,20"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.bokeh.plot.BokehPlot" target="_top" title="Plotting baseclass for the Bokeh backends, implementing the basic" alt="" coords="546,35,712,51"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.bokeh.plot.CompositePlot" target="_top" title="CompositePlot is an abstract baseclass for plot types that draw" alt="" coords="764,35,946,51"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.GenericAdjointLayoutPlot" target="_top" title="AdjointLayoutPlot allows placing up to three Views in a number of" alt="" coords="530,3,727,20"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="334,68,499,84"/>
+<area shape="rect" id="node8" href="holoviews.plotting.html#holoviews.plotting.plot.GenericCompositePlot" target="_top" title="holoviews.plotting.plot.GenericCompositePlot" alt="" coords="536,68,722,84"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.bokeh.plot.GridPlot" target="_top" title="Plot a group of elements in a grid layout based on a GridSpace element" alt="" coords="987,51,1144,68"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.bokeh.plot.LayoutPlot" target="_top" title="holoviews.plotting.bokeh.plot.LayoutPlot" alt="" coords="982,83,1149,100"/>
+<area shape="rect" id="node10" href="holoviews.plotting.html#holoviews.plotting.plot.GenericLayoutPlot" target="_top" title="A GenericLayoutPlot accepts either a Layout or a NdLayout and" alt="" coords="769,100,940,117"/>
+<area shape="rect" id="node11" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="188,36,303,52"/>
+<area shape="rect" id="node12" title="params(name=String)" alt="" coords="3,36,157,52"/>
+</map>

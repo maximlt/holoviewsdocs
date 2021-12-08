@@ -1,0 +1,6 @@
+<map id="inheritanceb0bd55e790" name="inheritanceb0bd55e790">
+<area shape="rect" id="node1" href="#holoviews.element.selection.Selection1DExpr" target="_top" title="Mixin class for Cartesian 1D Chart elements to add basic support for" alt="" coords="709,5,999,31"/>
+<area shape="rect" id="node2" href="#holoviews.element.selection.Selection2DExpr" target="_top" title="Mixin class for Cartesian 2D elements to add basic support for" alt="" coords="360,55,651,80"/>
+<area shape="rect" id="node4" href="#holoviews.element.selection.SelectionGeomExpr" target="_top" title="holoviews.element.selection.SelectionGeomExpr" alt="" coords="699,55,1009,80"/>
+<area shape="rect" id="node5" href="#holoviews.element.selection.SelectionPolyExpr" target="_top" title="holoviews.element.selection.SelectionPolyExpr" alt="" coords="704,104,1004,129"/>
+</map>

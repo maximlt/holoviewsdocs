@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Installation — HoloViews v1.14.7a1</title>
+<link href="_static/css/theme.css" rel="stylesheet"/>
+<link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/togglebutton.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="_static/favicon.ico" rel="shortcut icon">
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="reference/index.html" rel="next" title="Reference Gallery"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="#">
+<img alt="logo" class="logo" src="_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 current active nav-item">
+<a class="current reference internal nav-link" href="#">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   Home
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="reference/index.html">
+   Reference Gallery
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="simple">
+</ul>
+</input></li>
+<li class="toctree-l1">
+<a class="reference internal" href="releases.html">
+   Releases
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="reference_manual/index.html">
+   API
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.annotators.html">
+     annotators
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="reference_manual/holoviews.core.html">
+     core
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.core.data.html">
+       holoviews.data Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.core.data.html">
+     core.data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.element.html">
+     element
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.ipython.html">
+     ipython
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.operation.html">
+     operation
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="reference_manual/holoviews.plotting.html">
+     plotting
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.bokeh.html">
+       holoviews.bokeh Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.mpl.html">
+       holoviews.mpl Package
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="reference_manual/holoviews.plotting.plotly.html">
+       holoviews.plotly Package
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.plotting.bokeh.html">
+     plotting.bokeh
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.plotting.plotly.html">
+     plotting.plotly
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.selection.html">
+     selection
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.streams.html">
+     streams
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="reference_manual/holoviews.util.html">
+     util
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FAQ.html">
+   FAQ
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="roadmap.html">
+   Roadmap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference external" href="https://github.com/holoviz/holoviews">
+   Github source
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="about.html">
+   About
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1><img src="_static/logo_horizontal.png" style="width: 30%;"/></h1><p><strong>Stop plotting your data - annotate your data and let it visualize itself.</strong></p>
+<div style="display: flex">
+<div style="width: 70%"><p>HoloViews is an <a class="reference external" href="https://github.com/holoviz/holoviews/blob/master/LICENSE.txt">open-source</a> Python library designed to make data analysis and visualization seamless and simple.  With HoloViews, you can usually express what you want to do in very few lines of code, letting you focus on what you are trying to explore and convey, not on the process of plotting.</p>
+<p>For examples, check out the thumbnails below and the other items in the <a class="reference external" href="gallery">Gallery</a> of demos and apps and the <a class="reference external" href="reference">Reference Gallery</a> that shows every HoloViews component.  Be sure to look at the code, not just the pictures, to appreciate how easy it is to create such plots yourself!</p>
+<p>The <a class="reference external" href="getting_started">Getting-Started</a> guide explains the basic concepts and how to start using HoloViews, and is the recommended way to understand how everything works.</p>
+<p>The <a class="reference external" href="user_guide">User Guide</a> goes more deeply into key concepts from HoloViews, when you are ready for further study.</p>
+<p>The <a class="reference external" href="reference_manual">API</a> is the definitive guide to each HoloViews object, but the same information is available more conveniently via the <cite>hv.help()</cite> command and tab completion in the Jupyter notebook.</p>
+<p>If you have any <a class="reference external" href="https://github.com/holoviz/holoviews/issues">issues</a> or wish to <a class="reference external" href="https://help.github.com/articles/about-pull-requests">contribute code</a>, you can visit our <a class="reference external" href="https://github.com/holoviz/holoviews">GitHub site</a> or file a topic on the <a class="reference external" href="https://discourse.holoviz.org/">HoloViz Discourse</a>.</p>
+</div><div style="float: right; width: 30%; margin-top: -4%;">
+<a class="twitter-timeline" data-height="360" data-link-color="#902040" data-width="400" href="https://twitter.com/HoloViews">Tweets by HoloViews</a>
+<script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"></script>
+</div>
+</div>
+<hr width="100%"/><div>
+<div>
+<a href="https://holoviews.org/gallery/demos/bokeh/iris_splom_example.html">
+<img src="https://holoviews.org/_images/iris_splom_example.png" width="24%"/> </a>
+<a href="https://holoviews.org/getting_started/Gridded_Datasets.html">
+<img src="https://assets.holoviews.org/collage/cells.png" width="27%"/> </a>
+<a href="https://holoviews.org/gallery/demos/bokeh/scatter_economic.html">
+<img src="https://holoviews.org/_images/scatter_economic.png" width="47%"/> </a>
+</div>
+<div>
+<a href="https://holoviews.org/gallery/demos/bokeh/square_limit.html">
+<img src="https://holoviews.org/_images/square_limit.png" width="24%"/> </a>
+<a href="https://holoviews.org/gallery/demos/bokeh/bars_economic.html">
+<img src="https://holoviews.org/_images/bars_economic.png" width="24%"/> </a>
+<a href="https://holoviews.org/gallery/demos/bokeh/texas_choropleth_example.html">
+<img src="https://holoviews.org/_images/texas_choropleth_example.png" width="24%"/> </a>
+<a href="https://holoviews.org/gallery/demos/bokeh/verhulst_mandelbrot.html">
+<img src="https://holoviews.org/_images/verhulst_mandelbrot.png" width="24%"/> </a>
+</div>
+<div>
+<a href="https://holoviews.org/gallery/demos/bokeh/dropdown_economic.html">
+<img src="https://assets.holoviews.org/collage/dropdown.gif" width="33%"/> </a>
+<a href="https://holoviews.org/gallery/demos/bokeh/dragon_curve.html">
+<img src="https://assets.holoviews.org/collage/dragon_fractal.gif" width="30%"/> </a>
+<a href="https://holoviews.org/gallery/apps/bokeh/nytaxi_hover.html">
+<img src="https://assets.holoviews.org/collage/ny_datashader.gif" width="33%"/> </a>
+</div>
+</div><div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://anaconda.org/pyviz/holoviews"><img alt="CondaPkg" src="https://anaconda.org/pyviz/holoviews/badges/installer/conda.svg"/></a> <a class="reference external" href="https://pypi.python.org/pypi/holoviews"><img alt="PyPI" src="https://img.shields.io/pypi/v/holoviews.svg"/></a> <a class="reference external" href="https://github.com/holoviz/holoviews/blob/master/LICENSE.txt"><img alt="License" src="https://img.shields.io/pypi/l/holoviews.svg"/></a> <a class="reference external" href="https://coveralls.io/r/holoviz/holoviews"><img alt="Coveralls" src="https://img.shields.io/coveralls/holoviz/holoviews.svg"/></a></p>
+<p>HoloViews works with <a class="reference external" href="https://github.com/holoviz/holoviews/actions?query=workflow%3Apytest">Python 2.7 and Python 3</a> on Linux, Windows, or Mac, and works seamlessly with <a class="reference external" href="https://jupyter.org">Jupyter Notebook and JupyterLab</a>.</p>
+<p>The recommended way to install HoloViews is using the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/index.html">conda</a> command provided by <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">Anaconda</a> or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pyviz</span> <span class="n">holoviews</span> <span class="n">bokeh</span>
+</pre></div>
+</div>
+<p>This command will install the typical packages most useful with HoloViews, though HoloViews itself
+directly depends only on <a class="reference external" href="https://numpy.org">Numpy</a>, <a class="reference external" href="https://pandas.pydata.org">Pandas</a> and <a class="reference external" href="https://param.holoviz.org/">Param</a>.</p>
+<p>Additional installation and configuration options are described in the
+<a class="reference external" href="user_guide/Installing_and_Configuring.html">user guide</a>.</p>
+<p>Additional methods of installation, including different ways to use
+<code class="docutils literal notranslate"><span class="pre">pip</span></code> can be found in the <a class="reference external" href="install.html">installation guide</a>.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve installed HoloViews, you can get a copy of all the examples shown on this website:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">holoviews</span> <span class="o">--</span><span class="n">install</span><span class="o">-</span><span class="n">examples</span>
+<span class="n">cd</span> <span class="n">holoviews</span><span class="o">-</span><span class="n">examples</span>
+</pre></div>
+</div>
+<p>Now you can launch Jupyter Notebook or JupyterLab to explore them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+
+<span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+<p>If you are working with a JupyterLab version &lt;2.0 you will also need the PyViz JupyterLab
+extension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@pyviz</span><span class="o">/</span><span class="n">jupyterlab_pyviz</span>
+</pre></div>
+</div>
+<p>For more details on installing and configuring HoloViews see <a class="reference external" href="user_guide/Installing_and_Configuring.html">the installing and configuring guide</a>.</p>
+<p>After you have successfully installed and configured HoloViews, please see <a class="reference external" href="getting_started/index.html">Getting Started</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="right-next" href="reference/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Reference Gallery</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="last-updated">
+Last updated on 2021-12-08.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

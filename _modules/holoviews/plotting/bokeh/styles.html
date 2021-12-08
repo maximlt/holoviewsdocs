@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.bokeh.styles — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.bokeh.styles</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Defines valid style options, validation and utilities</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.core.properties</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Angle</span><span class="p">,</span> <span class="n">Color</span><span class="p">,</span> <span class="n">DashPattern</span><span class="p">,</span> <span class="n">FontSize</span><span class="p">,</span> <span class="n">MarkerType</span><span class="p">,</span> <span class="n">Percent</span><span class="p">,</span> <span class="n">Size</span>
+<span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">cm</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+<span class="kn">from</span> <span class="nn">...core.options</span> <span class="kn">import</span> <span class="n">abbreviated_exception</span>
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="n">arraylike_types</span>
+<span class="kn">from</span> <span class="nn">...util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">COLOR_ALIASES</span><span class="p">,</span> <span class="n">RGB_HEX_REGEX</span><span class="p">,</span> <span class="n">rgb2hex</span>
+
+<span class="c1"># Define shared style properties for bokeh plots</span>
+
+<span class="n">property_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'selection'</span><span class="p">,</span> <span class="s1">'nonselection'</span><span class="p">,</span> <span class="s1">'muted'</span><span class="p">,</span> <span class="s1">'hover'</span><span class="p">]</span>
+
+<span class="n">base_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'visible'</span><span class="p">,</span> <span class="s1">'muted'</span><span class="p">]</span>
+
+<span class="n">line_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'line_color'</span><span class="p">,</span> <span class="s1">'line_alpha'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'alpha'</span><span class="p">,</span> <span class="s1">'line_width'</span><span class="p">,</span>
+                   <span class="s1">'line_join'</span><span class="p">,</span> <span class="s1">'line_cap'</span><span class="p">,</span> <span class="s1">'line_dash'</span><span class="p">]</span>
+<span class="n">line_properties</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">prefix</span><span class="p">,</span> <span class="n">prop</span><span class="p">])</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">line_properties</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">property_prefixes</span><span class="p">]</span>
+
+<span class="n">fill_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'fill_color'</span><span class="p">,</span> <span class="s1">'fill_alpha'</span><span class="p">]</span>
+<span class="n">fill_properties</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">prefix</span><span class="p">,</span> <span class="n">prop</span><span class="p">])</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">fill_properties</span>
+                    <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">property_prefixes</span><span class="p">]</span>
+
+<span class="n">text_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'text_font'</span><span class="p">,</span> <span class="s1">'text_font_size'</span><span class="p">,</span> <span class="s1">'text_font_style'</span><span class="p">,</span> <span class="s1">'text_color'</span><span class="p">,</span>
+                   <span class="s1">'text_alpha'</span><span class="p">,</span> <span class="s1">'text_align'</span><span class="p">,</span> <span class="s1">'text_baseline'</span><span class="p">]</span>
+
+<span class="n">legend_dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'label_standoff'</span><span class="p">,</span> <span class="s1">'label_width'</span><span class="p">,</span> <span class="s1">'label_height'</span><span class="p">,</span> <span class="s1">'glyph_width'</span><span class="p">,</span>
+                     <span class="s1">'glyph_height'</span><span class="p">,</span> <span class="s1">'legend_padding'</span><span class="p">,</span> <span class="s1">'legend_spacing'</span><span class="p">,</span> <span class="s1">'click_policy'</span><span class="p">]</span>
+
+<span class="c1"># Conversion between matplotlib and bokeh markers</span>
+
+<span class="n">markers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'+'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'cross'</span><span class="p">},</span>
+    <span class="s1">'x'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'cross'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">},</span>
+    <span class="s1">'s'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'square'</span><span class="p">},</span>
+    <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'diamond'</span><span class="p">},</span>
+    <span class="s1">'^'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="s1">'&gt;'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+    <span class="s1">'v'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">},</span>
+    <span class="s1">'&lt;'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+    <span class="s1">'1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="s1">'2'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+    <span class="s1">'3'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">},</span>
+    <span class="s1">'4'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'triangle'</span><span class="p">,</span> <span class="s1">'angle'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+    <span class="s1">'o'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'circle'</span><span class="p">},</span>
+    <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="s1">'asterisk'</span><span class="p">},</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="mpl_to_bokeh"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.styles.mpl_to_bokeh">[docs]</a><span class="k">def</span> <span class="nf">mpl_to_bokeh</span><span class="p">(</span><span class="n">properties</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Utility to process style properties converting any</span>
+<span class="sd">    matplotlib specific options to their nearest bokeh</span>
+<span class="sd">    equivalent.</span>
+<span class="sd">    """</span>
+    <span class="n">new_properties</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">new_properties</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">'s'</span><span class="p">:</span>
+            <span class="n">new_properties</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">'marker'</span><span class="p">:</span>
+            <span class="n">new_properties</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">markers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">{</span><span class="s1">'marker'</span><span class="p">:</span> <span class="n">v</span><span class="p">}))</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="s1">'color'</span> <span class="ow">or</span> <span class="n">k</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'_color'</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">dim</span><span class="p">)):</span>
+            <span class="k">with</span> <span class="n">abbreviated_exception</span><span class="p">():</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">COLOR_ALIASES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">abbreviated_exception</span><span class="p">():</span>
+                    <span class="n">v</span> <span class="o">=</span> <span class="n">rgb2hex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">new_properties</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_properties</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">new_properties</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'cmap'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_properties</span></div>
+
+<span class="c1"># Validation</span>
+
+<span class="n">alpha</span>     <span class="o">=</span> <span class="n">Percent</span><span class="p">()</span>
+<span class="n">angle</span>     <span class="o">=</span> <span class="n">Angle</span><span class="p">()</span>
+<span class="n">color</span>     <span class="o">=</span> <span class="n">Color</span><span class="p">()</span>
+<span class="n">dash_pattern</span> <span class="o">=</span> <span class="n">DashPattern</span><span class="p">()</span>
+<span class="n">font_size</span> <span class="o">=</span> <span class="n">FontSize</span><span class="p">()</span>
+<span class="n">marker</span>    <span class="o">=</span> <span class="n">MarkerType</span><span class="p">()</span>
+<span class="n">size</span>      <span class="o">=</span> <span class="n">Size</span><span class="p">()</span>
+
+<span class="n">validators</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'angle'</span>     <span class="p">:</span> <span class="n">angle</span><span class="o">.</span><span class="n">is_valid</span><span class="p">,</span>
+    <span class="s1">'alpha'</span>     <span class="p">:</span> <span class="n">alpha</span><span class="o">.</span><span class="n">is_valid</span><span class="p">,</span>
+    <span class="s1">'color'</span>     <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+        <span class="n">color</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">RGB_HEX_REGEX</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="p">),</span>
+    <span class="s1">'font_size'</span> <span class="p">:</span> <span class="n">font_size</span><span class="o">.</span><span class="n">is_valid</span><span class="p">,</span>
+    <span class="s1">'line_dash'</span> <span class="p">:</span> <span class="n">dash_pattern</span><span class="o">.</span><span class="n">is_valid</span><span class="p">,</span>
+    <span class="s1">'marker'</span>    <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">marker</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">or</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">markers</span><span class="p">,</span>
+    <span class="s1">'size'</span>      <span class="p">:</span> <span class="n">size</span><span class="o">.</span><span class="n">is_valid</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">get_validator</span><span class="p">(</span><span class="n">style</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">validators</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">style</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">v</span>
+
+
+<div class="viewcode-block" id="validate"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.styles.validate">[docs]</a><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">scalar</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Validates a style and associated value.</span>
+
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    style: str</span>
+<span class="sd">       The style to validate (e.g. 'color', 'size' or 'marker')</span>
+<span class="sd">    value:</span>
+<span class="sd">       The style value to validate</span>
+<span class="sd">    scalar: bool</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    valid: boolean or None</span>
+<span class="sd">       If validation is supported returns boolean, otherwise None</span>
+<span class="sd">    """</span>
+    <span class="n">validator</span> <span class="o">=</span> <span class="n">get_validator</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">validator</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">arraylike_types</span><span class="o">+</span><span class="p">(</span><span class="nb">list</span><span class="p">,)):</span>
+        <span class="k">if</span> <span class="n">scalar</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">validator</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">validator</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+<span class="c1"># Utilities</span>
+
+<div class="viewcode-block" id="rgba_tuple"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.styles.rgba_tuple">[docs]</a><span class="k">def</span> <span class="nf">rgba_tuple</span><span class="p">(</span><span class="n">rgba</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Ensures RGB(A) tuples in the range 0-1 are scaled to 0-255.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rgba</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rgba</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">COLOR_ALIASES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">rgba</span><span class="p">,</span> <span class="n">rgba</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="expand_batched_style"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.styles.expand_batched_style">[docs]</a><span class="k">def</span> <span class="nf">expand_batched_style</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">nvals</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Computes styles applied to a batched plot by iterating over the</span>
+<span class="sd">    supplied list of style options and expanding any options found in</span>
+<span class="sd">    the supplied style dictionary returning a data and mapping defining</span>
+<span class="sd">    the data that should be added to the ColumnDataSource.</span>
+<span class="sd">    """</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'color'</span><span class="p">,</span> <span class="s1">'alpha'</span><span class="p">])</span>
+    <span class="n">applied_styles</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+    <span class="n">style_data</span><span class="p">,</span> <span class="n">style_mapping</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">opt</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'color'</span> <span class="ow">in</span> <span class="n">opt</span><span class="p">:</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="s1">'color'</span>
+        <span class="k">elif</span> <span class="s1">'alpha'</span> <span class="ow">in</span> <span class="n">opt</span><span class="p">:</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="s1">'alpha'</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">opt</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span> <span class="ow">or</span> <span class="n">opt</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">opt</span> <span class="o">==</span> <span class="n">alias</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">applied_styles</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="s1">'line_'</span><span class="o">+</span><span class="n">alias</span> <span class="ow">in</span> <span class="n">applied_styles</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">'fill_'</span><span class="o">+</span><span class="n">alias</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">opt</span> <span class="o">=</span> <span class="s1">'fill_'</span><span class="o">+</span><span class="n">alias</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">style</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="s1">'fill_'</span><span class="o">+</span><span class="n">alias</span> <span class="ow">in</span> <span class="n">applied_styles</span><span class="p">:</span>
+                <span class="n">opt</span> <span class="o">=</span> <span class="s1">'line_'</span><span class="o">+</span><span class="n">alias</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">style</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">style</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">style</span><span class="p">[</span><span class="n">opt</span><span class="p">]</span>
+        <span class="n">style_mapping</span><span class="p">[</span><span class="n">opt</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'field'</span><span class="p">:</span> <span class="n">opt</span><span class="p">}</span>
+        <span class="n">applied_styles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">'color'</span> <span class="ow">in</span> <span class="n">opt</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">rgb2hex</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">style_data</span><span class="p">[</span><span class="n">opt</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span><span class="p">]</span><span class="o">*</span><span class="n">nvals</span>
+    <span class="k">return</span> <span class="n">style_data</span><span class="p">,</span> <span class="n">style_mapping</span></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

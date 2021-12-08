@@ -1,0 +1,14 @@
+<map id="inheritancedbb9b5c471" name="inheritancedbb9b5c471">
+<area shape="rect" id="node1" href="#holoviews.plotting.mpl.plot.AdjoinedPlot" target="_top" title="holoviews.plotting.mpl.plot.AdjoinedPlot" alt="" coords="572,35,736,51"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="349,51,514,68"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.mpl.plot.MPLPlot" target="_top" title="An MPLPlot object draws a matplotlib figure object when called or" alt="" coords="579,67,728,83"/>
+<area shape="rect" id="node7" href="holoviews.plotting.html#holoviews.plotting.plot.GenericCompositePlot" target="_top" title="holoviews.plotting.plot.GenericCompositePlot" alt="" coords="561,3,747,20"/>
+<area shape="rect" id="node3" href="#holoviews.plotting.mpl.plot.AdjointLayoutPlot" target="_top" title="Initially, a AdjointLayoutPlot computes an appropriate layout based for" alt="" coords="778,83,961,99"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.mpl.plot.CompositePlot" target="_top" title="CompositePlot provides a baseclass for plots coordinate multiple" alt="" coords="783,35,955,51"/>
+<area shape="rect" id="node5" href="holoviews.plotting.html#holoviews.plotting.plot.GenericAdjointLayoutPlot" target="_top" title="AdjointLayoutPlot allows placing up to three Views in a number of" alt="" coords="333,83,530,99"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.mpl.plot.GridPlot" target="_top" title="Plot a group of elements in a grid layout based on a GridSpace element" alt="" coords="997,35,1144,51"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.mpl.plot.LayoutPlot" target="_top" title="A LayoutPlot accepts either a Layout or a NdLayout and" alt="" coords="992,3,1149,20"/>
+<area shape="rect" id="node10" href="holoviews.plotting.html#holoviews.plotting.plot.GenericLayoutPlot" target="_top" title="A GenericLayoutPlot accepts either a Layout or a NdLayout and" alt="" coords="784,3,955,20"/>
+<area shape="rect" id="node11" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="188,68,302,84"/>
+<area shape="rect" id="node12" title="params(name=String)" alt="" coords="3,68,157,84"/>
+</map>

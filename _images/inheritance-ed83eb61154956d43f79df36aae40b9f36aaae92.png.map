@@ -1,0 +1,12 @@
+<map id="inheritance3a481677af" name="inheritance3a481677af">
+<area shape="rect" id="node11" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="398,3,515,15"/>
+<area shape="rect" id="node2" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="246,26,369,38"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="391,26,522,38"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="139,26,224,38"/>
+<area shape="rect" id="node9" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="545,15,681,27"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="3,26,116,38"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.plotly.annotation.LabelPlot" target="_top" title="holoviews.plotting.plotly.annotation.LabelPlot" alt="" coords="1013,15,1149,27"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.plotly.chart.ScatterPlot" target="_top" title="holoviews.plotting.plotly.chart.ScatterPlot" alt="" coords="865,15,991,27"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.chart.ChartPlot" target="_top" title="holoviews.plotting.plotly.chart.ChartPlot" alt="" coords="713,3,833,15"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.plotly.element.ColorbarPlot" target="_top" title="holoviews.plotting.plotly.element.ColorbarPlot" alt="" coords="704,26,842,38"/>
+</map>

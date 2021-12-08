@@ -1,0 +1,15 @@
+<map id="inheritance39da524e6f" name="inheritance39da524e6f">
+<area shape="rect" id="node9" href="#holoviews.plotting.plotly.shapes.BoxShapePlot" target="_top" title="holoviews.plotting.plotly.shapes.BoxShapePlot" alt="" coords="981,3,1141,17"/>
+<area shape="rect" id="node15" href="#holoviews.plotting.plotly.shapes.SegmentShapePlot" target="_top" title="holoviews.plotting.plotly.shapes.SegmentShapePlot" alt="" coords="973,29,1149,43"/>
+<area shape="rect" id="node8" href="#holoviews.plotting.plotly.plot.PlotlyPlot" target="_top" title="holoviews.plotting.plotly.plot.PlotlyPlot" alt="" coords="452,82,585,96"/>
+<area shape="rect" id="node3" href="holoviews.plotting.html#holoviews.plotting.plot.DimensionedPlot" target="_top" title="DimensionedPlot implements a number of useful methods" alt="" coords="280,55,419,69"/>
+<area shape="rect" id="node5" href="holoviews.plotting.html#holoviews.plotting.plot.GenericElementPlot" target="_top" title="Plotting baseclass to render contents of an Element. Implements" alt="" coords="444,55,593,69"/>
+<area shape="rect" id="node4" href="holoviews.plotting.html#holoviews.plotting.plot.Plot" target="_top" title="Base class of all Plot classes in HoloViews, designed to be" alt="" coords="157,55,254,69"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.plotly.element.ElementPlot" target="_top" title="holoviews.plotting.plotly.element.ElementPlot" alt="" coords="618,69,774,83"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="3,55,132,69"/>
+<area shape="rect" id="node10" href="#holoviews.plotting.plotly.shapes.ShapePlot" target="_top" title="holoviews.plotting.plotly.shapes.ShapePlot" alt="" coords="800,69,947,83"/>
+<area shape="rect" id="node11" href="#holoviews.plotting.plotly.shapes.HVLinePlot" target="_top" title="holoviews.plotting.plotly.shapes.HVLinePlot" alt="" coords="986,109,1136,123"/>
+<area shape="rect" id="node12" href="#holoviews.plotting.plotly.shapes.HVSpanPlot" target="_top" title="holoviews.plotting.plotly.shapes.HVSpanPlot" alt="" coords="984,136,1138,150"/>
+<area shape="rect" id="node13" href="#holoviews.plotting.plotly.shapes.PathShapePlot" target="_top" title="holoviews.plotting.plotly.shapes.PathShapePlot" alt="" coords="980,56,1142,70"/>
+<area shape="rect" id="node14" href="#holoviews.plotting.plotly.shapes.PathsPlot" target="_top" title="holoviews.plotting.plotly.shapes.PathsPlot" alt="" coords="989,83,1133,96"/>
+</map>

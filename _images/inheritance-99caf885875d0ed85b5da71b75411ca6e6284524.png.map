@@ -1,0 +1,9 @@
+<map id="inheritance5533155975" name="inheritance5533155975">
+<area shape="rect" id="node1" href="#holoviews.plotting.links.DataLink" target="_top" title="DataLink defines a link in the data between two objects allowing" alt="" coords="561,5,774,31"/>
+<area shape="rect" id="node2" href="#holoviews.plotting.links.Link" target="_top" title="A Link defines some connection between a source and target object" alt="" coords="292,104,477,129"/>
+<area shape="rect" id="node4" href="#holoviews.plotting.links.RangeToolLink" target="_top" title="The RangeToolLink sets up a link between a RangeTool on the source" alt="" coords="543,55,792,80"/>
+<area shape="rect" id="node5" href="#holoviews.plotting.links.RectanglesTableLink" target="_top" title="Links a Rectangles element to a Table." alt="" coords="525,104,809,129"/>
+<area shape="rect" id="node6" href="#holoviews.plotting.links.SelectionLink" target="_top" title="Links the selection between two glyph renderers." alt="" coords="547,153,787,179"/>
+<area shape="rect" id="node7" href="#holoviews.plotting.links.VertexTableLink" target="_top" title="Defines a Link between a Path type and a Table that will" alt="" coords="539,203,795,228"/>
+<area shape="rect" id="node3" title="params(name=String)" alt="" coords="5,104,244,129"/>
+</map>

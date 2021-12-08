@@ -1,0 +1,7 @@
+<map id="inheritance94b773541e" name="inheritance94b773541e">
+<area shape="rect" id="node1" href="#holoviews.core.pprint.InfoPrinter" target="_top" title="Class for printing other information related to an object that is" alt="" coords="19,79,231,104"/>
+<area shape="rect" id="node2" title="Given a parameterized object, return a proxy parameterized object" alt="" coords="631,5,851,31"/>
+<area shape="rect" id="node3" title="params(name=String)" alt="" coords="292,5,583,31"/>
+<area shape="rect" id="node4" href="#holoviews.core.pprint.PrettyPrinter" target="_top" title="The PrettyPrinter used to print all HoloView objects via the" alt="" coords="325,55,550,80"/>
+<area shape="rect" id="node5" title="params(name=String)" alt="" coords="5,29,244,55"/>
+</map>

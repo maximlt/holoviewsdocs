@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.bokeh.graphs — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.bokeh.graphs</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StaticLayoutProvider</span><span class="p">,</span> <span class="n">NodesAndLinkedEdges</span><span class="p">,</span> <span class="n">EdgesAndLinkedNodes</span><span class="p">,</span>
+    <span class="n">Patches</span><span class="p">,</span> <span class="n">Bezier</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">NodesOnly</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">...core.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">...core.options</span> <span class="kn">import</span> <span class="n">Cycle</span><span class="p">,</span> <span class="n">abbreviated_exception</span>
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="n">dimension_sanitizer</span><span class="p">,</span> <span class="n">unique_array</span>
+<span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="n">Graph</span>
+<span class="kn">from</span> <span class="nn">...util.transform</span> <span class="kn">import</span> <span class="n">dim</span>
+<span class="kn">from</span> <span class="nn">..mixins</span> <span class="kn">import</span> <span class="n">ChordMixin</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">process_cmap</span><span class="p">,</span> <span class="n">get_directed_graph_paths</span>
+<span class="kn">from</span> <span class="nn">.chart</span> <span class="kn">import</span> <span class="n">ColorbarPlot</span><span class="p">,</span> <span class="n">PointPlot</span>
+<span class="kn">from</span> <span class="nn">.element</span> <span class="kn">import</span> <span class="n">CompositeElementPlot</span><span class="p">,</span> <span class="n">LegendPlot</span>
+<span class="kn">from</span> <span class="nn">.styles</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">base_properties</span><span class="p">,</span> <span class="n">line_properties</span><span class="p">,</span> <span class="n">fill_properties</span><span class="p">,</span> <span class="n">text_properties</span><span class="p">,</span>
+    <span class="n">rgba_tuple</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="GraphPlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.GraphPlot">[docs]</a><span class="k">class</span> <span class="nc">GraphPlot</span><span class="p">(</span><span class="n">CompositeElementPlot</span><span class="p">,</span> <span class="n">ColorbarPlot</span><span class="p">,</span> <span class="n">LegendPlot</span><span class="p">):</span>
+
+    <span class="n">arrowhead_length</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">      If directed option is enabled this determines the length of the</span>
+<span class="s2">      arrows as fraction of the overall extent of the graph."""</span><span class="p">)</span>
+
+    <span class="n">directed</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">      Whether to draw arrows on the graph edges to indicate the</span>
+<span class="s2">      directionality of each edge."""</span><span class="p">)</span>
+
+    <span class="n">selection_policy</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ObjectSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'nodes'</span><span class="p">,</span> <span class="n">objects</span><span class="o">=</span><span class="p">[</span><span class="s1">'edges'</span><span class="p">,</span> <span class="s1">'nodes'</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Determines policy for inspection of graph components, i.e. whether to highlight</span>
+<span class="s2">        nodes or edges when selecting connected edges and nodes respectively."""</span><span class="p">)</span>
+
+    <span class="n">inspection_policy</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ObjectSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'nodes'</span><span class="p">,</span> <span class="n">objects</span><span class="o">=</span><span class="p">[</span><span class="s1">'edges'</span><span class="p">,</span> <span class="s1">'nodes'</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Determines policy for inspection of graph components, i.e. whether to highlight</span>
+<span class="s2">        nodes or edges when hovering over connected edges and nodes respectively."""</span><span class="p">)</span>
+
+    <span class="n">tools</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">,</span> <span class="s1">'tap'</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        A list of plugin tools to use on the plot."""</span><span class="p">)</span>
+
+    <span class="c1"># Deprecated options</span>
+
+    <span class="n">color_index</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+                                      <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Deprecated in favor of color style mapping, e.g. `node_color=dim('color')`"""</span><span class="p">)</span>
+
+    <span class="n">edge_color_index</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+                                      <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Deprecated in favor of color style mapping, e.g. `edge_color=dim('color')`"""</span><span class="p">)</span>
+
+    <span class="c1"># Map each glyph to a style group</span>
+    <span class="n">_style_groups</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scatter'</span><span class="p">:</span> <span class="s1">'node'</span><span class="p">,</span> <span class="s1">'multi_line'</span><span class="p">:</span> <span class="s1">'edge'</span><span class="p">,</span> <span class="s1">'patches'</span><span class="p">:</span> <span class="s1">'edge'</span><span class="p">,</span>
+                     <span class="s1">'bezier'</span><span class="p">:</span> <span class="s1">'edge'</span><span class="p">}</span>
+
+    <span class="n">style_opts</span> <span class="o">=</span> <span class="p">([</span><span class="s1">'edge_'</span><span class="o">+</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base_properties</span><span class="o">+</span><span class="n">fill_properties</span><span class="o">+</span><span class="n">line_properties</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="p">[</span><span class="s1">'node_'</span><span class="o">+</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base_properties</span><span class="o">+</span><span class="n">fill_properties</span><span class="o">+</span><span class="n">line_properties</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="p">[</span><span class="s1">'node_size'</span><span class="p">,</span> <span class="s1">'cmap'</span><span class="p">,</span> <span class="s1">'edge_cmap'</span><span class="p">,</span> <span class="s1">'node_cmap'</span><span class="p">,</span>
+                   <span class="s1">'node_radius'</span><span class="p">,</span> <span class="s1">'node_marker'</span><span class="p">])</span>
+
+    <span class="n">_nonvectorized_styles</span> <span class="o">=</span>  <span class="n">base_properties</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'cmap'</span><span class="p">,</span> <span class="s1">'edge_cmap'</span><span class="p">,</span> <span class="s1">'node_cmap'</span><span class="p">]</span>
+
+    <span class="c1"># Filled is only supported for subclasses</span>
+    <span class="n">filled</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Bezier paths</span>
+    <span class="n">bezier</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Declares which columns in the data refer to node indices</span>
+    <span class="n">_node_columns</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edge_glyph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">'patches_1'</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">bezier</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">'bezier_1'</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">'multi_line_1'</span>
+
+    <span class="k">def</span> <span class="nf">_hover_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'nodes'</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="p">[(</span><span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">pprint_label</span><span class="p">,</span> <span class="s1">'@</span><span class="si">{index_hover}</span><span class="s1">'</span><span class="p">)]</span><span class="o">+</span><span class="n">dims</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'edges'</span><span class="p">:</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="p">[(</span><span class="n">kd</span><span class="o">.</span><span class="n">pprint_label</span><span class="p">,</span> <span class="s1">'@{</span><span class="si">%s</span><span class="s1">_values}'</span> <span class="o">%</span> <span class="n">kd</span><span class="p">)</span>
+                     <span class="k">if</span> <span class="n">kd</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">)</span> <span class="k">else</span> <span class="n">kd</span> <span class="k">for</span> <span class="n">kd</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">kdims</span><span class="p">]</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="n">kdims</span><span class="o">+</span><span class="n">element</span><span class="o">.</span><span class="n">vdims</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">dims</span><span class="p">,</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="GraphPlot.get_extents"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.GraphPlot.get_extents">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">range_type</span><span class="o">=</span><span class="s1">'combined'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_extents</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">range_type</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_axis_dims</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">Graph</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span>
+        <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_get_edge_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">edge_data</span><span class="p">,</span> <span class="n">edge_mapping</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="n">cdim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_color_index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cdim</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">elstyle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup_options</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s1">'style'</span><span class="p">)</span>
+        <span class="n">cycle</span> <span class="o">=</span> <span class="n">elstyle</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'edge_color'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">Cycle</span><span class="p">):</span>
+            <span class="n">cycle</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">get_dimension_index</span><span class="p">(</span><span class="n">cdim</span><span class="p">)</span>
+        <span class="n">field</span> <span class="o">=</span> <span class="n">dimension_sanitizer</span><span class="p">(</span><span class="n">cdim</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">cvals</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">cdim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node_columns</span><span class="p">:</span>
+            <span class="n">factors</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">cvals</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'uif'</span><span class="p">:</span>
+            <span class="n">factors</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">factors</span> <span class="o">=</span> <span class="n">unique_array</span><span class="p">(</span><span class="n">cvals</span><span class="p">)</span>
+
+        <span class="n">default_cmap</span> <span class="o">=</span> <span class="s1">'viridis'</span> <span class="k">if</span> <span class="n">factors</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">'tab20'</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'edge_cmap'</span><span class="p">,</span> <span class="n">style</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'cmap'</span><span class="p">,</span> <span class="n">default_cmap</span><span class="p">))</span>
+        <span class="n">nan_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">rgba_tuple</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">clipping_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">if</span> <span class="n">factors</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="n">factors</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'uif'</span> <span class="ow">and</span> <span class="n">idx</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node_columns</span><span class="p">):</span>
+            <span class="n">colors</span><span class="p">,</span> <span class="n">factors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">factors</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'f'</span><span class="p">:</span>
+                <span class="n">cvals</span> <span class="o">=</span> <span class="n">cvals</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+                <span class="n">factors</span> <span class="o">=</span> <span class="n">factors</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">factors</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'SU'</span><span class="p">:</span>
+                <span class="n">field</span> <span class="o">+=</span> <span class="s1">'_str__'</span>
+                <span class="n">cvals</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">cvals</span><span class="p">]</span>
+                <span class="n">factors</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">)</span>
+            <span class="n">factors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nan_colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'NaN'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_nan</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">colors</span> <span class="o">=</span> <span class="n">process_cmap</span><span class="p">(</span><span class="n">cycle</span> <span class="ow">or</span> <span class="n">cmap</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">edge_data</span><span class="p">:</span>
+            <span class="n">edge_data</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">cvals</span>
+        <span class="n">edge_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+        <span class="n">mapper</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_colormapper</span><span class="p">(</span><span class="n">cdim</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">edge_style</span><span class="p">,</span>
+                                       <span class="n">factors</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="s1">'edge'</span><span class="p">,</span> <span class="s1">'edge_colormapper'</span><span class="p">)</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'field'</span><span class="p">:</span> <span class="n">field</span><span class="p">,</span> <span class="s1">'transform'</span><span class="p">:</span> <span class="n">mapper</span><span class="p">}</span>
+        <span class="n">color_type</span> <span class="o">=</span> <span class="s1">'fill_color'</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="k">else</span> <span class="s1">'line_color'</span>
+        <span class="n">edge_mapping</span><span class="p">[</span><span class="s1">'edge_'</span><span class="o">+</span><span class="n">color_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform</span>
+        <span class="n">edge_mapping</span><span class="p">[</span><span class="s1">'edge_nonselection_'</span><span class="o">+</span><span class="n">color_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform</span>
+        <span class="n">edge_mapping</span><span class="p">[</span><span class="s1">'edge_selection_'</span><span class="o">+</span><span class="n">color_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform</span>
+
+
+    <span class="k">def</span> <span class="nf">_get_edge_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">):</span>
+        <span class="n">path_data</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="n">xidx</span><span class="p">,</span> <span class="n">yidx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span> <span class="k">else</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">_split_edgepaths</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s1">'array'</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="n">element</span><span class="o">.</span><span class="n">edgepaths</span><span class="o">.</span><span class="n">kdims</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
+                <span class="n">path_data</span><span class="p">[</span><span class="s1">'xs'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">[:,</span> <span class="n">xidx</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
+                <span class="n">path_data</span><span class="p">[</span><span class="s1">'ys'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">[:,</span> <span class="n">yidx</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
+                <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'xs'</span><span class="p">:</span> <span class="s1">'xs'</span><span class="p">,</span> <span class="s1">'ys'</span><span class="p">:</span> <span class="s1">'ys'</span><span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Edge paths do not match the number of supplied edges."</span>
+                                 <span class="s2">"Expected </span><span class="si">%d</span><span class="s2">, found </span><span class="si">%d</span><span class="s2"> paths."</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">directed</span><span class="p">:</span>
+            <span class="n">xdim</span><span class="p">,</span> <span class="n">ydim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">x_range</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">xdim</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s1">'combined'</span><span class="p">]</span>
+            <span class="n">y_range</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">ydim</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s1">'combined'</span><span class="p">]</span>
+            <span class="n">arrow_len</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">y_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">arrowhead_length</span>
+            <span class="n">arrows</span> <span class="o">=</span> <span class="n">get_directed_graph_paths</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">arrow_len</span><span class="p">)</span>
+            <span class="n">path_data</span><span class="p">[</span><span class="s1">'xs'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrows</span><span class="p">]</span>
+            <span class="n">path_data</span><span class="p">[</span><span class="s1">'ys'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrows</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">path_data</span><span class="p">,</span> <span class="n">mapping</span>
+
+
+<div class="viewcode-block" id="GraphPlot.get_data"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.GraphPlot.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="c1"># Force static source to False</span>
+        <span class="n">static</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_source</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'static_source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">static</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">static_source</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Get node data</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">node_positions</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="c1"># Map node indices to integers</span>
+        <span class="k">if</span> <span class="n">nodes</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'uif'</span><span class="p">:</span>
+            <span class="n">node_indices</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">)}</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">node_indices</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="n">k</span><span class="p">]):</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span> <span class="k">else</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">node_positions</span><span class="p">)}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">):</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">invert_axes</span> <span class="k">else</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">node_positions</span><span class="p">)}</span>
+        <span class="n">point_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'index'</span><span class="p">:</span> <span class="n">index</span><span class="p">}</span>
+
+        <span class="c1"># Handle node colors</span>
+        <span class="n">fixed_color</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'node_color'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">cycle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup_options</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s1">'style'</span><span class="p">)</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'node_color'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">Cycle</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">'cmap'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">cdata</span><span class="p">,</span> <span class="n">cmapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_color_data</span><span class="p">(</span>
+            <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'node_fill_color'</span><span class="p">,</span>
+            <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">int_categories</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">fixed_color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">cdata</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s1">'node_color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_color</span>
+        <span class="n">point_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cdata</span><span class="p">)</span>
+        <span class="n">point_mapping</span> <span class="o">=</span> <span class="n">cmapping</span>
+        <span class="k">if</span> <span class="s1">'node_fill_color'</span> <span class="ow">in</span> <span class="n">point_mapping</span><span class="p">:</span>
+            <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span>
+                     <span class="p">[</span><span class="s1">'node_fill_color'</span><span class="p">,</span> <span class="s1">'node_nonselection_fill_color'</span><span class="p">]}</span>
+            <span class="n">point_mapping</span><span class="p">[</span><span class="s1">'node_nonselection_fill_color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">point_mapping</span><span class="p">[</span><span class="s1">'node_fill_color'</span><span class="p">]</span>
+
+        <span class="c1"># Handle edge colors</span>
+        <span class="n">edge_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">nan_node</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">nodes</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'f'</span><span class="p">:</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="n">end</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">nodes</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'ui'</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">node_indices</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nan_node</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">start</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">node_indices</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">nan_node</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">end</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">path_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_edge_colors</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">path_data</span><span class="p">,</span> <span class="n">edge_mapping</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">static</span><span class="p">:</span>
+            <span class="n">pdata</span><span class="p">,</span> <span class="n">pmapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_edge_paths</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">)</span>
+            <span class="n">path_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pdata</span><span class="p">)</span>
+            <span class="n">edge_mapping</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pmapping</span><span class="p">)</span>
+
+        <span class="c1"># Get hover data</span>
+        <span class="k">if</span> <span class="s1">'hover'</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'nodes'</span><span class="p">:</span>
+                <span class="n">index_dim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">point_data</span><span class="p">[</span><span class="s1">'index_hover'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">index_dim</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()[</span><span class="mi">3</span><span class="p">:]:</span>
+                    <span class="n">point_data</span><span class="p">[</span><span class="n">dimension_sanitizer</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">)]</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'edges'</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">dimensions</span><span class="p">():</span>
+                    <span class="n">dim_name</span> <span class="o">=</span> <span class="n">dimension_sanitizer</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">dim_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">):</span>
+                        <span class="n">dim_name</span> <span class="o">+=</span> <span class="s1">'_values'</span>
+                    <span class="n">path_data</span><span class="p">[</span><span class="n">dim_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scatter_1'</span><span class="p">:</span> <span class="n">point_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="p">:</span> <span class="n">path_data</span><span class="p">,</span> <span class="s1">'layout'</span><span class="p">:</span> <span class="n">layout</span><span class="p">}</span>
+        <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scatter_1'</span><span class="p">:</span> <span class="n">point_mapping</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="p">:</span> <span class="n">edge_mapping</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_update_datasource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Update datasource with data for a new frame.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'static_source'</span><span class="p">]:</span>
+                <span class="n">source</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">source</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">source</span><span class="o">.</span><span class="n">graph_layout</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">_init_filled_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">edge_mapping</span><span class="p">):</span>
+        <span class="s2">"Replace edge renderer with filled renderer"</span>
+        <span class="n">glyph_model</span> <span class="o">=</span> <span class="n">Patches</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="k">else</span> <span class="n">Bezier</span>
+        <span class="n">allowed_properties</span> <span class="o">=</span> <span class="n">glyph_model</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">glyph_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'selection_'</span><span class="p">,</span> <span class="s1">'nonselection_'</span><span class="p">,</span> <span class="s1">'hover_'</span><span class="p">,</span> <span class="s1">'muted_'</span><span class="p">):</span>
+            <span class="n">glyph</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">edge_renderer</span><span class="p">,</span> <span class="n">glyph_type</span><span class="o">+</span><span class="s1">'glyph'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">glyph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">group_properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+            <span class="n">props</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_properties</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="p">,</span> <span class="n">group_properties</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="n">filtered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_properties</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">glyph_type</span><span class="p">,</span> <span class="n">allowed_properties</span><span class="p">)</span>
+            <span class="n">new_glyph</span> <span class="o">=</span> <span class="n">glyph_model</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">filtered</span><span class="p">,</span> <span class="o">**</span><span class="n">edge_mapping</span><span class="p">))</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">edge_renderer</span><span class="p">,</span> <span class="n">glyph_type</span><span class="o">+</span><span class="s1">'glyph'</span><span class="p">,</span> <span class="n">new_glyph</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">_get_graph_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="s2">"Computes the args and kwargs for the GraphRenderer"</span>
+        <span class="n">sources</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">properties</span><span class="p">,</span> <span class="n">mappings</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'scatter_1'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="p">):</span>
+            <span class="n">gdata</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="n">group_style</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+            <span class="n">style_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+            <span class="k">with</span> <span class="n">abbreviated_exception</span><span class="p">():</span>
+                <span class="n">group_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_transforms</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">gdata</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">group_style</span><span class="p">,</span> <span class="n">style_group</span><span class="p">)</span>
+
+            <span class="c1"># Get source</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_datasource</span><span class="p">(</span><span class="n">gdata</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="n">key</span><span class="o">+</span><span class="s1">'_source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">source</span>
+            <span class="n">sources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+
+            <span class="c1"># Get style</span>
+            <span class="n">others</span> <span class="o">=</span> <span class="p">[</span><span class="n">sg</span> <span class="k">for</span> <span class="n">sg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_style_groups</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">sg</span> <span class="o">!=</span> <span class="n">style_group</span><span class="p">]</span>
+            <span class="n">glyph_props</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyph_properties</span><span class="p">(</span>
+                <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">group_style</span><span class="p">,</span> <span class="n">style_group</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">glyph_props</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">others</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="n">properties</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+            <span class="n">mappings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">{}))</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                      <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="s1">'source'</span> <span class="ow">and</span> <span class="s1">'legend'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="p">}</span>
+        <span class="n">properties</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mappings</span><span class="p">)</span>
+
+        <span class="c1"># Initialize graph layout</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'layout'</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">StaticLayoutProvider</span><span class="p">(</span><span class="n">graph_layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'layout_source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">layout</span>
+
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sources</span><span class="o">+</span><span class="p">[</span><span class="n">layout</span><span class="p">]),</span> <span class="n">properties</span>
+
+    <span class="k">def</span> <span class="nf">_reorder_renderers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+        <span class="s2">"Reorders renderers based on the defined draw order"</span>
+        <span class="n">renderers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="n">r</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="n">r</span><span class="o">+</span><span class="s1">'_glyph_renderer'</span><span class="p">]</span>
+                          <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">},</span> <span class="n">graph</span><span class="o">=</span><span class="n">renderer</span><span class="p">)</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">plot</span><span class="o">.</span><span class="n">renderers</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">renderers</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+        <span class="n">graph_renderers</span> <span class="o">=</span> <span class="p">[</span><span class="n">renderers</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_order</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">renderers</span><span class="p">]</span>
+        <span class="n">plot</span><span class="o">.</span><span class="n">renderers</span> <span class="o">=</span> <span class="n">other</span> <span class="o">+</span> <span class="n">graph_renderers</span>
+
+    <span class="k">def</span> <span class="nf">_set_interaction_policies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selection_policy</span> <span class="o">==</span> <span class="s1">'nodes'</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">selection_policy</span> <span class="o">=</span> <span class="n">NodesAndLinkedEdges</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">selection_policy</span> <span class="o">==</span> <span class="s1">'edges'</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">selection_policy</span> <span class="o">=</span> <span class="n">EdgesAndLinkedNodes</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">selection_policy</span> <span class="o">=</span> <span class="n">NodesOnly</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'nodes'</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">=</span> <span class="n">NodesAndLinkedEdges</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">==</span> <span class="s1">'edges'</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">=</span> <span class="n">EdgesAndLinkedNodes</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">renderer</span><span class="o">.</span><span class="n">inspection_policy</span> <span class="o">=</span> <span class="n">NodesOnly</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="c1"># Get data and initialize data source</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">style</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cyclic_index</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'previous_id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">_plot_id</span>
+
+        <span class="c1"># Initialize GraphRenderer</span>
+        <span class="n">edge_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="s1">'color'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">k</span><span class="p">}</span>
+        <span class="n">graph_args</span><span class="p">,</span> <span class="n">properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_graph_properties</span><span class="p">(</span>
+            <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="n">renderer</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="o">*</span><span class="n">graph_args</span><span class="p">,</span> <span class="o">**</span><span class="n">properties</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">bezier</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_filled_edges</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">edge_mapping</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_interaction_policies</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+
+        <span class="c1"># Initialize other renderers</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">mapping</span><span class="p">:</span>
+            <span class="n">CompositeElementPlot</span><span class="o">.</span><span class="n">_init_glyphs</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+
+        <span class="c1"># Reorder renderers</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_order</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reorder_renderers</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'glyph_renderer'</span><span class="p">]</span> <span class="o">=</span> <span class="n">renderer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'scatter_1_glyph_renderer'</span><span class="p">]</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">node_renderer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="o">+</span><span class="s1">'_glyph_renderer'</span><span class="p">]</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">edge_renderer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'scatter_1_glyph'</span><span class="p">]</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">node_renderer</span><span class="o">.</span><span class="n">glyph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_glyph</span><span class="o">+</span><span class="s1">'_glyph'</span><span class="p">]</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">edge_renderer</span><span class="o">.</span><span class="n">glyph</span>
+        <span class="k">if</span> <span class="s1">'hover'</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">]</span><span class="o">.</span><span class="n">renderers</span> <span class="o">==</span> <span class="s1">'auto'</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">]</span><span class="o">.</span><span class="n">renderers</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'hover'</span><span class="p">]</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ChordPlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.ChordPlot">[docs]</a><span class="k">class</span> <span class="nc">ChordPlot</span><span class="p">(</span><span class="n">ChordMixin</span><span class="p">,</span> <span class="n">GraphPlot</span><span class="p">):</span>
+
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">dim</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The dimension or dimension value transform used to draw labels from."""</span><span class="p">)</span>
+
+    <span class="n">show_frame</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether or not to show a complete frame around the plot."""</span><span class="p">)</span>
+
+    <span class="c1"># Deprecated options</span>
+
+    <span class="n">label_index</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+                                      <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">      Index of the dimension from which the node labels will be drawn"""</span><span class="p">)</span>
+
+    <span class="c1"># Map each glyph to a style group</span>
+    <span class="n">_style_groups</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scatter'</span><span class="p">:</span> <span class="s1">'node'</span><span class="p">,</span> <span class="s1">'multi_line'</span><span class="p">:</span> <span class="s1">'edge'</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">:</span> <span class="s1">'label'</span><span class="p">}</span>
+
+    <span class="n">style_opts</span> <span class="o">=</span> <span class="p">(</span><span class="n">GraphPlot</span><span class="o">.</span><span class="n">style_opts</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'label_'</span><span class="o">+</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base_properties</span><span class="o">+</span><span class="n">text_properties</span><span class="p">])</span>
+
+    <span class="n">_draw_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'multi_line_2'</span><span class="p">,</span> <span class="s1">'graph'</span><span class="p">,</span> <span class="s1">'text_1'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_sync_arcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">arc_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'multi_line_2_glyph_renderer'</span><span class="p">]</span>
+        <span class="n">scatter_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'scatter_1_glyph_renderer'</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">gtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'selection_'</span><span class="p">,</span> <span class="s1">'nonselection_'</span><span class="p">,</span> <span class="s1">'muted_'</span><span class="p">,</span> <span class="s1">'hover_'</span><span class="p">,</span> <span class="s1">''</span><span class="p">):</span>
+            <span class="n">glyph</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">scatter_renderer</span><span class="p">,</span> <span class="n">gtype</span><span class="o">+</span><span class="s1">'glyph'</span><span class="p">)</span>
+            <span class="n">arc_glyph</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">arc_renderer</span><span class="p">,</span> <span class="n">gtype</span><span class="o">+</span><span class="s1">'glyph'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">glyph</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">arc_glyph</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">scatter_props</span> <span class="o">=</span> <span class="n">glyph</span><span class="o">.</span><span class="n">properties_with_values</span><span class="p">(</span><span class="n">include_defaults</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">styles</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="s1">'line'</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">scatter_props</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                      <span class="k">if</span> <span class="s1">'fill'</span> <span class="ow">in</span> <span class="n">k</span><span class="p">}</span>
+            <span class="n">arc_glyph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">styles</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_init_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_init_glyphs</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+        <span class="c1"># Ensure that arc glyph matches node style</span>
+        <span class="k">if</span> <span class="s1">'multi_line_2_glyph'</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span>
+            <span class="n">arc_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'multi_line_2_glyph_renderer'</span><span class="p">]</span>
+            <span class="n">scatter_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'scatter_1_glyph_renderer'</span><span class="p">]</span>
+            <span class="n">arc_renderer</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">scatter_renderer</span><span class="o">.</span><span class="n">view</span>
+            <span class="n">arc_renderer</span><span class="o">.</span><span class="n">data_source</span> <span class="o">=</span> <span class="n">scatter_renderer</span><span class="o">.</span><span class="n">data_source</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">[</span><span class="s1">'multi_line_2_source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">scatter_renderer</span><span class="o">.</span><span class="n">data_source</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sync_arcs</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_update_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">'multi_line_2_glyph'</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sync_arcs</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_glyphs</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ChordPlot.get_data"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.ChordPlot.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'label_offset'</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">_angles</span>
+        <span class="n">arcs</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="p">)):</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+            <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">arcs</span><span class="p">[</span><span class="s1">'arc_xs'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+            <span class="n">arcs</span><span class="p">[</span><span class="s1">'arc_ys'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">'scatter_1'</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arcs</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">'multi_line_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'scatter_1'</span><span class="p">]</span>
+        <span class="n">mapping</span><span class="p">[</span><span class="s1">'multi_line_2'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'xs'</span><span class="p">:</span> <span class="s1">'arc_xs'</span><span class="p">,</span> <span class="s1">'ys'</span><span class="p">:</span> <span class="s1">'arc_ys'</span><span class="p">,</span> <span class="s1">'line_width'</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+
+        <span class="n">label_dim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label_index</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span>
+        <span class="k">if</span> <span class="n">label_dim</span> <span class="ow">and</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"Cannot declare style mapping for 'labels' option "</span>
+                <span class="s2">"and declare a label_index; ignoring the label_index."</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">label_dim</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">label_dim</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">'uif'</span><span class="p">:</span>
+                <span class="n">edges</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">element</span><span class="p">)[</span><span class="n">values</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">edges</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]))</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">nodes</span><span class="p">})</span>
+        <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">offset</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">labels</span><span class="o">.</span><span class="n">pprint_value</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">ys</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">'text_1'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">text</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="n">angles</span><span class="p">)</span>
+        <span class="n">mapping</span><span class="p">[</span><span class="s1">'text_1'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">'text'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="s1">'angle'</span><span class="p">,</span> <span class="n">text_baseline</span><span class="o">=</span><span class="s1">'middle'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">style</span></div></div>
+
+
+
+<div class="viewcode-block" id="NodePlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.NodePlot">[docs]</a><span class="k">class</span> <span class="nc">NodePlot</span><span class="p">(</span><span class="n">PointPlot</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Simple subclass of PointPlot which hides x, y position on hover.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="nf">_hover_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()[</span><span class="mi">2</span><span class="p">:],</span> <span class="p">{}</span></div>
+
+
+
+<div class="viewcode-block" id="TriMeshPlot"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.bokeh.html#holoviews.plotting.bokeh.graphs.TriMeshPlot">[docs]</a><span class="k">class</span> <span class="nc">TriMeshPlot</span><span class="p">(</span><span class="n">GraphPlot</span><span class="p">):</span>
+
+    <span class="n">filled</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether the triangles should be drawn as filled."""</span><span class="p">)</span>
+
+    <span class="n">style_opts</span> <span class="o">=</span> <span class="p">([</span><span class="s1">'edge_'</span><span class="o">+</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base_properties</span><span class="o">+</span><span class="n">line_properties</span><span class="o">+</span><span class="n">fill_properties</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="p">[</span><span class="s1">'node_'</span><span class="o">+</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base_properties</span><span class="o">+</span><span class="n">fill_properties</span><span class="o">+</span><span class="n">line_properties</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="p">[</span><span class="s1">'node_size'</span><span class="p">,</span> <span class="s1">'cmap'</span><span class="p">,</span> <span class="s1">'edge_cmap'</span><span class="p">,</span> <span class="s1">'node_cmap'</span><span class="p">])</span>
+
+    <span class="c1"># Declares that three columns in TriMesh refer to edges</span>
+    <span class="n">_node_columns</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_process_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">style</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cyclic_index</span><span class="p">]</span>
+        <span class="n">edge_color</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'edge_color'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">edge_color</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="n">edge_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_color_index</span>
+        <span class="n">simplex_dim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
+        <span class="n">vertex_dim</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">edge_color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">vertex_dim</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">simplex_dim</span><span class="p">:</span>
+            <span class="n">simplices</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">vertex_dim</span><span class="p">)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">simplices</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">add_dimension</span><span class="p">(</span><span class="n">vertex_dim</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">vdims</span><span class="p">),</span> <span class="n">z</span><span class="p">,</span> <span class="n">vdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">element</span><span class="o">.</span><span class="n">edgepaths</span>
+        <span class="k">return</span> <span class="n">element</span>
+
+    <span class="k">def</span> <span class="nf">_init_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_vertices</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_init_glyphs</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">):</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_vertices</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_glyphs</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.element.chart — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.element.chart</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="kn">from</span> <span class="nn">..core</span> <span class="kn">import</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">..core</span> <span class="kn">import</span> <span class="n">Dimension</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">Element2D</span><span class="p">,</span> <span class="n">NdOverlay</span><span class="p">,</span> <span class="n">Overlay</span>
+<span class="kn">from</span> <span class="nn">..core.dimension</span> <span class="kn">import</span> <span class="n">process_dimensions</span>
+<span class="kn">from</span> <span class="nn">.geom</span> <span class="kn">import</span> <span class="n">Rectangles</span><span class="p">,</span> <span class="n">Points</span><span class="p">,</span> <span class="n">VectorField</span> <span class="c1"># noqa: backward compatible import</span>
+<span class="kn">from</span> <span class="nn">.selection</span> <span class="kn">import</span> <span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Selection2DExpr</span>
+
+
+<div class="viewcode-block" id="Chart"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Chart">[docs]</a><span class="k">class</span> <span class="nc">Chart</span><span class="p">(</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">Element2D</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    A Chart is an abstract baseclass for elements representing one or</span>
+<span class="sd">    more independent and dependent variables defining a 1D coordinate</span>
+<span class="sd">    system with associated values. The independent variables or key</span>
+<span class="sd">    dimensions map onto the x-axis while the dependent variables are</span>
+<span class="sd">    usually mapped to the location, height or spread along the</span>
+<span class="sd">    y-axis. Any number of additional value dimensions may be</span>
+<span class="sd">    associated with a Chart.</span>
+
+<span class="sd">    If a chart's independent variable (or key dimension) is numeric</span>
+<span class="sd">    the chart will represent a discretely sampled version of the</span>
+<span class="sd">    underlying continuously sampled 1D space. Therefore indexing along</span>
+<span class="sd">    this variable will automatically snap to the closest coordinate.</span>
+
+<span class="sd">    Since a Chart is a subclass of a Dataset it supports the full set</span>
+<span class="sd">    of data interfaces but usually each dimension of a chart represents</span>
+<span class="sd">    a column stored in a dictionary, array or DataFrame.</span>
+<span class="sd">    """</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The key dimension(s) of a Chart represent the independent</span>
+<span class="s2">        variable(s)."""</span><span class="p">)</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Chart'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        The value dimensions of the Chart, usually corresponding to a</span>
+<span class="s2">        number of dependent variables."""</span><span class="p">)</span>
+
+    <span class="c1"># Enables adding index if 1D array like data is supplied</span>
+    <span class="n">_auto_indexable_1d</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">_max_kdim_count</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Remove once kdims has bounds=(1,1) instead of warning</span>
+    <span class="n">__abstract</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">process_dimensions</span><span class="p">(</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'kdims'</span><span class="p">,</span> <span class="p">[]))</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_kdim_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">'Chart elements should only be supplied a single kdim'</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Chart</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Scatter"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Scatter">[docs]</a><span class="k">class</span> <span class="nc">Scatter</span><span class="p">(</span><span class="n">Selection2DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Scatter is a Chart element representing a set of points in a 1D</span>
+<span class="sd">    coordinate system where the key dimension maps to the points</span>
+<span class="sd">    location along the x-axis while the first value dimension</span>
+<span class="sd">    represents the location of the point along the y-axis.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Scatter'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Curve"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Curve">[docs]</a><span class="k">class</span> <span class="nc">Curve</span><span class="p">(</span><span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Curve is a Chart element representing a line in a 1D coordinate</span>
+<span class="sd">    system where the key dimension maps on the line x-coordinate and</span>
+<span class="sd">    the first value dimension represents the height of the line along</span>
+<span class="sd">    the y-axis.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Curve'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ErrorBars"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.ErrorBars">[docs]</a><span class="k">class</span> <span class="nc">ErrorBars</span><span class="p">(</span><span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    ErrorBars is a Chart element representing error bars in a 1D</span>
+<span class="sd">    coordinate system where the key dimension corresponds to the</span>
+<span class="sd">    location along the x-axis and the first value dimension</span>
+<span class="sd">    corresponds to the location along the y-axis and one or two</span>
+<span class="sd">    extra value dimensions corresponding to the symmetric or</span>
+<span class="sd">    asymetric errors either along x-axis or y-axis. If two value</span>
+<span class="sd">    dimensions are given, then the last value dimension will be</span>
+<span class="sd">    taken as symmetric errors. If three value dimensions are given</span>
+<span class="sd">    then the last two value dimensions will be taken as negative and</span>
+<span class="sd">    positive errors. By default the errors are defined along y-axis.</span>
+<span class="sd">    A parameter `horizontal`, when set `True`, will define the errors</span>
+<span class="sd">    along the x-axis.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'ErrorBars'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        A string describing the quantity measured by the ErrorBars</span>
+<span class="s2">        object."""</span><span class="p">)</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'y'</span><span class="p">),</span> <span class="n">Dimension</span><span class="p">(</span><span class="s1">'yerror'</span><span class="p">)],</span>
+                       <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">horizontal</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Whether the errors are along y-axis (vertical) or x-axis."""</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ErrorBars.range"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.ErrorBars.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">data_range</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dimension_range</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">"""Return the lower and upper bounds of values along dimension.</span>
+
+<span class="sd">        Range of the y-dimension includes the symmetric or assymetric</span>
+<span class="sd">        error.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dimension: The dimension to compute the range on.</span>
+<span class="sd">            data_range (bool): Compute range from data values</span>
+<span class="sd">            dimension_range (bool): Include Dimension ranges</span>
+<span class="sd">                Whether to include Dimension range and soft_range</span>
+<span class="sd">                in range calculation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple containing the lower and upper bound</span>
+<span class="sd">        """</span>
+        <span class="n">dim_with_err</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">horizontal</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="n">didx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dimension_index</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dimension</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">didx</span> <span class="o">==</span> <span class="n">dim_with_err</span> <span class="ow">and</span> <span class="n">data_range</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">mean</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">didx</span><span class="p">)</span>
+            <span class="n">neg_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">pos_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pos_error</span> <span class="o">=</span> <span class="n">neg_error</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">mean</span><span class="o">-</span><span class="n">neg_error</span><span class="p">)</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">mean</span><span class="o">+</span><span class="n">pos_error</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">dimension_range</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">util</span><span class="o">.</span><span class="n">dimension_range</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">range</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">soft_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">data_range</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Spread"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Spread">[docs]</a><span class="k">class</span> <span class="nc">Spread</span><span class="p">(</span><span class="n">ErrorBars</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Spread is a Chart element representing a spread of values or</span>
+<span class="sd">    confidence band in a 1D coordinate system. The key dimension(s)</span>
+<span class="sd">    corresponds to the location along the x-axis and the value</span>
+<span class="sd">    dimensions define the location along the y-axis as well as the</span>
+<span class="sd">    symmetric or assymetric spread.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Spread'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Bars"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Bars">[docs]</a><span class="k">class</span> <span class="nc">Bars</span><span class="p">(</span><span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Bars is a Chart element representing categorical observations</span>
+<span class="sd">    using the height of rectangular bars. The key dimensions represent</span>
+<span class="sd">    the categorical groupings of the data, but may also be used to</span>
+<span class="sd">    stack the bars, while the first value dimension represents the</span>
+<span class="sd">    height of each bar.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Bars'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">_max_kdim_count</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="Histogram"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Histogram">[docs]</a><span class="k">class</span> <span class="nc">Histogram</span><span class="p">(</span><span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Histogram is a Chart element representing a number of bins in a 1D</span>
+<span class="sd">    coordinate system. The key dimension represents the binned values,</span>
+<span class="sd">    which may be declared as bin edges or bin centers, while the value</span>
+<span class="sd">    dimensions usually defines a count, frequency or density associated</span>
+<span class="sd">    with each bin.</span>
+<span class="sd">    """</span>
+
+    <span class="n">datatype</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">'grid'</span><span class="p">])</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Histogram'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Dimensions on Element2Ds determine the number of indexable</span>
+<span class="s2">        dimensions."""</span><span class="p">)</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+    <span class="n">_binned</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">"Property to access the Histogram edges provided for backward compatibility"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Spikes"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Spikes">[docs]</a><span class="k">class</span> <span class="nc">Spikes</span><span class="p">(</span><span class="n">Selection1DExpr</span><span class="p">,</span> <span class="n">Chart</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Spikes is a Chart element which represents a number of discrete</span>
+<span class="sd">    spikes, events or observations in a 1D coordinate system. The key</span>
+<span class="sd">    dimension therefore represents the position of each spike along</span>
+<span class="sd">    the x-axis while the first value dimension, if defined, controls</span>
+<span class="sd">    the height along the y-axis. It may therefore be used to visualize</span>
+<span class="sd">    the distribution of discrete events, representing a rug plot, or</span>
+<span class="sd">    to draw the strength some signal.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Spikes'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">kdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)],</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[])</span>
+
+    <span class="n">_auto_indexable_1d</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Area"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Area">[docs]</a><span class="k">class</span> <span class="nc">Area</span><span class="p">(</span><span class="n">Curve</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Area is a Chart element representing the area under a curve or</span>
+<span class="sd">    between two curves in a 1D coordinate system. The key dimension</span>
+<span class="sd">    represents the location of each coordinate along the x-axis, while</span>
+<span class="sd">    the value dimension(s) represent the height of the area or the</span>
+<span class="sd">    lower and upper bounds of the area between curves.</span>
+
+<span class="sd">    Multiple areas may be stacked by overlaying them an passing them</span>
+<span class="sd">    to the stack method.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Area'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Area.stack"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Area.stack">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">areas</span><span class="p">,</span> <span class="n">baseline_name</span><span class="o">=</span><span class="s1">'Baseline'</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Stacks an (Nd)Overlay of Area or Curve Elements by offsetting</span>
+<span class="sd">        their baselines. To stack a HoloMap or DynamicMap use the map</span>
+<span class="sd">        method.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">areas</span>
+        <span class="n">is_overlay</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">areas</span><span class="p">,</span> <span class="n">Overlay</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_overlay</span><span class="p">:</span>
+            <span class="n">areas</span> <span class="o">=</span> <span class="n">NdOverlay</span><span class="p">({</span><span class="n">i</span><span class="p">:</span> <span class="n">el</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">areas</span><span class="p">)})</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">areas</span><span class="o">.</span><span class="n">dframe</span><span class="p">(</span><span class="n">multi_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">levels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">areas</span><span class="o">.</span><span class="n">ndims</span><span class="p">))</span>
+        <span class="n">vdim</span> <span class="o">=</span> <span class="n">areas</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">vdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">vdims</span> <span class="o">=</span> <span class="p">[</span><span class="n">vdim</span><span class="p">,</span> <span class="n">baseline_name</span><span class="p">]</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">stacked</span> <span class="o">=</span> <span class="n">areas</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">shared_data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">sdf</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">levels</span><span class="p">):</span>
+            <span class="n">sdf</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">baseline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">sdf</span><span class="p">[</span><span class="n">baseline_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sdf</span><span class="p">[</span><span class="n">vdim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[</span><span class="n">vdim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">+</span> <span class="n">baseline</span>
+                <span class="n">sdf</span><span class="p">[</span><span class="n">baseline_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">baseline</span>
+            <span class="n">baseline</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[</span><span class="n">vdim</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">stacked</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">areas</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">sdf</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Overlay</span><span class="p">(</span><span class="n">stacked</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="n">is_overlay</span> <span class="k">else</span> <span class="n">stacked</span></div></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

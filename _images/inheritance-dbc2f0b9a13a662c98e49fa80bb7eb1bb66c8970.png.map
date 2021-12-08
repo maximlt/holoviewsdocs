@@ -1,0 +1,14 @@
+<map id="inheritance9ec89a61d5" name="inheritance9ec89a61d5">
+<area shape="rect" id="node1" href="#holoviews.core.data.DataConversion" target="_top" title="DataConversion is a very simple container object which can be" alt="" coords="23,69,181,85"/>
+<area shape="rect" id="node2" href="#holoviews.core.data.Dataset" target="_top" title="Dataset provides a general baseclass for Element types that" alt="" coords="1024,69,1148,85"/>
+<area shape="rect" id="node3" href="holoviews.core.html#holoviews.core.element.Element" target="_top" title="Element is the atomic datastructure used to wrap some data with" alt="" coords="851,69,992,85"/>
+<area shape="rect" id="node4" href="#holoviews.core.data.PipelineMeta" target="_top" title="holoviews.core.data.PipelineMeta" alt="" coords="244,4,390,20"/>
+<area shape="rect" id="node5" title="The metaclass of Parameterized (and all its descendents)." alt="" coords="4,4,201,20"/>
+<area shape="rect" id="node6" href="holoviews.core.html#holoviews.core.dimension.Dimensioned" target="_top" title="Dimensioned is a base class that allows the data contents of a" alt="" coords="434,36,602,53"/>
+<area shape="rect" id="node9" href="holoviews.core.html#holoviews.core.dimension.ViewableElement" target="_top" title="A ViewableElement is a dimensioned datastructure that may be" alt="" coords="634,36,820,53"/>
+<area shape="rect" id="node7" href="holoviews.core.html#holoviews.core.dimension.LabelledData" target="_top" title="LabelledData is a mix&#45;in class designed to introduce the group and" alt="" coords="232,36,402,53"/>
+<area shape="rect" id="node8" title="params(name=String)" alt="" coords="23,36,181,53"/>
+<area shape="rect" id="node10" title="Composable is a mix&#45;in class to allow Dimensioned objects to be" alt="" coords="652,69,802,85"/>
+<area shape="rect" id="node11" href="holoviews.core.html#holoviews.core.overlay.Overlayable" target="_top" title="Overlayable provides a mix&#45;in class to support the" alt="" coords="651,101,803,118"/>
+<area shape="rect" id="node12" title="Layoutable provides a mix&#45;in class to support the" alt="" coords="446,69,590,85"/>
+</map>

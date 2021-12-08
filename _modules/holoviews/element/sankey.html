@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.element.sankey — HoloViews v1.14.7a1</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../about.html" rel="author" title="About these documents">
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.element.sankey</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cmp_to_key</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+
+<span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..core.dimension</span> <span class="kn">import</span> <span class="n">Dimension</span>
+<span class="kn">from</span> <span class="nn">..core.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">..core.operation</span> <span class="kn">import</span> <span class="n">Operation</span>
+<span class="kn">from</span> <span class="nn">..core.util</span> <span class="kn">import</span> <span class="n">get_param_values</span><span class="p">,</span> <span class="n">unique_array</span>
+<span class="kn">from</span> <span class="nn">.graphs</span> <span class="kn">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Nodes</span><span class="p">,</span> <span class="n">EdgePaths</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">quadratic_bezier</span>
+
+
+<span class="n">_Y_N_DECIMAL_DIGITS</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">_Y_EPS</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="n">_Y_N_DECIMAL_DIGITS</span>
+
+
+<span class="k">class</span> <span class="nc">_layout_sankey</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Computes a Sankey diagram from a Graph element for internal use in</span>
+<span class="sd">    the Sankey element constructor.</span>
+
+<span class="sd">    Adapted from d3-sankey under BSD-3 license.</span>
+
+<span class="sd">    Source: https://github.com/d3/d3-sankey/tree/v0.12.3</span>
+<span class="sd">    """</span>
+
+    <span class="n">bounds</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">NumericTuple</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+
+    <span class="n">node_width</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Width of the nodes."""</span><span class="p">)</span>
+
+    <span class="n">node_padding</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Number of pixels of padding relative to the bounds."""</span><span class="p">)</span>
+
+    <span class="n">iterations</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Number of iterations to run the layout algorithm."""</span><span class="p">)</span>
+
+    <span class="n">node_sort</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">        Sort nodes in ascending breadth."""</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">get_param_values</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Sankey</span><span class="p">((</span><span class="n">element</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">),</span> <span class="n">sankey</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ParamOverrides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'nodes'</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">'links'</span><span class="p">:</span> <span class="p">[]}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeLinks</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeValues</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeDepths</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeHeights</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeBreadths</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">computeLinkBreadths</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computePaths</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+
+        <span class="n">node_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">node_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">node</span><span class="p">[</span><span class="s1">'x0'</span><span class="p">],</span> <span class="n">node</span><span class="p">[</span><span class="s1">'x1'</span><span class="p">]]),</span>
+                              <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">],</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]]),</span>
+                              <span class="n">node</span><span class="p">[</span><span class="s1">'index'</span><span class="p">])</span><span class="o">+</span><span class="nb">tuple</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s1">'values'</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">ndims</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span>
+        <span class="k">elif</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">ndims</span><span class="p">:</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">kdims</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kdims</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">node_type</span><span class="o">.</span><span class="n">kdims</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">node_type</span><span class="p">(</span><span class="n">node_data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">)</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">edge_type</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">graph</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">computeNodeLinks</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Populate the sourceLinks and targetLinks for each node.</span>
+<span class="sd">        Also, if the source and target are not objects, assume they are indices.</span>
+<span class="sd">        """</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">node_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">vdims</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">([</span><span class="nb">tuple</span><span class="p">()])</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">vals</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">values</span><span class="p">):</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'index'</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span> <span class="s1">'sourceLinks'</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">'targetLinks'</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">'values'</span><span class="p">:</span> <span class="n">vals</span><span class="p">}</span>
+            <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">node_map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+
+        <span class="n">links</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()[:</span><span class="mi">3</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">links</span><span class="p">)):</span>
+            <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">node_map</span><span class="p">[</span><span class="n">src</span><span class="p">],</span> <span class="n">node_map</span><span class="p">[</span><span class="n">tgt</span><span class="p">]</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">graph</span><span class="p">[</span><span class="s1">'links'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+            <span class="n">source</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+            <span class="n">target</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">computeNodeValues</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Compute the value (size) of each node by summing the associated links.</span>
+<span class="sd">        """</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">source_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">l</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]])</span>
+            <span class="n">target_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">l</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]])</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">source_val</span><span class="p">,</span> <span class="n">target_val</span><span class="p">])</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">computeNodeDepths</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span>
+        <span class="n">depth</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">next_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'depth'</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span>
+                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+                    <span class="n">next_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">])</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">next_nodes</span>
+            <span class="n">depth</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">RecursionError</span><span class="p">(</span><span class="s1">'Sankey diagrams only support acyclic graphs.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">depth</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">computeNodeHeights</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">next_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span> <span class="o">=</span> <span class="n">height</span>
+                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+                    <span class="n">next_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">next_nodes</span>
+            <span class="n">height</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">height</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">RecursionError</span><span class="p">(</span><span class="s1">'Sankey diagrams only support acyclic graphs.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">computeNodeColumns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="n">depth_upper_bound</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'depth'</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">node_width</span>
+        <span class="n">kx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">dx</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">depth_upper_bound</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">depth_upper_bound</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'column'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="nb">min</span><span class="p">(</span>
+                    <span class="n">depth_upper_bound</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span>
+                        <span class="n">node</span><span class="p">[</span><span class="s1">'depth'</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]</span>
+                        <span class="k">else</span> <span class="n">depth_upper_bound</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'x0'</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="s1">'column'</span><span class="p">]</span> <span class="o">*</span> <span class="n">kx</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'x1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">'x0'</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span>
+            <span class="n">columns</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s1">'column'</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">columns</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">ascendingBreadth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">])</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">ascendingSourceBreadth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">(</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">ascendingBreadth</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">'source'</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span>
+                <span class="k">if</span> <span class="s1">'y0'</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="ow">and</span> <span class="s1">'y0'</span> <span class="ow">in</span> <span class="n">b</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span>
+                <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="ow">or</span> <span class="n">a</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">ascendingTargetBreadth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">(</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">ascendingBreadth</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">'target'</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="s1">'target'</span><span class="p">])</span>
+                <span class="k">if</span> <span class="s1">'y0'</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="ow">and</span> <span class="s1">'y0'</span> <span class="ow">in</span> <span class="n">b</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span>
+                <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="ow">or</span> <span class="n">a</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reorderLinks</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingTargetBreadth</span><span class="p">))</span>
+            <span class="n">x</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingSourceBreadth</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">initializeNodeBreadths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="n">ky</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">py</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">*</span> <span class="n">ky</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+</span> <span class="n">py</span>
+                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+                    <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">*</span> <span class="n">ky</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">py</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reorderLinks</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sourceTop</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">py</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">target</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="ow">is</span> <span class="n">source</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">+</span> <span class="n">py</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">source</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="ow">is</span> <span class="n">target</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">y</span> <span class="o">-=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">targetTop</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">py</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">source</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="ow">is</span> <span class="n">target</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">+</span> <span class="n">py</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">target</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="ow">is</span> <span class="n">source</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">y</span> <span class="o">-=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">resolveCollisionsTopToBottom</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">:]:</span>
+            <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">])</span> <span class="o">*</span> <span class="n">alpha</span>
+            <span class="k">if</span> <span class="n">dy</span> <span class="o">&gt;</span> <span class="n">_Y_EPS</span><span class="p">:</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+</span> <span class="n">py</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">resolveCollisionsBottomToTop</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="c1"># NOTE: don't change the `while` loop to `for`</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span>
+            <span class="k">if</span> <span class="n">dy</span> <span class="o">&gt;</span> <span class="n">_Y_EPS</span><span class="p">:</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dy</span>
+                <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dy</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="n">py</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">resolveCollisions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="n">subject</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisionsBottomToTop</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">subject</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="n">py</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisionsTopToBottom</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">subject</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+</span> <span class="n">py</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisionsBottomToTop</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisionsTopToBottom</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reorderNodeLinks</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+            <span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="s1">'sourceLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+                <span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingTargetBreadth</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+            <span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">][</span><span class="s1">'targetLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+                <span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingSourceBreadth</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">relaxLeftToRight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">target</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+                    <span class="n">source</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span>
+                    <span class="n">v</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="s1">'column'</span><span class="p">]</span> <span class="o">-</span> <span class="n">source</span><span class="p">[</span><span class="s1">'column'</span><span class="p">])</span>
+                    <span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetTop</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span>
+                    <span class="n">w</span> <span class="o">+=</span> <span class="n">v</span>
+                <span class="k">if</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="n">w</span> <span class="o">-</span> <span class="n">target</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">])</span> <span class="o">*</span> <span class="n">alpha</span>
+                <span class="n">target</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+                <span class="n">target</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reorderNodeLinks</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">node_sort</span><span class="p">:</span>
+                <span class="c1"># TODO is the comparison operator valid?</span>
+                <span class="n">column</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ascendingBreadth</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisions</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">relaxRightToLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">):</span>
+        <span class="sd">"""Reposition each node based on its outgoing (source) links."""</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">source</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+                    <span class="n">target</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span>
+                    <span class="n">v</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="s1">'column'</span><span class="p">]</span> <span class="o">-</span> <span class="n">source</span><span class="p">[</span><span class="s1">'column'</span><span class="p">])</span>
+                    <span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sourceTop</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span>
+                    <span class="n">w</span> <span class="o">+=</span> <span class="n">v</span>
+                <span class="k">if</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="n">w</span> <span class="o">-</span> <span class="n">source</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">])</span> <span class="o">*</span> <span class="n">alpha</span>
+                <span class="n">source</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+                <span class="n">source</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dy</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reorderNodeLinks</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">node_sort</span><span class="p">:</span>
+                <span class="n">column</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ascendingBreadth</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resolveCollisions</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">computeNodeBreadths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computeNodeColumns</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="n">max_column_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">columns</span><span class="p">))</span>
+        <span class="c1"># NOTE: the `max_default_padding` thing is a holoviews-specific hack</span>
+        <span class="n">max_default_padding</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">node_padding</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">node_padding</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="nb">min</span><span class="p">((</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_column_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">max_default_padding</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">max_column_size</span> <span class="o">&gt;</span> <span class="mi">1</span>
+            <span class="k">else</span> <span class="n">max_default_padding</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">initializeNodeBreadths</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.99</span> <span class="o">**</span> <span class="n">i</span>
+            <span class="n">beta</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">iterations</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relaxRightToLeft</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relaxLeftToRight</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">py</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">],</span> <span class="n">_Y_N_DECIMAL_DIGITS</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">computeLinkBreadths</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingTargetBreadth</span><span class="p">))</span>
+            <span class="n">node</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ascendingSourceBreadth</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]:</span>
+            <span class="n">y0</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="n">y0</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'sourceLinks'</span><span class="p">]:</span>
+                <span class="n">link</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">y0</span> <span class="o">+=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">'targetLinks'</span><span class="p">]:</span>
+                <span class="n">link</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">y1</span> <span class="o">+=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">computePaths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="s1">'links'</span><span class="p">]:</span>
+            <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'source'</span><span class="p">],</span> <span class="n">link</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="s1">'x1'</span><span class="p">]</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="s1">'x0'</span><span class="p">]</span>
+            <span class="n">xmid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">x1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">y0_upper</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">+</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">y0_lower</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'y0'</span><span class="p">]</span> <span class="o">-</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">y1_upper</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">+</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">y1_lower</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">'y1'</span><span class="p">]</span> <span class="o">-</span> <span class="n">link</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+
+            <span class="n">start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+                <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0_upper</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0_lower</span><span class="p">],</span>
+            <span class="p">])</span>
+            <span class="n">bottom</span> <span class="o">=</span> <span class="n">quadratic_bezier</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0_lower</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1_lower</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">xmid</span><span class="p">,</span> <span class="n">y0_lower</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">xmid</span><span class="p">,</span> <span class="n">y1_lower</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+                <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1_lower</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1_upper</span><span class="p">],</span>
+            <span class="p">])</span>
+            <span class="n">top</span> <span class="o">=</span> <span class="n">quadratic_bezier</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1_upper</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0_upper</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">xmid</span><span class="p">,</span> <span class="n">y1_upper</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">xmid</span><span class="p">,</span> <span class="n">y0_upper</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">spline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">top</span><span class="p">])</span>
+            <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spline</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">paths</span>
+
+
+<div class="viewcode-block" id="Sankey"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Sankey">[docs]</a><span class="k">class</span> <span class="nc">Sankey</span><span class="p">(</span><span class="n">Graph</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Sankey is an acyclic, directed Graph type that represents the flow</span>
+<span class="sd">    of some quantity between its nodes.</span>
+<span class="sd">    """</span>
+
+    <span class="n">group</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Sankey'</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">vdims</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="n">Dimension</span><span class="p">(</span><span class="s1">'Value'</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edges</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="n">sankey_graph</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'sankey'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">compute</span> <span class="o">=</span> <span class="ow">not</span> <span class="p">(</span><span class="n">sankey_graph</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Nodes</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="n">EdgePaths</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Graph</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">kdims</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">vdims</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">compute</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">src</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">tgt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">unique_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">src</span><span class="p">,</span> <span class="n">tgt</span><span class="p">]))</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">nodes</span><span class="o">.</span><span class="n">kdims</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Could not determine index in supplied node data. '</span>
+                                 <span class="s1">'Ensure data has at least one key dimension, '</span>
+                                 <span class="s1">'which matches the node ids on the edges.'</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+            <span class="n">nodes</span><span class="p">,</span> <span class="n">edgepaths</span><span class="p">,</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">_layout_sankey</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sankey</span> <span class="o">=</span> <span class="n">graph</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Expected Nodes object in data, found </span><span class="si">%s</span><span class="s2">."</span>
+                                <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_type</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Expected EdgePaths object in data, found </span><span class="si">%s</span><span class="s2">."</span>
+                                <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">edgepaths</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edgepaths</span> <span class="o">=</span> <span class="n">edgepaths</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sankey</span> <span class="o">=</span> <span class="n">sankey_graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Sankey.clone"><a class="viewcode-back" href="../../../reference_manual/holoviews.element.html#holoviews.element.Sankey.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shared_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">new_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">overrides</span><span class="p">[</span><span class="s1">'sankey'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sankey</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">shared_data</span><span class="p">,</span> <span class="n">new_type</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span>
+                             <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span></div></div>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

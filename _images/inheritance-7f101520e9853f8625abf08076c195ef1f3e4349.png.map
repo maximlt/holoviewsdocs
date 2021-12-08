@@ -1,0 +1,6 @@
+<map id="inheritance576f49656b" name="inheritance576f49656b">
+<area shape="rect" id="node1" href="#holoviews.util.transform.df_dim" target="_top" title="A subclass of dim which provides access to the DataFrame namespace" alt="" coords="240,29,445,55"/>
+<area shape="rect" id="node2" href="#holoviews.util.transform.dim" target="_top" title="dim transform objects are a way to express deferred transforms on" alt="" coords="5,55,192,80"/>
+<area shape="rect" id="node4" href="#holoviews.util.transform.xr_dim" target="_top" title="A subclass of dim which provides access to the xarray DataArray" alt="" coords="240,79,445,104"/>
+<area shape="rect" id="node3" href="#holoviews.util.transform.iloc" target="_top" title="Implements integer array indexing for dim expressions." alt="" coords="6,5,191,31"/>
+</map>

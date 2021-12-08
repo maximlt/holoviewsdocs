@@ -1,0 +1,6 @@
+<map id="inheritancea26e7d1227" name="inheritancea26e7d1227">
+<area shape="rect" id="node1" href="#holoviews.element.comparison.Comparison" target="_top" title="Class used for comparing two HoloViews objects, including complex" alt="" coords="385,55,665,80"/>
+<area shape="rect" id="node3" href="#holoviews.element.comparison.ComparisonTestCase" target="_top" title="Class to integrate the Comparison class with unittest.TestCase." alt="" coords="713,31,1049,56"/>
+<area shape="rect" id="node2" href="#holoviews.element.comparison.ComparisonInterface" target="_top" title="This class is designed to allow equality testing to work" alt="" coords="5,55,337,80"/>
+<area shape="rect" id="node4" title="A class whose instances are single test cases." alt="" coords="447,5,603,31"/>
+</map>

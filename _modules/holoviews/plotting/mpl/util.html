@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>holoviews.plotting.mpl.util — HoloViews v1.14.7a1</title>
+<link href="../../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/css/blank.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/nbsite.css" rel="stylesheet" type="text/css">
+<link href="../../../../_static/css/custom.css" rel="stylesheet" type="text/css">
+<link as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload">
+<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+<script src="../../../../_static/jquery.js"></script>
+<script src="../../../../_static/underscore.js"></script>
+<script src="../../../../_static/doctools.js"></script>
+<script src="../../../../_static/togglebutton.js"></script>
+<script src="../../../../_static/clipboard.min.js"></script>
+<script src="../../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../about.html" rel="author" title="About these documents">
+<link href="../../../../genindex.html" rel="index" title="Index">
+<link href="../../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-61554933-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../../index.html">
+<img alt="logo" class="logo" src="../../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../index.html">
+  Home
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../reference_manual/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference external nav-link" href="https://github.com/holoviz/holoviews">
+  Github source
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../../about.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/holoviews" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/holoviews" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-3 bd-sidebar"><form action="../../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for holoviews.plotting.mpl.util</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">munits</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">ticker</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">Normalize</span><span class="p">,</span> <span class="n">cnames</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span> <span class="nn">matplotlib.markers</span> <span class="kn">import</span> <span class="n">MarkerStyle</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">PathPatch</span>
+<span class="kn">from</span> <span class="nn">matplotlib.transforms</span> <span class="kn">import</span> <span class="n">Bbox</span><span class="p">,</span> <span class="n">TransformedBbox</span><span class="p">,</span> <span class="n">Affine2D</span>
+<span class="kn">from</span> <span class="nn">matplotlib.rcsetup</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">validate_fontsize</span><span class="p">,</span> <span class="n">validate_fonttype</span><span class="p">,</span> <span class="n">validate_hatch</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>  <span class="c1"># starting Matplotlib 3.4.0</span>
+    <span class="kn">from</span> <span class="nn">matplotlib._enums</span> <span class="kn">import</span> <span class="n">CapStyle</span> <span class="k">as</span> <span class="n">validate_capstyle</span>
+    <span class="kn">from</span> <span class="nn">matplotlib._enums</span> <span class="kn">import</span> <span class="n">JoinStyle</span> <span class="k">as</span> <span class="n">validate_joinstyle</span>
+<span class="k">except</span><span class="p">:</span>  <span class="c1"># before Matplotlib 3.4.0</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.rcsetup</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">validate_capstyle</span><span class="p">,</span> <span class="n">validate_joinstyle</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">nc_time_axis</span> <span class="kn">import</span> <span class="n">NetCDFTimeConverter</span><span class="p">,</span> <span class="n">CalendarDateTime</span>
+    <span class="n">nc_axis_available</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateConverter</span>
+    <span class="n">NetCDFTimeConverter</span> <span class="o">=</span> <span class="n">DateConverter</span>
+    <span class="n">nc_axis_available</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="kn">from</span> <span class="nn">...core.util</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LooseVersion</span><span class="p">,</span> <span class="n">arraylike_types</span><span class="p">,</span> <span class="n">cftime_types</span><span class="p">,</span> <span class="n">is_number</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">...element</span> <span class="kn">import</span> <span class="n">Raster</span><span class="p">,</span> <span class="n">RGB</span><span class="p">,</span> <span class="n">Polygons</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">COLOR_ALIASES</span><span class="p">,</span> <span class="n">RGB_HEX_REGEX</span>
+
+<span class="n">mpl_version</span> <span class="o">=</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="is_color"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.is_color">[docs]</a><span class="k">def</span> <span class="nf">is_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Checks if supplied object is a valid color spec.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">RGB_HEX_REGEX</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">COLOR_ALIASES</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">cnames</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<span class="n">validators</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'alpha'</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">is_number</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'capstyle'</span><span class="p">:</span> <span class="n">validate_capstyle</span><span class="p">,</span>
+    <span class="s1">'color'</span><span class="p">:</span> <span class="n">is_color</span><span class="p">,</span>
+    <span class="s1">'fontsize'</span><span class="p">:</span> <span class="n">validate_fontsize</span><span class="p">,</span>
+    <span class="s1">'fonttype'</span><span class="p">:</span> <span class="n">validate_fonttype</span><span class="p">,</span>
+    <span class="s1">'hatch'</span><span class="p">:</span> <span class="n">validate_hatch</span><span class="p">,</span>
+    <span class="s1">'joinstyle'</span><span class="p">:</span> <span class="n">validate_joinstyle</span><span class="p">,</span>
+    <span class="s1">'marker'</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">Line2D</span><span class="o">.</span><span class="n">markers</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">MarkerStyle</span><span class="p">)</span>
+                         <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span> <span class="ow">or</span>
+                         <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'$'</span><span class="p">)</span>
+                          <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'$'</span><span class="p">))),</span>
+    <span class="s1">'s'</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">is_number</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">get_old_rcparams</span><span class="p">():</span>
+    <span class="n">deprecated_rcparams</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'text.latex.unicode'</span><span class="p">,</span>
+        <span class="s1">'examples.directory'</span><span class="p">,</span>
+        <span class="s1">'savefig.frameon'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.1, to be removed in 3.3</span>
+        <span class="s1">'verbose.level'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.1, to be removed in 3.3</span>
+        <span class="s1">'verbose.fileo'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.1, to be removed in 3.3</span>
+        <span class="s1">'datapath'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.2.1, to be removed in 3.3</span>
+        <span class="s1">'text.latex.preview'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+        <span class="s1">'animation.avconv_args'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+        <span class="s1">'animation.avconv_path'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+        <span class="s1">'animation.html_args'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+        <span class="s1">'keymap.all_axes'</span><span class="p">,</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+        <span class="s1">'savefig.jpeg_quality'</span> <span class="c1"># deprecated in MPL 3.3.1</span>
+    <span class="p">]</span>
+    <span class="n">old_rcparams</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">mpl_version</span> <span class="o">&lt;</span> <span class="s1">'3.0'</span> <span class="ow">or</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">deprecated_rcparams</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">old_rcparams</span>
+
+
+<span class="k">def</span> <span class="nf">get_validator</span><span class="p">(</span><span class="n">style</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">validators</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">style</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">style</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">style</span> <span class="o">==</span> <span class="n">k</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">v</span>
+
+
+<div class="viewcode-block" id="validate"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.validate">[docs]</a><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">vectorized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Validates a style and associated value.</span>
+
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    style: str</span>
+<span class="sd">       The style to validate (e.g. 'color', 'size' or 'marker')</span>
+<span class="sd">    value:</span>
+<span class="sd">       The style value to validate</span>
+<span class="sd">    vectorized: bool</span>
+<span class="sd">       Whether validator should allow vectorized setting</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    valid: boolean or None</span>
+<span class="sd">       If validation is supported returns boolean, otherwise None</span>
+<span class="sd">    """</span>
+    <span class="n">validator</span> <span class="o">=</span> <span class="n">get_validator</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">validator</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">arraylike_types</span><span class="o">+</span><span class="p">(</span><span class="nb">list</span><span class="p">,))</span> <span class="ow">and</span> <span class="n">vectorized</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">validator</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">validator</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">valid</span> <span class="o">==</span> <span class="kc">False</span> <span class="k">else</span> <span class="kc">True</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="filter_styles"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.filter_styles">[docs]</a><span class="k">def</span> <span class="nf">filter_styles</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">other_groups</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Filters styles which are specific to a particular artist, e.g.</span>
+<span class="sd">    for a GraphPlot this will filter options specific to the nodes and</span>
+<span class="sd">    edges.</span>
+
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    style: dict</span>
+<span class="sd">        Dictionary of styles and values</span>
+<span class="sd">    group: str</span>
+<span class="sd">        Group within the styles to filter for</span>
+<span class="sd">    other_groups: list</span>
+<span class="sd">        Other groups to filter out</span>
+<span class="sd">    blacklist: list (optional)</span>
+<span class="sd">        List of options to filter out</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    filtered: dict</span>
+<span class="sd">        Filtered dictionary of styles</span>
+<span class="sd">    """</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="o">+</span><span class="s1">'_'</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">other_groups</span><span class="p">)</span>
+            <span class="ow">or</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="ow">or</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">filtered</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="ow">or</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">filtered</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">):]]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">filtered</span></div>
+
+
+<div class="viewcode-block" id="wrap_formatter"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.wrap_formatter">[docs]</a><span class="k">def</span> <span class="nf">wrap_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Wraps formatting function or string in</span>
+<span class="sd">    appropriate matplotlib formatter type.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">formatter</span><span class="p">,</span> <span class="n">ticker</span><span class="o">.</span><span class="n">Formatter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">formatter</span>
+    <span class="k">elif</span> <span class="n">callable</span><span class="p">(</span><span class="n">formatter</span><span class="p">):</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfullargspec</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span><span class="o">.</span><span class="n">args</span>
+                <span class="k">if</span> <span class="n">arg</span> <span class="o">!=</span> <span class="s1">'self'</span><span class="p">]</span>
+        <span class="n">wrapped</span> <span class="o">=</span> <span class="n">formatter</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">formatter</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">wrapped</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">formatter</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\{(\w+)\}"</span><span class="p">,</span> <span class="n">formatter</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ticker</span><span class="o">.</span><span class="n">StrMethodFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ticker</span><span class="o">.</span><span class="n">FormatStrFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">unpack_adjoints</span><span class="p">(</span><span class="n">ratios</span><span class="p">):</span>
+    <span class="n">new_ratios</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ratios</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">unpacked</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ratios</span><span class="p">:</span>
+            <span class="n">nr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+                <span class="n">unpacked</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nr</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unpacked</span><span class="p">):</span>
+            <span class="n">new_ratios</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="n">offset</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="n">offset</span> <span class="o">+=</span> <span class="n">num</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">new_ratios</span>
+
+<span class="k">def</span> <span class="nf">normalize_ratios</span><span class="p">(</span><span class="n">ratios</span><span class="p">):</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">ratios</span><span class="o">.</span><span class="n">values</span><span class="p">())):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">normalized</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">normalized</span>
+
+<span class="k">def</span> <span class="nf">compute_ratios</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">unpacked</span> <span class="o">=</span> <span class="n">unpack_adjoints</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'All-NaN (slice|axis) encountered'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">normalized</span><span class="p">:</span>
+            <span class="n">unpacked</span> <span class="o">=</span> <span class="n">normalize_ratios</span><span class="p">(</span><span class="n">unpacked</span><span class="p">)</span>
+        <span class="n">sorted_ratios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unpacked</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sorted_ratios</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="axis_overlap"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.axis_overlap">[docs]</a><span class="k">def</span> <span class="nf">axis_overlap</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Tests whether two axes overlap vertically</span>
+<span class="sd">    """</span>
+    <span class="n">b1</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">intervaly</span>
+    <span class="n">b2</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">intervaly</span>
+    <span class="k">return</span> <span class="n">t1</span> <span class="o">&gt;</span> <span class="n">b2</span> <span class="ow">and</span> <span class="n">b1</span> <span class="o">&lt;</span> <span class="n">t2</span></div>
+
+
+<div class="viewcode-block" id="resolve_rows"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.resolve_rows">[docs]</a><span class="k">def</span> <span class="nf">resolve_rows</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Recursively iterate over lists of axes merging</span>
+<span class="sd">    them by their vertical overlap leaving a list</span>
+<span class="sd">    of rows.</span>
+<span class="sd">    """</span>
+    <span class="n">merged_rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="n">overlap</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">mrow</span> <span class="ow">in</span> <span class="n">merged_rows</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">axis_overlap</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="k">for</span> <span class="n">ax1</span> <span class="ow">in</span> <span class="n">row</span>
+                   <span class="k">for</span> <span class="n">ax2</span> <span class="ow">in</span> <span class="n">mrow</span><span class="p">):</span>
+                <span class="n">mrow</span> <span class="o">+=</span> <span class="n">row</span>
+                <span class="n">overlap</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">overlap</span><span class="p">:</span>
+            <span class="n">merged_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rows</span> <span class="o">==</span> <span class="n">merged_rows</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rows</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">resolve_rows</span><span class="p">(</span><span class="n">merged_rows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="fix_aspect"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.fix_aspect">[docs]</a><span class="k">def</span> <span class="nf">fix_aspect</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_artists</span><span class="o">=</span><span class="p">[],</span>
+               <span class="n">vspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Calculate heights and widths of axes and adjust</span>
+<span class="sd">    the size of the figure to match the aspect.</span>
+<span class="sd">    """</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">get_size_inches</span><span class="p">()</span>
+
+    <span class="c1"># Compute maximum height and width of each row and columns</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">resolve_rows</span><span class="p">([[</span><span class="n">ax</span><span class="p">]</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">])</span>
+    <span class="n">rs</span><span class="p">,</span> <span class="n">cs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="nb">max</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">])</span>
+    <span class="n">heights</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cs</span><span class="p">)]</span>
+    <span class="n">widths</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rs</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="n">bbox</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_tightbbox</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">get_renderer</span><span class="p">())</span>
+            <span class="n">heights</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+            <span class="n">widths</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">heights</span><span class="p">]))</span> <span class="o">+</span> <span class="n">nrows</span><span class="o">*</span><span class="n">vspace</span><span class="o">*</span><span class="n">fig</span><span class="o">.</span><span class="n">dpi</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">widths</span><span class="p">]))</span> <span class="o">+</span> <span class="n">ncols</span><span class="o">*</span><span class="n">hspace</span><span class="o">*</span><span class="n">fig</span><span class="o">.</span><span class="n">dpi</span>
+
+    <span class="c1"># Compute aspect and set new size (in inches)</span>
+    <span class="n">aspect</span> <span class="o">=</span> <span class="n">height</span><span class="o">/</span><span class="n">width</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">title</span><span class="o">.</span><span class="n">get_text</span><span class="p">():</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">get_window_extent</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="o">/</span><span class="n">fig</span><span class="o">.</span><span class="n">dpi</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">aspect</span><span class="p">)</span><span class="o">+</span><span class="n">offset</span><span class="p">)</span>
+
+    <span class="c1"># Redraw and adjust title position if defined</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">title</span><span class="o">.</span><span class="n">get_text</span><span class="p">():</span>
+        <span class="n">extra_artists</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">extra_artists</span>
+                         <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">title</span><span class="p">]</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">get_tight_bbox</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">extra_artists</span><span class="p">)</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">intervaly</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">title</span><span class="o">.</span><span class="n">get_text</span><span class="p">():</span>
+            <span class="n">title</span><span class="o">.</span><span class="n">set_y</span><span class="p">((</span><span class="n">top</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">aspect</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="get_tight_bbox"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.get_tight_bbox">[docs]</a><span class="k">def</span> <span class="nf">get_tight_bbox</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox_extra_artists</span><span class="o">=</span><span class="p">[],</span> <span class="n">pad</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Compute a tight bounding box around all the artists in the figure.</span>
+<span class="sd">    """</span>
+    <span class="n">renderer</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">get_renderer</span><span class="p">()</span>
+    <span class="n">bbox_inches</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">get_tightbbox</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+    <span class="n">bbox_artists</span> <span class="o">=</span> <span class="n">bbox_extra_artists</span><span class="p">[:]</span>
+    <span class="n">bbox_artists</span> <span class="o">+=</span> <span class="n">fig</span><span class="o">.</span><span class="n">get_default_bbox_extra_artists</span><span class="p">()</span>
+    <span class="n">bbox_filtered</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">bbox_artists</span><span class="p">:</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get_window_extent</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">get_clip_on</span><span class="p">():</span>
+            <span class="n">clip_box</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get_clip_box</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">clip_box</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">bbox</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">clip_box</span><span class="p">)</span>
+            <span class="n">clip_path</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get_clip_path</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">clip_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">clip_path</span> <span class="o">=</span> <span class="n">clip_path</span><span class="o">.</span><span class="n">get_fully_transformed_path</span><span class="p">()</span>
+                <span class="n">bbox</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span>
+                                         <span class="n">clip_path</span><span class="o">.</span><span class="n">get_extents</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">width</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span>
+                                 <span class="n">bbox</span><span class="o">.</span><span class="n">height</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">bbox_filtered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bbox_filtered</span><span class="p">:</span>
+        <span class="n">_bbox</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">bbox_filtered</span><span class="p">)</span>
+        <span class="n">trans</span> <span class="o">=</span> <span class="n">Affine2D</span><span class="p">()</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">fig</span><span class="o">.</span><span class="n">dpi</span><span class="p">)</span>
+        <span class="n">bbox_extra</span> <span class="o">=</span> <span class="n">TransformedBbox</span><span class="p">(</span><span class="n">_bbox</span><span class="p">,</span> <span class="n">trans</span><span class="p">)</span>
+        <span class="n">bbox_inches</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">union</span><span class="p">([</span><span class="n">bbox_inches</span><span class="p">,</span> <span class="n">bbox_extra</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">bbox_inches</span><span class="o">.</span><span class="n">padded</span><span class="p">(</span><span class="n">pad</span><span class="p">)</span> <span class="k">if</span> <span class="n">pad</span> <span class="k">else</span> <span class="n">bbox_inches</span></div>
+
+
+<div class="viewcode-block" id="get_raster_array"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.get_raster_array">[docs]</a><span class="k">def</span> <span class="nf">get_raster_array</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Return the array data from any Raster or Image type</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">RGB</span><span class="p">):</span>
+        <span class="n">rgb</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">rgb</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">rgb</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+                          <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">rgb</span><span class="o">.</span><span class="n">vdims</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">dimension_values</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Raster</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="ring_coding"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.ring_coding">[docs]</a><span class="k">def</span> <span class="nf">ring_coding</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Produces matplotlib Path codes for exterior and interior rings</span>
+<span class="sd">    of a polygon geometry.</span>
+<span class="sd">    """</span>
+    <span class="c1"># The codes will be all "LINETO" commands, except for "MOVETO"s at the</span>
+    <span class="c1"># beginning of each subpath</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    <span class="n">codes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">Path</span><span class="o">.</span><span class="n">code_type</span><span class="p">)</span> <span class="o">*</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span>
+    <span class="n">codes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">MOVETO</span>
+    <span class="n">codes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">CLOSEPOLY</span>
+    <span class="k">return</span> <span class="n">codes</span></div>
+
+
+<div class="viewcode-block" id="polygons_to_path_patches"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.polygons_to_path_patches">[docs]</a><span class="k">def</span> <span class="nf">polygons_to_path_patches</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Converts Polygons into list of lists of matplotlib.patches.PathPatch</span>
+<span class="sd">    objects including any specified holes. Each list represents one</span>
+<span class="sd">    (multi-)polygon.</span>
+<span class="sd">    """</span>
+    <span class="n">paths</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s1">'array'</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="n">element</span><span class="o">.</span><span class="n">kdims</span><span class="p">)</span>
+    <span class="n">has_holes</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">Polygons</span><span class="p">)</span> <span class="ow">and</span> <span class="n">element</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">has_holes</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="n">holes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">holes</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="k">if</span> <span class="n">has_holes</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">mpl_paths</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+        <span class="n">splits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">path</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float'</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">arrays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">splits</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
+        <span class="n">subpath</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">array</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arrays</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">array</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">interiors</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">interior</span> <span class="ow">in</span> <span class="p">(</span><span class="n">holes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">if</span> <span class="n">has_holes</span> <span class="k">else</span> <span class="p">[]):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">interior</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">interior</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                    <span class="n">interior</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interior</span><span class="p">,</span> <span class="n">interior</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">interiors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interior</span><span class="p">)</span>
+            <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">array</span><span class="p">]</span><span class="o">+</span><span class="n">interiors</span><span class="p">)</span>
+            <span class="n">codes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">ring_coding</span><span class="p">(</span><span class="n">array</span><span class="p">)]</span><span class="o">+</span>
+                                   <span class="p">[</span><span class="n">ring_coding</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">interiors</span><span class="p">])</span>
+            <span class="n">subpath</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">codes</span><span class="p">)))</span>
+        <span class="n">mpl_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subpath</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mpl_paths</span></div>
+
+
+<div class="viewcode-block" id="CFTimeConverter"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.CFTimeConverter">[docs]</a><span class="k">class</span> <span class="nc">CFTimeConverter</span><span class="p">(</span><span class="n">NetCDFTimeConverter</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Defines conversions for cftime types by extending nc_time_axis.</span>
+<span class="sd">    """</span>
+
+<div class="viewcode-block" id="CFTimeConverter.convert"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.CFTimeConverter.convert">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nc_axis_available</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'In order to display cftime types with '</span>
+                             <span class="s1">'matplotlib install the nc_time_axis '</span>
+                             <span class="s1">'library using pip or from conda-forge '</span>
+                             <span class="s1">'using:</span><span class="se">\n\t</span><span class="s1">conda install -c conda-forge '</span>
+                             <span class="s1">'nc_time_axis'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cftime_types</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">CalendarDateTime</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">calendar</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">CalendarDateTime</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">calendar</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="EqHistNormalize"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.EqHistNormalize">[docs]</a><span class="k">class</span> <span class="nc">EqHistNormalize</span><span class="p">(</span><span class="n">Normalize</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">256</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncolors</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nbins</span> <span class="o">=</span> <span class="n">nbins</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bin_edges</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ncolors</span> <span class="o">=</span> <span class="n">ncolors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_color_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncolors</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">binning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span>
+        <span class="n">nbins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nbins</span>
+        <span class="n">eq_bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">nbins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">hist</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">eq_bin_edges</span><span class="p">)</span>
+
+        <span class="n">eq_bin_centers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">eq_bin_edges</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'valid'</span><span class="p">)</span>
+        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
+        <span class="n">cdf_max</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">norm_cdf</span> <span class="o">=</span> <span class="n">cdf</span><span class="o">/</span><span class="n">cdf_max</span>
+
+        <span class="c1"># Iteratively find as many finite bins as there are colors</span>
+        <span class="n">finite_bins</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">binning</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">iterations</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">guess</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">finite_bins</span> <span class="o">!=</span> <span class="n">n</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">iterations</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">finite_bins</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="n">guess</span><span class="o">/</span><span class="n">finite_bins</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ratio</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">):</span>
+                <span class="c1">#Abort if distribution is extremely skewed</span>
+                <span class="k">break</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">ratio</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+            <span class="c1"># Interpolate</span>
+            <span class="n">palette_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
+            <span class="n">palette_cdf</span> <span class="o">=</span> <span class="n">norm_cdf</span><span class="o">*</span><span class="p">(</span><span class="n">guess</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">binning</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">palette_edges</span><span class="p">,</span> <span class="n">palette_cdf</span><span class="p">,</span> <span class="n">eq_bin_centers</span><span class="p">)</span>
+
+            <span class="c1"># Evaluate binning</span>
+            <span class="n">uniq_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">binning</span><span class="p">)</span>
+            <span class="n">finite_bins</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniq_bins</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+            <span class="n">iterations</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">finite_bins</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">binning</span> <span class="o">=</span> <span class="p">[</span><span class="n">low</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">high</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">binning</span> <span class="o">=</span> <span class="n">binning</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">finite_bins</span> <span class="o">!=</span> <span class="n">n</span><span class="p">):</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">"EqHistColorMapper warning: Histogram equalization did not converge."</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">binning</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_value</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="EqHistNormalize.process_value"><a class="viewcode-back" href="../../../../reference_manual/holoviews.plotting.mpl.html#holoviews.plotting.mpl.util.EqHistNormalize.process_value">[docs]</a>    <span class="k">def</span> <span class="nf">process_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bin_edges</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">binning</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ncolors</span><span class="p">)</span>
+        <span class="n">isscalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">])</span> <span class="k">if</span> <span class="n">isscalar</span> <span class="k">else</span> <span class="n">data</span>
+        <span class="n">interped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bin_edges</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_bins</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">interped</span><span class="p">),</span> <span class="n">isscalar</span></div>
+
+    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bin_edges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Not invertible until eq_hist has been computed"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">([</span><span class="n">value</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_bins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bin_edges</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+<span class="k">for</span> <span class="n">cft</span> <span class="ow">in</span> <span class="n">cftime_types</span><span class="p">:</span>
+    <span class="n">munits</span><span class="o">.</span><span class="n">registry</span><span class="p">[</span><span class="n">cft</span><span class="p">]</span> <span class="o">=</span> <span class="n">CFTimeConverter</span><span class="p">()</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2021 HoloViz developers.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
